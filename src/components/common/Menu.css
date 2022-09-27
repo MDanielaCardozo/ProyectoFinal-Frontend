@@ -1,0 +1,46 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
+.navbg{
+    /* background-color: rgb(13,102,162); */
+    /* font-family: 'Staatliches', cursive; */
+    font-family: 'Montserrat', sans-serif;
+}
+.navLetra{
+    color: whitesmoke;
+}
+
+@media all and (min-width:992px){
+    .logoPeq{
+        display: none;
+    }
+}
+
+@media all and (max-width:991px){
+    .logoGran{
+        display: none;
+    }
+}
+
+
+  .boton {
+    color: #eee!important;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 0.5em 1.2em;
+    background: rgba(0,0,0,0);
+    border: 2px solid;
+    border-radius: 10px;
+    border-color: rgba(141, 0, 0, 0);
+    transition: all 1s ease;
+    position: relative;
+  }
+  .boton:hover {
+    /* background: #ffffff;
+    color: rgb(0, 0, 0) !important; */
+    background: rgba(0,0,0,0);
+    border: 2px solid;
+    border-radius: 10px;
+    border-color: #eee;
+    transition: all 1s ease;
+  }
