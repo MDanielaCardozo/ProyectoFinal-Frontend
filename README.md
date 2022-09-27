@@ -6,7 +6,15 @@
 - Andrade Nicolas
 - Cardozo Daniela
 - Escobar Carlos
-- Krautmann Otto
-- Ormaechea Valentina
-- Menichetti Juan
 - Garcia Mauro Nicolás
+- Krautmann Otto
+- Menichetti Juan
+- Ormaechea Valentina
+
+## Bibliotecas
+
+### Reac-Bootstrap
+npm install react-bootstrap bootstrap
+
+### Sweet Alert
+npm install sweetalert2
