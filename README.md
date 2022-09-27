@@ -11,10 +11,13 @@
 - Menichetti Juan
 - Ormaechea Valentina
 
-## Bibliotecas
+## Bibliotecas externas
 
 ### Reac-Bootstrap
 npm install react-bootstrap bootstrap
 
 ### Sweet Alert
 npm install sweetalert2
+
+### Route
+npm i react-router-dom
