@@ -1,8 +1,10 @@
 import React from 'react';
 import { Alert, Form, Button } from 'react-bootstrap';
 import { useState, useNavigate } from 'react';
+import Swal from 'sweetalert2';
 
 const Login = (props) => {
+
     const API_AUTH = process.env.REACT_APP_API_AUTH;
 
     const [form, setForm] = useState({});
@@ -10,7 +12,7 @@ const Login = (props) => {
     const [mensajeError, setMensajeError] = useState('');
 
     //inicializar useNavigate
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     const setField = (field, value) => {
         setForm({
@@ -55,6 +57,7 @@ const Login = (props) => {
         const usuario = form;
         usuario.valido = false; //invalido por defecto
         setMensajeError('');
+        /*
         props.setAdminLogged(false);
         if (usuario.email==='admin@gmail.com' && usuario.password ==='12345')
         {
@@ -77,8 +80,8 @@ const Login = (props) => {
             //props.setSesionIniciada(false);
             setMensajeError('Usario o contraseña no válido(s)');
         }
-
-        /*
+        */
+        
         try {
             const respuesta = await fetch(API_AUTH, {
                 method: "POST",
@@ -106,7 +109,7 @@ const Login = (props) => {
                 'error'
             );
         } 
-        */
+        
     }
 
     return (
@@ -128,9 +131,9 @@ const Login = (props) => {
                 <Button variant="primary" type="submit" className="me-1">
                     Enviar
                 </Button>
-                <Button variant="secondary" onClick={()=>{navigate("/");}}>
+                {/* <Button variant="secondary" onClick={()=>{navigate("/");}}>
                     Cancelar
-                </Button>
+                </Button> */}
             </Form>
             {mensajeError !== '' ? <Alert className="mt-3" variant="danger">{mensajeError}</Alert> : null}
         </section>
