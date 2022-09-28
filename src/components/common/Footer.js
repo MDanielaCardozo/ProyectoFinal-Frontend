@@ -10,6 +10,7 @@ import {
 // import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons'
+import Logo from '../../img/logo2.png'
 import './Footer.css';
 
 const Footer = () => {
@@ -21,10 +22,11 @@ const Footer = () => {
             <MDBCol md="3" lg="4" xl="3" className="mx-auto mb-4">
               <img
                 alt=""
-                src="https://fontmeme.com/permalink/220927/8e4e471e77dc91efd58b6ff133f81d50.png"
-                width="200"
+                // src="https://fontmeme.com/permalink/220927/8e4e471e77dc91efd58b6ff133f81d50.png"
+                src={Logo}
+                width="250"
                 height="auto"
-                className="my-0 py-0 pe-4"
+                className="my-0 py-0 ps-auto"
               />{" "}
             </MDBCol>
 

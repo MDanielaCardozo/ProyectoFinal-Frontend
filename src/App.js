@@ -2,7 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Menu from './components/common/Menu';
 import Footer from './components/common/Footer';
-import Burger1 from './img/Burger1.jpg'
+import Burger1 from './img/Burger2.jpg'
 
 const App = () => {
   return (

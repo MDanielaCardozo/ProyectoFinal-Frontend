@@ -5,16 +5,18 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faUser, faCartShopping} from '@fortawesome/free-solid-svg-icons';
+import Logo from '../../img/logo2.png'
 import "./Menu.css"
 
 function CollapsibleExample() {
   return (
-    <Navbar collapseOnSelect className="navbg gradiente" scrolling dark expand="lg" variant="dark" fixed="top">
+    <Navbar collapseOnSelect className="navbg gradiente mt-0 pt-0" scrolling dark expand="lg" variant="dark" fixed="top">
       <Container>
         <Navbar.Brand  href="#">
             <img
               alt=""
-              src="https://fontmeme.com/permalink/220927/8e4e471e77dc91efd58b6ff133f81d50.png"
+            //   src="https://fontmeme.com/permalink/220927/8e4e471e77dc91efd58b6ff133f81d50.png"
+            src={Logo}
               width="150px"
               height="auto"
               className="logoPeq"
@@ -29,7 +31,8 @@ function CollapsibleExample() {
           <div>
             <img
               alt=""
-              src="https://fontmeme.com/permalink/220927/8e4e471e77dc91efd58b6ff133f81d50.png"
+            //   src="https://fontmeme.com/permalink/220927/8e4e471e77dc91efd58b6ff133f81d50.png"
+            src={Logo}
               width="180"
               height="auto"
               className="my-0 py-0 logoGran"
