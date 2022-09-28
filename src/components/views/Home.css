@@ -1,32 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Changa+One&display=swap');
+* {
+    font-family: 'Changa One', cursive;
+}
 .bannerPromo {
- height: 600px;
- width: 100%;
- display: flex;
- object-position: absolute;
+  height: 600px;
+  width: 100%;
+  display: flex;
+  object-position: absolute;
 }
 
-.rowBrick{
-    height: 600px;
-    width: 100%;
-    position: absolute;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-.fondoBrick{
-    object-fit: cover;
-    width: 100%;
-    max-height: 100%;
+.rowBrick {
+  height: 600px;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
-.imgPromo{
-    width: 100%;
-    object-fit: cover;
+.fondoBrick {
+  object-fit: cover;
+  width: 100%;
+  max-height: 100%;
 }
 
-.colPromo{
-    height: 80%;
-    display: flex;
-    justify-content: space-between;
+.imgPromo {
+  width: 100%;
+  object-fit: cover;
+  box-shadow: 5px 5px 50px black;
+}
+
+.imgPromo:hover {
+  transition: 400ms;
+  top: 4px;
+  right: 4px;
+  left: 4px;
+  bottom: 4px;
+  position: relative;
+}
+
+.colPromo {
+  height: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.bannerTexto {
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.bannerConocenos {
+  height: 600px;
+  width: 100%;
+  position: absolute;
+  background-color: rgb(47, 45, 51);
+}
+
+.rowConocenos {
+  height: 600px;
+  width: 100%;
+}
+
+.imgConocenos {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  margin: 0;
 }
