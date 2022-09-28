@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import DetalleProducto from "./components/views/producto/DetalleProducto";
 import Home from "./components/views/Home";
 import AcercaDe from "./components/views/AcercaDe";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
   return (
