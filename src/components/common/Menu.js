@@ -5,7 +5,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faUser, faCartShopping} from '@fortawesome/free-solid-svg-icons';
-import Logo from '../../img/logo2.png'
+import Logo from '../../img/logoLed.png'
 import "./Menu.css"
 
 function CollapsibleExample() {

@@ -10,7 +10,7 @@ import {
 // import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons'
-import Logo from '../../img/logo2.png'
+import Logo from '../../img/logoLed.png'
 import './Footer.css';
 
 const Footer = () => {
