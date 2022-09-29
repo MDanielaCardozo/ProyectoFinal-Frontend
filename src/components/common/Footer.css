@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
+.subrayado{
+    text-decoration:none
+}
+
+
+.footerLetra{
+
+    font-family: 'Montserrat', sans-serif;
+    color: whitesmoke;
+}
