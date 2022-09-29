@@ -7,3 +7,17 @@
 .modal {
     background-color: rgba(0, 0, 0, 0.3);
 }
+
+.azul{
+    font-size: 50px;
+    border-radius: 2em;
+    color: white;
+    text-shadow: 0 0 5px #7bacff,
+    0 0 10px #7bacff,
+    0 0 15px #7bacff,
+    0 0 20px #7bacff,
+    0 0 40px #7bacff,
+    0 0 80px #7bacff,
+    0 0 90px #7bacff,
+    0 0 100px #7bacff
+}

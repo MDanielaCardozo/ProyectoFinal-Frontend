@@ -16,7 +16,7 @@ const DetalleProducto = () => {
       </Button>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton className="bg-dark text-light">
-          <Modal.Title>Detalle de producto</Modal.Title>
+          <Modal.Title className="azul">Detalle de producto</Modal.Title>
         </Modal.Header>
         <Modal.Body className="bg-dark">
         <Card className='container my-5 text-bg-dark'>
@@ -35,7 +35,7 @@ const DetalleProducto = () => {
         </Card>
         </Modal.Body>
         <Modal.Footer className="bg-dark">
-          <Button variant="secondary" onClick={handleClose}>
+          <Button variant="outline-light" className="azul" onClick={handleClose}>
             Cerrar
           </Button>
         </Modal.Footer>
