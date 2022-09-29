@@ -4,7 +4,7 @@ import pared from "../../img/purplewall.jpg";
 import promo1 from "../../img/promo1.jpg";
 import promo2 from "../../img/promo2.jpg";
 import promo3 from "../../img/promo3.jpg";
-import meatgood from "../../img/meatgood.jpg"
+import meatgood from "../../img/meatgood.jpg";
 import "./Home.css";
 
 const Home = () => {
@@ -37,6 +37,9 @@ const Home = () => {
             <img src={meatgood} alt="" className="imgConocenos" />
           </Col>
         </Row>
+      </section>
+      <section className="sectionMenu">
+        <h1 className="titulo">#MENÚ</h1>
       </section>
     </main>
   );

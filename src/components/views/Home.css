@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Changa+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Changa+One&display=swap");
 * {
-    font-family: 'Changa One', cursive;
+  font-family: "Changa One", cursive;
 }
 .bannerPromo {
   height: 600px;
@@ -54,7 +54,6 @@
 .bannerConocenos {
   height: 450px;
   width: 100%;
-  position: absolute;
   background-color: rgb(47, 45, 51);
 }
 
@@ -68,4 +67,17 @@
   width: 100%;
   object-fit: cover;
   margin: 0;
+}
+
+.sectionMenu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+  background-color: rgb(164, 42, 75);
+}
+
+.titulo {
+  color:rgb(178, 73, 76);
+  font-size: 200px;
 }
