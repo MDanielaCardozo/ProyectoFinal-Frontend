@@ -40,7 +40,7 @@ const AcercaDe = () => {
         <p className="text-light">Cotiza con nosotros. @burgerhouse</p>
       </section>
       <section className="container text-center">
-        <h3 className="azul mb-4">Nosotros</h3>
+        <h3 className="gris mb-4">Nosotros</h3>
         <Row xs={1} md={4} className="g-4 mb-4">
         <Col>
           <Card className="cardUno">
