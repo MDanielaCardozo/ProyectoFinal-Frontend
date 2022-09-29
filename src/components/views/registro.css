@@ -3,7 +3,7 @@
     background-image: url(../../img/roger\ house.jpeg);
     background-repeat: no-repeat;
     background-position: center center;
-    height: 100vh;
+    height: 110vh;
     width: 100%;
     background-size: cover;
 }
@@ -32,6 +32,7 @@
         padding-left: 100px;
         padding-right: 100px;
     }
+   
 }
 @media all and (min-width: 992px) and (max-width: 1399px) {
     .px-20 {
