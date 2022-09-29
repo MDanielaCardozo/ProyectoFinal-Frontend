@@ -19,23 +19,27 @@ const DetalleProducto = () => {
           <Modal.Title className="azul">Detalle de producto</Modal.Title>
         </Modal.Header>
         <Modal.Body className="bg-dark">
-        <Card className='container my-5 text-bg-dark'>
-            <Row className='w-75'>
-                <Col md={6}>
-                    <img src='' alt='' className="w-100" />
-                </Col>
-                <Col md={6} className="py-3">
+          <Card className="container my-5 text-bg-dark">
+            <Row className="w-75">
+              <Col md={6}>
+                <img src="" alt="" className="w-100" />
+              </Col>
+              <Col md={6} className="py-3">
                 <h3></h3>
-                <hr/>
+                <hr />
                 <Badge bg="success"></Badge>
-                <p className='m-4'></p>
-                <p className='m-4'></p>
-                </Col>
+                <p className="m-4"></p>
+                <p className="m-4"></p>
+              </Col>
             </Row>
-        </Card>
+          </Card>
         </Modal.Body>
         <Modal.Footer className="bg-dark">
-          <Button variant="outline-light" className="azul" onClick={handleClose}>
+          <Button
+            variant="outline-light"
+            className="azul"
+            onClick={handleClose}
+          >
             Cerrar
           </Button>
         </Modal.Footer>
