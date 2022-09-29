@@ -107,13 +107,14 @@ const Login = (props) => {
     return (
         <section className="container">
             <div className="row">
-                <article className="col-12 col-md-6">
+                <article className="col-12 col-md-6 bg-login">
                     <h3 className="display-6 mt-5">Ingrese su email y contraseña</h3>
-                    <hr />
-                    <Form className="mt-4 px-2" onSubmit={handleSubmit}>
-                        <Form.Group className="mb-3" controlId="formEmail">
+                    {/* <hr /> */}
+                    <Form className="mt-4" onSubmit={handleSubmit}>
+                        <Form.Group className="mb-3 bg-grupo" controlId="formEmail">
                             <Form.Label>Email</Form.Label>
                             <Form.Control
+                                className="custom-input"
                                 type="text"
                                 placeholder="tumail@gmail.com"
                                 onChange={(e) => setField("email", e.target.value)}
@@ -121,9 +122,10 @@ const Login = (props) => {
                             />
                             <Form.Control.Feedback type="invalid">{errors.email}</Form.Control.Feedback>
                         </Form.Group>
-                        <Form.Group className="mb-3" controlId="formPassword">
+                        <Form.Group className="mb-3 bg-grupo" controlId="formPassword">
                             <Form.Label>Password</Form.Label>
                             <Form.Control
+                                className="custom-input"
                                 type="password"
                                 onChange={(e) => setField("password", e.target.value)}
                                 isInvalid={!!errors.password}
