@@ -3,14 +3,14 @@ import { Form,Card,Button } from 'react-bootstrap';
 import './registro.css'
 const Registro = () => {
     return (
-        <div className="imagen py-5 position-fixed px-20">
-            <Card className="container my-5 bg-light  rounded bg-form  px-0">
+        <div className="imagen py-5 px-20 py-20">
+            <Card className="container my-3 bg-light  rounded bg-form  px-0">
                 <div className="bg-dark rounded py-2">
                     <h1 className="fs-4 fw-light text-center text-light">
                         Complete el formulario para Registrarse
                     </h1>
                 </div>
-                <Form className="mb-3 container ">
+                <Form className="mb-3 container">
                     <div className="row py-4">
                         <div className="col-12 col-md-6">
                             <Form.Group
