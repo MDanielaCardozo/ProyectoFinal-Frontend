@@ -1,0 +1,9 @@
+
+
+.imagenDetalle {
+    background: url('../../img/burger.jpeg') no-repeat center center/cover;
+}
+
+.modal {
+    background-color: rgba(0, 0, 0, 0.3);
+}
