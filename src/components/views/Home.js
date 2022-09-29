@@ -1,4 +1,5 @@
 import React from "react";
+import CardProducto from "./producto/CardProducto";
 import { Row, Col, Button } from "react-bootstrap";
 import pared from "../../img/purplewall.jpg";
 import promo1 from "../../img/promo1.jpg";
@@ -40,6 +41,17 @@ const Home = () => {
       </section>
       <section className="sectionMenu">
         <h1 className="titulo">#MENÚ</h1>
+
+        <Row xs={1} md={4} className="g-4 rowProd">
+          <CardProducto></CardProducto>
+          <CardProducto></CardProducto>
+          <CardProducto></CardProducto>
+          <CardProducto></CardProducto>
+          <CardProducto></CardProducto>
+          <CardProducto></CardProducto>
+          <CardProducto></CardProducto>
+          <CardProducto></CardProducto>
+        </Row>
       </section>
     </main>
   );

@@ -70,11 +70,14 @@
 }
 
 .sectionMenu {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
   height: 250px;
   background-color: rgb(164, 42, 75);
+}
+
+.rowProd{
+  background-color: rgb(164, 42, 75);
+  padding: 0px 20px 50px 50px;
 }
 
 .titulo {
