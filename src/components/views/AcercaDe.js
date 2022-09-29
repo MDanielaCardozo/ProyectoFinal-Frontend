@@ -7,7 +7,7 @@ import "./AcercaDe.css";
 
 const AcercaDe = () => {
   return (
-    <div className="container-f">
+    <div className="container-flui">
       <Carousel className="mt-5 container">
         <Carousel.Item className="carouselUno"></Carousel.Item>
         <Carousel.Item className="carouselDos"></Carousel.Item>
@@ -32,15 +32,15 @@ const AcercaDe = () => {
         </p>
       </article>
       <section className="equipo text-center">
-        <h2 className="gris">Unete al equipo</h2>
+        <h2 className="gris pt-5">Unete al equipo</h2>
         <p className="text-light">¿Te gustaría formar parte del equipo de Burger House? ¡Trabaja con nosotros!. @burgerhouse</p>
       </section>
-      <section className="evento mb-5 text-center">
-        <h2 className="gris">Tenes un evento</h2>
+      <section className="evento text-center">
+        <h2 className="gris pt-5">Tenes un evento</h2>
         <p className="text-light">Cotiza con nosotros. @burgerhouse</p>
       </section>
       <section className="container text-center">
-        <h3 className="gris mb-4">Nosotros</h3>
+        <h3 className="gris mb-4 py-5">Nosotros</h3>
         <Row xs={1} md={4} className="g-4 mb-4">
         <Col>
           <Card className="cardUno">
