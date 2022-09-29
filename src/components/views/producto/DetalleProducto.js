@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import { Card, Row, Col, Badge } from "react-bootstrap";
 import "./DetalleProducto.css";
 
 const DetalleProducto = () => {
@@ -13,39 +14,29 @@ const DetalleProducto = () => {
       <Button variant="primary" onClick={handleShow}>
         Launch demo modal
       </Button>
-
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton className="bg-dark text-light">
           <Modal.Title>Detalle de producto</Modal.Title>
         </Modal.Header>
         <Modal.Body className="bg-dark">
-          <div className="card mb-3">
-            <div className="row g-0">
-              <div className="col-md-4 imagenDetalle img-fluid rounded-start"></div>
-              <div className="col-md-8">
-                <div className="card-body">
-                  <h5 className="card-title">Card title</h5>
-                  <p className="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                  </p>
-                  <p className="card-text">
-                    <small className="text-muted">
-                      Last updated 3 mins ago
-                    </small>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+        <Card className='container my-5 text-bg-dark'>
+            <Row className='w-75'>
+                <Col md={6}>
+                    <img src='' alt='' className="w-100" />
+                </Col>
+                <Col md={6} className="py-3">
+                <h3></h3>
+                <hr/>
+                <Badge bg="success"></Badge>
+                <p className='m-4'></p>
+                <p className='m-4'></p>
+                </Col>
+            </Row>
+        </Card>
         </Modal.Body>
         <Modal.Footer className="bg-dark">
           <Button variant="secondary" onClick={handleClose}>
             Cerrar
-          </Button>
-          <Button variant="secondary" onClick={handleClose}>
-            Comprar
           </Button>
         </Modal.Footer>
       </Modal>
