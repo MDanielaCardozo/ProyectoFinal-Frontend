@@ -21,10 +21,9 @@ const Footer = () => {
           <MDBRow className="mt-3">
             <MDBCol md="3" lg="4" xl="3" className="mx-auto mb-4">
               <img
-                alt=""
-                // src="https://fontmeme.com/permalink/220927/8e4e471e77dc91efd58b6ff133f81d50.png"
+                alt="Logo footer"
                 src={Logo}
-                width="250"
+                width="200"
                 height="auto"
                 className="my-0 py-0 ps-auto"
               />{" "}
