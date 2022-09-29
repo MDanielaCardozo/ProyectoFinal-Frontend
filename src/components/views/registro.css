@@ -1,0 +1,40 @@
+.imagen {
+    background-image: url(https://images.pexels.com/photos/1639562/pexels-photo-1639562.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    /* background-image: url(../../img/roger\ house.jpeg);  */
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+}
+.bg-form {
+    background-color: rgba(0, 0, 0, 0.312) !important;
+}
+.px-20 {
+    padding-left: 250px;
+    padding-right: 250px;
+}
+
+/* Celulares */
+@media all and (max-width: 760px) {
+    .imagen {
+        background-position-x: 75%;
+        background-position-y: 100%;
+    }
+    .px-20 {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+/* Tablets */
+@media all and (min-width: 767px) and (max-width: 991px) {
+    .imagen {
+        background-position-x: 84%;
+        background-position-y: 100%;
+        height: 100%;
+    }
+    .px-20 {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+}
