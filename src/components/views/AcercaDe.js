@@ -1,9 +1,14 @@
 import React from "react";
 import Carousel from "react-bootstrap/Carousel";
-import Card from 'react-bootstrap/Card';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
+import Card from "react-bootstrap/Card";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import Button from "react-bootstrap/Button";
 import "./AcercaDe.css";
+import Fran from "../imgNosotros/FranAnd.jpg";
+import Dani from "../imgNosotros/DanielaC.jpg";
+import Mauro from "../imgNosotros/MauroGarcia.jpg";
+import Juan from "../imgNosotros/JuanMeni.png";
 
 const AcercaDe = () => {
   return (
@@ -33,117 +38,88 @@ const AcercaDe = () => {
       </article>
       <section className="equipo text-center">
         <h2 className="gris pt-5">Unete al equipo</h2>
-        <p className="text-light">¿Te gustaría formar parte del equipo de Burger House? ¡Trabaja con nosotros!. @burgerhouse</p>
+        <p className="text-light">
+          ¿Te gustaría formar parte del equipo de Burger House? ¡Trabaja con
+          nosotros!. @burgerhouse
+        </p>
+        <Button variant="outline-light gris">Unite</Button>
       </section>
       <section className="evento text-center">
         <h2 className="gris pt-5">Tenes un evento</h2>
         <p className="text-light">Cotiza con nosotros. @burgerhouse</p>
+        <Button variant="outline-light gris">Información</Button>
       </section>
       <section className="container text-center">
         <h3 className="gris mb-4 py-5">Nosotros</h3>
-        <Row xs={1} md={4} className="g-4 mb-4">
-        <Col>
-          <Card className="cardUno">
-            <Card.Body>
-              <Card.Title>Card title</Card.Title>
-              <Card.Text>
-                This is a longer card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col>
-          <Card className="cardUno">
-            <Card.Body>
-              <Card.Title>Card title</Card.Title>
-              <Card.Text>
-                This is a longer card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col>
-          <Card className="cardUno">
-            <Card.Body>
-              <Card.Title>Card title</Card.Title>
-              <Card.Text>
-                This is a longer card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col>
-          <Card className="cardUno">
-            <Card.Body>
-              <Card.Title>Card title</Card.Title>
-              <Card.Text>
-                This is a longer card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-    </Row>
-    <Row xs={1} md={4} className="g-4 mb-5">
-        <Col>
-          <Card className="cardDos">
-            <Card.Body>
-              <Card.Title>Card title</Card.Title>
-              <Card.Text>
-                This is a longer card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col>
-          <Card className="cardDos">
-            <Card.Body>
-              <Card.Title>Card title</Card.Title>
-              <Card.Text>
-                This is a longer card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col>
-          <Card className="cardDos">
-            <Card.Body>
-              <Card.Title>Card title</Card.Title>
-              <Card.Text>
-                This is a longer card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col>
-          <Card className="cardDos">
-            <Card.Body>
-              <Card.Title>Card title</Card.Title>
-              <Card.Text>
-                This is a longer card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-      
-    </Row>
+        <Row xs={1} sm={2} md={4} className="g-4 mb-4">
+          <Col>
+            <Card>
+              <Card.Img variant="top" src={Fran} className='nosotrosFoto'/>
+              <Card.Body className="bg-dark">
+                <Card.Title className="gris">Andrade Francisco</Card.Title>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col>
+            <Card>
+            <Card.Img variant="top" src={Fran} className='nosotrosFoto'/>
+              <Card.Body className="bg-dark">
+                <Card.Title className="gris">Andrade Nicolas</Card.Title>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col>
+            <Card>
+            <Card.Img variant="top" src={Dani} className='nosotrosFoto'/>
+              <Card.Body className="bg-dark">
+                <Card.Title className="gris">Cardozo Daniela</Card.Title>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col>
+            <Card>
+            <Card.Img variant="top" src={Fran} className='nosotrosFoto'/>
+              <Card.Body className="bg-dark">
+                <Card.Title className="gris">Escobar Carlos</Card.Title>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+        <Row xs={1} sm={2} md={4} className="g-4 mb-5">
+          <Col>
+            <Card>
+            <Card.Img variant="top" src={Mauro} className='nosotrosFoto'/>
+              <Card.Body className="bg-dark">
+                <Card.Title className="gris">Garcia Mauro Nicolas</Card.Title>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col>
+            <Card>
+              <Card.Img variant="top" src={Fran} className='nosotrosFoto'/>
+              <Card.Body className="bg-dark">
+                <Card.Title className="gris">Krautmann Otto</Card.Title>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col>
+            <Card>
+              <Card.Img variant="top" src={Juan} className='nosotrosFoto'/>
+              <Card.Body className="bg-dark">
+                <Card.Title className="gris">Menichetti Juan</Card.Title>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col>
+            <Card>
+              <Card.Img variant="top" src={Fran} className='nosotrosFoto'/>
+              <Card.Body className="bg-dark">
+                <Card.Title className="gris">Ormaechea Valentina</Card.Title>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
       </section>
-        
     </div>
   );
 };
