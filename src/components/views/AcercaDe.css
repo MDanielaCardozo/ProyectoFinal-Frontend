@@ -83,3 +83,12 @@ body {
     height: 270px;
     object-fit: cover;
 }
+
+.card {
+    transition: 300ms ease;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.card:hover{
+    transform: scale(1.04);
+}
