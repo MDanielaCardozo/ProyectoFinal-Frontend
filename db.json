@@ -31,6 +31,14 @@
       "estado": true,
       "perfil": true,
       "id": 4
+    },
+    {
+      "nombre": "flor",
+      "email": "florencia@gmail.com",
+      "password": "En1nicolas*",
+      "estado": true,
+      "perfil": true,
+      "id": 5
     }
   ]
 }

@@ -1,18 +1,22 @@
 import React, { useState } from 'react';
 import { Form, Card, Button, Alert } from 'react-bootstrap';
 import './registro.css';
-import { cantidadCaracteres } from './helperUsuario';
+import { cantidadCaracteres, validarclave } from './helperUsuario';
 
 const Registro = () => {
     const [nombre, setnombre] = useState('');
     const [email, setemail] = useState('');
     const [clave, setclave] = useState('');
     const [msjError, setMsjError] = useState(false);
-
+    const [msjErrorclave,setmsjErrorclave]= useState(false);
     const URL = process.env.REACT_APP_API_USUARIOS;
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        if (validarclave(clave)) {
+            setmsjErrorclave(false);
+        }else setmsjErrorclave(true);
+
         if (cantidadCaracteres(nombre, 4, 15)) {
              setMsjError(false);
             const nuevoUsario = {
@@ -62,7 +66,7 @@ const Registro = () => {
                                 <Form.Control
                                     type="text"
                                     placeholder="Entre (4 y 15) caracteres"
-                                    onChange={(e) => setnombre(e.target.value)}
+                                    onChange={(e) => setnombre(e.target.value.trim())}
                                 />
                             </Form.Group>
                         </div>
@@ -75,7 +79,7 @@ const Registro = () => {
                                 <Form.Control
                                     type="text"
                                     placeholder="Ej: juanperez@gmail.com"
-                                    onChange={(e) => setemail(e.target.value)}
+                                    onChange={(e) => setemail(e.target.value.trim())}
                                 />
                             </Form.Group>
                         </div>
@@ -88,7 +92,7 @@ const Registro = () => {
                                 <Form.Control
                                     type="text"
                                     placeholder="Ej: 1234admin"
-                                    onChange={(e) => setclave(e.target.value)}
+                                    onChange={(e) => setclave(e.target.value.trim())}
                                 />
                             </Form.Group>
                         </div>
@@ -105,6 +109,13 @@ const Registro = () => {
                     <Alert variant="danger" className=" mx-3">
                         No pudimos crear el usuario, verifica los datos
                         ingresados y vuelve a intentar!
+                    </Alert>
+                ) : null}
+                {msjErrorclave ? (
+                    <Alert variant="danger" className=" mx-3">
+                         CLAVE ! :Introducir entre 8 y 15 caracteres con al menos una
+                        letra minúscula, una mayúscula, un digito y un caracter
+                        especial.
                     </Alert>
                 ) : null}
             </Card>
