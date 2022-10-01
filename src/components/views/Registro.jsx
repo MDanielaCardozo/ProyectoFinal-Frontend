@@ -61,7 +61,7 @@ const Registro = () => {
                                 <Form.Label>Nombre*</Form.Label>
                                 <Form.Control
                                     type="text"
-                                    placeholder="Ej: Admin"
+                                    placeholder="Entre (4 y 15) caracteres"
                                     onChange={(e) => setnombre(e.target.value)}
                                 />
                             </Form.Group>
