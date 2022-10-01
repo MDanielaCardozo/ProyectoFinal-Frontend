@@ -1,0 +1,12 @@
+{
+    "Usuarios": [
+        {
+            "nombre": "nicolas",
+            "email": "nico@gmail.com",
+            "password": "nico1234",
+            "estado":true,
+            "perfil":true,
+            "id": 1
+        }
+    ]
+}
