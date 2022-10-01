@@ -1,12 +1,20 @@
 {
-    "Usuarios": [
-        {
-            "nombre": "nicolas",
-            "email": "nico@gmail.com",
-            "password": "nico1234",
-            "estado":true,
-            "perfil":true,
-            "id": 1
-        }
-    ]
+  "Usuarios": [
+    {
+      "nombre": "nicolas",
+      "email": "nico@gmail.com",
+      "password": "nico1234",
+      "estado": true,
+      "perfil": true,
+      "id": 1
+    },
+    {
+      "nombre": "fran",
+      "email": "fran@gmail.com",
+      "password": "1234",
+      "estado": true,
+      "perfil": true,
+      "id": 2
+    }
+  ]
 }

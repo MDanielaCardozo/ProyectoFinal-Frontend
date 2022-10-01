@@ -1,11 +1,42 @@
 import React, { useState } from 'react';
-import { Form,Card,Button } from 'react-bootstrap';
-import './registro.css'
-const Registro = () => {
+import { Form, Card, Button } from 'react-bootstrap';
+import './registro.css';
+import { cantidadCaracteres } from './helperUsuario';
 
-    const [nombre,setnombre]=useState('');
-    const [email,setemail]= useState('');
-    const [clave,setclave]= useState('');
+const Registro = () => {
+    const [nombre, setnombre] = useState('');
+    const [email, setemail] = useState('');
+    const [clave, setclave] = useState('');
+
+    const URL = process.env.REACT_APP_API_USUARIOS;
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        if (cantidadCaracteres(nombre, 4, 15)) {
+            const nuevoUsario = {
+                nombre,
+                email,
+                password:clave,
+                estado:true,
+                perfil:true,
+            };
+            try {
+                const parametroPeticion = {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(nuevoUsario),
+                };
+                const respuesta = await fetch(URL, parametroPeticion);
+                if (respuesta.status === 201) {
+                    console.log('el producto se creo correctamente');
+                }
+            } catch (error) {
+                console.log('Error');
+            }
+        }
+    };
 
     return (
         <main className="imagen justify-content-center  px-20  ">
@@ -15,7 +46,7 @@ const Registro = () => {
                         Complete el formulario para Registrarse
                     </h1>
                 </div>
-                <Form className="container" >
+                <Form className="container" onSubmit={handleSubmit}>
                     <div className="row py-4">
                         <div className="col-12 ">
                             <Form.Group
@@ -39,7 +70,7 @@ const Registro = () => {
                                 <Form.Control
                                     type="text"
                                     placeholder="Ej: juanperez@gmail.com"
-                                    onChange={(e)=> setemail(e.target.value)}
+                                    onChange={(e) => setemail(e.target.value)}
                                 />
                             </Form.Group>
                         </div>
@@ -52,7 +83,7 @@ const Registro = () => {
                                 <Form.Control
                                     type="text"
                                     placeholder="Ej: 1234admin"
-                                    onChange={(e)=>setclave(e.target.value)}
+                                    onChange={(e) => setclave(e.target.value)}
                                 />
                             </Form.Group>
                         </div>
