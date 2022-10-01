@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Form, Card, Button, Alert } from 'react-bootstrap';
 import './registro.css';
-import { cantidadCaracteres, validarclave } from './helperUsuario';
+import { cantidadCaracteres, validarclave, validarGmail } from './helperUsuario';
+import { useNavigate } from 'react-router-dom';
 
 const Registro = () => {
     const [nombre, setnombre] = useState('');
@@ -9,15 +10,17 @@ const Registro = () => {
     const [clave, setclave] = useState('');
     const [msjError, setMsjError] = useState(false);
     const [msjErrorclave,setmsjErrorclave]= useState(false);
+
     const URL = process.env.REACT_APP_API_USUARIOS;
+
+    // const navegacion = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (validarclave(clave)) {
-            setmsjErrorclave(false);
-        }else setmsjErrorclave(true);
+        if (validarclave(clave)) {setmsjErrorclave(false) }
+        else setmsjErrorclave(true);
 
-        if (cantidadCaracteres(nombre, 4, 15)) {
+        if (cantidadCaracteres(nombre, 4, 15)&&validarclave(clave)&&validarGmail(email)) {
              setMsjError(false);
             const nuevoUsario = {
                 nombre,
@@ -38,6 +41,7 @@ const Registro = () => {
                 const respuesta = await fetch(URL, parametroPeticion);
                 if (respuesta.status === 201) {
                     console.log('el producto se creo correctamente');
+                    // navegacion('/');
                 }
             } catch (error) {
                 console.log('Error');

@@ -25,3 +25,13 @@ export function validarGmail(input) {
         return false;
     }
 }
+export function chequearExistenciaEmail(clave1, input) {
+    if (clave1.value === input.value && input.value != '') {
+        input.className = ' form-control is-valid';
+        return true;
+    } else {
+        input.className += ' is-invalid';
+        input.value = null;
+        return false;
+    }
+}
