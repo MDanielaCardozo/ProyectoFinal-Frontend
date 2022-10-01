@@ -2,12 +2,13 @@ import React from "react";
 import { Card, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import promo3 from "../../../img/promo3.jpg";
+import hambur from "../../../img/hamburcheddar.jpg";
 
 const CardProducto = (props) => {
   return (
     <Col md={3}>
       <Card>
-        <Card.Img variant="top" src={promo3} />
+        <Card.Img variant="top" src={hambur} />
         <Card.Body>
           <Card.Title>
             <h2>Pizza napolitana</h2>
