@@ -3,16 +3,16 @@ import { Form,Card,Button } from 'react-bootstrap';
 import './registro.css'
 const Registro = () => {
     return (
-        <div className="imagen py-5 px-20 py-20">
-            <Card className="container  bg-light  rounded bg-form  px-0">
+        <main className="imagen justify-content-center  px-20  ">
+            <Card className="container  rounded bg-form px-0">
                 <div className="bg-dark rounded py-2">
                     <h1 className="fs-4 fw-light text-center text-light">
                         Complete el formulario para Registrarse
                     </h1>
                 </div>
-                <Form className="container">
+                <div className="container">
                     <div className="row py-4">
-                        <div className="col-12 col-md-6">
+                        <div className="col-12 ">
                             <Form.Group
                                 className="mb-3 text-light"
                                 controlId="formAdmin"
@@ -24,7 +24,7 @@ const Registro = () => {
                                 />
                             </Form.Group>
                         </div>
-                        <div className="col-12 col-md-6">
+                        <div className="col-12 ">
                             <Form.Group
                                 className="mb-3 text-light"
                                 controlId="formEmail"
@@ -36,7 +36,7 @@ const Registro = () => {
                                 />
                             </Form.Group>
                         </div>
-                        <div className="col-12 col-md-6">
+                        <div className="col-12 ">
                             <Form.Group
                                 className="mb-3 text-light"
                                 controlId="formClave"
@@ -48,37 +48,17 @@ const Registro = () => {
                                 />
                             </Form.Group>
                         </div>
-                        <div className="col-12 col-md-6">
-                            <Form.Group
-                                className="mb-3 text-light"
-                                controlId="formEstado"
-                            >
-                                <Form.Label>Estado</Form.Label>
-                                <Form.Control
-                                    type="text"
-                                    placeholder="Ej: estado"
-                                />
-                            </Form.Group>
-                        </div>
-                        <div className="col-12">
-                            <Form.Group
-                                className="mb-3 text-light"
-                                controlId="formPerfil"
-                            >
-                                <Form.Label>Perfil</Form.Label>
-                                <Form.Control
-                                    type="text"
-                                    placeholder="Ej: perfil"
-                                />
-                            </Form.Group>
-                        </div>
                     </div>
-                    <Button variant="outline-light" className='mb-3' type="submit">
+                    <Button
+                        variant="outline-light"
+                        className="mb-3"
+                        type="submit"
+                    >
                         Ingresar
                     </Button>
-                </Form>
+                </div>
             </Card>
-        </div>
+        </main>
     );
 };
 
