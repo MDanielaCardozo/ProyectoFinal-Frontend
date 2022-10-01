@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Form, Card, Button } from 'react-bootstrap';
+import { Form, Card, Button, Alert } from 'react-bootstrap';
 import './registro.css';
 import { cantidadCaracteres } from './helperUsuario';
 
@@ -7,19 +7,22 @@ const Registro = () => {
     const [nombre, setnombre] = useState('');
     const [email, setemail] = useState('');
     const [clave, setclave] = useState('');
+    const [msjError, setMsjError] = useState(false);
 
     const URL = process.env.REACT_APP_API_USUARIOS;
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (cantidadCaracteres(nombre, 4, 15)) {
+             setMsjError(false);
             const nuevoUsario = {
                 nombre,
                 email,
-                password:clave,
-                estado:true,
-                perfil:true,
+                password: clave,
+                estado: true,
+                perfil: true,
             };
+           
             try {
                 const parametroPeticion = {
                     method: 'POST',
@@ -35,6 +38,8 @@ const Registro = () => {
             } catch (error) {
                 console.log('Error');
             }
+        }else{
+            setMsjError(true)
         }
     };
 
@@ -96,6 +101,12 @@ const Registro = () => {
                         Ingresar
                     </Button>
                 </Form>
+                {msjError ? (
+                    <Alert variant="danger" className=" mx-3">
+                        No pudimos crear el usuario, verifica los datos
+                        ingresados y vuelve a intentar!
+                    </Alert>
+                ) : null}
             </Card>
         </main>
     );

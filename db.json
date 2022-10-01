@@ -15,6 +15,22 @@
       "estado": true,
       "perfil": true,
       "id": 2
+    },
+    {
+      "nombre": "carlos",
+      "email": "carlos@gmail.com",
+      "password": "12345",
+      "estado": true,
+      "perfil": true,
+      "id": 3
+    },
+    {
+      "nombre": "fran",
+      "email": "nicolas@gmail.com",
+      "password": "1234",
+      "estado": true,
+      "perfil": true,
+      "id": 4
     }
   ]
 }
