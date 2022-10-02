@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import CardProducto from "./producto/CardProducto";
 import { Row, Col, Button } from "react-bootstrap";
 import pared from "../../img/purplewall.jpg";
@@ -9,6 +9,22 @@ import meatgood from "../../img/meatgood.jpg";
 import "./Home.css";
 
 const Home = () => {
+  const URL = process.env.REACT_APP_API_HAMBURGUESERIA;
+  const [productos, setProductos] = useState([]);
+
+  useEffect(() => {
+    consultarAPI();
+  }, []);
+
+  const consultarAPI = async () => {
+    try {
+      const respuesta = await fetch(URL);
+      const listaProductos = await respuesta.json();
+      setProductos(listaProductos);
+    } catch (error) {
+      console.log("No pudieron cargarse los productos");
+    }
+  };
   return (
     <main>
       <section className="bannerPromo">
@@ -43,14 +59,13 @@ const Home = () => {
         <h1 className="titulo">#MENÚ</h1>
 
         <Row xs={1} md={4} className="w-100 m-0 p-3 rowProd ">
-          <CardProducto></CardProducto>
-          <CardProducto></CardProducto>
-          <CardProducto></CardProducto>
-          <CardProducto></CardProducto>
-          <CardProducto></CardProducto>
-          <CardProducto></CardProducto>
-          <CardProducto></CardProducto>
-          <CardProducto></CardProducto>
+          {productos.map((producto) => (
+            <CardProducto
+              key={producto._id}
+              producto={producto}
+              consultarAPI={consultarAPI}
+            ></CardProducto>
+          ))}
         </Row>
       </section>
     </main>
