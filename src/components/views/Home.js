@@ -44,7 +44,7 @@ const Home = () => {
       {/* </section> */}
       <section className="sectionMenu">
         <h1 className="titulo">#MENÚ</h1>
-        <Row className="w-100 m-0 rowProd ">
+        <Row className="w-100 m-0 rowProd">
           <CardProducto></CardProducto>
           <CardProducto></CardProducto>
           <CardProducto></CardProducto>
