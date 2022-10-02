@@ -39,6 +39,22 @@
       "estado": true,
       "perfil": true,
       "id": 5
+    },
+    {
+      "nombre": "nicolas",
+      "email": "nicolasan@gmail.com",
+      "password": "Ea1234*nicos",
+      "estado": true,
+      "perfil": true,
+      "id": 6
+    },
+    {
+      "nombre": "nicolas",
+      "email": "nicolasandrade@gmail.com",
+      "password": "Ea1234*nicoas",
+      "estado": true,
+      "perfil": true,
+      "id": 7
     }
   ]
 }

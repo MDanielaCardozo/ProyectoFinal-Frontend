@@ -1,7 +1,12 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Form, Card, Button, Alert } from 'react-bootstrap';
 import './registro.css';
-import { cantidadCaracteres, validarclave, validarGmail } from './helperUsuario';
+import {
+    cantidadCaracteres,
+    validarclave,
+    validarGmail,
+    chequearExistenciaEmail,
+} from './helperUsuario';
 import { useNavigate } from 'react-router-dom';
 
 const Registro = () => {
@@ -10,18 +15,48 @@ const Registro = () => {
     const [clave, setclave] = useState('');
     const [msjError, setMsjError] = useState(false);
     const [msjErrorclave,setmsjErrorclave]= useState(false);
-
+    const [msjErroremail,setmsjErroremail] = useState(false);
+    const [datosAdmin, setDatosAdmin] = useState([]);
+  
     const URL = process.env.REACT_APP_API_USUARIOS;
 
     // const navegacion = useNavigate();
+    useEffect(()=>{
+        consultarAPI()
+    },[]);
 
+      const consultarAPI = async () => {
+          try {
+              const respuesta = await fetch(URL);
+              const obtenerAdministrador = await respuesta.json();
+              setDatosAdmin(obtenerAdministrador);
+          } catch (error) {
+              console.log(error);
+          }
+      };
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (validarclave(clave)) {setmsjErrorclave(false) }
-        else setmsjErrorclave(true);
+        if (validarclave(clave)) {
+            setmsjErrorclave(false);
+        } else setmsjErrorclave(true);
+        //esta linea encuentra un mail en la BD que concida con el email ingresado (devuelve un objeto)
+        const Usuarios = datosAdmin.find((element) => element.email === email);
+        if (chequearExistenciaEmail(Usuarios, email)) {
+            setmsjErroremail(false);
+        }else setmsjErroremail(true);
 
-        if (cantidadCaracteres(nombre, 4, 15)&&validarclave(clave)&&validarGmail(email)) {
-             setMsjError(false);
+        console.log(chequearExistenciaEmail(Usuarios, email));
+        console.log(cantidadCaracteres(nombre, 4, 15))
+        console.log(validarclave(clave));
+        console.log(validarGmail(email));
+
+        if (
+            chequearExistenciaEmail(Usuarios, email) &&
+            cantidadCaracteres(nombre, 4, 15) &&
+            validarclave(clave) &&
+            validarGmail(email)
+        ) {
+            setMsjError(false);
             const nuevoUsario = {
                 nombre,
                 email,
@@ -29,7 +64,7 @@ const Registro = () => {
                 estado: true,
                 perfil: true,
             };
-           
+
             try {
                 const parametroPeticion = {
                     method: 'POST',
@@ -46,8 +81,8 @@ const Registro = () => {
             } catch (error) {
                 console.log('Error');
             }
-        }else{
-            setMsjError(true)
+        } else {
+            setMsjError(true);
         }
     };
 
@@ -70,7 +105,9 @@ const Registro = () => {
                                 <Form.Control
                                     type="text"
                                     placeholder="Entre (4 y 15) caracteres"
-                                    onChange={(e) => setnombre(e.target.value.trim())}
+                                    onChange={(e) =>
+                                        setnombre(e.target.value.trim())
+                                    }
                                 />
                             </Form.Group>
                         </div>
@@ -83,7 +120,9 @@ const Registro = () => {
                                 <Form.Control
                                     type="text"
                                     placeholder="Ej: juanperez@gmail.com"
-                                    onChange={(e) => setemail(e.target.value.trim())}
+                                    onChange={(e) =>
+                                        setemail(e.target.value.trim())
+                                    }
                                 />
                             </Form.Group>
                         </div>
@@ -96,7 +135,9 @@ const Registro = () => {
                                 <Form.Control
                                     type="text"
                                     placeholder="Ej: 1234admin"
-                                    onChange={(e) => setclave(e.target.value.trim())}
+                                    onChange={(e) =>
+                                        setclave(e.target.value.trim())
+                                    }
                                 />
                             </Form.Group>
                         </div>
@@ -117,9 +158,14 @@ const Registro = () => {
                 ) : null}
                 {msjErrorclave ? (
                     <Alert variant="danger" className=" mx-3">
-                         CLAVE ! :Introducir entre 8 y 15 caracteres con al menos una
-                        letra minúscula, una mayúscula, un digito y un caracter
-                        especial.
+                        CLAVE ! :Introducir entre 8 y 15 caracteres con al menos
+                        una letra minúscula, una mayúscula, un digito y un
+                        caracter especial.
+                    </Alert>
+                ) : null}
+                {msjErroremail ? (
+                    <Alert variant="danger" className=" mx-3">
+                        El email ingresado ya exite, por favor introduce un email valido.
                     </Alert>
                 ) : null}
             </Card>

@@ -18,20 +18,16 @@ export function validarclave(input) {
 }
 export function validarGmail(input) {
     let patron = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
-
-    if (patron.test(input.value)) {
+    if (patron.test(input)) {
         return true;
     } else {
         return false;
     }
 }
-export function chequearExistenciaEmail(clave1, input) {
-    if (clave1.value === input.value && input.value != '') {
-        input.className = ' form-control is-valid';
-        return true;
-    } else {
-        input.className += ' is-invalid';
-        input.value = null;
+export function chequearExistenciaEmail(emailBD) {
+    if (emailBD !== undefined) {
         return false;
+    } else {
+        return true;
     }
 }
