@@ -6,7 +6,7 @@ import hambur from "../../../img/hamburcheddar.jpg";
 
 const CardProducto = (props) => {
   return (
-    <Col md={3}>
+    <Col xs={12} sm={12} md={3}>
       <Card>
         <Card.Img variant="top" src={hambur} />
         <Card.Body>
