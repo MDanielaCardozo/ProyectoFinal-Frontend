@@ -14,26 +14,26 @@ const Registro = () => {
     const [email, setemail] = useState('');
     const [clave, setclave] = useState('');
     const [msjError, setMsjError] = useState(false);
-    const [msjErrorclave,setmsjErrorclave]= useState(false);
-    const [msjErroremail,setmsjErroremail] = useState(false);
+    const [msjErrorclave, setmsjErrorclave] = useState(false);
+    const [msjErroremail, setmsjErroremail] = useState(false);
     const [datosAdmin, setDatosAdmin] = useState([]);
-  
+
     const URL = process.env.REACT_APP_API_USUARIOS;
 
     // const navegacion = useNavigate();
-    useEffect(()=>{
-        consultarAPI()
-    },[]);
+    useEffect(() => {
+        consultarAPI();
+    }, []);
 
-      const consultarAPI = async () => {
-          try {
-              const respuesta = await fetch(URL);
-              const obtenerAdministrador = await respuesta.json();
-              setDatosAdmin(obtenerAdministrador);
-          } catch (error) {
-              console.log(error);
-          }
-      };
+    const consultarAPI = async () => {
+        try {
+            const respuesta = await fetch(URL);
+            const obtenerAdministrador = await respuesta.json();
+            setDatosAdmin(obtenerAdministrador);
+        } catch (error) {
+            console.log(error);
+        }
+    };
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (validarclave(clave)) {
@@ -43,10 +43,10 @@ const Registro = () => {
         const Usuarios = datosAdmin.find((element) => element.email === email);
         if (chequearExistenciaEmail(Usuarios, email)) {
             setmsjErroremail(false);
-        }else setmsjErroremail(true);
+        } else setmsjErroremail(true);
 
         console.log(chequearExistenciaEmail(Usuarios, email));
-        console.log(cantidadCaracteres(nombre, 4, 15))
+        console.log(cantidadCaracteres(nombre, 4, 15));
         console.log(validarclave(clave));
         console.log(validarGmail(email));
 
@@ -165,7 +165,8 @@ const Registro = () => {
                 ) : null}
                 {msjErroremail ? (
                     <Alert variant="danger" className=" mx-3">
-                        El email ingresado ya exite, por favor introduce un email valido.
+                        El email ingresado ya exite, por favor introduce un
+                        email valido.
                     </Alert>
                 ) : null}
             </Card>
