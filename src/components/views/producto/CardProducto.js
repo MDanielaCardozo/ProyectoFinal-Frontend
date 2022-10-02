@@ -1,30 +1,28 @@
 import React from "react";
 import { Card, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import promo3 from "../../../img/promo3.jpg";
 import hambur from "../../../img/hamburcheddar.jpg";
+import "./CardProducto.css";
 
-const CardProducto = (props) => {
+const CardProducto = () => {
   return (
     <Col md={3}>
-      <Card>
-        <Card.Img variant="top" src={hambur} />
+      <Card className="mb-5">
+        <Card.Img variant="top" src={hambur} className="m-0 p-0 cardImg" />
         <Card.Body>
           <Card.Title>
             <h2>Pizza napolitana</h2>
           </Card.Title>
-          <Card.Text>Pizza napolitana con masa madre</Card.Text>
+          <Card.Text className="cardDescrip">Pizza napolitana con masa madre</Card.Text>
         </Card.Body>
         <Card.Footer>
-          <Row className="text-center">
-            <Col>
-              <h3 className="m-0"></h3>
-            </Col>
-            <Col>
-              <Link to={`/detalleProducto`} className="btn btn-danger">
-                Ver más
-              </Link>
-            </Col>
+          <Row className="text-center align-items-center justify-content-around d-flex flex-nowrap">
+            <Link to={`*`} className="btn btn-danger w-50">
+              Agregar al carrito
+            </Link>
+            <Link to={`/detalleProducto`} className="btn btn-danger w-25">
+              Ver más
+            </Link>
           </Row>
         </Card.Footer>
       </Card>

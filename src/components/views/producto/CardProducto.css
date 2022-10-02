@@ -1,0 +1,8 @@
+.cardDescrip{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.cardImg{
+    max-height: 300px;
+    object-fit: cover;
+}
