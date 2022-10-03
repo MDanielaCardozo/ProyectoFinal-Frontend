@@ -3,7 +3,6 @@ import Carousel from "react-bootstrap/Carousel";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import Button from "react-bootstrap/Button";
 import "./AcercaDe.css";
 import Fran from "../imgNosotros/FranAnd.jpg";
 import Dani from "../imgNosotros/DanielaC.jpg";
@@ -12,6 +11,7 @@ import Juan from "../imgNosotros/JuanMeni.png";
 import Vale from "../imgNosotros/ValentinaO.jpg";
 import Carlos from "../imgNosotros/Carlos.jpg";
 import Nico from "../imgNosotros/Nico.jpg";
+import { Link } from "react-router-dom";
 
 const AcercaDe = () => {
   return (
@@ -45,12 +45,12 @@ const AcercaDe = () => {
           ¿Te gustaría formar parte del equipo de Burger House? ¡Trabaja con
           nosotros!. @burgerhouse
         </p>
-        <Button variant="outline-light gris">Unite</Button>
+        <Link to={'/error404'} className='btn btn-outline-light'>Unite</Link>
       </section>
       <section className="evento text-center">
         <h2 className="gris pt-5">Tenes un evento</h2>
         <p className="text-light">Cotiza con nosotros. @burgerhouse</p>
-        <Button variant="outline-light gris">Información</Button>
+        <Link to={'/error404'} className='btn btn-outline-light'>Información</Link>
       </section>
       <section className="container text-center">
         <h3 className="display-3 mb-4 py-5 text-light">Nosotros</h3>
@@ -83,7 +83,7 @@ const AcercaDe = () => {
             <Card>
             <Card.Img variant="top" src={Carlos} className='nosotrosFoto'/>
               <Card.Body className="bg-dark">
-              <Card.Link href="https://github.com/carlosmsx" className="gris">Escobar Carlos</Card.Link>
+              <Link href="https://github.com/carlosmsx" className="gris">Escobar Carlos</Link>
               </Card.Body>
             </Card>
           </Col>
