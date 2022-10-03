@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import AcercaDe from "./components/views/AcercaDe";
+import Menu from './components/common/Menu';
+import Footer from './components/common/Footer';import AcercaDe from "./components/views/AcercaDe";
 import DetalleProducto from "./components/views/producto/DetalleProducto";
 import Home from "./components/views/Home";
 import Login from './components/views/Login';
@@ -12,7 +13,7 @@ const App = () => {
   return (
     <body>
       <BrowserRouter>
-        <header></header>
+        <Menu></Menu>
         <Routes>
           <Route exact path="/" element={<Home></Home>}></Route>
           <Route exact path="/login" element={<Login></Login>} />
@@ -20,7 +21,7 @@ const App = () => {
           <Route exact path="/acercaDe" element={<AcercaDe></AcercaDe>}></Route>
           {/* <Route exact path="*" element={<Error404></Error404>}></Route> */}
         </Routes>
-        <footer></footer>
+        <Footer></Footer>
       </BrowserRouter>
     </body>
   );
