@@ -1,8 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Changa+One&family=Montserrat:wght@200;300;400&display=swap');
-* {
-  font-family: "Changa One", cursive;
-}
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bungee+Inline&family=Changa+One&family=Kanit:wght@400;500&family=Montserrat:wght@200;300;400;800;900&family=Passion+One&family=Rajdhani:wght@600;700&display=swap");
+/* * {
+  font-family: 'Montserrat', sans-serif;
+} */
 
+h1,
+h2 {
+  font-weight: 800;
+  font-family: "Montserrat", sans-serif;
+}
 /* Banner promociones inicial */
 /* .bannerPromo {
   width: 100%;
@@ -96,6 +101,13 @@
   position: relative;
 }
 
+.rowConocenos h1,
+h2,
+boton {
+  font-weight: 800 !important;
+  font-family: "Montserrat", sans-serif;
+}
+
 .colConocenos {
   width: 100%;
 }
@@ -110,16 +122,21 @@
 .sectionMenu {
   position: static;
   text-align: center;
-  background-color: rgb(164, 42, 75);
+  background-color: #84358d;
+}
+
+.sectionMenu h1 {
+  font-weight: 900;
+  font-family: "Montserrat", sans-serif;
 }
 
 .rowProd {
-  background-color: rgb(164, 42, 75);
+  background-color: #84358d;
   padding: 0px 20px 0px 20px;
 }
 
 .titulo {
-  color: rgb(178, 73, 76);
+  color: #363982;
   font-size: 200px;
   margin: 0;
   padding: 20px;
@@ -141,7 +158,7 @@
   }
   .rowConocenos {
     min-height: 450px;
-    align-content:space-around;
+    align-content: space-around;
   }
 }
 

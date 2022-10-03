@@ -34,7 +34,7 @@ const Home = () => {
             <div className="ms-5 text-light p-3">
               <h1>Somos expertos</h1>
               <h2>Veni a conocernos</h2>
-              <Button variant="outline-info mt-2">Más sobre nosotros</Button>
+              <Button variant="outline-info mt-2 boton">Más sobre nosotros</Button>
             </div>
           </Col>
           <Col sm={12} md={8} className="colConocenos">
