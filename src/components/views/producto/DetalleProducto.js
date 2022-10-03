@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { Card, Row, Col, Badge } from "react-bootstrap";
 import "./DetalleProducto.css";
+import Burger from '../../img/burger.jpeg'
 
 const DetalleProducto = () => {
   const [show, setShow] = useState(false);
@@ -20,15 +21,15 @@ const DetalleProducto = () => {
         </Modal.Header>
         <Modal.Body className="bg-dark">
           <Card className="container my-5 text-bg-dark">
-            <Row className="w-75">
+            <Row className="w-100">
               <Col md={6}>
-                <img src="" alt="" className="w-100" />
+                <img src={Burger} alt='' className=" imagen" />
               </Col>
-              <Col md={6} className="py-3">
-                <h3></h3>
+              <Col md={6} className="">
+                <h4>Hamburguesa</h4>
                 <hr />
-                <Badge bg="success"></Badge>
-                <p className="m-4"></p>
+                <Badge className="azul bg-secondary">Promo 1</Badge>
+                <p className="m-4">hyyfftyhbgkkjhyggvfgcdcghggfv</p>
                 <p className="m-4"></p>
               </Col>
             </Row>
