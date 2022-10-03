@@ -21,3 +21,6 @@ npm install sweetalert2
 
 ### Route
 npm i react-router-dom
+
+### Material Design
+npm i mdb-react-ui-kit
