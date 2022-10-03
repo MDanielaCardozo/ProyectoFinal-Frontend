@@ -1,33 +1,28 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import React, { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import AcercaDe from "./components/views/AcercaDe";
+import DetalleProducto from "./components/views/producto/DetalleProducto";
+import Home from "./components/views/Home";
 import Login from './components/views/Login';
-import Menu from './components/common/Menu';
-import Footer from './components/common/Footer';
-import Burger1 from './img/Burger2.jpg'
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const App = () => {
-  const setAdminLogged=(val)=>{
-
-  }
+  const [usuarioLogueado, setUsuarioLogueado] = useState({});
 
   return (
-    <div>
+    <body>
       <BrowserRouter>
-      <Menu></Menu>
-      <img
-              alt=""
-              src={Burger1}
-              width="100%"
-              height="auto"
-              className=""
-            />{' '}
+        <header></header>
         <Routes>
-          <Route exact path="/login" element={<Login setAdminLogged={setAdminLogged} />} />
+          <Route exact path="/" element={<Home></Home>}></Route>
+          <Route exact path="/login" element={<Login></Login>} />
+          <Route exact path="/detalleProducto/:id" element={<DetalleProducto></DetalleProducto>} ></Route>
+          <Route exact path="/acercaDe" element={<AcercaDe></AcercaDe>}></Route>
+          {/* <Route exact path="*" element={<Error404></Error404>}></Route> */}
         </Routes>
-      <Footer></Footer>
-      </BrowserRouter> 
-    </div>
+        <footer></footer>
+      </BrowserRouter>
+    </body>
   );
 };
 

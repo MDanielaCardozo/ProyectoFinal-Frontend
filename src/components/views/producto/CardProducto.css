@@ -1,0 +1,30 @@
+.cardDescrip {
+  font-family: "Montserrat", sans-serif;
+}
+
+.cardImg {
+  max-height: 300px;
+  object-fit: cover;
+  border: 0px;
+}
+
+.cardProd {
+  box-shadow: 5px 5px 50px rgb(223, 93, 97);
+  border: 0px !important;
+}
+
+.cardProd:hover {
+  transition: 400ms;
+  top: 4px;
+  left: 4px;
+  position: relative;
+}
+
+.cardProd .btnCard {
+  background-color: rgb(210, 128, 122);
+}
+
+.cardProd .btnCard:hover {
+  background-color: rgb(235, 182, 24) !important;
+  color: white !important;
+}

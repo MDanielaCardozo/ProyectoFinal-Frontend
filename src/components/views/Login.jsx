@@ -1,10 +1,10 @@
 import React, {useState} from "react";
-import { Alert, Form, Button, Card } from "react-bootstrap";
+import { Alert, Form, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import "./login.css";
 
-const Login = (props) => {
+const Login = ({setUsuarioLogueado}) => {
     const API_AUTH = process.env.REACT_APP_API_AUTH;
 
     const [form, setForm] = useState({});
@@ -58,30 +58,6 @@ const Login = (props) => {
         const usuario = form;
         usuario.valido = false; //invalido por defecto
         setMensajeError("");
-        /*
-        props.setAdminLogged(false);
-        if (usuario.email==='admin@gmail.com' && usuario.password ==='12345')
-        {
-            usuario.valido=true;
-            usuario.perfil='admin';
-            //setLoggedUser(usuario);
-            //props.setAdminLogged(true);
-            //props.setSesionIniciada(true);
-            //navigate("/receta/administrar");
-        }
-        else if (usuario.email==='user@gmail.com' && usuario.password ==='12345') 
-        {
-            usuario.valido=true;
-            usuario.perfil='usuario';
-            //setLoggedUser(usuario);
-            //props.setSesionIniciada(true);
-            //navigate("/");
-        }
-        else {
-            //props.setSesionIniciada(false);
-            setMensajeError('Usario o contraseña no válido(s)');
-        }
-        */
 
         try {
             const respuesta = await fetch(API_AUTH, {
@@ -91,26 +67,28 @@ const Login = (props) => {
                 },
                 body: JSON.stringify(usuario),
             });
-            console.log(respuesta);
+
             if (respuesta.status === 200) {
                 const data = await respuesta.json();
                 //almaceno el usuario en el state y localstorage
-                localStorage.setItem(process.env.REACT_APP_LS_TOKEN, JSON.stringify(data))
-                //setUsuarioLogueado(data)
+                localStorage.setItem(process.env.REACT_APP_LOCALSTORAGE, JSON.stringify(data))
+                setUsuarioLogueado(data)
                 //redireccionar al home
                 navigate('/')
-            } else {
-                //usuario no validado
-                console.log("error");
-            }
+            } 
+            // else {
+            //     //usuario no validado
+            //     console.log("error");
+            //     Swal.fire("Error en Login", "No se pudo iniciar sesion, intente nuevamente en unos minutos", "error");            
+            // }
         } catch (error) {
             Swal.fire("Error en Login", "No se pudo iniciar sesion, intente nuevamente en unos minutos", "error");
         }
     };
 
     return (
-        <section className="container">
-            <div className="row">
+        <section className="container-fluid">
+            <div className="row rowBrick">
                 <article className="col-12 col-md-6 bg-login px-5">
                     <h3 className="display-6 mt-5">Ingrese su email y contraseña</h3>
                     {/* <hr /> */}

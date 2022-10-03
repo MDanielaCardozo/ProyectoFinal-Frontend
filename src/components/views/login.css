@@ -29,3 +29,11 @@
     padding: 8px;
     border-radius: 10px;
 }
+
+.rowBrick {
+    background-image: url(../../img/purplewall.jpg);
+    background-size: cover;
+    padding: 30px;
+    min-height: 600px;
+    justify-content: space-around;
+}
