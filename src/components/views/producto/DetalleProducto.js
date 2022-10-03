@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { Card, Row, Col, Badge } from "react-bootstrap";
 import "./DetalleProducto.css";
-import Burger from '../../img/burger.jpeg'
+import Burger from '../../imgDetalle/burger.jpeg'
 
 const DetalleProducto = () => {
   const [show, setShow] = useState(false);
