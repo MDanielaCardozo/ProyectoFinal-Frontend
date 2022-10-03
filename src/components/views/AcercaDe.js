@@ -9,6 +9,9 @@ import Fran from "../imgNosotros/FranAnd.jpg";
 import Dani from "../imgNosotros/DanielaC.jpg";
 import Mauro from "../imgNosotros/MauroGarcia.jpg";
 import Juan from "../imgNosotros/JuanMeni.png";
+import Vale from "../imgNosotros/ValentinaO.jpg";
+import Carlos from "../imgNosotros/Carlos.jpg";
+import Nico from "../imgNosotros/Nico.jpg";
 
 const AcercaDe = () => {
   return (
@@ -50,21 +53,21 @@ const AcercaDe = () => {
         <Button variant="outline-light gris">Información</Button>
       </section>
       <section className="container text-center">
-        <h3 className="gris mb-4 py-5">Nosotros</h3>
+        <h3 className="display-3 mb-4 py-5 text-light">Nosotros</h3>
         <Row xs={1} sm={2} md={4} className="g-4 mb-4">
           <Col>
             <Card>
               <Card.Img variant="top" src={Fran} className='nosotrosFoto'/>
               <Card.Body className="bg-dark">
-                <Card.Title className="gris">Andrade Francisco</Card.Title>
+              <Card.Link href="https://github.com/franAndrad" className="gris">Andrade Francisco</Card.Link>
               </Card.Body>
             </Card>
           </Col>
           <Col>
             <Card>
-            <Card.Img variant="top" src={Fran} className='nosotrosFoto'/>
+            <Card.Img variant="top" src={Nico} className='nosotrosFoto'/>
               <Card.Body className="bg-dark">
-                <Card.Title className="gris">Andrade Nicolas</Card.Title>
+              <Card.Link href="https://github.com/nicolasandr" className="gris">Andrade Nicolas</Card.Link>  
               </Card.Body>
             </Card>
           </Col>
@@ -72,15 +75,15 @@ const AcercaDe = () => {
             <Card>
             <Card.Img variant="top" src={Dani} className='nosotrosFoto'/>
               <Card.Body className="bg-dark">
-                <Card.Title className="gris">Cardozo Daniela</Card.Title>
+              <Card.Link href="https://github.com/MDanielaCardozo" className="gris">Cardozo Daniela</Card.Link>
               </Card.Body>
             </Card>
           </Col>
           <Col>
             <Card>
-            <Card.Img variant="top" src={Fran} className='nosotrosFoto'/>
+            <Card.Img variant="top" src={Carlos} className='nosotrosFoto'/>
               <Card.Body className="bg-dark">
-                <Card.Title className="gris">Escobar Carlos</Card.Title>
+              <Card.Link href="https://github.com/carlosmsx" className="gris">Escobar Carlos</Card.Link>
               </Card.Body>
             </Card>
           </Col>
@@ -90,7 +93,7 @@ const AcercaDe = () => {
             <Card>
             <Card.Img variant="top" src={Mauro} className='nosotrosFoto'/>
               <Card.Body className="bg-dark">
-                <Card.Title className="gris">Garcia Mauro Nicolas</Card.Title>
+              <Card.Link href="https://github.com/Ao-Rubi" className="gris">Garcia Mauro Nicolás</Card.Link>
               </Card.Body>
             </Card>
           </Col>
@@ -98,7 +101,7 @@ const AcercaDe = () => {
             <Card>
               <Card.Img variant="top" src={Fran} className='nosotrosFoto'/>
               <Card.Body className="bg-dark">
-                <Card.Title className="gris">Krautmann Otto</Card.Title>
+              <Card.Link href="https://github.com/OttoKrautmann" className="gris">Krautmann Otto</Card.Link>
               </Card.Body>
             </Card>
           </Col>
@@ -106,15 +109,15 @@ const AcercaDe = () => {
             <Card>
               <Card.Img variant="top" src={Juan} className='nosotrosFoto'/>
               <Card.Body className="bg-dark">
-                <Card.Title className="gris">Menichetti Juan</Card.Title>
+              <Card.Link href="https://github.com/JuanMeni" className="gris">Menichetti Juan</Card.Link>
               </Card.Body>
             </Card>
           </Col>
           <Col>
             <Card>
-              <Card.Img variant="top" src={Fran} className='nosotrosFoto'/>
+              <Card.Img variant="top" src={Vale} className='nosotrosFoto'/>
               <Card.Body className="bg-dark">
-                <Card.Title className="gris">Ormaechea Valentina</Card.Title>
+              <Card.Link href="https://github.com/valeormaechea" className="gris">Ormaechea Valentina</Card.Link>
               </Card.Body>
             </Card>
           </Col>
