@@ -1,8 +1,8 @@
-import React from "react";
+import React, {useState} from "react";
 import { Alert, Form, Button, Card } from "react-bootstrap";
-import { useState, useNavigate } from "react";
-import "./login.css";
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import "./login.css";
 
 const Login = (props) => {
     const API_AUTH = process.env.REACT_APP_API_AUTH;
@@ -12,7 +12,7 @@ const Login = (props) => {
     const [mensajeError, setMensajeError] = useState("");
 
     //inicializar useNavigate
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
 
     const setField = (field, value) => {
         setForm({
@@ -92,12 +92,16 @@ const Login = (props) => {
                 body: JSON.stringify(usuario),
             });
             console.log(respuesta);
-            if (respuesta.status === 201) {
-                //usuario validado
-                //redirecciono a página anterior
-                //navegacion(-1);
+            if (respuesta.status === 200) {
+                const data = await respuesta.json();
+                //almaceno el usuario en el state y localstorage
+                localStorage.setItem(process.env.REACT_APP_LS_TOKEN, JSON.stringify(data))
+                //setUsuarioLogueado(data)
+                //redireccionar al home
+                navigate('/')
             } else {
                 //usuario no validado
+                console.log("error");
             }
         } catch (error) {
             Swal.fire("Error en Login", "No se pudo iniciar sesion, intente nuevamente en unos minutos", "error");
@@ -107,7 +111,7 @@ const Login = (props) => {
     return (
         <section className="container">
             <div className="row">
-                <article className="col-12 col-md-6 bg-login">
+                <article className="col-12 col-md-6 bg-login px-5">
                     <h3 className="display-6 mt-5">Ingrese su email y contraseña</h3>
                     {/* <hr /> */}
                     <Form className="mt-4" onSubmit={handleSubmit}>
@@ -150,7 +154,7 @@ const Login = (props) => {
                         </Alert>
                     ) : null}
                 </article>
-                <article className="col-12 col-md-6 bg-gris px-3">
+                <article className="col-12 col-md-6 bg-gris px-5">
                     <h2 className="display-6 mt-5">No sos miembro aún?</h2>
                     <p>Registrate y obtené descuentos y promociones, participá en sorteos y muchas otras ventajas.</p>
                     <Button>Quiero registrarme</Button>
