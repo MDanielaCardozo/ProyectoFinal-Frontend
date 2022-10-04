@@ -1,3 +1,14 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;800;900&display=swap');
+* {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  color: white;
+}
+.title-typography{
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 600;
+}
 .imagen {
     /* background-image: url(https://images.pexels.com/photos/159291/beer-machine-alcohol-brewery-159291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1); */
     background-image: url(../../img/purplewall.jpg);

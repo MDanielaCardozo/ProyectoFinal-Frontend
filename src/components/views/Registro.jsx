@@ -90,7 +90,7 @@ const Registro = () => {
         <main className="imagen justify-content-center  px-20  ">
             <Card className="container  rounded bg-form px-0">
                 <div className="bg-dark rounded py-2">
-                    <h1 className="fs-4 fw-light text-center text-light">
+                    <h1 className="title-typography text-center text-light">
                         Complete el formulario para Registrarse
                     </h1>
                 </div>
