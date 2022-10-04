@@ -15,13 +15,13 @@ const DetalleProducto = () => {
       <Button variant="primary" onClick={handleShow}>
         Launch demo modal
       </Button>
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose} className="">
         <Modal.Header closeButton className="bg-dark text-light">
           <Modal.Title className="azul">Detalle de producto</Modal.Title>
         </Modal.Header>
         <Modal.Body className="bg-dark">
           <Card className="container my-5 text-bg-dark">
-            <Row className="w-100">
+            <Row className="w-100 py-3">
               <Col md={6}>
                 <img src={Burger} alt='' className=" imagen" />
               </Col>
