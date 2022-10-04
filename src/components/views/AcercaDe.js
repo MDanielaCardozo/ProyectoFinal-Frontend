@@ -45,15 +45,15 @@ const AcercaDe = () => {
           ¿Te gustaría formar parte del equipo de Burger House? ¡Trabaja con
           nosotros!. @burgerhouse
         </p>
-        <Link to={'/error404'} className='btn btn-outline-light'>Unite</Link>
+        <Link to={'/*'} className='btn btn-outline-light'>Unite</Link>
       </section>
       <section className="evento text-center">
         <h2 className="gris pt-5">Tenes un evento</h2>
         <p className="text-light">Cotiza con nosotros. @burgerhouse</p>
-        <Link to={'/error404'} className='btn btn-outline-light'>Información</Link>
+        <Link to={'/*'} className='btn btn-outline-light'>Información</Link>
       </section>
-      <section className="container text-center">
-        <h3 className="display-3 mb-4 py-5 text-light">Nosotros</h3>
+      <section className="container text-center nosotrosSection">
+        <h3 className="display-1 mb-4 py-5 text-light">Nosotros</h3>
         <Row xs={1} sm={2} md={4} className="g-4 mb-4">
           <Col>
             <Card>

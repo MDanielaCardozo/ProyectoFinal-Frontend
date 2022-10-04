@@ -9,7 +9,7 @@
 body {
     font-family: 'Nunito', 'Open Sans';
     font-weight: 900;
-    background: url('../imgNosotros/wallUno.jpg') no-repeat center center/cover;
+    background: url('../imgNosotros/purplewall.jpg') no-repeat center center/cover;
 }
 
 .carouselUno {
@@ -77,6 +77,8 @@ body {
     height: 250px;
     margin-bottom: 90px;
 }
+
+
 
 .nosotrosFoto {
     width: 100%;
