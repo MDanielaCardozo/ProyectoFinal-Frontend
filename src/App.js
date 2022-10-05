@@ -1,13 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Registro from './components/views/Registro';
 import Login from './components/views/Login';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
-  const setAdminLogged=(val)=>{
-
-  }
+  const [usuarioLogueado, setUsuarioLogueado] = useState({});
 
   return (
       <div>

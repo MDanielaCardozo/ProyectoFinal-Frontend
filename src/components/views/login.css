@@ -1,9 +1,11 @@
 .bg-gris {
-    background-color: #ece6e6;
+    background-color: #1b0747bd;
+    /* background-color: rgba(0, 0, 0, 0.664) !important; */
 }
 
 .bg-login {
-    background-color: hsl(33, 41%, 95%);
+    /* background-color: hsl(33, 41%, 95%); */
+    background-color: rgba(0, 0, 0, 0.658) !important;
 }
 
 .custom-input {
@@ -25,7 +27,28 @@
 }
 
 .bg-grupo {
-    background-color: #ffffff;
+    /* background-color: #ffffff; */
+    background-color: rgba(0, 0, 0, 0.664) !important;
     padding: 8px;
     border-radius: 10px;
+}
+
+.rowBrick {
+    background-image: url(../../img/purplewall.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 30px;
+    min-height: 600px;
+    justify-content: space-around;
+    min-height: 100vh;
+}
+
+.imagen {
+    /* background-image: url(https://images.pexels.com/photos/159291/beer-machine-alcohol-brewery-159291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1); */
+    background-image: url(../../img/purplewall.jpg);
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
 }

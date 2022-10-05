@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import "./login.css";
 
-const Login = (props) => {
+const Login = ({setUsuarioLogueado}) => {
     const API_AUTH = process.env.REACT_APP_API_AUTH;
 
     const [form, setForm] = useState({});
@@ -71,8 +71,8 @@ const Login = (props) => {
             if (respuesta.status === 200) {
                 const data = await respuesta.json();
                 //almaceno el usuario en el state y localstorage
-                localStorage.setItem(process.env.REACT_APP_LS_TOKEN, JSON.stringify(data))
-                //setUsuarioLogueado(data)
+                localStorage.setItem(process.env.REACT_APP_LOCALSTORAGE, JSON.stringify(data))
+                setUsuarioLogueado(data)
                 //redireccionar al home
                 navigate('/')
             } else {
@@ -84,8 +84,8 @@ const Login = (props) => {
     };
 
     return (
-        <section className="container">
-            <div className="row">
+        <section className="container-fluid">
+            <div className="row rowBrick">
                 <article className="col-12 col-md-6 bg-login px-5">
                     <h3 className="display-6 mt-5">Ingrese su email y contraseña</h3>
                     {/* <hr /> */}
@@ -112,13 +112,13 @@ const Login = (props) => {
                             <Form.Control.Feedback type="invalid">{errors.password}</Form.Control.Feedback>
                             <a href="#">Olvidé la contraseña</a><br/>
                         </Form.Group>
-                        <Button variant="primary" type="submit" className="me-1">
+                        <Button variant="outline-light" type="submit" className="me-1">
                             Ingresar
                         </Button>
                         <Button
-                            variant="secondary"
+                            variant="outline-light"
                             onClick={() => {
-                                /*navigate("/");*/
+                                navigate(-1);
                             }}>
                             Cancelar
                         </Button>
@@ -132,7 +132,7 @@ const Login = (props) => {
                 <article className="col-12 col-md-6 bg-gris px-5">
                     <h2 className="display-6 mt-5">No sos miembro aún?</h2>
                     <p>Registrate y obtené descuentos y promociones, participá en sorteos y muchas otras ventajas.</p>
-                    <Button>Quiero registrarme</Button>
+                    <Button variant="outline-light" className="mb-3" onClick={()=>{navigate("/registro")}}>Quiero registrarme</Button>
                     <hr />
                     <h2 className="display-6 mt-2">Politica de seguridad</h2>
                     <p>
