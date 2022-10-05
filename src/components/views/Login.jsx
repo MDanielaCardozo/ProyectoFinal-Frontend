@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { Alert, Form, Button, Card } from "react-bootstrap";
+import { Alert, Form, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import "./login.css";
@@ -58,30 +58,6 @@ const Login = (props) => {
         const usuario = form;
         usuario.valido = false; //invalido por defecto
         setMensajeError("");
-        /*
-        props.setAdminLogged(false);
-        if (usuario.email==='admin@gmail.com' && usuario.password ==='12345')
-        {
-            usuario.valido=true;
-            usuario.perfil='admin';
-            //setLoggedUser(usuario);
-            //props.setAdminLogged(true);
-            //props.setSesionIniciada(true);
-            //navigate("/receta/administrar");
-        }
-        else if (usuario.email==='user@gmail.com' && usuario.password ==='12345') 
-        {
-            usuario.valido=true;
-            usuario.perfil='usuario';
-            //setLoggedUser(usuario);
-            //props.setSesionIniciada(true);
-            //navigate("/");
-        }
-        else {
-            //props.setSesionIniciada(false);
-            setMensajeError('Usario o contraseña no válido(s)');
-        }
-        */
 
         try {
             const respuesta = await fetch(API_AUTH, {
@@ -100,8 +76,7 @@ const Login = (props) => {
                 //redireccionar al home
                 navigate('/')
             } else {
-                //usuario no validado
-                console.log("error");
+                Swal.fire("Error en Login", "No se pudo iniciar sesion, el usuario y/o la contraseña son incorrectos", "error");
             }
         } catch (error) {
             Swal.fire("Error en Login", "No se pudo iniciar sesion, intente nuevamente en unos minutos", "error");

@@ -1,10 +1,8 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Registro from './components/views/Registro';
 import Login from './components/views/Login';
-import Menu from './components/common/Menu';
-import Footer from './components/common/Footer';
-import Burger1 from './img/Burger2.jpg'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
   const setAdminLogged=(val)=>{
@@ -12,22 +10,14 @@ const App = () => {
   }
 
   return (
-    <div>
-      <BrowserRouter>
-      <Menu></Menu>
-      <img
-              alt=""
-              src={Burger1}
-              width="100%"
-              height="auto"
-              className=""
-            />{' '}
-        <Routes>
-          <Route exact path="/login" element={<Login setAdminLogged={setAdminLogged} />} />
-        </Routes>
-      <Footer></Footer>
-      </BrowserRouter> 
-    </div>
+      <div>
+          <BrowserRouter>
+              <Routes>
+                  <Route exact path="/registro" element={<Registro />}></Route>
+                  <Route exact path="/login" element={<Login />}></Route>
+              </Routes>
+          </BrowserRouter>
+      </div>
   );
 };
 
