@@ -70,12 +70,11 @@ const Login = ({setUsuarioLogueado}) => {
             console.log(respuesta);
             if (respuesta.status === 200) {
                 const data = await respuesta.json();
-                console.log(data)
                 //almaceno el usuario en el state y localstorage
-                setUsuarioLogueado(data)
-                localStorage.setItem(process.env.REACT_APP_LOCALSTORAGE, JSON.stringify(data))
-                //redireccionar al home
-                navigate('/')
+                setUsuarioLogueado(data);
+                localStorage.setItem(process.env.REACT_APP_LOCALSTORAGE, JSON.stringify(data));
+                //redireccionar a la pagina desde donde se llamó
+                navigate(-1)
             } else {
                 Swal.fire("Error en Login", "No se pudo iniciar sesion, el usuario y/o la contraseña son incorrectos", "error");
             }
@@ -135,7 +134,7 @@ const Login = ({setUsuarioLogueado}) => {
                     <p>Registrate y obtené descuentos y promociones, participá en sorteos y muchas otras ventajas.</p>
                     <Button variant="outline-light" className="mb-3" onClick={()=>{navigate("/registro")}}>Quiero registrarme</Button>
                     <hr />
-                    <h2 className="display-6 mt-2">Politica de seguridad</h2>
+                    <h2 className="display-6 mt-2">Política de seguridad</h2>
                     <p>
                         Sabemos que compartir su información personal con nosotros se basa en la confianza. Nos tomamos esto en
                         serio y nos comprometemos a garantizar que respetamos su privacidad cuando visita nuestro sitio web o
