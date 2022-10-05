@@ -70,9 +70,10 @@ const Login = ({setUsuarioLogueado}) => {
             console.log(respuesta);
             if (respuesta.status === 200) {
                 const data = await respuesta.json();
+                console.log(data)
                 //almaceno el usuario en el state y localstorage
-                localStorage.setItem(process.env.REACT_APP_LOCALSTORAGE, JSON.stringify(data))
                 setUsuarioLogueado(data)
+                localStorage.setItem(process.env.REACT_APP_LOCALSTORAGE, JSON.stringify(data))
                 //redireccionar al home
                 navigate('/')
             } else {
