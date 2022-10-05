@@ -38,14 +38,14 @@ function CollapsibleExample() {
             />{' '}
           </div>
           <Nav className="ms-auto">
-          <Nav.Link className="fs-6 navLetra boton" href="#">INICIO</Nav.Link>
+          <Nav.Link className="fs-6 navLetra boton text-end" href="#">INICIO</Nav.Link>
             {/* <Nav.Link className="fs-5 px-3 navLetra btn mt-1 noselect" href="#">PRODUCTOS</Nav.Link> */}
-            <Nav.Link className="fs-6 px-3 navLetra boton" href="#">PRODUCTOS</Nav.Link>
-            <Nav.Link className="fs-6 navLetra boton" href="#">ADMINISTRACION</Nav.Link>
-            <Nav.Link className="fs-6 px-3 navLetra boton" href="#">NOSOTROS</Nav.Link>
+            <Nav.Link className="fs-6 px-3 navLetra boton text-end" href="#">PRODUCTOS</Nav.Link>
+            <Nav.Link className="fs-6 navLetra boton text-end" href="#">ADMINISTRACION</Nav.Link>
+            <Nav.Link className="fs-6 px-3 navLetra boton text-end" href="#">NOSOTROS</Nav.Link>
             {/* <Nav.Link className="fs-5 mt-1 btn noselect" href="#">LOGIN</Nav.Link> */}
-            <Nav.Link className="fs-6 boton" href="#"><FontAwesomeIcon icon={faUser}/></Nav.Link>
-            <Nav.Link className="fs-6 boton" href="#"><FontAwesomeIcon icon={faCartShopping}/></Nav.Link>
+            <Nav.Link className="fs-6 boton text-end" href="#"><FontAwesomeIcon icon={faUser}/></Nav.Link>
+            <Nav.Link className="fs-6 boton text-end" href="#"><FontAwesomeIcon icon={faCartShopping}/></Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
