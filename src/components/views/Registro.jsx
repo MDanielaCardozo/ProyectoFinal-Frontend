@@ -9,7 +9,7 @@ import {
 } from './helperUsuario';
 import { useNavigate } from 'react-router-dom';
 
-const Registro = () => {
+const Registro = ({setUsuarioLogueado}) => {
     const [nombre, setnombre] = useState('');
     const [email, setemail] = useState('');
     const [clave, setclave] = useState('');
@@ -20,10 +20,10 @@ const Registro = () => {
 
     const URL = process.env.REACT_APP_API_USUARIOS;
 
-    // const navegacion = useNavigate();
-    useEffect(() => {
-        consultarAPI();
-    }, []);
+    const navigate = useNavigate();
+    // useEffect(() => {
+    //     consultarAPI();
+    // }, []);
 
     const consultarAPI = async () => {
         try {
@@ -34,24 +34,29 @@ const Registro = () => {
             console.log(error);
         }
     };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (validarclave(clave)) {
-            setmsjErrorclave(false);
-        } else setmsjErrorclave(true);
-        //esta linea encuentra un mail en la BD que concida con el email ingresado (devuelve un objeto)
-        const Usuarios = datosAdmin.find((element) => element.email === email);
-        if (chequearExistenciaEmail(Usuarios, email)) {
-            setmsjErroremail(false);
-        } else setmsjErroremail(true);
 
-        console.log(chequearExistenciaEmail(Usuarios, email));
-        console.log(cantidadCaracteres(nombre, 4, 15));
-        console.log(validarclave(clave));
-        console.log(validarGmail(email));
+        //validaciones
+        if (validarclave(clave))
+            setmsjErrorclave(false);
+        else 
+            setmsjErrorclave(true);
+        
+        // //esta linea encuentra un mail en la BD que concida con el email ingresado (devuelve un objeto)
+        // const usuario = datosAdmin.find((element) => element.email === email);
+        // if (chequearExistenciaEmail(usuario, email)) {
+        //     setmsjErroremail(false);
+        // } else setmsjErroremail(true);
+
+        // console.log(chequearExistenciaEmail(usuario, email));
+        // console.log(cantidadCaracteres(nombre, 4, 15));
+        // console.log(validarclave(clave));
+        // console.log(validarGmail(email));
 
         if (
-            chequearExistenciaEmail(Usuarios, email) &&
+            // chequearExistenciaEmail(usuario, email) &&
             cantidadCaracteres(nombre, 4, 15) &&
             validarclave(clave) &&
             validarGmail(email)
@@ -66,17 +71,21 @@ const Registro = () => {
             };
 
             try {
-                const parametroPeticion = {
+                const parametrosPeticion = {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify(nuevoUsario),
                 };
-                const respuesta = await fetch(URL, parametroPeticion);
+                const respuesta = await fetch(URL + '/nuevo', parametrosPeticion);
                 if (respuesta.status === 201) {
-                    console.log('el producto se creo correctamente');
-                    // navegacion('/');
+                    const data = await respuesta.json();
+                    //almaceno el usuario en el state y localstorage
+                    localStorage.setItem(process.env.REACT_APP_LOCALSTORAGE, JSON.stringify(data)); //localStorage.setItem("tokenCafe", JSON.stringify(data));
+                    setUsuarioLogueado(data);
+                    //redireccionar a la página desde donde se llamó
+                    navigate(-1);                
                 }
             } catch (error) {
                 console.log('Error');
@@ -147,7 +156,7 @@ const Registro = () => {
                         className="mb-3"
                         type="submit"
                     >
-                        Ingresar
+                        Registrar
                     </Button>
                 </Form>
                 {msjError ? (

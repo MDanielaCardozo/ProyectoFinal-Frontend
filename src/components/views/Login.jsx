@@ -70,12 +70,11 @@ const Login = ({setUsuarioLogueado}) => {
             console.log(respuesta);
             if (respuesta.status === 200) {
                 const data = await respuesta.json();
-                console.log(data)
                 //almaceno el usuario en el state y localstorage
-                setUsuarioLogueado(data)
-                localStorage.setItem(process.env.REACT_APP_LOCALSTORAGE, JSON.stringify(data))
-                //redireccionar al home
-                navigate('/')
+                setUsuarioLogueado(data);
+                localStorage.setItem(process.env.REACT_APP_LOCALSTORAGE, JSON.stringify(data));
+                //redireccionar a la pagina desde donde se llamó
+                navigate(-1)
             } else {
                 Swal.fire("Error en Login", "No se pudo iniciar sesion, el usuario y/o la contraseña son incorrectos", "error");
             }
