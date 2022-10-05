@@ -1,13 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Form, Card, Button, Alert } from 'react-bootstrap';
 import './registro.css';
-import {
-    cantidadCaracteres,
-    validarclave,
-    validarGmail,
-    chequearExistenciaEmail,
-} from './helperUsuario';
+import { cantidadCaracteres, validarclave, validarGmail } from './helperUsuario';
 import { useNavigate } from 'react-router-dom';
+import Swal from "sweetalert2";
+
 
 const Registro = ({setUsuarioLogueado}) => {
     const [nombre, setnombre] = useState('');
@@ -16,24 +13,10 @@ const Registro = ({setUsuarioLogueado}) => {
     const [msjError, setMsjError] = useState(false);
     const [msjErrorclave, setmsjErrorclave] = useState(false);
     const [msjErroremail, setmsjErroremail] = useState(false);
-    const [datosAdmin, setDatosAdmin] = useState([]);
 
     const URL = process.env.REACT_APP_API_USUARIOS;
 
     const navigate = useNavigate();
-    // useEffect(() => {
-    //     consultarAPI();
-    // }, []);
-
-    const consultarAPI = async () => {
-        try {
-            const respuesta = await fetch(URL);
-            const obtenerAdministrador = await respuesta.json();
-            setDatosAdmin(obtenerAdministrador);
-        } catch (error) {
-            console.log(error);
-        }
-    };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -44,17 +27,6 @@ const Registro = ({setUsuarioLogueado}) => {
         else 
             setmsjErrorclave(true);
         
-        // //esta linea encuentra un mail en la BD que concida con el email ingresado (devuelve un objeto)
-        // const usuario = datosAdmin.find((element) => element.email === email);
-        // if (chequearExistenciaEmail(usuario, email)) {
-        //     setmsjErroremail(false);
-        // } else setmsjErroremail(true);
-
-        // console.log(chequearExistenciaEmail(usuario, email));
-        // console.log(cantidadCaracteres(nombre, 4, 15));
-        // console.log(validarclave(clave));
-        // console.log(validarGmail(email));
-
         if (
             // chequearExistenciaEmail(usuario, email) &&
             cantidadCaracteres(nombre, 4, 15) &&
@@ -82,13 +54,27 @@ const Registro = ({setUsuarioLogueado}) => {
                 if (respuesta.status === 201) {
                     const data = await respuesta.json();
                     //almaceno el usuario en el state y localstorage
-                    localStorage.setItem(process.env.REACT_APP_LOCALSTORAGE, JSON.stringify(data)); //localStorage.setItem("tokenCafe", JSON.stringify(data));
+                    localStorage.setItem(process.env.REACT_APP_LOCALSTORAGE, JSON.stringify(data));
                     setUsuarioLogueado(data);
-                    //redireccionar a la página desde donde se llamó
-                    navigate(-1);                
+                    //muestra registro correcto
+                    Swal.fire({
+                        title: 'Registro exitoso',
+                        showDenyButton: false,
+                        showCancelButton: false,
+                        confirmButtonText: 'Ok',
+                      }).then((result) => {
+                        //redireccionar a la página desde donde se llamó
+                        navigate(-1);                
+                      });
+                }
+                else
+                {
+                    const data = await respuesta.json();
+                    setmsjErroremail(data.mensaje);
+                    console.log(data);
                 }
             } catch (error) {
-                console.log('Error');
+                Swal.fire("Se produjo un error", "No se pudo realizar su registro de usuario, por favor intente nuevamente en unos minutos", "error");
             }
         } else {
             setMsjError(true);
@@ -174,7 +160,7 @@ const Registro = ({setUsuarioLogueado}) => {
                 ) : null}
                 {msjErroremail ? (
                     <Alert variant="danger" className=" mx-3">
-                        El email ingresado ya exite, por favor introduce un
+                        El email ingresado ya existe, por favor introduce un
                         email valido.
                     </Alert>
                 ) : null}

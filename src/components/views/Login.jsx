@@ -134,7 +134,7 @@ const Login = ({setUsuarioLogueado}) => {
                     <p>Registrate y obtené descuentos y promociones, participá en sorteos y muchas otras ventajas.</p>
                     <Button variant="outline-light" className="mb-3" onClick={()=>{navigate("/registro")}}>Quiero registrarme</Button>
                     <hr />
-                    <h2 className="display-6 mt-2">Politica de seguridad</h2>
+                    <h2 className="display-6 mt-2">Política de seguridad</h2>
                     <p>
                         Sabemos que compartir su información personal con nosotros se basa en la confianza. Nos tomamos esto en
                         serio y nos comprometemos a garantizar que respetamos su privacidad cuando visita nuestro sitio web o
