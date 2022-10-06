@@ -64,7 +64,7 @@
         padding-top: 200px;
     }
 }
-@media all and (min-width: 992px) and (max-width: 1399px) {
+@media all and (min-width: 992px) {
     .rowBrick {
         background-image: url(../../img/purplewall.jpg);
         background-size: cover;
