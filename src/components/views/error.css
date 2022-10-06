@@ -1,6 +1,6 @@
 .error-container {
     text-align: center;
-	font-size: 180px;
+	font-size: 370px;
 	font-family: 'Catamaran', sans-serif;
 	font-weight: 800;
 }
@@ -42,17 +42,17 @@
     padding: 15px ;
 }
 .imagen{
-    width: 180px;
+    width: 370px;
     margin-bottom: 50px;
 }
 
 @media all and (max-width:575px){
     .error-container {
-        font-size: 80px;
+        font-size: 93px;
     } 
     .imagen{
-        width: 80px;
-        margin-bottom: 10px;
+        width: 93px;
+        margin-bottom: 30px;
     }
     .font{
         padding: 10px;
@@ -60,16 +60,40 @@
 }
 
 @media all and (min-width:576px) and  (max-width:767px){
-    .error-container {
-        font-size: 110px;
+	.error-container {
+		font-size: 180px;
     } 
     .imagen{
-        width: 110px;
-        margin-bottom: 10px;
+		width: 180px;
+        margin-bottom: 40px;
     }
     .font{
-        padding: 10px;
+		padding: 10px;
     }
+}
+@media all and (min-width:768px) and  (max-width:991px){
+	.error-container {
+		font-size: 210px;
+	} 
+	.imagen{
+		width: 210px;
+		margin-bottom: 50px;
+	}
+	.font{
+		padding: 10px;
+	}
+}
+@media all and (min-width:992px) {
+	.error-container {
+		font-size: 300px;
+	} 
+	.imagen{
+		width: 300px;
+		margin-bottom: 60px;
+	}
+	.font{
+		padding: 10px;
+	}
 }
 @keyframes easyoutelastic {
 	0% {
