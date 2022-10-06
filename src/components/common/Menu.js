@@ -18,7 +18,6 @@ function CollapsibleExample() {
         <Navbar.Brand  href="#">
             <img
               alt=""
-            //   src="https://fontmeme.com/permalink/220927/8e4e471e77dc91efd58b6ff133f81d50.png"
             src={Logo}
               width="150px"
               height="auto"
@@ -27,14 +26,9 @@ function CollapsibleExample() {
           </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          {/* <Nav className="me-auto">
-            <Nav.Link className="fs-5 pe-5 navLetra" href="#">INICIO</Nav.Link>
-            <Nav.Link className="fs-5 navLetra btn mt-1 noselect" href="#">PRODUCTOS</Nav.Link>
-          </Nav> */}
           <div>
             <img
-              alt=""
-            //   src="https://fontmeme.com/permalink/220927/8e4e471e77dc91efd58b6ff133f81d50.png"
+              alt="Logo del restaurante"
             src={Logo}
               width="180"
               height="auto"
@@ -42,7 +36,7 @@ function CollapsibleExample() {
             />{' '}
           </div>
           <Nav className="ms-auto">
-          <NavLink to='/' className='nav-item nav-link fs-6 px-3 navLetra boton text-end'>INICIO</NavLink>
+          <NavLink to='' className='nav-item nav-link fs-6 px-3 navLetra boton text-end'>INICIO</NavLink>
           <NavLink end to='/acercaDe' className='nav-item nav-link fs-6 px-3 navLetra boton text-end'>ACERCA DE</NavLink>
           <NavLink end to='/' className='nav-item nav-link fs-6 px-3 navLetra boton text-end'>ADMINISTRACION</NavLink>
           <NavLink end to='/' className='nav-item nav-link fs-6 px-3 navLetra boton text-end'><FontAwesomeIcon icon={faUser}/></NavLink>

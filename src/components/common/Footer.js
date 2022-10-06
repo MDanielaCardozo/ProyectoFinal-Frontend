@@ -4,7 +4,6 @@ import {
   MDBContainer,
   MDBRow,
   MDBCol,
-  MDBIcon,
 } from "mdb-react-ui-kit";
 
 import {Link} from 'react-router-dom';
@@ -21,8 +20,7 @@ const Footer = () => {
           <MDBRow className="mt-3">
             <MDBCol md="3" lg="4" xl="3" className="mx-auto mb-4">
               <img
-                alt=""
-                // src="https://fontmeme.com/permalink/220927/8e4e471e77dc91efd58b6ff133f81d50.png"
+                alt="Logo del restaurante"
                 src={Logo}
                 width="250"
                 height="auto"
@@ -42,9 +40,6 @@ const Footer = () => {
 
             <MDBCol md="3" lg="2" xl="2" className="mx-auto mb-4">
               <h6 className="fw-bold mb-4 fs-5">Mi cuenta</h6>
-              {/* <p><a href="#" className="fs-6 text-reset subrayado">Mis pedidos</a></p>
-              <p><a href="#" className="fs-6 text-reset subrayado">Burger points</a></p>
-              <p><a href="#" className="fs-6 text-reset subrayado">Mi cuenta</a></p> */}
               <p><Link end to='/' className="fs-6 text-reset subrayado">Mis pedidos</Link></p>
               <p><Link end to='/' className="fs-6 text-reset subrayado">Burger points</Link></p>
               <p><Link end to='/' className="fs-6 text-reset subrayado">Mi cuenta</Link></p>
@@ -53,9 +48,6 @@ const Footer = () => {
 
             <MDBCol md="4" lg="3" xl="3" className="mx-auto mb-md-0 mb-4">
               <h6 className="fw-bold mb-4 fs-5">Redes sociales</h6>
-              {/* <p><a href="#" className="fs-6 text-reset subrayado"><FontAwesomeIcon icon={faFacebook}/> Facebook</a></p>
-              <p><a href="#" className="fs-6 text-reset subrayado"><FontAwesomeIcon icon={faInstagram}/> Instagram</a></p>
-              <p><a href="#" className="fs-6 text-reset subrayado"><FontAwesomeIcon icon={faTwitter}/> Twitter</a></p> */}
               <p><Link end to='/' className="fs-6 text-reset subrayado"><FontAwesomeIcon icon={faFacebook}/> Facebook</Link></p>
               <p><Link end to='/' className="fs-6 text-reset subrayado"><FontAwesomeIcon icon={faInstagram}/> Instagram</Link></p>
               <p><Link end to='/' className="fs-6 text-reset subrayado"><FontAwesomeIcon icon={faTwitter}/> Twitter</Link></p>
