@@ -1,6 +1,3 @@
-
-
-
 import React from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
@@ -36,11 +33,11 @@ function CollapsibleExample() {
             />{' '}
           </div>
           <Nav className="ms-auto">
-          <NavLink to='' className='nav-item nav-link fs-6 px-3 navLetra boton text-end'>INICIO</NavLink>
+          <NavLink to='/' className='nav-item nav-link fs-6 px-3 navLetra boton text-end'>INICIO</NavLink>
           <NavLink end to='/acercaDe' className='nav-item nav-link fs-6 px-3 navLetra boton text-end'>ACERCA DE</NavLink>
           <NavLink end to='/' className='nav-item nav-link fs-6 px-3 navLetra boton text-end'>ADMINISTRACION</NavLink>
-          <NavLink end to='/' className='nav-item nav-link fs-6 px-3 navLetra boton text-end'><FontAwesomeIcon icon={faUser}/></NavLink>
-          <NavLink end to='/' className='nav-item nav-link fs-6 px-3 navLetra boton text-end'><FontAwesomeIcon icon={faCartShopping}/></NavLink>
+          <NavLink end to='/login' className='nav-item nav-link fs-6 px-3 navLetra boton text-end'><FontAwesomeIcon icon={faUser}/></NavLink>
+          <NavLink end to='/pedidos' className='nav-item nav-link fs-6 px-3 navLetra boton text-end'><FontAwesomeIcon icon={faCartShopping}/></NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>
