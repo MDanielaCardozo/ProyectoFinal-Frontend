@@ -5,8 +5,8 @@ import imagen from "../../img/purplewall.jpg"
 const Error = () => {
     return (
         <section className='fondo'>
-            <h2 className='error'>404</h2>
-            <h3 className='error2'> Esta pagina no funciona</h3>
+            <div class="logo"><b><span>4</span>0<span>4</span></b></div>
+            <h3 className='notfound'> Esta pagina no funciona</h3>
         </section>
 
     );

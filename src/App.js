@@ -14,7 +14,7 @@ const App = () => {
     <BrowserRouter>
         <Menu/>
         <Routes>
-          <Route exact path="/error" element={<Error></Error>} />
+            <Route exact path="*" element={<Error></Error>} />
             <Route exact path="/registro" element={<Registro setUsuarioLogueado={setUsuarioLogueado}/>}></Route>
             <Route exact path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado}/>}></Route>
         </Routes>
