@@ -64,12 +64,21 @@
         padding-top: 200px;
     }
 }
-@media all and (min-width: 992px) {
+@media all and (min-width: 992px) and (max-width: 1399px) {
     .rowBrick {
         background-image: url(../../img/purplewall.jpg);
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
         padding: 190px 70px 10px 70px;
+    }
+}
+@media all and (min-width: 1400px) {
+    .rowBrick {
+        background-image: url(../../img/purplewall.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        padding: 190px 200px 10px 200px;
     }
 }
