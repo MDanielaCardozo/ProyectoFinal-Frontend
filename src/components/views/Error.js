@@ -4,14 +4,11 @@ import './error.css'
 import imagen from "./error404.png"
 const Error = () => {
     return (
-        <Container className='my-5'>
-            {/* <h1 className='fs-4 font'> La pagina que estas buscando no pudo ser encontrada</h1> */}
-            <section class="error-container">
-                <span><span>4</span></span>
-                <span><img src={imagen} alt="hamburguesa mordida" className='imagen'/></span>
-                <span><span>4</span></span>
-            </section>
-        </Container>
+        <section className='w-100'>
+            <h2 className='error'>404</h2>
+            <h3 className='error2'> Esta pagina no funciona</h3>
+        </section>
+
     );
 };
 

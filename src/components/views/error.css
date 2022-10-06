@@ -1,45 +1,37 @@
-.error-container {
-    text-align: center;
-	font-size: 370px;
-	font-family: 'Catamaran', sans-serif;
-	font-weight: 800;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;800;900&display=swap');
+
+*{
+	font-family: "Montserrat", sans-serif;
+	background-color: black;
 }
-.error-container > span {
-    display: inline-block;
-	line-height: 0.7;
-	position: relative;
-	color: #f9c21d;
+.error{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-transform: uppercase;
+  transform: translate(-50%, -50%);
+  display: block;
+  color: #12000a;
+  font-weight: 400;
+  font-family: Audiowide;
+  text-shadow: 0px 0px 4px #12000a;
+  
+  animation: fadeInText 1s ease-in 3.5s forwards, flicker4 5s linear 7.5s infinite, hueRotate;
 }
-.error-container > span > span {
-    display: inline-block;
-	position: relative;
-}
-.error-container > span:nth-of-type(1) {
-    perspective: 1000px;
-	perspective-origin: 500% 50%;
-	color: #f9c21d;
-}
-.error-container > span:nth-of-type(1) > span {
-    transform-origin: 50% 100% 0px;
-	transform: rotateX(0);
-	animation: easyoutelastic 8s infinite;
-}
-.error-container > span:nth-of-type(3) {
-    perspective: none;
-	perspective-origin: 50% 50%;
-	color: #f9c21d;
-}
-.error-container > span:nth-of-type(3) > span {
-    transform-origin: 100% 100% 0px;
-	transform: rotate(0deg);
-	animation: rotatedrop 8s infinite;
-}
-.font{
-    font-family: 'Inter', sans-serif;
-    background-color: #f9c21d;
-    border-radius: 10px;
-    text-align: center;
-    padding: 15px ;
+
+.error2{
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  text-transform: uppercase;
+  transform: translate(-50%, -50%);
+  display: block;
+  color: #12000a;
+  font-weight: 600;
+  font-family: Audiowide;
+  text-shadow: 0px 0px 4px #12000a;
+  
+  animation: fadeInText 1s ease-in 3.5s forwards, flicker4 5s linear 7.5s infinite, hueRotate;
 }
 .imagen{
     width: 370px;
@@ -47,20 +39,17 @@
 }
 
 @media all and (max-width:575px){
-    .error-container {
+    .error{
         font-size: 93px;
     } 
     .imagen{
         width: 93px;
         margin-bottom: 30px;
     }
-    .font{
-        padding: 10px;
-    }
 }
 
 @media all and (min-width:576px) and  (max-width:767px){
-	.error-container {
+	.error{
 		font-size: 180px;
     } 
     .imagen{
@@ -72,76 +61,42 @@
     }
 }
 @media all and (min-width:768px) and  (max-width:991px){
-	.error-container {
-		font-size: 210px;
+	.error {
+		font-size: 300px;
 	} 
 	.imagen{
 		width: 210px;
 		margin-bottom: 50px;
 	}
-	.font{
-		padding: 10px;
-	}
 }
 @media all and (min-width:992px) {
-	.error-container {
-		font-size: 300px;
+	.error {
+		font-size: 170px;
 	} 
 	.imagen{
 		width: 300px;
 		margin-bottom: 60px;
 	}
-	.font{
-		padding: 10px;
-	}
-}
-@keyframes easyoutelastic {
-	0% {
-		transform: rotateX(0);
-	}
-	9% {
-		transform: rotateX(210deg);
-	}
-	13% {
-		transform: rotateX(150deg);
-	}
-	16% {
-		transform: rotateX(200deg);
-	}
-	18% {
-		transform: rotateX(170deg);
-	}
-	20% {
-		transform: rotateX(180deg);
-	}
-	60% {
-		transform: rotateX(180deg);
-	}
-	80% {
-		transform: rotateX(0);
-	}
-	100% {
-		transform: rotateX(0);
-	}
 }
 
-@keyframes rotatedrop {
-	0% {
-		transform: rotate(0);
-	}
-	10% {
-		transform: rotate(30deg);
-	}
-	15% {
-		transform: rotate(90deg);
-	}
-	70% {
-		transform: rotate(90deg);
-	}
-	80% {
-		transform: rotate(0);
-	}
-	100% {
-		transform: rotateX(0);
-	}
+@keyframes flicker4{
+  0%  {color: #ff005d;text-shadow:0px 0px 4px #ff005d;}
+  30% {color: #ff005d;text-shadow:0px 0px 4px #ff005d;}
+  31% {color: #12000a;text-shadow:0px 0px 4px #12000a;}
+  32% {color: #ff005d;text-shadow:0px 0px 4px #ff005d;}
+  36% {color: #ff005d;text-shadow:0px 0px 4px #ff005d;}
+  37% {color: #12000a;text-shadow:0px 0px 4px #12000a;}
+  41% {color: #12000a;text-shadow:0px 0px 4px #12000a;}
+  42% {color: #ff005d;text-shadow:0px 0px 4px #ff005d;}
+  85% {color: #ff005d;text-shadow:0px 0px 4px #ff005d;}
+  86% {color: #12000a;text-shadow:0px 0px 4px #12000a;}
+  95% {color: #12000a;text-shadow:0px 0px 4px #12000a;}
+  96% {color: #ff005d;text-shadow:0px 0px 4px #ff005d;}
+  100%{color: #ff005d;text-shadow:0px 0px 4px #ff005d;}
+}
+
+@keyframes fadeInText{
+  1%  {color: #12000a;text-shadow:0px 0px 4px #12000a;}
+  70% {color: #ff005d;text-shadow:0px 0px 14px #ff005d;}
+  100%{color: #ff005d;text-shadow:0px 0px 4px #ff005d;}
 }

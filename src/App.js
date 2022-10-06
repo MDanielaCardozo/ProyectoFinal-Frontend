@@ -1,23 +1,25 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React, {useState} from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Menu from './components/common/Menu';
+import Footer from './components/common/Footer'
+import Registro from './components/views/Registro';
 import Login from './components/views/Login';
 import Error from './components/views/Error';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
-  const setAdminLogged=(val)=>{
-
-  }
+  const [usuarioLogueado, setUsuarioLogueado] = useState({});
 
   return (
-    <div>
-      <BrowserRouter>
+    <BrowserRouter>
+        <Menu/>
         <Routes>
-          <Route exact path="/login" element={<Login setAdminLogged={setAdminLogged} />} />
           <Route exact path="/error" element={<Error></Error>} />
+            <Route exact path="/registro" element={<Registro setUsuarioLogueado={setUsuarioLogueado}/>}></Route>
+            <Route exact path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado}/>}></Route>
         </Routes>
-      </BrowserRouter> 
-    </div>
+        <Footer/>
+    </BrowserRouter>
   );
 };
 
