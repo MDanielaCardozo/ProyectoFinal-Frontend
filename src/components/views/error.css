@@ -2,7 +2,16 @@
 
 *{
 	font-family: "Montserrat", sans-serif;
-	background-color: black;
+}
+
+.fondo{
+	background-image: url(../../img/purplewall.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 .error{
   position: absolute;
