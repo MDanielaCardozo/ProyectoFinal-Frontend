@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 import "./login.css";
 
 const Login = ({setUsuarioLogueado}) => {
-    const API_AUTH = process.env.REACT_APP_API_AUTH;
+    const API_AUTH = process.env.REACT_APP_API_USUARIOS;
 
     const [form, setForm] = useState({});
     const [errors, setErrors] = useState({});

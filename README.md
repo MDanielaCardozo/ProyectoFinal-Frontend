@@ -52,10 +52,13 @@ funcionalidad desarrollada.
 ## Bibliotecas externas
 
 ### Reac-Bootstrap
-npm install react-bootstrap bootstrap
+npm i react-bootstrap bootstrap
 
 ### Sweet Alert
-npm install sweetalert2
+npm i sweetalert2
 
 ### Route
 npm i react-router-dom
+
+### EmailJS
+npm i @emailjs/browser --save

@@ -4,7 +4,7 @@ import './registro.css';
 import { cantidadCaracteres, validarclave, validarGmail } from './helperUsuario';
 import { useNavigate } from 'react-router-dom';
 import Swal from "sweetalert2";
-
+import { sendMail } from './sendMail';
 
 const Registro = ({setUsuarioLogueado}) => {
     const [nombre, setnombre] = useState('');
@@ -56,6 +56,7 @@ const Registro = ({setUsuarioLogueado}) => {
                     //almaceno el usuario en el state y localstorage
                     localStorage.setItem(process.env.REACT_APP_LOCALSTORAGE, JSON.stringify(data));
                     setUsuarioLogueado(data);
+                    sendMail(nuevoUsario.nombre, nuevoUsario.email);
                     //muestra registro correcto
                     Swal.fire({
                         title: 'Registro exitoso',
