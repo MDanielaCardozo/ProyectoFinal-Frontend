@@ -1,3 +1,6 @@
+
+
+
 import React from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
@@ -5,6 +8,7 @@ import Navbar from "react-bootstrap/Navbar";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faUser, faCartShopping} from '@fortawesome/free-solid-svg-icons';
 import Logo from '../../img/logoLed.png'
+import {NavLink} from 'react-router-dom';
 import "./Menu.css"
 
 function CollapsibleExample() {
@@ -38,14 +42,11 @@ function CollapsibleExample() {
             />{' '}
           </div>
           <Nav className="ms-auto">
-          <Nav.Link className="fs-6 navLetra boton text-end" href="#">INICIO</Nav.Link>
-            {/* <Nav.Link className="fs-5 px-3 navLetra btn mt-1 noselect" href="#">PRODUCTOS</Nav.Link> */}
-            <Nav.Link className="fs-6 px-3 navLetra boton text-end" href="#">PRODUCTOS</Nav.Link>
-            <Nav.Link className="fs-6 navLetra boton text-end" href="#">ADMINISTRACION</Nav.Link>
-            <Nav.Link className="fs-6 px-3 navLetra boton text-end" href="#">NOSOTROS</Nav.Link>
-            {/* <Nav.Link className="fs-5 mt-1 btn noselect" href="#">LOGIN</Nav.Link> */}
-            <Nav.Link className="fs-6 boton text-end" href="#"><FontAwesomeIcon icon={faUser}/></Nav.Link>
-            <Nav.Link className="fs-6 boton text-end" href="#"><FontAwesomeIcon icon={faCartShopping}/></Nav.Link>
+          <NavLink to='/' className='nav-item nav-link fs-6 px-3 navLetra boton text-end'>INICIO</NavLink>
+          <NavLink end to='/acercaDe' className='nav-item nav-link fs-6 px-3 navLetra boton text-end'>ACERCA DE</NavLink>
+          <NavLink end to='/' className='nav-item nav-link fs-6 px-3 navLetra boton text-end'>ADMINISTRACION</NavLink>
+          <NavLink end to='/' className='nav-item nav-link fs-6 px-3 navLetra boton text-end'><FontAwesomeIcon icon={faUser}/></NavLink>
+          <NavLink end to='/' className='nav-item nav-link fs-6 px-3 navLetra boton text-end'><FontAwesomeIcon icon={faCartShopping}/></NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>
@@ -54,4 +55,3 @@ function CollapsibleExample() {
 }
 
 export default CollapsibleExample;
-
