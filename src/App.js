@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
   return (
-    <body>
+    <div>
       <BrowserRouter>
         <header></header>
         <Routes>
@@ -22,7 +22,7 @@ const App = () => {
         </Routes>
         <footer></footer>
       </BrowserRouter>
-    </body>
+    </div>
   );
 };
 

@@ -1,10 +1,20 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;800;900&display=swap');
+* {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  color: white;
+}
+.title-typography{
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 600;
+}
 
 .modal {
     background-color: rgba(0, 0, 0, 0.3);
 }
 
-.azul{
+/* .azul{
     font-size: 50px;
     border-radius: 2em;
     color: white;
@@ -16,9 +26,10 @@
     0 0 80px #7bacff,
     0 0 90px #7bacff,
     0 0 100px #7bacff
-}
+} */
 
 .imagen {
-    width: 200px;
+    width: 100%;
     margin-right: 5px;
+    background-size: contain;
 }
