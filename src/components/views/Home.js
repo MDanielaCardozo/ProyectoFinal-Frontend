@@ -43,15 +43,13 @@ const Home = () => {
       {/* <section className="bannerConocenos"> */}
       <Row className="rowConocenos w-100 m-0">
         <Col sm={12} md={4} className="colConocenos bannerTexto ">
-          <div className="ms-5 text-light p-3">
+          <div className="w-100 h-100 ms-xl-5 text-light p-3 text-center text-md-start">
             <h1>Somos expertos</h1>
-            <h2>Veni a conocernos</h2>
-            <Button variant="outline-info mt-2 boton">
-              Más sobre nosotros
-            </Button>
+            <h3>Veni a conocernos</h3>
+            <Button variant="mt-2 outline-light">Más sobre nosotros</Button>
           </div>
         </Col>
-        <Col sm={12} md={8} className="colConocenos">
+        <Col sm={12} md={8} className="colConocenos p-0">
           <img src={meatgood} alt="" className="imgConocenos img-fluid" />
         </Col>
       </Row>

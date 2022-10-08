@@ -3,7 +3,8 @@
 } */
 
 h1,
-h2 {
+h2,
+h3 {
   font-weight: 800;
   font-family: "Montserrat", sans-serif;
 }
@@ -101,8 +102,7 @@ h2 {
 }
 
 .rowConocenos h1,
-h2,
-boton {
+h2 {
   font-weight: 800 !important;
   font-family: "Montserrat", sans-serif;
 }
