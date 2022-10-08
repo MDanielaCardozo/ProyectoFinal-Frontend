@@ -1,4 +1,5 @@
 import React from "react";
+import CarouselHome from "./CarouselHome";
 import CardProducto from "./producto/CardProducto";
 import { Row, Col, Button } from "react-bootstrap";
 import pared from "../../img/purplewall.jpg";
@@ -12,10 +13,11 @@ const Home = () => {
   return (
     <main>
       {/* <section className="bannerPromo"> */}
-        {/* <img src={promo1} alt="" className="imgPromo" />
+      {/* <img src={promo1} alt="" className="imgPromo" />
         <img src={promo2} alt="" className="imgPromo" />
         <img src={promo3} alt="" className="imgPromo" />
         <img src={pared} alt="" className="fondoBrick" /> */}
+      <section className="promosPpal">
         <Row className="rowBrick w-100 m-0">
           <Col sm={12} md={3} className="colPromo">
             <img src={promo1} alt="" className="imgPromo" />
@@ -27,20 +29,32 @@ const Home = () => {
             <img src={promo3} alt="" className="imgPromo" />
           </Col>
         </Row>
+      </section>
+
+      <section className="carouselPpal">
+        <CarouselHome
+          promo1={promo1}
+          promo2={promo2}
+          promo3={promo3}
+        ></CarouselHome>
+      </section>
+
       {/* </section> */}
       {/* <section className="bannerConocenos"> */}
-        <Row className="rowConocenos w-100 m-0">
-          <Col sm={12} md={4} className="colConocenos bannerTexto ">
-            <div className="ms-5 text-light p-3">
-              <h1>Somos expertos</h1>
-              <h2>Veni a conocernos</h2>
-              <Button variant="outline-info mt-2 boton">Más sobre nosotros</Button>
-            </div>
-          </Col>
-          <Col sm={12} md={8} className="colConocenos">
-            <img src={meatgood} alt="" className="imgConocenos img-fluid" />
-          </Col>
-        </Row>
+      <Row className="rowConocenos w-100 m-0">
+        <Col sm={12} md={4} className="colConocenos bannerTexto ">
+          <div className="ms-5 text-light p-3">
+            <h1>Somos expertos</h1>
+            <h2>Veni a conocernos</h2>
+            <Button variant="outline-info mt-2 boton">
+              Más sobre nosotros
+            </Button>
+          </div>
+        </Col>
+        <Col sm={12} md={8} className="colConocenos">
+          <img src={meatgood} alt="" className="imgConocenos img-fluid" />
+        </Col>
+      </Row>
       {/* </section> */}
       <section className="sectionMenu">
         <h1 className="titulo">#MENÚ</h1>

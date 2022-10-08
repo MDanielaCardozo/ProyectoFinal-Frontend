@@ -160,10 +160,24 @@ boton {
     min-height: 450px;
     align-content: space-around;
   }
+
+  .promosPpal {
+    display: none;
+  }
+
+  .carouselPpal {
+    display: block;
+  }
 }
 
 @media all and (min-width: 767px) and (max-width: 991px) {
   .titulo {
     font-size: 50px;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .carouselPpal {
+    display: none;
   }
 }
