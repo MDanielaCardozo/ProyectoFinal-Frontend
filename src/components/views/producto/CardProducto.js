@@ -16,9 +16,6 @@ const CardProducto = (props) => {
           <Card.Title>
             <h2>{props.producto.nombre}</h2>
           </Card.Title>
-          <Card.Text className="cardDescrip">
-            {props.producto.detalle}
-          </Card.Text>
         </Card.Body>
         <Card.Footer>
           <Row className="text-center align-items-center justify-content-around d-flex flex-wrap">
@@ -26,11 +23,8 @@ const CardProducto = (props) => {
               Agregar al carrito
             </Link>
             <Link
-             
               to={`/detalleProducto/${props.producto._id}`}
-             
               className="btn btnCard mt-1 mt-xl-0 btnVerMas"
-            
             >
               Ver más
             </Link>
