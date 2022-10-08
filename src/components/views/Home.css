@@ -49,6 +49,18 @@ h2 {
   font-family: "Montserrat", sans-serif;
 }
 
+.rowConocenos .btn {
+  color: white;
+  outline: 2px white solid;
+  font-family: "Montserrat", sans-serif;
+  margin-top: 20px;
+}
+
+.rowConocenos .btn:hover {
+  color: #c85bd4 !important;
+  outline: 2px #c85bd4 solid;
+}
+
 .colConocenos {
   width: 100%;
 }

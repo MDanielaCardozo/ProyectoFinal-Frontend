@@ -2,6 +2,7 @@ import React from "react";
 import CarouselHome from "./CarouselHome";
 import CardProducto from "./producto/CardProducto";
 import { Row, Col, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import pared from "../../img/purplewall.jpg";
 import promo1 from "../../img/promo1.jpg";
 import promo2 from "../../img/promo2.jpg";
@@ -46,7 +47,10 @@ const Home = () => {
           <div className="w-100 h-100 text-light p-3 text-center text-md-start">
             <h1>Somos expertos</h1>
             <h3>Veni a conocernos</h3>
-            <Button variant="mt-2 outline-light">Más sobre nosotros</Button>
+            {/* <Button variant="mt-2 outline-light">Más sobre nosotros</Button> */}
+            <Link to={`/acercaDe`} className="btn">
+              Más sobre nosotros
+            </Link>
           </div>
         </Col>
         <Col sm={12} md={8} className="colConocenos p-0">

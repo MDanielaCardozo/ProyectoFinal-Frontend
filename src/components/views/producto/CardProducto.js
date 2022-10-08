@@ -6,7 +6,7 @@ import "./CardProducto.css";
 
 const CardProducto = () => {
   return (
-    <Col md={4} lg={3}>
+    <Col md={4} xl={3}>
       <Card className="mb-5 cardProd">
         <Card.Img variant="top" src={hambur} className="m-0 p-0 cardImg" />
         <Card.Body>
