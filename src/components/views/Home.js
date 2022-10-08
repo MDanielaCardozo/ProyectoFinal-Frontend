@@ -19,13 +19,13 @@ const Home = () => {
         <img src={pared} alt="" className="fondoBrick" /> */}
       <section className="promosPpal">
         <Row className="rowBrick w-100 m-0">
-          <Col sm={12} md={3} className="colPromo">
+          <Col sm={12} lg={3} className="colPromo">
             <img src={promo1} alt="" className="imgPromo" />
           </Col>
-          <Col sm={12} md={3} className="colPromo">
+          <Col sm={12} lg={3} className="colPromo">
             <img src={promo2} alt="" className="imgPromo" />
           </Col>
-          <Col sm={12} md={3} className="colPromo">
+          <Col sm={12} lg={3} className="colPromo">
             <img src={promo3} alt="" className="imgPromo" />
           </Col>
         </Row>
@@ -43,7 +43,7 @@ const Home = () => {
       {/* <section className="bannerConocenos"> */}
       <Row className="rowConocenos w-100 m-0">
         <Col sm={12} md={4} className="colConocenos bannerTexto ">
-          <div className="w-100 h-100 ms-xl-5 text-light p-3 text-center text-md-start">
+          <div className="w-100 h-100 text-light p-3 text-center text-md-start">
             <h1>Somos expertos</h1>
             <h3>Veni a conocernos</h3>
             <Button variant="mt-2 outline-light">Más sobre nosotros</Button>

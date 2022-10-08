@@ -171,7 +171,7 @@ h2 {
   }
 }
 
-@media all and (max-width: 576px) {
+@media all and (max-width: 991px) {
   .carouselPpal {
     display: block;
   }
