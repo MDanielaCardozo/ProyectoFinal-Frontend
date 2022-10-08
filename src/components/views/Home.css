@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bungee+Inline&family=Changa+One&family=Kanit:wght@400;500&family=Montserrat:wght@200;300;400;800;900&family=Passion+One&family=Rajdhani:wght@600;700&display=swap");
-/* * {
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;800;900&display=swap"); /* * {
   font-family: 'Montserrat', sans-serif;
 } */
 
@@ -142,6 +141,10 @@ boton {
   padding: 20px;
 }
 
+.carouselPpal {
+  display: none;
+}
+
 /* Mediaqueries */
 /* Celular */
 
@@ -160,14 +163,6 @@ boton {
     min-height: 450px;
     align-content: space-around;
   }
-
-  .promosPpal {
-    display: none;
-  }
-
-  .carouselPpal {
-    display: block;
-  }
 }
 
 @media all and (min-width: 767px) and (max-width: 991px) {
@@ -176,8 +171,11 @@ boton {
   }
 }
 
-@media all and (min-width: 992px) {
+@media all and (max-width: 576px) {
   .carouselPpal {
+    display: block;
+  }
+  .promosPpal {
     display: none;
   }
 }

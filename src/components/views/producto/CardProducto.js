@@ -6,7 +6,7 @@ import "./CardProducto.css";
 
 const CardProducto = () => {
   return (
-    <Col md={3}>
+    <Col md={4} lg={3}>
       <Card className="mb-5 cardProd">
         <Card.Img variant="top" src={hambur} className="m-0 p-0 cardImg" />
         <Card.Body>
@@ -18,11 +18,14 @@ const CardProducto = () => {
           </Card.Text>
         </Card.Body>
         <Card.Footer>
-          <Row className="text-center align-items-center justify-content-around d-flex flex-nowrap">
-            <Link to={`*`} className="btn w-50 btnCard">
+          <Row className="text-center align-items-center justify-content-around d-flex flex-wrap">
+            <Link to={`*`} className="btn btnCard btnCarrito">
               Agregar al carrito
             </Link>
-            <Link to={`/detalleProducto`} className="btn w-25 btnCard">
+            <Link
+              to={`/detalleProducto`}
+              className="btn btnCard mt-1 mt-xl-0 btnVerMas"
+            >
               Ver más
             </Link>
           </Row>

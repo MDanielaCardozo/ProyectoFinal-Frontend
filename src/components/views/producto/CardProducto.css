@@ -20,11 +20,30 @@
   position: relative;
 }
 
+.btnCarrito {
+  width: 50% !important;
+}
+
+.btnVerMas {
+  width: 25% !important;
+}
+
 .cardProd .btnCard {
-  background-color: rgb(210, 128, 122);
+  background-color: #363982;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: smaller;
 }
 
 .cardProd .btnCard:hover {
-  background-color: rgb(235, 182, 24) !important;
+  background-color: rgb(250, 229, 36) !important;
   color: white !important;
+}
+
+@media all and (max-width: 1200px) {
+  .btnCard {
+    width: 100% !important;
+    
+  }
 }
