@@ -2,9 +2,14 @@
 
 h1,
 h2,
-h3 {
+h3,
+a {
   font-weight: 800;
   font-family: "Montserrat", sans-serif;
+}
+
+a {
+  font-weight: 300;
 }
 
 .rowBrick {

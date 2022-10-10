@@ -13,8 +13,8 @@ import "./Home.css";
 const Home = () => {
   const URL = process.env.REACT_APP_API_HAMBURGUESERIA;
   const [productos, setProductos] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage, setPostsPerPage] = useState(1);
+  const [paginaActual, setPaginaActual] = useState(1);
+  const [productosPorPagina, setProductosPorPagina] = useState(4);
 
   useEffect(() => {
     consultarProd();
@@ -30,13 +30,17 @@ const Home = () => {
     }
   };
 
-  const indexOfLastPost = currentPage * postsPerPage;
-  const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const currentPosts = productos.slice(indexOfFirstPost, indexOfLastPost);
+  // Determinacion de productos por pagina
+  const indexUltimoProducto = paginaActual * productosPorPagina;
+  const indexPrimerProducto = indexUltimoProducto - productosPorPagina;
+  const productosActuales = productos.slice(
+    indexPrimerProducto,
+    indexUltimoProducto
+  );
 
   //Cambiar pagina
-  const paginate = (pageNumber) => {
-    setCurrentPage(pageNumber);
+  const paginar = (numeroPagina) => {
+    setPaginaActual(numeroPagina);
   };
 
   return (
@@ -79,7 +83,7 @@ const Home = () => {
       <section className="sectionMenu">
         <h1 className="titulo">#MENÚ</h1>
         <Row className="w-100 m-0 rowProd">
-          {currentPosts.map((producto) => (
+          {productosActuales.map((producto) => (
             <CardProducto
               key={producto._id}
               producto={producto}
@@ -88,9 +92,9 @@ const Home = () => {
           ))}
         </Row>
         <Paginacion
-          postsPerPage={postsPerPage}
-          totalPosts={productos.length}
-          paginate={paginate}
+          productosPorPagina={productosPorPagina}
+          totalDeProductos={productos.length}
+          paginar={paginar}
         ></Paginacion>
       </section>
     </main>

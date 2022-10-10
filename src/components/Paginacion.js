@@ -1,19 +1,23 @@
 import React from "react";
+import "./Paginacion.css";
 
-const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
-  const pageNumbers = [];
+const Pagination = ({ productosPorPagina, totalDeProductos, paginar }) => {
+  const numerosPaginas = [];
 
-  for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
-    pageNumbers.push(i);
+  for (let i = 1; i <= Math.ceil(totalDeProductos / productosPorPagina); i++) {
+    numerosPaginas.push(i);
   }
 
   return (
     <nav className="w-100 d-flex justify-content-center">
       <ul className="pagination">
-        {pageNumbers.map((number) => (
-          <li key={number} className="page-item">
-            <a onClick={() => paginate(number)} className="page-link">
-              {number}
+        {numerosPaginas.map((numero) => (
+          <li key={numero} className="page-item">
+            <a
+              onClick={() => paginar(numero)}
+              className="page-link linkPaginacion"
+            >
+              {numero}
             </a>
           </li>
         ))}
