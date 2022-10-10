@@ -1,15 +1,38 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { Card, Row, Col, Badge } from "react-bootstrap";
 import "./DetalleProducto.css";
 import Burger from '../../imgDetalle/burger.jpeg'
+import { useParams } from "react-router";
+import { async } from "q";
 
 const DetalleProducto = () => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const {id} = useParams();
+  console.log(id);
+  const URL = process.env.REACT_APP_API_HAMBURGUESERIA;
+  const [producto, setProducto] = useState({});
+
+  useEffect(() => {
+    consultarAPI();
+  }, [])
+  
+  const consultarAPI = async () => {
+    try {
+        const respuesta = await fetch(URL+'/'+id);
+        const dato = await respuesta.json();
+        setProducto(dato);
+
+    } catch (error) {
+        console.log(error)
+    }
+  }
+
   return (
     <div>
       <Button variant="primary" onClick={handleShow}>
@@ -23,7 +46,7 @@ const DetalleProducto = () => {
           <Card className="container my-5 text-bg-dark">
             <Row className="w-100 py-3">
               <Col md={6}>
-                <img src={Burger} alt='' className=" imagen" />
+                <img src={producto.imagen} alt='' className=" imagen" />
               </Col>
               <Col md={6} className="">
                 <h4>Hamburguesa</h4>
