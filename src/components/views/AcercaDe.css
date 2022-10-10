@@ -18,9 +18,8 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    padding-top: 200px;
 }
-
-
 
 .carouselUno {
     background: url('../imgNosotros/eat.jpeg') no-repeat bottom center/cover;
@@ -126,6 +125,12 @@
         margin-left: 65px;
         margin-right: 65px;
     }
+
+    .titulo {
+        font-family: "Montserrat", sans-serif !important;
+        font-weight: 500;
+        font-size: 78px;
+      }
 
     
 }
