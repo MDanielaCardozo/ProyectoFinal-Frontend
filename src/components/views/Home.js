@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import CarouselHome from "./CarouselHome";
 import CardProducto from "./producto/CardProducto";
-import { Row, Col, Button } from "react-bootstrap";
+import { Row, Col, Pagination } from "react-bootstrap";
+import Paginacion from "../Paginacion";
 import { Link } from "react-router-dom";
-import pared from "../../img/purplewall.jpg";
 import promo1 from "../../img/promo1.jpg";
 import promo2 from "../../img/promo2.jpg";
 import promo3 from "../../img/promo3.jpg";
@@ -13,12 +13,14 @@ import "./Home.css";
 const Home = () => {
   const URL = process.env.REACT_APP_API_HAMBURGUESERIA;
   const [productos, setProductos] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage, setPostsPerPage] = useState(1);
 
   useEffect(() => {
-    consultarAPI();
+    consultarProd();
   }, []);
 
-  const consultarAPI = async () => {
+  const consultarProd = async () => {
     try {
       const respuesta = await fetch(URL);
       const listaProductos = await respuesta.json();
@@ -27,15 +29,20 @@ const Home = () => {
       console.log("No pudieron cargarse los productos");
     }
   };
+
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = productos.slice(indexOfFirstPost, indexOfLastPost);
+
+  //Cambiar pagina
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
   return (
     <main>
-      {/* <section className="bannerPromo"> */}
-      {/* <img src={promo1} alt="" className="imgPromo" />
-        <img src={promo2} alt="" className="imgPromo" />
-        <img src={promo3} alt="" className="imgPromo" />
-        <img src={pared} alt="" className="fondoBrick" /> */}
       <section className="promosPpal">
-        <Row className="rowBrick w-100 m-0">
+        <Row className="rowBrick w-100 m-0" pagination={Pagination}>
           <Col sm={12} lg={3} className="colPromo">
             <img src={promo1} alt="" className="imgPromo" />
           </Col>
@@ -55,15 +62,11 @@ const Home = () => {
           promo3={promo3}
         ></CarouselHome>
       </section>
-
-      {/* </section> */}
-      {/* <section className="bannerConocenos"> */}
-      <Row className="rowConocenos w-100 m-0">
+      <Row className="rowConocenos w-100 m-0" Pagination>
         <Col sm={12} md={4} className="colConocenos bannerTexto ">
           <div className="w-100 h-100 text-light p-3 text-center text-md-start">
             <h1>Somos expertos</h1>
             <h3>Veni a conocernos</h3>
-            {/* <Button variant="mt-2 outline-light">Más sobre nosotros</Button> */}
             <Link to={`/acercaDe`} className="btn">
               Más sobre nosotros
             </Link>
@@ -73,18 +76,22 @@ const Home = () => {
           <img src={meatgood} alt="" className="imgConocenos img-fluid" />
         </Col>
       </Row>
-      {/* </section> */}
       <section className="sectionMenu">
         <h1 className="titulo">#MENÚ</h1>
         <Row className="w-100 m-0 rowProd">
-          {productos.map((producto) => (
+          {currentPosts.map((producto) => (
             <CardProducto
               key={producto._id}
               producto={producto}
-              consultarAPI={consultarAPI}
+              consultarProd={consultarProd}
             ></CardProducto>
           ))}
         </Row>
+        <Paginacion
+          postsPerPage={postsPerPage}
+          totalPosts={productos.length}
+          paginate={paginate}
+        ></Paginacion>
       </section>
     </main>
   );
