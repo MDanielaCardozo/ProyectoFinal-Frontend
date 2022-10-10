@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
 
 const AcercaDe = () => {
   return (
-    <div className="container-fluid imagenFondo">
+    <div className="imagenFondo">
       <Carousel className="mt-5 container">
         <Carousel.Item className="carouselUno"></Carousel.Item>
         <Carousel.Item className="carouselDos"></Carousel.Item>
