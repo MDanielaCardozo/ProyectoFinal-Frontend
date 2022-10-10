@@ -11,6 +11,7 @@ import Juan from "../imgNosotros/JuanMeni.png";
 import Vale from "../imgNosotros/ValentinaO.jpg";
 import Carlos from "../imgNosotros/Carlos.jpg";
 import Nico from "../imgNosotros/Nico.jpg";
+import Otto from "../imgNosotros/otto.png";
 import { Link } from "react-router-dom";
 
 const AcercaDe = () => {
@@ -53,7 +54,7 @@ const AcercaDe = () => {
         <Link to={'/*'} className='btn btn-outline-light'>Información</Link>
       </section>
       <section className="container text-center nosotrosSection">
-        <h3 className="display-1 mb-4 py-5 text-light">Nosotros</h3>
+        <h3 className="titulo mb-4 py-5 text-light">Nosotros</h3>
         <Row xs={1} sm={2} md={4} className="g-4 mb-4">
           <Col>
             <Card>
@@ -99,7 +100,7 @@ const AcercaDe = () => {
           </Col>
           <Col>
             <Card>
-              <Card.Img variant="top" src={Fran} className='nosotrosFoto'/>
+              <Card.Img variant="top" src={Otto} className='nosotrosFoto'/>
               <Card.Body className="bg-dark">
               <Card.Link href="https://github.com/OttoKrautmann" className="gris">Krautmann Otto</Card.Link>
               </Card.Body>

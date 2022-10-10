@@ -3,11 +3,14 @@
   font-family: "Montserrat", sans-serif;
   font-weight: 800;
   color: white;
+  margin: 0;
+  padding: 0;
 }
 
-.title-typography{
+.titulo {
   font-family: "Montserrat", sans-serif !important;
-  font-weight: 600;
+  font-weight: 500;
+  font-size: 100px;
 }
 
 .imagenFondo {
@@ -21,16 +24,19 @@
 
 .carouselUno {
     background: url('../imgNosotros/eat.jpeg') no-repeat bottom center/cover;
+    width: 100%;
     height: 400px;
 }
 
 .carouselDos {
     background: url('../imgNosotros/laugh.webp') no-repeat bottom center/cover;
+    width: 100%;
     height: 400px;
 }
 
 .carouselTres {
     background: url('../imgNosotros/kiss.webp') no-repeat bottom center/cover;
+    width: 100%;
     height: 400px;
 }
 
@@ -100,4 +106,26 @@
 
 .card:hover{
     transform: scale(1.04);
+}
+
+/* Celulares sm */
+@media all and (max-width: 576px){
+    .carouselUno {
+        height: 300px;
+    }
+
+    .carouselDos {
+        height: 300px;
+    }
+
+    .carouselTres {
+        height: 300px;
+    }
+
+    .card {
+        margin-left: 65px;
+        margin-right: 65px;
+    }
+
+    
 }
