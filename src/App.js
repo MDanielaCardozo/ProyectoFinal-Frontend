@@ -7,6 +7,7 @@ import Menu from './components/common/Menu';
 import Footer from './components/common/Footer'
 import Registro from './components/views/Registro';
 import Login from './components/views/Login';
+import Error from './components/views/Error';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
       <BrowserRouter>
       <Menu/>
         <Routes>
+          <Route exact path="*" element={<Error></Error>} />
           <Route exact path="/" element={<Home></Home>}></Route>
           <Route
             exact
