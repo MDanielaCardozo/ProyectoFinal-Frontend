@@ -1,3 +1,6 @@
+import DetalleProducto from "./components/views/producto/DetalleProducto";
+import Home from "./components/views/Home";
+import AcercaDe from "./components/views/AcercaDe";
 import React, {useState} from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Menu from './components/common/Menu';
@@ -11,15 +14,25 @@ const App = () => {
   const [usuarioLogueado, setUsuarioLogueado] = useState({});
 
   return (
-    <BrowserRouter>
-        <Menu/>
+    <div>
+      <BrowserRouter>
+      <Menu/>
         <Routes>
-            <Route exact path="*" element={<Error></Error>} />
-            <Route exact path="/registro" element={<Registro setUsuarioLogueado={setUsuarioLogueado}/>}></Route>
+          <Route exact path="*" element={<Error></Error>} />
+          <Route exact path="/" element={<Home></Home>}></Route>
+          <Route
+            exact
+            path="/detalleProducto/:id"
+            element={<DetalleProducto></DetalleProducto>}
+          ></Route>
+          <Route exact path="/acercaDe" element={<AcercaDe></AcercaDe>}></Route>
+          {/* <Route exact path="*" element={<Error404></Error404>}></Route> */}
+          <Route exact path="/registro" element={<Registro setUsuarioLogueado={setUsuarioLogueado}/>}></Route>
             <Route exact path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado}/>}></Route>
         </Routes>
         <Footer/>
-    </BrowserRouter>
+      </BrowserRouter>
+    </div>
   );
 };
 

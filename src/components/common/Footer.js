@@ -26,8 +26,9 @@ const Footer = () => {
                               alt="Logo del restaurante"
                               src={Logo}
                               width="250"
-                              height="auto"
-                              className="my-0 py-0 ps-auto"
+                            //   height="auto"
+                            //   className="my-0 py-0 ps-auto pe-5"
+                            className="logoImg"
                           />{' '}
                       </MDBCol>
 
@@ -80,7 +81,7 @@ const Footer = () => {
                           </p>
                       </MDBCol>
 
-                      <MDBCol md="3" lg="2" xl="2" className="mx-auto mb-4">
+                      <MDBCol md="3" lg="2" xl="2" className="mx-auto mb-4 text-center">
                           <h6 className="fw-bold mb-4 fs-5">Mi cuenta</h6>
                           <p>
                               <Link
