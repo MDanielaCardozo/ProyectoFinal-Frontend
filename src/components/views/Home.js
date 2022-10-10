@@ -97,6 +97,13 @@ const Home = () => {
           paginar={paginar}
         ></Paginacion>
       </section>
+      <section className="p-5 text-center">
+        <h1 className="textoSomos m-0">SOMOS #BURGUER&BEER</h1>
+        <h2 className="m-0">
+          Veni a disfrutar con nosotros de alta hamburguesa!
+        </h2>
+        <h4 className="mt-3">Te esperamos</h4>
+      </section>
     </main>
   );
 };

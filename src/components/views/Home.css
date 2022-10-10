@@ -1,17 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;800;900&display=swap");
 
+/* Fuentes */
+* {
+  font-family: "Montserrat", sans-serif;
+}
 h1,
 h2,
 h3,
-a {
+h4,
+h5 {
   font-weight: 800;
-  font-family: "Montserrat", sans-serif;
 }
 
 a {
   font-weight: 300;
 }
 
+/* Promos */
 .rowBrick {
   background-image: url(../../img/purplewall.jpg);
   background-size: cover;
@@ -39,6 +44,11 @@ a {
   width: 100%;
 }
 
+.carouselPpal {
+  display: none;
+}
+
+/* Seccion conocenos */
 .rowConocenos {
   background-color: rgb(47, 45, 51);
   max-height: 500px;
@@ -83,9 +93,14 @@ h2 {
   background-color: #84358d;
 }
 
-.sectionMenu h1 {
+.sectionMenu h1,
+.textoSomos {
   font-weight: 900;
   font-family: "Montserrat", sans-serif;
+}
+
+.textoSomos {
+  font-size: 100px;
 }
 
 .rowProd {
@@ -98,10 +113,6 @@ h2 {
   font-size: 200px;
   margin: 0;
   padding: 20px;
-}
-
-.carouselPpal {
-  display: none;
 }
 
 /* Mediaqueries */
