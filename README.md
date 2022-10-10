@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+# Proyecto Final - c2i
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## REQUERIMIENTOS
 
-## Available Scripts
+### LOGIN
+Pantalla de login donde el usuario puede autenticarse o darse de alta a través de un enlace al formulario de
+registro.
+### REGISTRO
+Puede ser una página o un modal donde el usuario nuevo puede darse de alta. Los datos indispensables para
+permitir el ingreso deben ser un email y contraseña, pueden agregar más datos si lo desean.
+### PAGINA PRINCIPAL
+Pantalla principal con información del restaurante y los productos disponibles para que los usuarios puedan
+seleccionar los que deseen (si quiero crear un pedido seleccionando las opciones de la página principal me
+debe pedir previamente que este logueado)
+### PAGINA DE DETALLE
 
-In the project directory, you can run:
+Al seleccionar un producto de la página principal, se debe diseñar una página con el detalle del producto o
+ventana modal, donde se visualicen correctamente los datos del producto.
+### PEDIDOS
+Una página que contendrá los menús seleccionados por el usuario y su costo total. Deberá tener un botón
+de hacer pedido. Al hacer clic el pedido se guardará en la BD con un estado pendiente y mostrar al usuario
+un mensaje que su pedido fue correctamente realizado.
+### PAGINA DEL ADMINISTRADOR
+El usuario administrador debe poder acceder a una página donde se muestran los listados de usuarios,
+productos del menú y pedidos solicitados, además debe poder realizar las siguientes operaciones:
+#### Usuarios
+- Listar los usuarios
 
-### `npm start`
+#### Productos del menú
+- Dar de alta productos
+- Modificar productos
+- Eliminar productos
+- Listar productos
+#### Pedidos
+- Listar los pedidos
+- Modificar el estado de los pedidos de pendientes a realizados
+### ACERCA DE
+Una página informativa que contendrá datos del grupo de desarrolladores del proyecto.
+### ERROR 404
+Una página con el respectivo mensaje de error a donde deben dirigirnos en caso de no tener una
+funcionalidad desarrollada.
+## Integrantes
+- Andrade Francisco
+- Andrade Nicolas
+- Cardozo Daniela
+- Escobar Carlos
+- Garcia Mauro Nicolás
+- Krautmann Otto
+- Menichetti Juan
+- Ormaechea Valentina
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Bibliotecas externas
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Reac-Bootstrap
+npm i react-bootstrap bootstrap
 
-### `npm test`
+### Sweet Alert
+npm i sweetalert2
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Route
+npm i react-router-dom
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### EmailJS
+npm i @emailjs/browser --save
