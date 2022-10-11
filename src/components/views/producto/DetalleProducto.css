@@ -5,10 +5,22 @@
   font-weight: 800;
   color: white;
 }
-.title-typography{
-  font-family: "Montserrat", sans-serif !important;
-  font-weight: 600;
+
+.modalImg {
+  max-width: 400px;
+  width: 100%;
+  display: flex;
 }
+
+/* .btnCard {
+  margin-left: 100px;
+  margin-bottom: 10px;
+} */
+
+/* img {
+  width: 250px;
+  object-fit: contain;
+} */
 
 .modal {
     background-color: rgba(0, 0, 0, 0.3);
@@ -16,6 +28,11 @@
 
 .modalDetalle {
   background-color: #363982;
+  border-radius: 5px;
+}
+
+.btnModal {
+  margin-top: 500px;
 }
 
 /* .azul{
@@ -32,8 +49,10 @@
     0 0 100px #7bacff
 } */
 
-.imagen {
+/* .imagen {
+    max-width: 600px;
     width: 100%;
+    height: 100px;
     margin-right: 5px;
-    background-size: contain;
-}
+    background-size: cover;
+} */
