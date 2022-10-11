@@ -92,6 +92,9 @@ h2 {
   position: static;
   text-align: center;
   background-color: #84358d;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .sectionMenu h1,

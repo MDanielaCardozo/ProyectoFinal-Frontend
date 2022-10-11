@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import CarouselHome from "./CarouselHome";
 import CardProducto from "./producto/CardProducto";
-import { Row, Col, Pagination } from "react-bootstrap";
+import { Row, Col, Pagination, Form } from "react-bootstrap";
 import Paginacion from "../Paginacion";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import promo1 from "../../img/promo1.jpg";
 import promo2 from "../../img/promo2.jpg";
 import promo3 from "../../img/promo3.jpg";
@@ -16,6 +16,7 @@ const Home = () => {
   const [paginaActual, setPaginaActual] = useState(1);
   const [productosPorPagina, setProductosPorPagina] = useState(8);
   const element = document.querySelector(".sectionMenu");
+  const [productosBuscados, setProductosBuscados] = useState([]);
 
   useEffect(() => {
     consultarProd();
@@ -26,24 +27,36 @@ const Home = () => {
       const respuesta = await fetch(URL);
       const listaProductos = await respuesta.json();
       setProductos(listaProductos);
+      setProductosBuscados(listaProductos);
     } catch (error) {
       console.log("No pudieron cargarse los productos");
     }
   };
-
-  // Determinacion de productos por pagina
-  const indexUltimoProducto = paginaActual * productosPorPagina;
-  const indexPrimerProducto = indexUltimoProducto - productosPorPagina;
-  const productosActuales = productos.slice(
-    indexPrimerProducto,
-    indexUltimoProducto
-  );
 
   // Cambiar pagina
   const paginar = (numeroPagina) => {
     setPaginaActual(numeroPagina);
     element.scrollIntoView();
   };
+
+  const buscar = (buscado) => {
+    const productosSearch = [];
+    productos.forEach((producto) => {
+      if (producto.nombre.toLowerCase().includes(buscado)) {
+        productosSearch.push(producto);
+      }
+    });
+    setProductosBuscados(productosSearch);
+    console.log(productosBuscados);
+  };
+
+  // Determinacion de productos por pagina
+  const indexUltimoProducto = paginaActual * productosPorPagina;
+  const indexPrimerProducto = indexUltimoProducto - productosPorPagina;
+  const productosActuales = productosBuscados.slice(
+    indexPrimerProducto,
+    indexUltimoProducto
+  );
 
   return (
     <main>
@@ -83,6 +96,13 @@ const Home = () => {
       </Row>
       <section className="sectionMenu">
         <h1 className="tituloMenu">#MENÚ</h1>
+        <Form className="w-50 mb-5">
+          <Form.Control
+            type="text"
+            placeholder="Buscar producto"
+            onChange={(e) => buscar(e.target.value)}
+          />
+        </Form>
         <Row className="w-100 m-0 rowProd">
           {productosActuales.map((producto) => (
             <CardProducto
