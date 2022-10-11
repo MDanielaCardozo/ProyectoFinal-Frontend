@@ -53,8 +53,8 @@ const AcercaDe = () => {
         <p className="text-light">Cotiza con nosotros. @burgerhouse</p>
         <Link to={'/*'} className='btn btn-outline-light'>Información</Link>
       </section>
-      <section className="container text-center nosotrosSection">
-        <h3 className="titulo mb-4 py-5 text-light">Nosotros</h3>
+      <section className="container text-center">
+        <h3 className="titulo text-light my-4">Nosotros</h3>
         <Row xs={1} sm={2} md={4} className="g-4 mb-4">
           <Col>
             <Card>
