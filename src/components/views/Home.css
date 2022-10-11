@@ -126,6 +126,11 @@ h2 {
   padding: 80px 20px 80px 20px;
 }
 
+/* Buscador productos */
+.buscadorProd {
+  border: #363982 solid 5px;
+  border-radius: 5px;
+}
 /* Mediaqueries */
 /* Celular */
 
