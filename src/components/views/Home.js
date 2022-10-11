@@ -39,7 +39,7 @@ const Home = () => {
     indexUltimoProducto
   );
 
-  //Cambiar pagina
+  // Cambiar pagina
   const paginar = (numeroPagina) => {
     setPaginaActual(numeroPagina);
     element.scrollIntoView();
@@ -60,7 +60,6 @@ const Home = () => {
           </Col>
         </Row>
       </section>
-
       <section className="carouselPpal">
         <CarouselHome
           promo1={promo1}
