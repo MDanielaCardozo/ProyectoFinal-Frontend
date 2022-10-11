@@ -63,6 +63,7 @@
 
 .gris{
     font-size: 20px;
+    font-weight: 500;
     border-radius: 2em;
     color: rgb(224, 224, 224);
     text-shadow: 0 0 5px #424242,
@@ -89,8 +90,6 @@
     height: 250px;
     margin-bottom: 90px;
 }
-
-
 
 .nosotrosFoto {
     width: 100%;
@@ -129,7 +128,7 @@
     .titulo {
         font-family: "Montserrat", sans-serif !important;
         font-weight: 500;
-        font-size: 78px;
+        font-size: 3rem;
       }
 
     
