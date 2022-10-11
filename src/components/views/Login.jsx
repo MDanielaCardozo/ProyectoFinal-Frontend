@@ -1,18 +1,18 @@
-import React, {useState} from "react";
-import { Alert, Form, Button } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
-import Swal from "sweetalert2";
+import React from "react";
+import { Alert, Form, Button, Card } from "react-bootstrap";
+import { useState, useNavigate } from "react";
 import "./login.css";
+import Swal from "sweetalert2";
 
-const Login = ({setUsuarioLogueado}) => {
-    const API_AUTH = process.env.REACT_APP_API_USUARIOS;
+const Login = (props) => {
+    const API_AUTH = process.env.REACT_APP_API_AUTH;
 
     const [form, setForm] = useState({});
     const [errors, setErrors] = useState({});
     const [mensajeError, setMensajeError] = useState("");
 
     //inicializar useNavigate
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     const setField = (field, value) => {
         setForm({
@@ -58,6 +58,30 @@ const Login = ({setUsuarioLogueado}) => {
         const usuario = form;
         usuario.valido = false; //invalido por defecto
         setMensajeError("");
+        /*
+        props.setAdminLogged(false);
+        if (usuario.email==='admin@gmail.com' && usuario.password ==='12345')
+        {
+            usuario.valido=true;
+            usuario.perfil='admin';
+            //setLoggedUser(usuario);
+            //props.setAdminLogged(true);
+            //props.setSesionIniciada(true);
+            //navigate("/receta/administrar");
+        }
+        else if (usuario.email==='user@gmail.com' && usuario.password ==='12345') 
+        {
+            usuario.valido=true;
+            usuario.perfil='usuario';
+            //setLoggedUser(usuario);
+            //props.setSesionIniciada(true);
+            //navigate("/");
+        }
+        else {
+            //props.setSesionIniciada(false);
+            setMensajeError('Usario o contraseña no válido(s)');
+        }
+        */
 
         try {
             const respuesta = await fetch(API_AUTH, {
@@ -68,15 +92,12 @@ const Login = ({setUsuarioLogueado}) => {
                 body: JSON.stringify(usuario),
             });
             console.log(respuesta);
-            if (respuesta.status === 200) {
-                const data = await respuesta.json();
-                //almaceno el usuario en el state y localstorage
-                setUsuarioLogueado(data);
-                localStorage.setItem(process.env.REACT_APP_LOCALSTORAGE, JSON.stringify(data));
-                //redireccionar a la pagina desde donde se llamó
-                navigate(-1)
+            if (respuesta.status === 201) {
+                //usuario validado
+                //redirecciono a página anterior
+                //navegacion(-1);
             } else {
-                Swal.fire("Error en Login", "No se pudo iniciar sesion, el usuario y/o la contraseña son incorrectos", "error");
+                //usuario no validado
             }
         } catch (error) {
             Swal.fire("Error en Login", "No se pudo iniciar sesion, intente nuevamente en unos minutos", "error");
@@ -84,9 +105,9 @@ const Login = ({setUsuarioLogueado}) => {
     };
 
     return (
-        <section className="container-fluid">
-            <div className="row rowBrick">
-                <article className="col-12 col-md-6 bg-login px-5">
+        <section className="container">
+            <div className="row">
+                <article className="col-12 col-md-6 bg-login">
                     <h3 className="display-6 mt-5">Ingrese su email y contraseña</h3>
                     {/* <hr /> */}
                     <Form className="mt-4" onSubmit={handleSubmit}>
@@ -112,13 +133,13 @@ const Login = ({setUsuarioLogueado}) => {
                             <Form.Control.Feedback type="invalid">{errors.password}</Form.Control.Feedback>
                             <a href="#">Olvidé la contraseña</a><br/>
                         </Form.Group>
-                        <Button variant="outline-light" type="submit" className="me-1">
+                        <Button variant="primary" type="submit" className="me-1">
                             Ingresar
                         </Button>
                         <Button
-                            variant="outline-light"
+                            variant="secondary"
                             onClick={() => {
-                                navigate(-1);
+                                /*navigate("/");*/
                             }}>
                             Cancelar
                         </Button>
@@ -129,12 +150,12 @@ const Login = ({setUsuarioLogueado}) => {
                         </Alert>
                     ) : null}
                 </article>
-                <article className="col-12 col-md-6 bg-gris px-5">
+                <article className="col-12 col-md-6 bg-gris px-3">
                     <h2 className="display-6 mt-5">No sos miembro aún?</h2>
                     <p>Registrate y obtené descuentos y promociones, participá en sorteos y muchas otras ventajas.</p>
-                    <Button variant="outline-light" className="mb-3" onClick={()=>{navigate("/registro")}}>Quiero registrarme</Button>
+                    <Button>Quiero registrarme</Button>
                     <hr />
-                    <h2 className="display-6 mt-2">Política de seguridad</h2>
+                    <h2 className="display-6 mt-2">Politica de seguridad</h2>
                     <p>
                         Sabemos que compartir su información personal con nosotros se basa en la confianza. Nos tomamos esto en
                         serio y nos comprometemos a garantizar que respetamos su privacidad cuando visita nuestro sitio web o

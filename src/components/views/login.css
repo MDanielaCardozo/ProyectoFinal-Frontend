@@ -1,11 +1,9 @@
 .bg-gris {
-    background-color: #1b0747bd;
-    /* background-color: rgba(0, 0, 0, 0.664) !important; */
+    background-color: #ece6e6;
 }
 
 .bg-login {
-    /* background-color: hsl(33, 41%, 95%); */
-    background-color: rgba(0, 0, 0, 0.658) !important;
+    background-color: hsl(33, 41%, 95%);
 }
 
 .custom-input {
@@ -27,58 +25,7 @@
 }
 
 .bg-grupo {
-    /* background-color: #ffffff; */
-    background-color: rgba(0, 0, 0, 0.664) !important;
+    background-color: #ffffff;
     padding: 8px;
     border-radius: 10px;
-}
-
-.imagen {
-    /* background-image: url(https://images.pexels.com/photos/159291/beer-machine-alcohol-brewery-159291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1); */
-    background-image: url(../../img/purplewall.jpg);
-    background-size: cover;
-
-    display: flex;
-    flex-direction: column;
-}
-
-/* Celulares */
-@media all and (max-width: 760px) {
-    .rowBrick {
-        background-image: url(../../img/purplewall.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center center;
-        padding: 20px;
-        padding-top: 200px;
-    }
-    }
-/* Tablets */
-@media all and (min-width: 761px) and (max-width: 991px) {
-    .rowBrick {
-        background-image: url(../../img/purplewall.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center center;
-        padding: 20px;
-        padding-top: 200px;
-    }
-}
-@media all and (min-width: 992px) and (max-width: 1399px) {
-    .rowBrick {
-        background-image: url(../../img/purplewall.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center center;
-        padding: 190px 70px 10px 70px;
-    }
-}
-@media all and (min-width: 1400px) {
-    .rowBrick {
-        background-image: url(../../img/purplewall.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center center;
-        padding: 190px 200px 10px 200px;
-    }
 }
