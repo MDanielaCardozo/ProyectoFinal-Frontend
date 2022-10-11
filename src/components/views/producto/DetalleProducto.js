@@ -3,9 +3,8 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { Card, Row, Col, Badge } from "react-bootstrap";
 import "./DetalleProducto.css";
-import Burger from '../../imgDetalle/burger.jpeg'
+import Burger from "../../imgDetalle/burger.jpeg";
 import { useParams } from "react-router";
-import { async } from "q";
 
 const DetalleProducto = () => {
   const [show, setShow] = useState(false);
@@ -13,25 +12,24 @@ const DetalleProducto = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const {id} = useParams();
+  const { id } = useParams();
   console.log(id);
-  const URL = process.env.REACT_APP_API_HAMBURGUESERIA;
-  const [producto, setProducto] = useState({});
+  const URL = process.env.REACT_API_HAMBURGUESERIA;
+  const [producto, setProducto] = useState([]);
 
   useEffect(() => {
-    consultarAPI();
-  }, [])
-  
-  const consultarAPI = async () => {
-    try {
-        const respuesta = await fetch(URL+'/'+id);
-        const dato = await respuesta.json();
-        setProducto(dato);
+    consultarProd();
+  }, []);
 
+  const consultarProd = async () => {
+    try {
+      const respuesta = await fetch(URL + "/" + id);
+      const listarProductos = await respuesta.json();
+      setProducto(listarProductos);
     } catch (error) {
-        console.log(error)
+      console.log("No pudieron cargarse los productos");
     }
-  }
+  };
 
   return (
     <div>
@@ -39,34 +37,42 @@ const DetalleProducto = () => {
         Launch demo modal
       </Button>
       <Modal show={show} onHide={handleClose} className="">
-        <Modal.Header closeButton className="bg-dark text-light">
-          <Modal.Title className="azul">Detalle de producto</Modal.Title>
-        </Modal.Header>
-        <Modal.Body className="bg-dark">
+        <Modal.Body className="modalDetalle">
           <Card className="container my-5 text-bg-dark">
             <Row className="w-100 py-3">
               <Col md={6}>
-                <img src={producto.imagen} alt='' className=" imagen" />
+                <img
+                  src={producto.imagen}
+                  alt={producto.nombre}
+                  className=" imagen"
+                />
               </Col>
               <Col md={6} className="">
-                <h4>Hamburguesa</h4>
+                <h4>{producto.nombre}</h4>
                 <hr />
-                <Badge className="azul bg-secondary">Promo 1</Badge>
-                <p className="m-4">hyyfftyhbgkkjhyggvfgcdcghggfv</p>
-                <p className="m-4"></p>
+                <Badge className="azul bg-secondary">
+                  {producto.categoria}
+                </Badge>
+                <p className="m-4">{producto.descripcion}</p>
+                <p className="m-4">Precio: ${producto.precio}</p>
               </Col>
             </Row>
           </Card>
-        </Modal.Body>
-        <Modal.Footer className="bg-dark">
           <Button
-            variant="outline-light"
+            variant="outline-light me-3"
             className="azul"
             onClick={handleClose}
           >
             Cerrar
           </Button>
-        </Modal.Footer>
+          <Button
+            variant="outline-light"
+            className="azul"
+            onClick={handleClose}
+          >
+            Comprar
+          </Button>
+        </Modal.Body>
       </Modal>
     </div>
   );
