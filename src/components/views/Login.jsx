@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import { Alert, Form, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import { validarEmail, cantidadCaracteres } from "./helperUsuario";
 import Swal from "sweetalert2";
 import "./login.css";
 
@@ -31,11 +32,11 @@ const Login = ({setUsuarioLogueado}) => {
         const { email, password } = form;
         const newErrors = {};
         // email errors
-        /*
+        
         if ( !email || email === '' ) newErrors.email = 'Ingrese su email'
-        else if (!cantidadCaracteres(email, 2, 30))  newErrors.email = 'El email debe tener entre 2 y 30 caracteres'
+        else if (!cantidadCaracteres(email, 4, 70))  newErrors.email = 'El email debe tener entre 4 y 70 caracteres'
         else if (!validarEmail(email)) newErrors.email = 'Ingrese un email válido'
-        */
+        
         /*
         // password errors
         if ( !password || password === '' ) newErrors.password = 'Ingrese su password'
