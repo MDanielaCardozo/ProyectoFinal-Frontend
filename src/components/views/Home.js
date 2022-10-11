@@ -14,7 +14,7 @@ const Home = () => {
   const URL = process.env.REACT_APP_API_HAMBURGUESERIA;
   const [productos, setProductos] = useState([]);
   const [paginaActual, setPaginaActual] = useState(1);
-  const [productosPorPagina, setProductosPorPagina] = useState(4);
+  const [productosPorPagina, setProductosPorPagina] = useState(8);
 
   useEffect(() => {
     consultarProd();
@@ -81,7 +81,7 @@ const Home = () => {
         </Col>
       </Row>
       <section className="sectionMenu">
-        <h1 className="titulo">#MENÚ</h1>
+        <h1 className="tituloMenu">#MENÚ</h1>
         <Row className="w-100 m-0 rowProd">
           {productosActuales.map((producto) => (
             <CardProducto
@@ -97,9 +97,9 @@ const Home = () => {
           paginar={paginar}
         ></Paginacion>
       </section>
-      <section className="p-5 text-center">
-        <h1 className="textoSomos m-0">SOMOS #BURGUER&BEER</h1>
-        <h2 className="m-0">
+      <section className="sectionFinal text-center w-100 m-0">
+        <h1 className="m-0 w-100">SOMOS #BURGERHOUSE</h1>
+        <h2 className="m-0 ">
           Veni a disfrutar con nosotros de alta hamburguesa!
         </h2>
         <h4 className="mt-3">Te esperamos</h4>

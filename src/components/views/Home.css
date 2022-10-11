@@ -4,6 +4,7 @@
 * {
   font-family: "Montserrat", sans-serif;
 }
+
 h1,
 h2,
 h3,
@@ -94,12 +95,12 @@ h2 {
 }
 
 .sectionMenu h1,
-.textoSomos {
+.sectionFinal h1 {
   font-weight: 900;
   font-family: "Montserrat", sans-serif;
 }
 
-.textoSomos {
+.sectionFinal h1 {
   font-size: 100px;
 }
 
@@ -108,19 +109,26 @@ h2 {
   padding: 0px 20px 0px 20px;
 }
 
-.titulo {
+.tituloMenu {
   color: #363982;
   font-size: 200px;
   margin: 0;
   padding: 20px;
 }
 
+/* Section final */
+.sectionFinal {
+  background-color: rgb(47, 45, 51);
+  color: rgb(93, 89, 101);
+  padding: 80px 20px 80px 20px;
+}
+
 /* Mediaqueries */
 /* Celular */
 
-@media all and (max-width: 760px) {
-  .titulo {
-    font-size: 50px;
+@media all and (max-width: 767px) {
+  .sectionMenu h1 {
+    font-size: 90px;
   }
   .imgConocenos {
     max-height: 200px;
@@ -135,9 +143,13 @@ h2 {
   }
 }
 
-@media all and (min-width: 767px) and (max-width: 991px) {
-  .titulo {
-    font-size: 50px;
+@media all and (min-width: 768px) and (max-width: 991px) {
+  .sectionMenu h1 {
+    font-size: 100px;
+  }
+
+  .sectionFinal h1 {
+    font-size: 60px;
   }
 }
 
@@ -147,5 +159,37 @@ h2 {
   }
   .promosPpal {
     display: none;
+  }
+}
+
+@media all and (max-width: 400px) {
+  .sectionFinal h1 {
+    font-size: 35px;
+  }
+
+  .sectionFinal h2 {
+    font-size: 20px;
+  }
+
+  .sectionMenu h1 {
+    font-size: 70px;
+  }
+}
+
+@media all and (min-width: 401px) and (max-width: 600px) {
+  .sectionFinal h1 {
+    font-size: 40px;
+  }
+  .sectionFinal h2 {
+    font-size: 25px;
+  }
+  .sectionMenu h1 {
+    font-size: 80px;
+  }
+}
+
+@media all and (min-width: 601px) and (max-width: 767px) {
+  .sectionFinal h1 {
+    font-size: 50px;
   }
 }
