@@ -33,7 +33,7 @@ const DetalleProducto = () => {
 
   return (
     <div>
-      <Button variant="primary" onClick={handleShow}>
+      <Button variant="primary" onClick={handleShow} className="btnModal">
         Launch demo modal
       </Button>
       <Modal show={show} onHide={handleClose} className="">
@@ -41,33 +41,29 @@ const DetalleProducto = () => {
           <Card className="container my-5 text-bg-dark">
             <Row className="w-100 py-3">
               <Col md={6}>
-                <img
-                  src={producto.imagen}
-                  alt={producto.nombre}
-                  className=" imagen"
-                />
+                <img src={Burger} alt={producto.nombre} className='modalImg'/>
               </Col>
-              <Col md={6} className="">
-                <h4>{producto.nombre}</h4>
+              <Col md={6} className="mt-2">
+                <h4>{producto.nombre}Hamburguesa</h4>
                 <hr />
-                <Badge className="azul bg-secondary">
+                <Badge className="azul bg-secondary">promo
                   {producto.categoria}
                 </Badge>
-                <p className="m-4">{producto.descripcion}</p>
-                <p className="m-4">Precio: ${producto.precio}</p>
+                <p className="my-2">{producto.descripcion}fjskfhskjggh</p>
+                <p className="my-2">Precio: ${producto.precio}</p>
               </Col>
             </Row>
           </Card>
           <Button
             variant="outline-light me-3"
-            className="azul"
+            className="azul btnCard"
             onClick={handleClose}
           >
             Cerrar
           </Button>
           <Button
             variant="outline-light"
-            className="azul"
+            className="azul btnCard"
             onClick={handleClose}
           >
             Comprar
