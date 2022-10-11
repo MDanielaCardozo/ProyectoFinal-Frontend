@@ -114,7 +114,7 @@ const Home = () => {
         </Row>
         <Paginacion
           productosPorPagina={productosPorPagina}
-          totalDeProductos={productos.length}
+          totalDeProductos={productosBuscados.length}
           paginar={paginar}
         ></Paginacion>
       </section>
