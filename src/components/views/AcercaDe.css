@@ -103,6 +103,10 @@
     background-color: rgba(0, 0, 0, 0.3);
 }
 
+.tipografiaCard {
+    font-weight: 500;
+}
+
 .card:hover{
     transform: scale(1.04);
 }

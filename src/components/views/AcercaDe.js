@@ -60,7 +60,7 @@ const AcercaDe = () => {
             <Card>
               <Card.Img variant="top" src={Fran} className='nosotrosFoto'/>
               <Card.Body className="bg-dark">
-              <Card.Link href="https://github.com/franAndrad" className="gris">Andrade Francisco</Card.Link>
+              <Card.Link href="https://github.com/franAndrad" className="gris tipografiaCard">Andrade Francisco</Card.Link>
               </Card.Body>
             </Card>
           </Col>
@@ -68,7 +68,7 @@ const AcercaDe = () => {
             <Card>
             <Card.Img variant="top" src={Nico} className='nosotrosFoto'/>
               <Card.Body className="bg-dark">
-              <Card.Link href="https://github.com/nicolasandr" className="gris">Andrade Nicolas</Card.Link>  
+              <Card.Link href="https://github.com/nicolasandr" className="gris tipografiaCard">Andrade Nicolas</Card.Link>  
               </Card.Body>
             </Card>
           </Col>
@@ -76,7 +76,7 @@ const AcercaDe = () => {
             <Card>
             <Card.Img variant="top" src={Dani} className='nosotrosFoto'/>
               <Card.Body className="bg-dark">
-              <Card.Link href="https://github.com/MDanielaCardozo" className="gris">Cardozo Daniela</Card.Link>
+              <Card.Link href="https://github.com/MDanielaCardozo" className="gris tipografiaCard">Cardozo Daniela</Card.Link>
               </Card.Body>
             </Card>
           </Col>
@@ -84,7 +84,7 @@ const AcercaDe = () => {
             <Card>
             <Card.Img variant="top" src={Carlos} className='nosotrosFoto'/>
               <Card.Body className="bg-dark">
-              <Link href="https://github.com/carlosmsx" className="gris">Escobar Carlos</Link>
+              <Link href="https://github.com/carlosmsx" className="gris tipografiaCard">Escobar Carlos</Link>
               </Card.Body>
             </Card>
           </Col>
@@ -94,7 +94,7 @@ const AcercaDe = () => {
             <Card>
             <Card.Img variant="top" src={Mauro} className='nosotrosFoto'/>
               <Card.Body className="bg-dark">
-              <Card.Link href="https://github.com/Ao-Rubi" className="gris">Garcia Mauro Nicolás</Card.Link>
+              <Card.Link href="https://github.com/Ao-Rubi" className="gris tipografiaCard">Garcia Mauro Nicolás</Card.Link>
               </Card.Body>
             </Card>
           </Col>
@@ -102,7 +102,7 @@ const AcercaDe = () => {
             <Card>
               <Card.Img variant="top" src={Otto} className='nosotrosFoto'/>
               <Card.Body className="bg-dark">
-              <Card.Link href="https://github.com/OttoKrautmann" className="gris">Krautmann Otto</Card.Link>
+              <Card.Link href="https://github.com/OttoKrautmann" className="gris tipografiaCard">Krautmann Otto</Card.Link>
               </Card.Body>
             </Card>
           </Col>
@@ -110,7 +110,7 @@ const AcercaDe = () => {
             <Card>
               <Card.Img variant="top" src={Juan} className='nosotrosFoto'/>
               <Card.Body className="bg-dark">
-              <Card.Link href="https://github.com/JuanMeni" className="gris">Menichetti Juan</Card.Link>
+              <Card.Link href="https://github.com/JuanMeni" className="gris tipografiaCard">Menichetti Juan</Card.Link>
               </Card.Body>
             </Card>
           </Col>
@@ -118,7 +118,7 @@ const AcercaDe = () => {
             <Card>
               <Card.Img variant="top" src={Vale} className='nosotrosFoto'/>
               <Card.Body className="bg-dark">
-              <Card.Link href="https://github.com/valeormaechea" className="gris">Ormaechea Valentina</Card.Link>
+              <Card.Link href="https://github.com/valeormaechea" className="gris tipografiaCard">Ormaechea Valentina</Card.Link>
               </Card.Body>
             </Card>
           </Col>
