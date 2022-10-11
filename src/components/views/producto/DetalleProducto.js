@@ -5,6 +5,7 @@ import { Card, Row, Col, Badge } from "react-bootstrap";
 import "./DetalleProducto.css";
 import Burger from "../../imgDetalle/burger.jpeg";
 import { useParams } from "react-router";
+import { Link } from "react-router-dom";
 
 const DetalleProducto = () => {
   const [show, setShow] = useState(false);
@@ -41,33 +42,29 @@ const DetalleProducto = () => {
           <Card className="container my-5 text-bg-dark">
             <Row className="w-100 py-3">
               <Col md={6}>
-                <img src={Burger} alt={producto.nombre} className='modalImg'/>
+                <img src={Burger} alt={producto.nombre} className="modalImg" />
               </Col>
               <Col md={6} className="mt-2">
-                <h4>{producto.nombre}Hamburguesa</h4>
+                <h4 className="tituloDetalle">{producto.nombre}Hamburguesa</h4>
                 <hr />
-                <Badge className="azul bg-secondary">promo
+                {/* <Badge className="azul bg-secondary">
                   {producto.categoria}
-                </Badge>
+                </Badge> */}
                 <p className="my-2">{producto.descripcion}fjskfhskjggh</p>
                 <p className="my-2">Precio: ${producto.precio}</p>
               </Col>
             </Row>
           </Card>
-          <Button
-            variant="outline-light me-3"
-            className="azul btnCard"
-            onClick={handleClose}
-          >
+          <Button variant="outline-light m-1" onClick={handleClose}>
             Cerrar
           </Button>
-          <Button
-            variant="outline-light"
-            className="azul btnCard"
+          <Link
+            to={`*`}
+            className="btn btn-outline-light"
             onClick={handleClose}
           >
-            Comprar
-          </Button>
+            Agregar al carrito
+          </Link>
         </Modal.Body>
       </Modal>
     </div>
