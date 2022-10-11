@@ -33,7 +33,7 @@ const DetalleProducto = () => {
 
   return (
     <div>
-      <Button variant="primary" onClick={handleShow}>
+      <Button variant="primary" onClick={handleShow} className='btnModal'>
         Launch demo modal
       </Button>
       <Modal show={show} onHide={handleClose} className="">
@@ -42,9 +42,9 @@ const DetalleProducto = () => {
             <Row className="w-100 py-3">
               <Col md={6}>
                 <img
-                  src={producto.imagen}
-                  alt={producto.nombre}
-                  className=" imagen"
+                  src={Burger}
+                  // alt={producto.nombre}
+                   className="imagen"
                 />
               </Col>
               <Col md={6} className="">
