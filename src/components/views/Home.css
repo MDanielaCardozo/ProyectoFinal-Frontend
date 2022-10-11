@@ -139,7 +139,7 @@ h2 {
   }
   .rowConocenos {
     min-height: 450px;
-    align-content: space-around;
+    align-content: space-between;
   }
 }
 

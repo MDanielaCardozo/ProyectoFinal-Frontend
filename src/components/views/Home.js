@@ -68,8 +68,8 @@ const Home = () => {
         ></CarouselHome>
       </section>
       <Row className="rowConocenos w-100 m-0" Pagination>
-        <Col sm={12} md={4} className="colConocenos bannerTexto ">
-          <div className="w-100 h-100 text-light p-3 text-center text-md-start">
+        <Col sm={12} md={4} className="colConocenos">
+          <div className="w-100 h-100 text-light p-md-3 p-5 text-center text-md-start">
             <h1>Somos expertos</h1>
             <h3>Veni a conocernos</h3>
             <Link to={`/acercaDe`} className="btn">
