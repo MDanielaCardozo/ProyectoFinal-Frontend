@@ -15,6 +15,7 @@ const Home = () => {
   const [productos, setProductos] = useState([]);
   const [paginaActual, setPaginaActual] = useState(1);
   const [productosPorPagina, setProductosPorPagina] = useState(8);
+  const element = document.querySelector(".sectionMenu");
 
   useEffect(() => {
     consultarProd();
@@ -41,6 +42,7 @@ const Home = () => {
   //Cambiar pagina
   const paginar = (numeroPagina) => {
     setPaginaActual(numeroPagina);
+    element.scrollIntoView();
   };
 
   return (
