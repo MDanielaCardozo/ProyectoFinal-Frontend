@@ -16,12 +16,14 @@ import { Link } from "react-router-dom";
 
 const AcercaDe = () => {
   return (
-    <div className="imagenFondo">
+    <div>
+      <section className="imagenFondo">
       <Carousel className="mt-5 container carousel">
         <Carousel.Item className="carouselUno"></Carousel.Item>
         <Carousel.Item className="carouselDos"></Carousel.Item>
         <Carousel.Item className="carouselTres"></Carousel.Item>
       </Carousel>
+      
       <article className="articulo text-center container table-responsive">
         <h2 className="azul my-5">JUNTOS SOMOS BURGER HOUSE</h2>
         <p className="text-light">
@@ -40,22 +42,24 @@ const AcercaDe = () => {
           cada vez.
         </p>
       </article>
+      </section>
       <section className="equipo text-center">
         <h2 className="gris pt-5">Unete al equipo</h2>
         <p className="text-light">
           ¿Te gustaría formar parte del equipo de Burger House? ¡Trabaja con
           nosotros!. @burgerhouse
         </p>
-        <Link to={'/*'} className='btn btn-outline-light'>Unite</Link>
+        <Link to={'*'} className='btn btn-outline-light'>Unite</Link>
       </section>
       <section className="evento text-center">
         <h2 className="gris pt-5">Tenes un evento</h2>
         <p className="text-light">Cotiza con nosotros. @burgerhouse</p>
         <Link to={'/*'} className='btn btn-outline-light'>Información</Link>
       </section>
+      <div className="nosotrosSection">
       <section className="container text-center">
-        <h3 className="titulo text-light my-4">Nosotros</h3>
-        <Row xs={1} sm={2} md={4} className="g-4 mb-4">
+        <h3 className="titulo py-4">Nosotros</h3>
+        <Row xs={1} sm={2} md={4} className="g-4 py-5">
           <Col>
             <Card>
               <Card.Img variant="top" src={Fran} className='nosotrosFoto'/>
@@ -89,7 +93,7 @@ const AcercaDe = () => {
             </Card>
           </Col>
         </Row>
-        <Row xs={1} sm={2} md={4} className="g-4 mb-5">
+        <Row xs={1} sm={2} md={4} className="g-4 pb-5">
           <Col>
             <Card>
             <Card.Img variant="top" src={Mauro} className='nosotrosFoto'/>
@@ -124,6 +128,7 @@ const AcercaDe = () => {
           </Col>
         </Row>
       </section>
+      </div>
     </div>
   );
 };
