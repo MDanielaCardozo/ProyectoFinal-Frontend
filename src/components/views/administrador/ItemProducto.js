@@ -54,36 +54,36 @@ const ItemProducto = (producto, consultarAPI) => {
   };
 
   return (
-      // {/* <tr>
-      //       <td className="text-black">{idProducto}</td>
-      //       <td className="text-black">{nombreProducto}</td>
-      //       <td className="text-black">{estado}</td>
-      //       <td className="text-black">{precio}</td>
-      //       <td className="text-black">{descripcion}</td>
-      //       <td className="text-black">{categoria}</td>
-      //       <td className="text-black">{imagen}</td>
-      //       <td className="text-black">
-      //           <Button variant="warning" className="me-1">Editar</Button>
-      //           <Button variant="danger" type="submit" onclick={handleDeleteProducto} >Eliminar</Button>
-      //       </td>
-      //     </tr> */}
+      <tr>
+           <td className="text-black">{idProducto}</td>
+            <td className="text-black">{nombreProducto}</td>
+             <td className="text-black">{estado}</td>
+             <td className="text-black">{precio}</td>
+            <td className="text-black">{descripcion}</td>
+            <td className="text-black">{categoria}</td>
+            <td className="text-black">{imagen}</td>
+            <td className="text-black">
+                <Button variant="warning" className="me-1">Editar</Button>
+                <Button variant="danger" type="submit" onclick={handleDeleteProducto} >Eliminar</Button>
+            </td>
+           </tr> 
 
       
-      <tr>
-        <td className="text-black">1</td>
-        <td className="text-black">Hamb clasica</td>
-        <td className="text-black">Disponible</td>
-        <td className="text-black">850</td>
-        <td className="text-black">Tomate, lechuga y aderezos</td>
-        <td className="text-black">Hamburguesa</td>
-        <td className="text-black">pexels</td>
-        <td className="text-black">
-          <Button variant="warning" className="me-1">Editar</Button>
-          <Button variant="danger" type="submit" onclick={handleDeleteProducto}>
-            Eliminar
-          </Button>
-        </td>
-      </tr>
+      // <tr>
+      //   <td className="text-black">1</td>
+      //   <td className="text-black">Hamb clasica</td>
+      //   <td className="text-black">Disponible</td>
+      //   <td className="text-black">850</td>
+      //   <td className="text-black">Tomate, lechuga y aderezos</td>
+      //   <td className="text-black">Hamburguesa</td>
+      //   <td className="text-black">pexels</td>
+      //   <td className="text-black">
+      //     <Button variant="warning" className="me-1">Editar</Button>
+      //     <Button variant="danger" type="submit" onclick={handleDeleteProducto}>
+      //       Eliminar
+      //     </Button>
+      //   </td>
+      // </tr>
     
   );
 };
