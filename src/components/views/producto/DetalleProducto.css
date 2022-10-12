@@ -3,56 +3,64 @@
 * {
   font-family: "Montserrat", sans-serif;
   font-weight: 800;
-  color: white;
 }
 
-.modalImg {
-  max-width: 400px;
-  width: 100%;
+.imagenFondo {
+  background: url('../../imgNosotros/purplewall.jpg') no-repeat center center/cover;
   display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: 100px;
 }
 
-/* .btnCard {
-  margin-left: 100px;
-  margin-bottom: 10px;
-} */
-
-/* img {
-  width: 250px;
-  object-fit: contain;
-} */
-
-.modal {
-    background-color: rgba(0, 0, 0, 0.3);
+.bgCard {
+  background-color: rgba(0, 0, 0, 0.664) !important;
+  margin-top: 100px;
 }
 
-.modalDetalle {
-  background-color: #363982;
-  border-radius: 5px;
+.tituloDetalle {
+  font-weight: 800;
 }
 
-.btnModal {
-  margin-top: 500px;
+.tipografiaDetalle {
+  font-weight: 500;
 }
 
-/* .azul{
-    font-size: 50px;
-    border-radius: 2em;
-    color: white;
-    text-shadow: 0 0 5px #7bacff,
-    0 0 10px #7bacff,
-    0 0 15px #7bacff,
-    0 0 20px #7bacff,
-    0 0 40px #7bacff,
-    0 0 80px #7bacff,
-    0 0 90px #7bacff,
-    0 0 100px #7bacff
-} */
+.imagenDetalle {
+  max-width: 400px;
+}
 
-/* .imagen {
-    max-width: 600px;
-    width: 100%;
-    height: 100px;
-    margin-right: 5px;
-    background-size: cover;
-} */
+/* Media queries */
+
+@media all and (min-width: 992px) and (max-width: 1399px){
+
+  .bgCard {
+    max-width: 1000px !important;
+  }
+}
+
+@media all and (min-width: 761px) and (max-width: 991px){
+
+  .bgCard {
+    max-width: 750px !important;
+  }
+}
+
+@media all and (min-width: 576px) and (max-width: 760px){
+
+  .bgCard {
+    max-width: 450px !important;
+  }
+}
+
+@media  all and (max-width: 575px) {
+
+  .bgCard {
+    max-width: 400px !important;
+  }
+
+}
+  
+
+
+

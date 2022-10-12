@@ -2,10 +2,9 @@ import React from "react";
 import Button from "react-bootstrap/esm/Button";
 import Swal from "sweetalert2";
 
-const ItemCliente = (props) => {
-
+const ItemCliente = ({cliente, consultarAPI}) => {
   // TRAER AL URL DE LA API
-  console.log(props.cliente.estado)
+  const URL = process.env.REACT_APP_API_USUARIOS;
 
   const handleDeleteCliente = () => {
     Swal.fire({
@@ -23,7 +22,7 @@ const ItemCliente = (props) => {
           const parametros = {
             method: "DELETE",
           };
-          const respuesta = await fetch(URL + "/" + props.cliente.id , parametros);
+          const respuesta = await fetch(URL + "/" + cliente._id, parametros);
           if (respuesta.status === 200) {
             Swal.fire(
               "Eliminado",
@@ -48,19 +47,12 @@ const ItemCliente = (props) => {
       
       
        <tr>
-      <td className="text-black">{props.cliente.id}</td>
-      <td className="text-black">{props.cliente.nombre}</td>
-      <td className="text-black">{props.cliente.email}</td>
-      <td className="text-black">{props.cliente.password}</td>
-      <td className="text-black">{props.cliente.estado?"activo":"inactivo"}</td>
-      <td className="text-black">{props.cliente.perfil?"usuario":"admin"}</td>
-            <td className="text-black">
-              <Button variant="warning" className="me-1">Suspender</Button>
-              <Button variant="danger" type="submit" onclick={handleDeleteCliente} >Eliminar</Button>
-            </td> 
-        </tr>
-    
+      <td className="text-black">{cliente.perfil?"Admin":"Cliente"}</td>
+      <td className="text-black"> 
+        <Button variant="warning" className="me-1">Suspender</Button>
+        <Button variant="danger" type="submit" onClick={handleDeleteCliente} >Eliminar</Button>
+      </td>
+    </tr>
   );
 };
 
-export default ItemCliente;

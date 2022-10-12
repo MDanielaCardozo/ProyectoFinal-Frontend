@@ -1,20 +1,14 @@
 import React, { useEffect, useState } from "react";
-import Button from "react-bootstrap/Button";
-import Modal from "react-bootstrap/Modal";
 import { Card, Row, Col, Badge } from "react-bootstrap";
 import "./DetalleProducto.css";
 import Burger from "../../imgDetalle/burger.jpeg";
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const DetalleProducto = () => {
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
   const { id } = useParams();
   console.log(id);
-  const URL = process.env.REACT_API_HAMBURGUESERIA;
+  const URL = process.env.REACT_APP_API_HAMBURGUESERIA;
   const [producto, setProducto] = useState([]);
 
   useEffect(() => {
@@ -32,44 +26,28 @@ const DetalleProducto = () => {
   };
 
   return (
-    <div>
-      <Button variant="primary" onClick={handleShow} className="btnModal">
-        Launch demo modal
-      </Button>
-      <Modal show={show} onHide={handleClose} className="">
-        <Modal.Body className="modalDetalle">
-          <Card className="container my-5 text-bg-dark">
-            <Row className="w-100 py-3">
-              <Col md={6}>
-                <img src={Burger} alt={producto.nombre} className='modalImg'/>
-              </Col>
-              <Col md={6} className="mt-2">
-                <h4>{producto.nombre}Hamburguesa</h4>
-                <hr />
-                <Badge className="azul bg-secondary">promo
-                  {producto.categoria}
-                </Badge>
-                <p className="my-2">{producto.descripcion}fjskfhskjggh</p>
-                <p className="my-2">Precio: ${producto.precio}</p>
-              </Col>
-            </Row>
-          </Card>
-          <Button
-            variant="outline-light me-3"
-            className="azul btnCard"
-            onClick={handleClose}
-          >
-            Cerrar
-          </Button>
-          <Button
-            variant="outline-light"
-            className="azul btnCard"
-            onClick={handleClose}
-          >
-            Comprar
-          </Button>
-        </Modal.Body>
-      </Modal>
+    <div className="imagenFondo">
+      <Card className="container bgCard p-4 mb-3">
+        <Row className="w-100">
+          <Col md={6}>
+            <img src={producto.imagen} alt={producto.nombre} className="w-100 p-3 imagenDetalle" />
+          </Col>
+          <Col md={6} className="p-3">
+            <h3 className="text-light tituloDetalle">{producto.nombre}</h3>
+            <hr />
+            <Badge bg="secondary">{producto.categoria}</Badge>
+            <p className="mt-3 text-light">
+              <b>Precio: ${producto.precio}</b>
+            </p>
+            <p className="text-light tipografiaDetalle">
+              {producto.descripcion}
+            </p>
+            <Link to={`*`} className="btn btn-outline-light">
+              Agregar al carrito
+            </Link>
+          </Col>
+        </Row>
+      </Card>
     </div>
   );
 };

@@ -62,3 +62,7 @@ npm i react-router-dom
 
 ### EmailJS
 npm i @emailjs/browser --save
+
+### Para ejecutar la simulacion de una API 
+
+`json-server --watch db.json --port 3005`

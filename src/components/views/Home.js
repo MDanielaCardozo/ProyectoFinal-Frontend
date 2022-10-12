@@ -61,7 +61,7 @@ const Home = () => {
   return (
     <main>
       <section className="promosPpal">
-        <Row className="rowBrick w-100 m-0" pagination={Pagination}>
+        <Row className="rowBrick w-100 m-0">
           <Col sm={12} lg={3} className="colPromo">
             <img src={promo1} alt="" className="imgPromo" />
           </Col>
@@ -80,7 +80,7 @@ const Home = () => {
           promo3={promo3}
         ></CarouselHome>
       </section>
-      <Row className="rowConocenos w-100 m-0" Pagination>
+      <Row className="rowConocenos w-100 m-0">
         <Col sm={12} md={4} className="colConocenos">
           <div className="w-100 h-100 text-light p-md-3 p-5 text-center text-md-start">
             <h1>Somos expertos</h1>
