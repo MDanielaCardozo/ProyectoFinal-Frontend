@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Form, Card, Button, Alert } from 'react-bootstrap';
 import './registro.css';
-import { cantidadCaracteres, validarclave, validarGmail } from './helperUsuario';
+import { cantidadCaracteres, validarclave, validarEmail } from './helperUsuario';
 import { useNavigate } from 'react-router-dom';
 import Swal from "sweetalert2";
-
+import { sendMail } from './sendMail';
 
 const Registro = ({setUsuarioLogueado}) => {
     const [nombre, setnombre] = useState('');
@@ -29,9 +29,9 @@ const Registro = ({setUsuarioLogueado}) => {
         
         if (
             // chequearExistenciaEmail(usuario, email) &&
-            cantidadCaracteres(nombre, 4, 15) &&
+            cantidadCaracteres(nombre, 4, 70) &&
             validarclave(clave) &&
-            validarGmail(email)
+            validarEmail(email)
         ) {
             setMsjError(false);
             const nuevoUsario = {
@@ -56,6 +56,7 @@ const Registro = ({setUsuarioLogueado}) => {
                     //almaceno el usuario en el state y localstorage
                     localStorage.setItem(process.env.REACT_APP_LOCALSTORAGE, JSON.stringify(data));
                     setUsuarioLogueado(data);
+                    sendMail(nuevoUsario.nombre, nuevoUsario.email);
                     //muestra registro correcto
                     Swal.fire({
                         title: 'Registro exitoso',
@@ -82,7 +83,7 @@ const Registro = ({setUsuarioLogueado}) => {
     };
 
     return (
-        <div className="imagen justify-content-center  px-20  ">
+        <div className="imagen justify-content-center  px-20  py-20 ">
             <Card className="container  rounded bg-form px-0">
                 <div className="bg-dark rounded py-2">
                     <h1 className="title-typography text-center text-light">

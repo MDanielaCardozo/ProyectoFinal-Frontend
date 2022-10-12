@@ -16,7 +16,7 @@ export function validarclave(input) {
         return false;
     }
 }
-export function validarGmail(input) {
+export function validarEmail(input) {
     let patron = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
     if (patron.test(input)) {
         return true;
@@ -31,3 +31,4 @@ export function chequearExistenciaEmail(emailBD) {
         return true;
     }
 }
+

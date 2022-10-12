@@ -3,7 +3,6 @@
 * {
   font-family: "Montserrat", sans-serif;
   font-weight: 800;
-  color: white;
 }
 .title-typography{
   font-family: "Montserrat", sans-serif !important;
@@ -28,7 +27,9 @@
     padding-left: 500px;
     padding-right: 500px;
 }
-
+.py-20{
+    padding-top: 180px;
+}
 /* Celulares */
 @media all and (max-width: 760px) {
     .imagen {
