@@ -54,21 +54,6 @@ const ItemProducto = (producto, consultarAPI) => {
   };
 
   return (
-      // {/* <tr>
-      //       <td className="text-black">{idProducto}</td>
-      //       <td className="text-black">{nombreProducto}</td>
-      //       <td className="text-black">{estado}</td>
-      //       <td className="text-black">{precio}</td>
-      //       <td className="text-black">{descripcion}</td>
-      //       <td className="text-black">{categoria}</td>
-      //       <td className="text-black">{imagen}</td>
-      //       <td className="text-black">
-      //           <Button variant="warning" className="me-1">Editar</Button>
-      //           <Button variant="danger" type="submit" onclick={handleDeleteProducto} >Eliminar</Button>
-      //       </td>
-      //     </tr> */}
-
-      
       <tr>
         <td className="text-black">1</td>
         <td className="text-black">Hamb clasica</td>
@@ -79,7 +64,7 @@ const ItemProducto = (producto, consultarAPI) => {
         <td className="text-black">pexels</td>
         <td className="text-black">
           <Button variant="warning" className="me-1">Editar</Button>
-          <Button variant="danger" type="submit" onclick={handleDeleteProducto}>
+          <Button variant="danger" type="submit" onClick={handleDeleteProducto}>
             Eliminar
           </Button>
         </td>
