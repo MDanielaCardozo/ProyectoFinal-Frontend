@@ -11,6 +11,7 @@ import Error from "./components/views/Error";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Administrador from "./components/views/administrador/Administrador";
 
+
 const App = () => {
   const [usuarioLogueado, setUsuarioLogueado] = useState({});
 
