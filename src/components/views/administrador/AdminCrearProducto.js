@@ -9,7 +9,7 @@ const AdminCrearProducto = () => {
     const [imagen, setImagen] = useState('');
     const [detalleProducto, setDetalleProdcuto] = useState('');
     const [categoria, setCategoria] = useState('');
-    const [estadoProducto, setEstadoProducto] = useState(false);
+    const [estadoProducto, setEstadoProducto] = useState(true);
 
     const URL = process.env.REACT_APP_API_USUARIOS;
     const navegacion = useNavigate();
@@ -101,18 +101,6 @@ const AdminCrearProducto = () => {
                             <option value="hamburguesa">hamburguesas</option>
                             <option value="cerveza">cervezas</option>
                         </Form.Select>
-                    </Form.Group>
-                    <Form.Group className="mb-3">
-                        <Form.Label>Estado *</Form.Label>
-                        <FormSelect
-                            onChange={(e) => setEstadoProducto(e.target.value)}
-                        >
-                            <option value="">Seleccione una opcion</option>
-                            <option value="true">Producto disponible</option>
-                            <option value="false">
-                                Producto no disponible
-                            </option>
-                        </FormSelect>
                     </Form.Group>
                     <Button
                         variant="outline-light"
