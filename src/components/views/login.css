@@ -42,10 +42,14 @@
     flex-direction: column;
 }
 
+.color-texto {
+    color: rgb(255, 227, 191);
+}
+
 /* Celulares */
 @media all and (max-width: 760px) {
-    .rowBrick {
-        background-image: url(../../img/purplewall.jpg);
+    .rowLadrillo {
+        background-image: url(../../img/purplewall-40.jpg);
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
@@ -55,8 +59,8 @@
     }
 /* Tablets */
 @media all and (min-width: 761px) and (max-width: 991px) {
-    .rowBrick {
-        background-image: url(../../img/purplewall.jpg);
+    .rowLadrillo {
+        background-image: url(../../img/purplewall-40.jpg);
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
@@ -65,8 +69,8 @@
     }
 }
 @media all and (min-width: 992px) and (max-width: 1399px) {
-    .rowBrick {
-        background-image: url(../../img/purplewall.jpg);
+    .rowLadrillo {
+        background-image: url(../../img/purplewall-40.jpg);
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
@@ -74,7 +78,7 @@
     }
 }
 @media all and (min-width: 1400px) {
-    .rowBrick {
+    .rowLadrillo {
         background-image: url(../../img/purplewall.jpg);
         background-size: cover;
         background-repeat: no-repeat;

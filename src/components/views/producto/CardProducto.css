@@ -47,6 +47,10 @@
   flex-wrap: wrap;
 }
 
+.cardProdBody h2{
+  font-weight: 800;
+}
+
 .cardPrecio {
   font-weight: 700 !important;
   color: #363982;

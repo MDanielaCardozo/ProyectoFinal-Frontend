@@ -3,7 +3,16 @@ import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faTrash} from '@fortawesome/free-solid-svg-icons';
+import Swal from 'sweetalert2';
 import "./Pedidos.css";
+
+const handleClick = ()=>{
+  Swal.fire(
+    'Muy bien!',
+    'Su producto esta siendo preparado.',
+    'success'
+  )
+}
 
 const Pedidos = () => {
   return (
@@ -34,7 +43,7 @@ const Pedidos = () => {
           </tbody>
         </Table>
           <div className="text-end">
-          <Button variant="primary" className='mt-3'>Proceder a pagar</Button>
+          <Button variant="primary" className='mt-3' onClick={handleClick}>Proceder a pagar</Button>
           </div>
       </div>
     </div>
