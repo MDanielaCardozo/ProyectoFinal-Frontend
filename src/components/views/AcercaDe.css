@@ -99,19 +99,16 @@
     width: 100%;
     height: 270px;
     object-fit: cover;
+   
 }
 
-.card {
+.nosotrosCard:hover{
+    transform: scale(1.04);
     transition: 300ms ease;
-    background-color: rgba(0, 0, 0, 0.3);
 }
 
 .tipografiaCard {
     font-weight: 500;
-}
-
-.card:hover{
-    transform: scale(1.04);
 }
 
 /* Celulares sm */
@@ -128,7 +125,7 @@
         height: 300px;
     }
 
-    .card {
+    .nosotrosCard {
         margin-left: 65px;
         margin-right: 65px;
     }

@@ -61,7 +61,7 @@ const AcercaDe = () => {
         <h3 className="titulo py-4">Nosotros</h3>
         <Row xs={1} sm={2} md={4} className="g-4 py-5">
           <Col>
-            <Card>
+            <Card className="nosotrosCard">
               <Card.Img variant="top" src={Fran} className='nosotrosFoto'/>
               <Card.Body className="bg-dark">
               <Card.Link href="https://github.com/franAndrad" className="gris tipografiaCard">Andrade Francisco</Card.Link>
@@ -69,7 +69,7 @@ const AcercaDe = () => {
             </Card>
           </Col>
           <Col>
-            <Card>
+            <Card className="nosotrosCard">
             <Card.Img variant="top" src={Nico} className='nosotrosFoto'/>
               <Card.Body className="bg-dark">
               <Card.Link href="https://github.com/nicolasandr" className="gris tipografiaCard">Andrade Nicolas</Card.Link>  
@@ -77,7 +77,7 @@ const AcercaDe = () => {
             </Card>
           </Col>
           <Col>
-            <Card>
+            <Card className="nosotrosCard">
             <Card.Img variant="top" src={Dani} className='nosotrosFoto'/>
               <Card.Body className="bg-dark">
               <Card.Link href="https://github.com/MDanielaCardozo" className="gris tipografiaCard">Cardozo Daniela</Card.Link>
@@ -85,7 +85,7 @@ const AcercaDe = () => {
             </Card>
           </Col>
           <Col>
-            <Card>
+            <Card className="nosotrosCard">
             <Card.Img variant="top" src={Carlos} className='nosotrosFoto'/>
               <Card.Body className="bg-dark">
               <Card.Link href="https://github.com/carlosmsx" className="gris tipografiaCard">Escobar Carlos</Card.Link>
@@ -95,7 +95,7 @@ const AcercaDe = () => {
         </Row>
         <Row xs={1} sm={2} md={4} className="g-4 pb-5">
           <Col>
-            <Card>
+            <Card className="nosotrosCard">
             <Card.Img variant="top" src={Mauro} className='nosotrosFoto'/>
               <Card.Body className="bg-dark">
               <Card.Link href="https://github.com/Ao-Rubi" className="gris tipografiaCard">Garcia Mauro Nicolás</Card.Link>
@@ -103,7 +103,7 @@ const AcercaDe = () => {
             </Card>
           </Col>
           <Col>
-            <Card>
+            <Card className="nosotrosCard">
               <Card.Img variant="top" src={Otto} className='nosotrosFoto'/>
               <Card.Body className="bg-dark">
               <Card.Link href="https://github.com/OttoKrautmann" className="gris tipografiaCard">Krautmann Otto</Card.Link>
@@ -111,7 +111,7 @@ const AcercaDe = () => {
             </Card>
           </Col>
           <Col>
-            <Card>
+            <Card className="nosotrosCard">
               <Card.Img variant="top" src={Juan} className='nosotrosFoto'/>
               <Card.Body className="bg-dark">
               <Card.Link href="https://github.com/JuanMeni" className="gris tipografiaCard">Menichetti Juan</Card.Link>
@@ -119,7 +119,7 @@ const AcercaDe = () => {
             </Card>
           </Col>
           <Col>
-            <Card>
+            <Card className="nosotrosCard">
               <Card.Img variant="top" src={Vale} className='nosotrosFoto'/>
               <Card.Body className="bg-dark">
               <Card.Link href="https://github.com/valeormaechea" className="gris tipografiaCard">Ormaechea Valentina</Card.Link>
