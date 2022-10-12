@@ -7,7 +7,7 @@ import "./Pedidos.css";
 
 const Pedidos = () => {
   return (
-    <div className="fondo text-center">
+    <div className="fondo text-center text-dark">
       <h1 className="display-3 text-light">CARRITO DE COMPRAS</h1>
       <div className="tabla container pt-3">
         <Table striped bordered responsive>
@@ -34,6 +34,9 @@ const Pedidos = () => {
 
             {/* tengo que hacer el map */}
           </tbody>
+          <div>
+          <Button variant="primary" className='mt-3 text-end'>Proceder a pagar</Button>{' '}
+          </div>
         </Table>
       </div>
     </div>

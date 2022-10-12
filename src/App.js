@@ -1,7 +1,6 @@
 import DetalleProducto from "./components/views/producto/DetalleProducto";
 import Home from "./components/views/Home";
 import AcercaDe from "./components/views/AcercaDe";
-<<<<<<< HEAD
 import React, { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Menu from "./components/common/Menu";
@@ -11,16 +10,7 @@ import Login from "./components/views/Login";
 import Error from "./components/views/Error";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Administrador from "./components/views/administrador/Administrador";
-=======
-import React, {useState} from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Menu from './components/common/Menu';
-import Footer from './components/common/Footer'
-import Registro from './components/views/Registro';
-import Login from './components/views/Login';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Pedidos from "./components/views/Pedidos";
->>>>>>> pedidosMerge
 
 const App = () => {
   const [usuarioLogueado, setUsuarioLogueado] = useState({});
