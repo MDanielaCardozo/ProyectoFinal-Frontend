@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Menu from "./components/common/Menu";
 import Footer from "./components/common/Footer";
 import Registro from "./components/views/Registro";
+import CrearProducto from "./components/views/administrador/AdminCrearProducto"
 import Login from "./components/views/Login";
 import Error from "./components/views/Error";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -26,6 +27,7 @@ const App = () => {
           <Route exact path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado}/>}/>
           <Route exact path="/registro" element={<Registro setUsuarioLogueado={setUsuarioLogueado}/>} />
           <Route exact path="*" element={<Error/>} />
+          <Route exact path="/crearProducto" element={<CrearProducto/>}/>
         </Routes>
         <Footer />
       </BrowserRouter>
