@@ -48,35 +48,36 @@ const ItemCliente = (cliente, consultarAPI) => {
   };
 
   return (
-    <div>
+    
       <tr>
-        <td>1</td>
-        <td>Otto Krautmann</td>
-        <td>otto@gmail.com</td>
-        <td>Otto1234</td>
-        <td>Activo</td>
-        <td>ni idea que va en perfil</td>
-        <td>
-          <Button variant="warning">Suspender</Button>
+        <td className="text-black">1</td>
+        <td className="text-black">Otto Krautmann</td>
+        <td className="text-black">otto@gmail.com</td>
+        <td className="text-black">Otto1234</td>
+        <td className="text-black">Activo</td>
+        <td className="text-black">ni idea que va en perfil</td>
+        <td className="text-black">
+          <Button variant="warning" className="me-1">Suspender</Button>
           <Button variant="danger" type="submit" onclick={handleDeleteCliente}>
             Eliminar
           </Button>
         </td>
       </tr>
       
-      {/* <tr>
-            <td>{idCliente}</td>
-            <td>{nombreCliente}</td>
-            <td>{mail}</td>
-            <td>{contrasena}</td>
-            <td>{estado}</td>
-            <td>{perfil}</td>
-            <td> */}
-      {/* <Button variant="warning">Suspender</Button> */}
-      {/* <Button variant="danger" type="submit" onclick={handleDeleteCliente} >Eliminar</Button> */}
-      {/* </td>
-          </tr> */}
-    </div>
+      
+      // {/* <tr>
+      //       <td className="text-black">{idCliente}</td>
+      //       <td className="text-black">{nombreCliente}</td>
+      //       <td className="text-black">{mail}</td>
+      //       <td className="text-black">{contrasena}</td>
+      //       <td className="text-black">{estado}</td>
+      //       <td className="text-black">{perfil}</td>
+      //       <td className="text-black"> */}
+      // {/* <Button variant="warning" className="me-1">Suspender</Button> */}
+      // {/* <Button variant="danger" type="submit" onclick={handleDeleteCliente} >Eliminar</Button> */}
+      // {/* </td>
+      //     </tr> */}
+    
   );
 };
 

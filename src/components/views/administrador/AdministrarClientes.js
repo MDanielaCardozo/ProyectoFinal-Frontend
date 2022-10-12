@@ -30,27 +30,29 @@ const AdministrarClientes = () => {
 
   return (
     <div>
-        <p>Lista de clientes</p>
-      <Table striped bordered hover responsive>
+        <p className="text-black">Lista de clientes</p>
+      <Table striped bordered hover responsive >
         <thead>
           <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Mail</th>
-            <th>Contraseña</th>
-            <th>Estado</th>
-            <th>Perfil</th>
-            <th>Acciones</th>
+            <th className="text-black">ID</th>
+            <th className="text-black">Nombre</th>
+            <th className="text-black">Mail</th>
+            <th className="text-black">Contraseña</th>
+            <th className="text-black">Estado</th>
+            <th className="text-black">Perfil</th>
+            <th className="text-black">Acciones</th>
           </tr>
         </thead>
-        <tbody>          
-          {clientes.map((cliente) =>(
-            <ItemCliente
-            key={cliente.idCliente}
-            cliente = {cliente}
-            consultarAPI = {consultarAPI}
-            />
-          ))}
+        <tbody className="text-black">          
+         ///{/* {clientes.map((cliente) =>(
+         ///   <ItemCliente
+         ///   key={cliente.idCliente}
+         ///   cliente = {cliente}
+         ///   consultarAPI = {consultarAPI}
+         ///   />
+         /// ))} */}
+         <ItemCliente/>
+          
         </tbody>
       </Table>
     </div>

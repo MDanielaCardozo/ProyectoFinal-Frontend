@@ -3,6 +3,7 @@ import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
 import ItemProducto from "./ItemProducto";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const AdministrarProductos = () => {
   // ¡¡¡¡¡¡ TRAER URL DE LA API !!!!!!!
@@ -30,14 +31,14 @@ const AdministrarProductos = () => {
 
   return (
     <div>
-      <div>
-        <p>Lista de productos</p>
+      <div className="d-flex justify-content-between">
+        <p className="text-black">Lista de productos</p>
 
         {/* ¡¡¡¡¡¡AGREGAR REDIRECCION AL BOTON DE AGREGAR PRODUCTO!!!!!! */}
 
         <Link
           //  to="/crearProducto"
-          className="btn btn-primary"
+          className="btn btn-primary mb-2"
         >
           Agregar producto
         </Link>
@@ -45,14 +46,14 @@ const AdministrarProductos = () => {
       <Table striped bordered hover responsive>
         <thead>
           <tr>
-            <th>ID</th>
-            <th>Nombre producto</th>
-            <th>Estado</th>
-            <th>Precio</th>
-            <th>Descripción</th>
-            <th>Categoría</th>
-            <th>Imagen</th>
-            <th>Acciones</th>
+            <th className="text-black">ID</th>
+            <th className="text-black">Nombre producto</th>
+            <th className="text-black">Estado</th>
+            <th className="text-black">Precio</th>
+            <th className="text-black">Descripción</th>
+            <th className="text-black">Categoría</th>
+            <th className="text-black">Imagen</th>
+            <th className="text-black">Acciones</th>
           </tr>
         </thead>
         <tbody>
@@ -66,8 +67,7 @@ const AdministrarProductos = () => {
             <ItemProducto
             key = {producto.idProducto}
             producto = {producto}
-            consultarAPI = {consultarAPI}
-            />
+            consultarAPI = {consultarAPI}></ ItemProducto>
           ))} */}
         </tbody>
       </Table>
