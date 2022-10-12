@@ -5,14 +5,12 @@ import "./CardProducto.css";
 import DetalleProducto from "./DetalleProducto";
 
 const CardProducto = (props) => {
+  const [show, setShow] = useState(false);
 
-    const [show, setShow] = useState(false);
-
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   return (
-    <>
     <Col md={4} xl={3} className="mb-5">
       <Card className="h-100 cardProd">
         <Card.Img
@@ -46,9 +44,8 @@ const CardProducto = (props) => {
           </Row>
         </Card.Footer>
       </Card>
+      <DetalleProducto show={show} handleClose={handleClose} />
     </Col>
-    <DetalleProducto show={show} handleClose={handleClose}/>
-    </>
   );
 };
 
