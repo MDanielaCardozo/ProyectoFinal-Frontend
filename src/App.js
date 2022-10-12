@@ -12,56 +12,26 @@ import Error from "./components/views/Error";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Administrador from "./components/views/administrador/Administrador";
 
-
 const App = () => {
   const [usuarioLogueado, setUsuarioLogueado] = useState({});
 
   return (
-      <div>
-          <BrowserRouter>
-              <Menu />
-              <Routes>
-                  <Route exact path="*" element={<Error></Error>} />
-                  <Route exact path="/" element={<Home></Home>}></Route>
-                  <Route
-                      exact
-                      path="/detalleProducto/:id"
-                      element={<DetalleProducto></DetalleProducto>}
-                  ></Route>
-                  <Route
-                      exact
-                      path="/acercaDe"
-                      element={<AcercaDe></AcercaDe>}
-                  ></Route>
-                  {/* <Route exact path="*" element={<Error404></Error404>}></Route> */}
-                  <Route
-                      exact
-                      path="/registro"
-                      element={
-                          <Registro setUsuarioLogueado={setUsuarioLogueado} />
-                      }
-                  ></Route>
-                  <Route
-                      exact
-                      path="/crearProducto"
-                      element={<CrearProducto></CrearProducto>}
-                  ></Route>
-                  <Route
-                      exact
-                      path="/login"
-                      element={
-                          <Login setUsuarioLogueado={setUsuarioLogueado} />
-                      }
-                  ></Route>
-                  <Route
-                      exact
-                      path="/administrador"
-                      element={<Administrador />}
-                  ></Route>
-              </Routes>
-              <Footer />
-          </BrowserRouter>
-      </div>
+    <div>
+      <BrowserRouter>
+        <Menu usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado} />
+        <Routes>
+          <Route exact path="/" element={<Home/>} />
+          <Route exact path="/administrador" element={<Administrador/>} />
+          <Route exact path="/acercaDe" element={<AcercaDe/>} />
+          <Route exact path="/detalleProducto/:id" element={<DetalleProducto/>} />
+          <Route exact path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado}/>}/>
+          <Route exact path="/registro" element={<Registro setUsuarioLogueado={setUsuarioLogueado}/>} />
+          <Route exact path="*" element={<Error/>} />
+          <Route exact path="/crearProducto" element={<CrearProducto/>}/>
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+    </div>
   );
 };
 
