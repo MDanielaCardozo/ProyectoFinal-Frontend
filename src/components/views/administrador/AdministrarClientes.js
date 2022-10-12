@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
 import ItemCliente from "./ItemCliente";
@@ -10,28 +10,28 @@ const AdministrarClientes = () => {
 
   const [clientes, setClientes] = useState([]);
 
-  useEffect(()=>{
+  useEffect(() => {
     consultarAPI();
-  },[])
+  }, []);
 
-  const consultarAPI = async () =>{
+  const consultarAPI = async () => {
     try {
-      const respuesta = await fetch (URL);
+      const respuesta = await fetch(URL);
       const listaClientes = await respuesta.json();
       setClientes(listaClientes);
-    }catch (error){
+    } catch (error) {
       Swal.fire({
         icon: "error",
         title: "Algo falló",
         text: "Intenta esto más tarde",
       });
     }
-  }
+  };
 
   return (
     <div>
-        <p className="text-black">Lista de clientes</p>
-      <Table striped bordered hover responsive >
+      <p className="text-black">Lista de clientes</p>
+      <Table striped bordered hover responsive>
         <thead>
           <tr>
             <th className="text-black">ID</th>
@@ -43,16 +43,15 @@ const AdministrarClientes = () => {
             <th className="text-black">Acciones</th>
           </tr>
         </thead>
-        <tbody className="text-black">          
-         ///{/* {clientes.map((cliente) =>(
-         ///   <ItemCliente
-         ///   key={cliente.idCliente}
-         ///   cliente = {cliente}
-         ///   consultarAPI = {consultarAPI}
-         ///   />
-         /// ))} */}
-         <ItemCliente/>
-          
+        <tbody className="text-black">
+          {clientes.map((cliente) => (
+            <ItemCliente
+              key={cliente.idCliente}
+              cliente={cliente}
+              consultarAPI={consultarAPI}
+            />
+          ))}
+          <ItemCliente />
         </tbody>
       </Table>
     </div>
