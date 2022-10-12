@@ -17,3 +17,12 @@
 .card-effect:hover{
        transform: none; 
 }
+/* Celulares */
+@media all and (max-width: 1399px){
+   
+    .px-10 {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+
