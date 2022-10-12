@@ -16,19 +16,14 @@ const App = () => {
   return (
     <div>
       <BrowserRouter>
-      <Menu/>
+      <Menu usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado} />
         <Routes>
+          <Route exact path="/" element={<Home></Home>} />
+          <Route exact path="/detalleProducto/:id" element={<DetalleProducto></DetalleProducto>} />
+          <Route exact path="/acercaDe" element={<AcercaDe></AcercaDe>} />
+          <Route exact path="/registro" element={<Registro setUsuarioLogueado={setUsuarioLogueado}/>} />
+          <Route exact path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado}/>} />
           <Route exact path="*" element={<Error></Error>} />
-          <Route exact path="/" element={<Home></Home>}></Route>
-          <Route
-            exact
-            path="/detalleProducto/:id"
-            element={<DetalleProducto></DetalleProducto>}
-          ></Route>
-          <Route exact path="/acercaDe" element={<AcercaDe></AcercaDe>}></Route>
-          {/* <Route exact path="*" element={<Error404></Error404>}></Route> */}
-          <Route exact path="/registro" element={<Registro setUsuarioLogueado={setUsuarioLogueado}/>}></Route>
-            <Route exact path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado}/>}></Route>
         </Routes>
         <Footer/>
       </BrowserRouter>
