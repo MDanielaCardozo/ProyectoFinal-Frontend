@@ -21,7 +21,7 @@ a {
 .rowBrick {
   background-image: url(../../img/purplewall.jpg);
   background-size: cover;
-  padding: 30px;
+  padding: 130px 30px 30px 30px;
   min-height: 600px;
   justify-content: space-around;
 }
