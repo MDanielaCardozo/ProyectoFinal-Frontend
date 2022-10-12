@@ -5,10 +5,25 @@
   font-weight: 800;
 }
 
-.modalImg {
-  max-width: 400px;
-  width: 100%;
+.imagenFondo {
+  background: url('../../imgNosotros/purplewall.jpg') no-repeat center center/cover;
   display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: 100px;
+}
+
+.bgCard {
+  background-color: rgba(0, 0, 0, 0.664) !important;
+  margin-top: 100px;
+}
+
+.tituloDetalle {
+  font-weight: 800;
+}
+
+.tipografiaDetalle {
+  font-weight: 500;
 }
 
 /* .btnCard {
