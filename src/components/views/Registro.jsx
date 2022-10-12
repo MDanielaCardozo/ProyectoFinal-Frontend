@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Card, Button, Alert } from 'react-bootstrap';
 import './registro.css';
-import { cantidadCaracteres, validarclave, validarGmail } from './helperUsuario';
+import { cantidadCaracteres, validarclave, validarEmail } from './helperUsuario';
 import { useNavigate } from 'react-router-dom';
 import Swal from "sweetalert2";
 import { sendMail } from './sendMail';
@@ -29,9 +29,9 @@ const Registro = ({setUsuarioLogueado}) => {
         
         if (
             // chequearExistenciaEmail(usuario, email) &&
-            cantidadCaracteres(nombre, 4, 15) &&
+            cantidadCaracteres(nombre, 4, 70) &&
             validarclave(clave) &&
-            validarGmail(email)
+            validarEmail(email)
         ) {
             setMsjError(false);
             const nuevoUsario = {
