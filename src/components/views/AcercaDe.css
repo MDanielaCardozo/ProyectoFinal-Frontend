@@ -27,13 +27,13 @@
 }
 
 .carouselDos {
-    background: url('../imgNosotros/laugh.webp') no-repeat bottom center/cover;
+    background: url('../imgNosotros/laugh.jpeg') no-repeat bottom center/cover;
     width: 100%;
     height: 400px;
 }
 
 .carouselTres {
-    background: url('../imgNosotros/kiss.webp') no-repeat bottom center/cover;
+    background: url('../imgNosotros/neonkiss.jpeg') no-repeat bottom center/cover;
     width: 100%;
     height: 400px;
 }
