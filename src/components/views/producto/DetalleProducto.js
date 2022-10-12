@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Card, Row, Col, Badge } from "react-bootstrap";
 import "./DetalleProducto.css";
 import Burger from "../../imgDetalle/burger.jpeg";
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 const DetalleProducto = () => {
@@ -33,7 +33,7 @@ const DetalleProducto = () => {
             <img src={producto.nombre} alt={producto.nombre} className="w-100 p-3" />
           </Col>
           <Col md={6} className="p-3">
-            <h3 className="text-light tituloDetalle">Hamburguesa{producto.nombre}</h3>
+            <h3 className="text-light tituloDetalle">{producto.nombre}</h3>
             <hr />
             <Badge bg="secondary">{producto.categoria}</Badge>
             <p className="mt-3 text-light">
