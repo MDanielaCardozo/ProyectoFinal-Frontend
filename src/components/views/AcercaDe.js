@@ -16,12 +16,14 @@ import { Link } from "react-router-dom";
 
 const AcercaDe = () => {
   return (
-    <div className="imagenFondo">
+    <div>
+      <section className="imagenFondo">
       <Carousel className="mt-5 container carousel">
         <Carousel.Item className="carouselUno"></Carousel.Item>
         <Carousel.Item className="carouselDos"></Carousel.Item>
         <Carousel.Item className="carouselTres"></Carousel.Item>
       </Carousel>
+      
       <article className="articulo text-center container table-responsive">
         <h2 className="azul my-5">JUNTOS SOMOS BURGER HOUSE</h2>
         <p className="text-light">
@@ -40,27 +42,29 @@ const AcercaDe = () => {
           cada vez.
         </p>
       </article>
+      </section>
       <section className="equipo text-center">
         <h2 className="gris pt-5">Unete al equipo</h2>
         <p className="text-light">
           ¿Te gustaría formar parte del equipo de Burger House? ¡Trabaja con
           nosotros!. @burgerhouse
         </p>
-        <Link to={'/*'} className='btn btn-outline-light'>Unite</Link>
+        <Link to={'*'} className='btn btn-outline-light'>Unite</Link>
       </section>
       <section className="evento text-center">
         <h2 className="gris pt-5">Tenes un evento</h2>
         <p className="text-light">Cotiza con nosotros. @burgerhouse</p>
         <Link to={'/*'} className='btn btn-outline-light'>Información</Link>
       </section>
+      <div className="nosotrosSection">
       <section className="container text-center">
-        <h3 className="titulo text-light my-4">Nosotros</h3>
-        <Row xs={1} sm={2} md={4} className="g-4 mb-4">
+        <h3 className="titulo py-4">Nosotros</h3>
+        <Row xs={1} sm={2} md={4} className="g-4 py-5">
           <Col>
             <Card>
               <Card.Img variant="top" src={Fran} className='nosotrosFoto'/>
               <Card.Body className="bg-dark">
-              <Card.Link href="https://github.com/franAndrad" className="gris">Andrade Francisco</Card.Link>
+              <Card.Link href="https://github.com/franAndrad" className="gris tipografiaCard">Andrade Francisco</Card.Link>
               </Card.Body>
             </Card>
           </Col>
@@ -68,7 +72,7 @@ const AcercaDe = () => {
             <Card>
             <Card.Img variant="top" src={Nico} className='nosotrosFoto'/>
               <Card.Body className="bg-dark">
-              <Card.Link href="https://github.com/nicolasandr" className="gris">Andrade Nicolas</Card.Link>  
+              <Card.Link href="https://github.com/nicolasandr" className="gris tipografiaCard">Andrade Nicolas</Card.Link>  
               </Card.Body>
             </Card>
           </Col>
@@ -76,7 +80,7 @@ const AcercaDe = () => {
             <Card>
             <Card.Img variant="top" src={Dani} className='nosotrosFoto'/>
               <Card.Body className="bg-dark">
-              <Card.Link href="https://github.com/MDanielaCardozo" className="gris">Cardozo Daniela</Card.Link>
+              <Card.Link href="https://github.com/MDanielaCardozo" className="gris tipografiaCard">Cardozo Daniela</Card.Link>
               </Card.Body>
             </Card>
           </Col>
@@ -84,17 +88,17 @@ const AcercaDe = () => {
             <Card>
             <Card.Img variant="top" src={Carlos} className='nosotrosFoto'/>
               <Card.Body className="bg-dark">
-              <Link href="https://github.com/carlosmsx" className="gris">Escobar Carlos</Link>
+              <Card.Link href="https://github.com/carlosmsx" className="gris tipografiaCard">Escobar Carlos</Card.Link>
               </Card.Body>
             </Card>
           </Col>
         </Row>
-        <Row xs={1} sm={2} md={4} className="g-4 mb-5">
+        <Row xs={1} sm={2} md={4} className="g-4 pb-5">
           <Col>
             <Card>
             <Card.Img variant="top" src={Mauro} className='nosotrosFoto'/>
               <Card.Body className="bg-dark">
-              <Card.Link href="https://github.com/Ao-Rubi" className="gris">Garcia Mauro Nicolás</Card.Link>
+              <Card.Link href="https://github.com/Ao-Rubi" className="gris tipografiaCard">Garcia Mauro Nicolás</Card.Link>
               </Card.Body>
             </Card>
           </Col>
@@ -102,7 +106,7 @@ const AcercaDe = () => {
             <Card>
               <Card.Img variant="top" src={Otto} className='nosotrosFoto'/>
               <Card.Body className="bg-dark">
-              <Card.Link href="https://github.com/OttoKrautmann" className="gris">Krautmann Otto</Card.Link>
+              <Card.Link href="https://github.com/OttoKrautmann" className="gris tipografiaCard">Krautmann Otto</Card.Link>
               </Card.Body>
             </Card>
           </Col>
@@ -110,7 +114,7 @@ const AcercaDe = () => {
             <Card>
               <Card.Img variant="top" src={Juan} className='nosotrosFoto'/>
               <Card.Body className="bg-dark">
-              <Card.Link href="https://github.com/JuanMeni" className="gris">Menichetti Juan</Card.Link>
+              <Card.Link href="https://github.com/JuanMeni" className="gris tipografiaCard">Menichetti Juan</Card.Link>
               </Card.Body>
             </Card>
           </Col>
@@ -118,12 +122,13 @@ const AcercaDe = () => {
             <Card>
               <Card.Img variant="top" src={Vale} className='nosotrosFoto'/>
               <Card.Body className="bg-dark">
-              <Card.Link href="https://github.com/valeormaechea" className="gris">Ormaechea Valentina</Card.Link>
+              <Card.Link href="https://github.com/valeormaechea" className="gris tipografiaCard">Ormaechea Valentina</Card.Link>
               </Card.Body>
             </Card>
           </Col>
         </Row>
       </section>
+      </div>
     </div>
   );
 };

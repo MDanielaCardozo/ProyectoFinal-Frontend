@@ -2,14 +2,13 @@
 * {
   font-family: "Montserrat", sans-serif;
   font-weight: 800;
-  color: white;
   margin: 0;
   padding: 0;
 }
 
 .titulo {
   font-family: "Montserrat", sans-serif !important;
-  font-weight: 500;
+  font-weight: 800;
   font-size: 100px;
 }
 
@@ -18,7 +17,7 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    padding-top: 200px;
+    padding-top: 100px;
 }
 
 .carouselUno {
@@ -28,13 +27,13 @@
 }
 
 .carouselDos {
-    background: url('../imgNosotros/laugh.webp') no-repeat bottom center/cover;
+    background: url('../imgNosotros/laugh.jpeg') no-repeat bottom center/cover;
     width: 100%;
     height: 400px;
 }
 
 .carouselTres {
-    background: url('../imgNosotros/kiss.webp') no-repeat bottom center/cover;
+    background: url('../imgNosotros/neonkiss.jpeg') no-repeat bottom center/cover;
     width: 100%;
     height: 400px;
 }
@@ -80,7 +79,7 @@
     background: url('../imgNosotros/equipo.jpeg') no-repeat center center/cover;
     width: 100%;
     height: 250px;
-    margin-top: 100px;
+    margin-top: 0;
     
 }
 
@@ -88,7 +87,12 @@
     background: url('../imgNosotros/evento.jpeg') no-repeat bottom center/cover;
     width: 100%;
     height: 250px;
-    margin-bottom: 90px;
+    
+}
+
+.nosotrosSection {
+    background-color: #84358d;
+    margin: 0;
 }
 
 .nosotrosFoto {
@@ -100,6 +104,10 @@
 .card {
     transition: 300ms ease;
     background-color: rgba(0, 0, 0, 0.3);
+}
+
+.tipografiaCard {
+    font-weight: 500;
 }
 
 .card:hover{
@@ -127,7 +135,7 @@
 
     .titulo {
         font-family: "Montserrat", sans-serif !important;
-        font-weight: 500;
+        font-weight: 800;
         font-size: 3rem;
       }
 

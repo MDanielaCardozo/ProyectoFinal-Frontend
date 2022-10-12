@@ -86,7 +86,7 @@ const Login = ({setUsuarioLogueado}) => {
 
     return (
         <section className="container-fluid">
-            <div className="row rowBrick">
+            <div className="row rowLadrillo">
                 <article className="col-12 col-md-6 bg-login px-5">
                     <h3 className="display-6 mt-5">Ingrese su email y contraseña</h3>
                     {/* <hr /> */}

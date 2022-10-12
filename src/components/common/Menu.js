@@ -25,7 +25,7 @@ function CollapsibleExample({ usuarioLogueado, setUsuarioLogueado }) {
             <img
               alt=""
             src={Logo}
-              width="150px"
+              width="100px"
               height="auto"
               className="logoPeq"
             />{' '}
@@ -36,7 +36,7 @@ function CollapsibleExample({ usuarioLogueado, setUsuarioLogueado }) {
             <img
               alt="Logo del restaurante"
             src={Logo}
-              width="180"
+              width="100"
               height="auto"
               className="my-0 py-0 logoGran"
             />{' '}
@@ -47,7 +47,7 @@ function CollapsibleExample({ usuarioLogueado, setUsuarioLogueado }) {
           {usuarioLogueado.nombre ? 
           (
             <>
-            <NavLink end to='/' className='nav-item nav-link fs-6 px-3 navLetra boton text-end'>ADMINISTRACION</NavLink>
+            <NavLink end to='/administrador' className='nav-item nav-link fs-6 px-3 navLetra boton text-end'>ADMINISTRACION</NavLink>
             <NavLink end to='/pedidos' className='nav-item nav-link fs-6 px-3 navLetra boton text-end'><FontAwesomeIcon icon={faCartShopping}/></NavLink>
             <Button as={Link} className='nav-item nav-link fs-6 px-3 navLetra boton text-end' onClick={logout}>LOGOUT</Button>
             </>
