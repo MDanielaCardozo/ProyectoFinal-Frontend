@@ -88,7 +88,7 @@ const AcercaDe = () => {
             <Card>
             <Card.Img variant="top" src={Carlos} className='nosotrosFoto'/>
               <Card.Body className="bg-dark">
-              <Link href="https://github.com/carlosmsx" className="gris tipografiaCard">Escobar Carlos</Link>
+              <Card.Link href="https://github.com/carlosmsx" className="gris tipografiaCard">Escobar Carlos</Card.Link>
               </Card.Body>
             </Card>
           </Col>
