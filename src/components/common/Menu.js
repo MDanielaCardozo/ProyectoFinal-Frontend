@@ -30,14 +30,14 @@ function CollapsibleExample() {
               width="100"
               height="auto"
               className="my-0 py-0 logoGran"
-            />{' '}
+            />
           </div>
           <Nav className="ms-auto">
           <NavLink to='/' className='nav-item nav-link fs-6 px-3 navLetra boton text-end'>INICIO</NavLink>
-          <NavLink end to='/acercaDe' className='nav-item nav-link fs-6 px-3 navLetra boton text-end'>ACERCA DE</NavLink>
-          <NavLink end to='/administrador' className='nav-item nav-link fs-6 px-3 navLetra boton text-end'>ADMINISTRACION</NavLink>
-          <NavLink end to='/login' className='nav-item nav-link fs-6 px-3 navLetra boton text-end'><FontAwesomeIcon icon={faUser}/></NavLink>
-          <NavLink end to='/Pedidos' className='nav-item nav-link fs-6 px-3 navLetra boton text-end'><FontAwesomeIcon icon={faCartShopping}/></NavLink>
+          <NavLink to='/acercaDe' className='nav-item nav-link fs-6 px-3 navLetra boton text-end'>ACERCA DE</NavLink>
+          <NavLink to='/administrador' className='nav-item nav-link fs-6 px-3 navLetra boton text-end'>ADMINISTRACION</NavLink>
+          <NavLink to='/login' className='nav-item nav-link fs-6 px-3 navLetra boton text-end'><FontAwesomeIcon icon={faUser}/></NavLink>
+          <NavLink to='/Pedidos' className='nav-item nav-link fs-6 px-3 navLetra boton text-end'><FontAwesomeIcon icon={faCartShopping}/></NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>

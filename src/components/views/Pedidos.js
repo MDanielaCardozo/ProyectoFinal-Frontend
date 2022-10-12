@@ -21,22 +21,20 @@ const Pedidos = () => {
             </tr>
           </thead>
           <tbody>
+            {/* ejemplo */}
             <tr>
               <td>1</td>
               <td>CheesBurger</td>
-              <td></td>
-              <td>$</td>
+              <td>1</td>
+              <td>$850</td>
               <td>
               <Button variant="danger"><FontAwesomeIcon className="botont" icon={faTrash}/></Button>{' '}
               </td>
             </tr>
-
-
-            {/* tengo que hacer el map */}
           </tbody>
         </Table>
           <div className="text-end">
-          <Button variant="primary" className='mt-3'>Proceder a pagar</Button>{' '}
+          <Button variant="primary" className='mt-3'>Proceder a pagar</Button>
           </div>
       </div>
     </div>
