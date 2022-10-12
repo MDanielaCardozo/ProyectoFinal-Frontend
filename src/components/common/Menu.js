@@ -16,7 +16,7 @@ function CollapsibleExample() {
             <img
               alt=""
             src={Logo}
-              width="150px"
+              width="100px"
               height="auto"
               className="logoPeq"
             />{' '}
@@ -27,7 +27,7 @@ function CollapsibleExample() {
             <img
               alt="Logo del restaurante"
             src={Logo}
-              width="180"
+              width="100"
               height="auto"
               className="my-0 py-0 logoGran"
             />{' '}
