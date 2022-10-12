@@ -1,9 +1,11 @@
 .bg-gris {
-    background-color: #ece6e6;
+    background-color: #1b0747bd;
+    /* background-color: rgba(0, 0, 0, 0.664) !important; */
 }
 
 .bg-login {
-    background-color: hsl(33, 41%, 95%);
+    /* background-color: hsl(33, 41%, 95%); */
+    background-color: rgba(0, 0, 0, 0.658) !important;
 }
 
 .custom-input {
@@ -25,15 +27,62 @@
 }
 
 .bg-grupo {
-    background-color: #ffffff;
+    /* background-color: #ffffff; */
+    background-color: rgba(0, 0, 0, 0.664) !important;
     padding: 8px;
     border-radius: 10px;
 }
 
-.rowBrick {
+.imagen {
+    /* background-image: url(https://images.pexels.com/photos/159291/beer-machine-alcohol-brewery-159291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1); */
     background-image: url(../../img/purplewall.jpg);
     background-size: cover;
-    padding: 30px;
-    min-height: 600px;
-    justify-content: space-around;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.color-texto {
+    color: rgb(255, 227, 191);
+}
+
+/* Celulares */
+@media all and (max-width: 760px) {
+    .rowLadrillo {
+        background-image: url(../../img/purplewall-40.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        padding: 20px;
+        padding-top: 200px;
+    }
+    }
+/* Tablets */
+@media all and (min-width: 761px) and (max-width: 991px) {
+    .rowLadrillo {
+        background-image: url(../../img/purplewall-40.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        padding: 20px;
+        padding-top: 200px;
+    }
+}
+@media all and (min-width: 992px) and (max-width: 1399px) {
+    .rowLadrillo {
+        background-image: url(../../img/purplewall-40.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        padding: 190px 70px 10px 70px;
+    }
+}
+@media all and (min-width: 1400px) {
+    .rowLadrillo {
+        background-image: url(../../img/purplewall.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        padding: 190px 200px 10px 200px;
+    }
 }

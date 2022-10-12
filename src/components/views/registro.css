@@ -1,0 +1,56 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;800;900&display=swap');
+* {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+}
+.title-typography{
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 600;
+}
+.imagen {
+    /* background-image: url(https://images.pexels.com/photos/159291/beer-machine-alcohol-brewery-159291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1); */
+    background-image: url(../../img/purplewall.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.bg-form {
+    background-color: rgba(0, 0, 0, 0.664) !important;
+}
+.px-20 {
+    padding-left: 500px;
+    padding-right: 500px;
+}
+.py-20{
+    padding-top: 180px;
+}
+/* Celulares */
+@media all and (max-width: 760px) {
+    .imagen {
+        background-position-x: 75%;
+        background-position-y: 100%;
+    }
+    .px-20 {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+/* Tablets */
+@media all and (min-width: 761px) and (max-width: 991px) {
+    .px-20 {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+}
+@media all and (min-width: 992px) and (max-width: 1399px) {
+    .px-20 {
+        padding-left: 300px;
+        padding-right: 300px;
+    }
+}

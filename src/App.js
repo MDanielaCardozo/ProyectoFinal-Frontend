@@ -1,29 +1,35 @@
-import React, { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Menu from './components/common/Menu';
-import Footer from './components/common/Footer';import AcercaDe from "./components/views/AcercaDe";
 import DetalleProducto from "./components/views/producto/DetalleProducto";
 import Home from "./components/views/Home";
-import Login from './components/views/Login';
+import AcercaDe from "./components/views/AcercaDe";
+import React, { useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Menu from "./components/common/Menu";
+import Footer from "./components/common/Footer";
+import Registro from "./components/views/Registro";
+import Login from "./components/views/Login";
+import Error from "./components/views/Error";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Administrador from "./components/views/administrador/Administrador";
 
 const App = () => {
   const [usuarioLogueado, setUsuarioLogueado] = useState({});
 
   return (
-    <body>
+    <div>
       <BrowserRouter>
-        <Menu></Menu>
+        <Menu usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado} />
         <Routes>
-          <Route exact path="/" element={<Home></Home>}></Route>
-          <Route exact path="/login" element={<Login></Login>} />
-          <Route exact path="/detalleProducto/:id" element={<DetalleProducto></DetalleProducto>} ></Route>
-          <Route exact path="/acercaDe" element={<AcercaDe></AcercaDe>}></Route>
-          {/* <Route exact path="*" element={<Error404></Error404>}></Route> */}
+          <Route exact path="/" element={<Home/>} />
+          <Route exact path="/administrador" element={<Administrador/>} />
+          <Route exact path="/acercaDe" element={<AcercaDe/>} />
+          <Route exact path="/detalleProducto/:id" element={<DetalleProducto/>} />
+          <Route exact path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado}/>}/>
+          <Route exact path="/registro" element={<Registro setUsuarioLogueado={setUsuarioLogueado}/>} />
+          <Route exact path="*" element={<Error/>} />
         </Routes>
-        <Footer></Footer>
+        <Footer />
       </BrowserRouter>
-    </body>
+    </div>
   );
 };
 
