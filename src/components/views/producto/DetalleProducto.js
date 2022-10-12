@@ -7,12 +7,7 @@ import Burger from "../../imgDetalle/burger.jpeg";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 
-const DetalleProducto = () => {
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
+const DetalleProducto = ({ show, handleClose }) => {
   const { id } = useParams();
   console.log(id);
   const URL = process.env.REACT_API_HAMBURGUESERIA;
@@ -34,9 +29,6 @@ const DetalleProducto = () => {
 
   return (
     <div>
-      <Button variant="primary" onClick={handleShow} className="btnModal">
-        Launch demo modal
-      </Button>
       <Modal show={show} onHide={handleClose} className="">
         <Modal.Body className="modalDetalle">
           <Card className="container my-5 text-bg-dark">
