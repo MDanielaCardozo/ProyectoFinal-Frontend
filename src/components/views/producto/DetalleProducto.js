@@ -30,7 +30,7 @@ const DetalleProducto = () => {
       <Card className="container bgCard p-4 mb-3">
         <Row className="w-100">
           <Col md={6}>
-            <img src={producto.imagen} alt={producto.nombre} className="w-100 p-3" />
+            <img src={producto.imagen} alt={producto.nombre} className="w-100 p-3 imagenDetalle" />
           </Col>
           <Col md={6} className="p-3">
             <h3 className="text-light tituloDetalle">{producto.nombre}</h3>

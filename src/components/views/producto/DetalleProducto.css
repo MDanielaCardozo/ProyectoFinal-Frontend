@@ -26,47 +26,41 @@
   font-weight: 500;
 }
 
-/* .btnCard {
-  margin-left: 100px;
-  margin-bottom: 10px;
-} */
-
-/* img {
-  width: 250px;
-  object-fit: contain;
-} */
-
-.modal {
-    background-color: rgba(0, 0, 0, 0.3);
+.imagenDetalle {
+  max-width: 400px;
 }
 
-.modalDetalle {
-  background-color: #363982;
-  border-radius: 5px;
+/* Media queries */
+
+@media all and (min-width: 992px) and (max-width: 1399px){
+
+  .bgCard {
+    max-width: 1000px !important;
+  }
 }
 
-.btnModal {
-  margin-top: 500px;
+@media all and (min-width: 761px) and (max-width: 991px){
+
+  .bgCard {
+    max-width: 750px !important;
+  }
 }
 
-/* .azul{
-    font-size: 50px;
-    border-radius: 2em;
-    color: white;
-    text-shadow: 0 0 5px #7bacff,
-    0 0 10px #7bacff,
-    0 0 15px #7bacff,
-    0 0 20px #7bacff,
-    0 0 40px #7bacff,
-    0 0 80px #7bacff,
-    0 0 90px #7bacff,
-    0 0 100px #7bacff
-} */
+@media all and (min-width: 576px) and (max-width: 760px){
 
-/* .imagen {
-    max-width: 600px;
-    width: 100%;
-    height: 100px;
-    margin-right: 5px;
-    background-size: cover;
-} */
+  .bgCard {
+    max-width: 450px !important;
+  }
+}
+
+@media  all and (max-width: 575px) {
+
+  .bgCard {
+    max-width: 400px !important;
+  }
+
+}
+  
+
+
+
