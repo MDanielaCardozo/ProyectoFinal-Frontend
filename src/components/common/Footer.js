@@ -11,6 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons'
 import Logo from '../../img/logoLed.png'
 import './Footer.css';
+import 'mdb-react-ui-kit/dist/css/mdb.min.css'
 
 const Footer = () => {
   return (
@@ -29,14 +30,13 @@ const Footer = () => {
                             //   height="auto"
                             //   className="my-0 py-0 ps-auto pe-5"
                             className="logoImg"
-                          />{' '}
+                          />
                       </MDBCol>
 
                       <MDBCol md="2" lg="2" xl="2" className="mx-auto mb-4">
                           <h6 className=" fw-bold mb-4 fs-5">Conócenos</h6>
                           <p>
                               <Link
-                                  end
                                   to="/"
                                   className="fs-6 text-reset subrayado"
                               >
@@ -45,7 +45,6 @@ const Footer = () => {
                           </p>
                           <p>
                               <Link
-                                  end
                                   to="/"
                                   className="fs-6 text-reset subrayado"
                               >
@@ -54,7 +53,6 @@ const Footer = () => {
                           </p>
                           <p>
                               <Link
-                                  end
                                   to="/"
                                   className="fs-6 text-reset subrayado"
                               >
@@ -63,7 +61,6 @@ const Footer = () => {
                           </p>
                           <p>
                               <Link
-                                  end
                                   to="/"
                                   className="fs-6 text-reset subrayado"
                               >
@@ -72,7 +69,6 @@ const Footer = () => {
                           </p>
                           <p>
                               <Link
-                                  end
                                   to="/"
                                   className="fs-6 text-reset subrayado"
                               >
@@ -81,11 +77,11 @@ const Footer = () => {
                           </p>
                       </MDBCol>
 
-                      <MDBCol md="3" lg="2" xl="2" className="mx-auto mb-4 text-center">
+                      <MDBCol md="3" lg="2" xl="2" className="mx-auto mb-4">
                           <h6 className="fw-bold mb-4 fs-5">Mi cuenta</h6>
                           <p>
                               <Link
-                                  end
+                                  
                                   to="/"
                                   className="fs-6 text-reset subrayado"
                               >
@@ -94,7 +90,7 @@ const Footer = () => {
                           </p>
                           <p>
                               <Link
-                                  end
+                                  
                                   to="/"
                                   className="fs-6 text-reset subrayado"
                               >
@@ -103,7 +99,7 @@ const Footer = () => {
                           </p>
                           <p>
                               <Link
-                                  end
+                                  
                                   to="/"
                                   className="fs-6 text-reset subrayado"
                               >
@@ -121,7 +117,7 @@ const Footer = () => {
                           <h6 className="fw-bold mb-4 fs-5">Redes sociales</h6>
                           <p>
                               <Link
-                                  end
+                                  
                                   to="/"
                                   className="fs-6 text-reset subrayado"
                               >
@@ -130,17 +126,17 @@ const Footer = () => {
                           </p>
                           <p>
                               <Link
-                                  end
+                                  
                                   to="/"
                                   className="fs-6 text-reset subrayado"
                               >
-                                  <FontAwesomeIcon icon={faInstagram} />{' '}
+                                  <FontAwesomeIcon icon={faInstagram} />
                                   Instagram
                               </Link>
                           </p>
                           <p>
                               <Link
-                                  end
+                                  
                                   to="/"
                                   className="fs-6 text-reset subrayado"
                               >
