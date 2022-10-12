@@ -13,7 +13,7 @@ import "./Menu.css"
 
 function CollapsibleExample() {
   return (
-    <Navbar collapseOnSelect className="navbg gradiente mt-0 pt-0" scrolling dark expand="lg" variant="dark" fixed="top">
+    <Navbar collapseOnSelect className="navbg gradiente mt-0 pt-0" expand="lg" variant="dark" fixed="top">
       <Container>
         <Navbar.Brand  href="#">
             <img
@@ -22,7 +22,7 @@ function CollapsibleExample() {
               width="150px"
               height="auto"
               className="logoPeq"
-            />{' '}
+            />
           </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -33,7 +33,7 @@ function CollapsibleExample() {
               width="180"
               height="auto"
               className="my-0 py-0 logoGran"
-            />{' '}
+            />
           </div>
           <Nav className="ms-auto">
           <NavLink to='' className='nav-item nav-link fs-6 px-3 navLetra boton text-end'>INICIO</NavLink>
