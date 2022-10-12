@@ -28,7 +28,6 @@ const App = () => {
             element={<DetalleProducto></DetalleProducto>}
           ></Route>
           <Route exact path="/acercaDe" element={<AcercaDe></AcercaDe>}></Route>
-          {/* <Route exact path="*" element={<Error404></Error404>}></Route> */}
           <Route
             exact
             path="/registro"

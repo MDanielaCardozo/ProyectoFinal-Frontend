@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Table from "react-bootstrap/Table";
-import Button from "react-bootstrap/Button";
 import ItemCliente from "./ItemCliente";
 import Swal from "sweetalert2";
 
 const AdministrarClientes = () => {
-  // ¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡TRAER URL DE LA API!!!!!!!!
-  // const URL =
+
+  const URL = "http://localhost:3005/Usuarios"
 
   const [clientes, setClientes] = useState([]);
 
@@ -43,15 +42,16 @@ const AdministrarClientes = () => {
             <th className="text-black">Acciones</th>
           </tr>
         </thead>
-        <tbody className="text-black">
-          {clientes.map((cliente) => (
-            <ItemCliente
-              key={cliente.idCliente}
-              cliente={cliente}
-              consultarAPI={consultarAPI}
+        <tbody className="text-black">          
+          {clientes.map((cliente) =>(
+           <ItemCliente
+           key={cliente.id}
+           cliente = {cliente}
+            consultarAPI = {consultarAPI}
             />
-          ))}
-          <ItemCliente />
+         ))}
+         {/* <ItemCliente/> */}
+          
         </tbody>
       </Table>
     </div>
