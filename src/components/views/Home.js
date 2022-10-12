@@ -24,7 +24,7 @@ const Home = () => {
 
   const consultarProd = async () => {
     try {
-      const respuesta = await fetch(URL);
+      const respuesta = await fetch(URL + "productos");
       const listaProductos = await respuesta.json();
       setProductos(listaProductos);
       setProductosBuscados(listaProductos);
