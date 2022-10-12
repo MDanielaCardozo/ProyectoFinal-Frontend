@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;800;900&display=swap');
+*{
+	font-family: "Montserrat", sans-serif;
+}
+
+ .fondo{
+	background-image: url(../../img/purplewall.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.logo {
+  text-align: center;
+  width: 65%;
+  height: 350px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+   user-select: none;
+}
+.notfound{
+text-align:center;
+  width: 65%;
+  height: 33vh;
+  margin: auto;
+  position: absolute;
+  top: 1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-size: 30px;
+  text-transform: uppercase;
+  color: #fee;
+  text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff3e21, 0 0 0.5em #ff3e21, 0 0 0.1em #ff3e21, 0 10px 3px #000
+}
+.logo b{
+  font-size: 256px;
+  color: #fee;
+  text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff3e21, 0 0 0.5em #ff3e21, 0 0 0.1em #ff3e21, 0 10px 3px #000;
+}
+
+.logo b span{
+  animation: blink linear infinite 2s;
+  margin-left: 35px;
+  margin-right: 35px;
+}
+.logo b span:nth-of-type(2){
+  animation: blink linear infinite 3s;
+}
+@keyframes blink {
+  78% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  79%{
+     color: #333;
+  }
+  80% {
+    
+    text-shadow: none;
+  }
+  81% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  82% {
+    color: #333;
+    text-shadow: none;
+  }
+  83% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  92% {
+    color: #333;
+    text-shadow: none;
+  }
+  92.5% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+}
+
+/* Celulares */
+@media all and (max-width: 760px) {
+	.logo {
+		height: 10vh;
+	}
+    .notfound{
+		font-size: 15px;
+	}
+	.logo b{
+  		font-size: 110px;
+	}
+	.logo b span{
+  		margin-left: 5px;
+  		margin-right: 5px;
+}
+}
+/* Tablets */
+@media all and (min-width: 761px) and (max-width: 991px) {
+    	.logo {
+		height: 250px;
+	}
+    .notfound{
+		font-size: 25px;
+	}
+	.logo b{
+  		font-size: 200px;
+	}
+	.logo b span{
+  		margin-left: 5px;
+  		margin-right: 5px;
+}
+}
+
+@media all and (min-width: 992px) and (max-width: 1399px) {
+      	.logo {
+		height: 250px;
+	}
+    .notfound{
+		font-size: 25px;
+	}
+	.logo b{
+  		font-size: 220px;
+	}
+	.logo b span{
+  		margin-left: 10px;
+  		margin-right: 10px;
+}
+}
