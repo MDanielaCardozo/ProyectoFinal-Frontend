@@ -8,6 +8,7 @@ import Footer from './components/common/Footer'
 import Registro from './components/views/Registro';
 import Login from './components/views/Login';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Pedidos from "./components/views/Pedidos";
 
 const App = () => {
   const [usuarioLogueado, setUsuarioLogueado] = useState({});
@@ -24,6 +25,7 @@ const App = () => {
             element={<DetalleProducto></DetalleProducto>}
           ></Route>
           <Route exact path="/acercaDe" element={<AcercaDe></AcercaDe>}></Route>
+          <Route exact path="/Pedidos" element={<Pedidos></Pedidos>}></Route>
           {/* <Route exact path="*" element={<Error404></Error404>}></Route> */}
           <Route exact path="/registro" element={<Registro setUsuarioLogueado={setUsuarioLogueado}/>}></Route>
             <Route exact path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado}/>}></Route>
