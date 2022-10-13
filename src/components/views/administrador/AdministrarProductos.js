@@ -31,9 +31,14 @@ const AdministrarProductos = () => {
     <div className="mb-4">
       <div className="d-flex justify-content-between">
         <h1 className="text-black">Lista de productos</h1>
-        <Link to="/privado/crearProducto" className="btn btn-primary mb-2 btnItemsAdmin d-flex align-items-center">
+        <div className="d-flex">
+        <Link to="/privado/crearProducto" className="btn btn-primary mb-2 btnItemsAdmin d-flex align-items-center ms-2">
           Agregar producto
         </Link>
+        <Link to="/privado/listaPedidos" className="btn btn-primary mb-2 btnItemsAdmin d-flex align-items-center ms-2">
+          Lista de pedidos
+        </Link>
+        </div>
       </div>
       <Table striped bordered hover responsive>
         <thead>

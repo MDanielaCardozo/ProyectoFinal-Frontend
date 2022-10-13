@@ -37,8 +37,6 @@ const AdministrarPedidos = () => {
                   <th>ID</th>
                   <th>Cliente</th>
                   <th>Fecha</th>
-                  <th>Detalle de compra</th>
-                  <th>Monto total</th>
                   <th>Estado</th>
                   <th>Cambiar estado</th>
                 </tr>

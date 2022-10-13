@@ -48,11 +48,11 @@ const ItemPedido = ({pedido, consultarAPI}) => {
             <td className='text-black'>{pedido._id}</td>
             <td className='text-black'>{pedido.usuario}</td>
             <td className='text-black'>{pedido.fecha}</td>
-            <td className='text-black'></td>
-            <td className='text-black'></td>
             <td className='text-black'>{pedido.estado?"Entregado":"Pendiente"}</td>
             <td className='text-black'>
-            <Button variant="primary" type="submit" onClick={handleEntregado} >Cambiar estado</Button>
+            <div  className="d-flex justify-content-center">
+              <Button variant="primary" type="submit" onClick={handleEntregado} >Cambiar estado</Button>
+            </div>
             </td>
         </tr>
     );
