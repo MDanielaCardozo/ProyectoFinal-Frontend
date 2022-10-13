@@ -35,7 +35,7 @@ const AdministrarProductos = () => {
           Agregar producto
         </Link>
       </div>
-      <Table striped bordered hover responsive tablaAdmin>
+      <Table striped bordered hover responsive>
         <thead>
           <tr>
             <th className="text-black">ID</th>

@@ -29,7 +29,7 @@ const AdministrarClientes = () => {
   return (
     <div className="mt-4">
       <h1 className="text-black">Lista de clientes</h1>
-      <Table striped bordered hover responsive tablaAdmin>
+      <Table striped bordered hover responsive >
         <thead>
           <tr>
             <th className="text-black">Nombre</th>
