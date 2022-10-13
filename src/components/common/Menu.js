@@ -8,14 +8,28 @@ import Logo from '../../img/logoLed.png'
 import {Link,NavLink, useNavigate} from 'react-router-dom';
 import "./Menu.css"
 import { Button } from "react-bootstrap";
+import Swal from "sweetalert2";
 
 function CollapsibleExample({ usuarioLogueado, setUsuarioLogueado }) {
   const navigate = useNavigate();
 
   const logout = ()=> {
-    localStorage.removeItem(process.env.REACT_APP_LOCALSTORAGE);
-    setUsuarioLogueado({});
-    navigate("/");
+    Swal.fire({
+      title: 'Esta seguro?',
+      text: 'Está seguro que desea cerrar su sesión?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Cerrar',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        localStorage.removeItem(process.env.REACT_APP_LOCALSTORAGE);
+        setUsuarioLogueado({});
+        navigate("/");
+          }
+    })
   }
 
   return (
@@ -44,10 +58,10 @@ function CollapsibleExample({ usuarioLogueado, setUsuarioLogueado }) {
           <Nav className="ms-auto">
           <NavLink to='/' className='nav-item nav-link fs-6 px-3 navLetra boton text-end'>INICIO</NavLink>
           <NavLink end to='/acercaDe' className='nav-item nav-link fs-6 px-3 navLetra boton text-end'>ACERCA DE</NavLink>
+          {usuarioLogueado.perfil ? <NavLink end to='/administrador' className='nav-item nav-link fs-6 px-3 navLetra boton text-end'>ADMINISTRACION</NavLink>:<></>}
           {usuarioLogueado.nombre ? 
           (
             <>
-            <NavLink end to='/administrador' className='nav-item nav-link fs-6 px-3 navLetra boton text-end'>ADMINISTRACION</NavLink>
             <NavLink end to='/pedidos' className='nav-item nav-link fs-6 px-3 navLetra boton text-end'><FontAwesomeIcon icon={faCartShopping}/></NavLink>
             <Button as={Link} className='nav-item nav-link fs-6 px-3 navLetra boton text-end' onClick={logout}>LOGOUT</Button>
             </>

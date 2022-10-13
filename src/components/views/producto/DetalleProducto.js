@@ -52,7 +52,7 @@ const DetalleProducto = () => {
               <b>Precio: ${producto.precio}</b>
             </p>
             <p className="text-light tipografiaDetalle">
-              {producto.descripcion}
+              {producto.detalle}
             </p>
             {/* <Link to={`*`} className="btn btn-outline-light">
               Agregar al carrito

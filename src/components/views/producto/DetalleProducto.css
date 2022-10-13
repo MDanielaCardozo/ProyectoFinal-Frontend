@@ -28,22 +28,22 @@
 }
 
 .imagenDetalle {
-  max-width: 400px;
+  max-width: 330px;
 }
 
 /* Media queries */
 
-@media all and (min-width: 992px) and (max-width: 1399px){
+@media all and (min-width: 992px) and (max-width: 1900px){
 
   .bgCard {
-    max-width: 1000px !important;
+    max-width: 850px !important;
   }
 }
 
 @media all and (min-width: 761px) and (max-width: 991px){
 
   .bgCard {
-    max-width: 750px !important;
+    max-width: 700px !important;
   }
 }
 
@@ -58,6 +58,10 @@
 
   .bgCard {
     max-width: 400px !important;
+  }
+
+  .imagenDetalle {
+    max-width: 250px;
   }
 
 }
