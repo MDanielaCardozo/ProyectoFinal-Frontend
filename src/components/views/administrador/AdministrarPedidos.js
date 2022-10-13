@@ -6,7 +6,7 @@ import ItemPedido from "./ItemPedido";
 
 const AdministrarPedidos = () => {
     // ¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡TRAER URL DE LA API!!!!!!!!
-  // const URL =
+  const URL = process.env.REACT_APP_API_
 
   const [pedidos, setPedidos] = useState([]);
 
@@ -36,7 +36,7 @@ const AdministrarPedidos = () => {
                 <tr>
                   <th>ID</th>
                   <th>Cliente</th>
-                  <th>Direccion</th>
+                  <th>Fecha</th>
                   <th>Detalle de compra</th>
                   <th>Monto total</th>
                   <th>Estado</th>

@@ -30,7 +30,7 @@ const ItemCliente = ({cliente, consultarAPI}) => {
               "success"
             );
             // ACÁ CONSULTA A LA API
-            props.consultarAPI();
+            consultarAPI();
           }
         } catch (error) {
           Swal.fire({
@@ -56,3 +56,4 @@ const ItemCliente = ({cliente, consultarAPI}) => {
   );
 };
 
+export default ItemCliente;
