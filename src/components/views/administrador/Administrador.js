@@ -7,6 +7,7 @@ const Administrador = () => {
     return (
         <div className="container text-black paddingInicio mb-5">
             <AdministrarProductos />
+            <hr />
             <AdministrarClientes />
         </div>
     );

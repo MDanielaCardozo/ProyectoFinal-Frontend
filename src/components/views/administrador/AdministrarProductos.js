@@ -29,14 +29,14 @@ const AdministrarProductos = () => {
   };
 
   return (
-    <div>
+    <div className="mb-4">
       <div className="d-flex justify-content-between">
-        <p className="text-black">Lista de productos</p>
-        <Link to="/crearProducto" className="btn btn-primary mb-2">
+        <h1 className="text-black">Lista de productos</h1>
+        <Link to="/crearProducto" className="btn btn-primary mb-2 btnItemsAdmin d-flex align-items-center">
           Agregar producto
         </Link>
       </div>
-      <Table striped bordered hover responsive>
+      <Table striped bordered hover responsive tablaAdmin>
         <thead>
           <tr>
             <th className="text-black">ID</th>
