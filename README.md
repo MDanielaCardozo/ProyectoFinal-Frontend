@@ -2,14 +2,14 @@
 <p align="center"> <img src="src/img/logoLed.png" alt="logo-burgerhouse" height="200" width="200"/> </p>
 
 ## 👪 Integrantes 
-- Andrade Francisco
-- Andrade Nicolas
-- Cardozo Daniela
-- Escobar Carlos
-- Garcia Mauro Nicolás
-- Krautmann Otto
-- Menichetti Juan
-- Ormaechea Valentina
+- [Andrade Francisco](https://github.com/franAndrad)
+- [Andrade Nicolas](https://github.com/nicolasandr)
+- [Cardozo Daniela](https://github.com/MDanielaCardozo)
+- [Escobar Carlos](https://github.com/carlosmsx)
+- [Garcia Mauro Nicolás](https://github.com/Ao-Rubi)
+- [Krautmann Otto](https://github.com/OttoKrautmann)
+- [Menichetti Juan](https://github.com/JuanMeni)
+- [Ormaechea Valentina](https://github.com/valeormaechea)
 
 ## 📜 Requerimientos 
 
