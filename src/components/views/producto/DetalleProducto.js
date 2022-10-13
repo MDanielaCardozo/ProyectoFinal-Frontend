@@ -12,6 +12,7 @@ const DetalleProducto = () => {
   const [producto, setProducto] = useState([]);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     consultarProd();
   }, []);
 
@@ -26,16 +27,24 @@ const DetalleProducto = () => {
   };
 
   const agregarCarrito = (producto) => {
-    let productosPedido = JSON.parse(localStorage.getItem(process.env.REACT_APP_LOCALSTORAGE_PRODUCTOS_PEDIDO)) || [];
+    let productosPedido =
+      JSON.parse(
+        localStorage.getItem(
+          process.env.REACT_APP_LOCALSTORAGE_PRODUCTOS_PEDIDO
+        )
+      ) || [];
     productosPedido.push(producto);
-    localStorage.setItem(process.env.REACT_APP_LOCALSTORAGE_PRODUCTOS_PEDIDO, JSON.stringify(productosPedido));
+    localStorage.setItem(
+      process.env.REACT_APP_LOCALSTORAGE_PRODUCTOS_PEDIDO,
+      JSON.stringify(productosPedido)
+    );
     Swal.fire(
-      'Producto agregado',
-      'El producto fue agregado correctamente',
-      'success'
+      "Producto agregado",
+      "El producto fue agregado correctamente",
+      "success"
     );
     navigate("/");
-  }
+  };
 
   // const agregarCarrito = async (_id) => {
   //   try {
@@ -43,7 +52,7 @@ const DetalleProducto = () => {
   //     const usuario = JSON.parse(localStorage.getItem(process.env.REACT_APP_LOCALSTORAGE));
   //     console.log(usuario);
   //     const pedidos = {
-  //       // usuario:"Fran", 
+  //       // usuario:"Fran",
   //       // fecha:"12/10/22",
   //       // productosdelmenu:["Burger"],
   //       // estado:true
@@ -76,7 +85,11 @@ const DetalleProducto = () => {
       <Card className="container bgCard p-4 mb-3">
         <Row className="w-100">
           <Col md={6}>
-            <img src={producto.imagen} alt={producto.nombre} className="w-100 p-3 imagenDetalle" />
+            <img
+              src={producto.imagen}
+              alt={producto.nombre}
+              className="w-100 p-3 imagenDetalle"
+            />
           </Col>
           <Col md={6} className="p-3">
             <h3 className="text-light tituloDetalle">{producto.nombre}</h3>
@@ -91,7 +104,14 @@ const DetalleProducto = () => {
             {/* <Link to={`*`} className="btn btn-outline-light">
               Agregar al carrito
             </Link> */}
-            <Button className='btn btn-outline-light' onClick={()=>{agregarCarrito(producto)}}>Agregar al carrito</Button>
+            <Button
+              className="btn btn-outline-light"
+              onClick={() => {
+                agregarCarrito(producto);
+              }}
+            >
+              Agregar al carrito
+            </Button>
           </Col>
         </Row>
       </Card>

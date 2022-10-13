@@ -19,6 +19,7 @@ const Home = () => {
   const [productosBuscados, setProductosBuscados] = useState([]);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     consultarProd();
   }, []);
 
@@ -85,7 +86,7 @@ const Home = () => {
           <div className="w-100 h-100 text-light p-md-3 p-5 text-center text-md-start">
             <h1>Somos expertos</h1>
             <h3>Veni a conocernos</h3>
-            <Link to={`/acercaDe`} className="btn">
+            <Link to={`/acercaDe`} className="btn" preventScrollReset={true}>
               Más sobre nosotros
             </Link>
           </div>
