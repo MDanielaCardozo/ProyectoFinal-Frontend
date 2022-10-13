@@ -12,6 +12,7 @@ const DetalleProducto = () => {
   const [producto, setProducto] = useState([]);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     consultarProd();
   }, []);
 
