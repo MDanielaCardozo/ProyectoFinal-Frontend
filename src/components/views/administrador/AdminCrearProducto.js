@@ -10,13 +10,14 @@ import {
   validarPrecio,
   campoRequerido,
   validarUrl,
+  validarEstado,
 } from "./helperProducto";
 
 const AdminCrearProducto = () => {
-  const [nombreProducto, setNombrePorducto] = useState("");
+  const [nombreProducto, setNombreProducto] = useState("");
   const [precio, setPrecio] = useState(0);
   const [imagen, setImagen] = useState("");
-  const [detalleProducto, setDetalleProdcuto] = useState("");
+  const [detalleProducto, setDetalleProducto] = useState("");
   const [categoria, setCategoria] = useState("");
   const [estadoProducto, setEstadoProducto] = useState(true);
   const [msjError, setMsjError] = useState(false);
@@ -32,14 +33,14 @@ const AdminCrearProducto = () => {
       validarNombre(nombreProducto) &&
       validarPrecio(precio) &&
       validarDetalle(detalleProducto) &&
-      validarUrl(imagen) &&
+        validarUrl(imagen) &&
       campoRequerido(categoria)
     ) {
       setMsjError(false);
 
       console.log("los datos son correctos crear el objeto");
       //crear un objeto
-      const nuevoPorducto = {
+      const nuevoProducto = {
         nombre: nombreProducto,
         precio: precio,
         imagen: imagen,
@@ -47,7 +48,7 @@ const AdminCrearProducto = () => {
         detalle: detalleProducto,
         estado: estadoProducto,
       };
-      console.log(nuevoPorducto);
+      console.log(nuevoProducto);
 
       try {
         const respuesta = await fetch(URL + "productos", {
@@ -55,7 +56,7 @@ const AdminCrearProducto = () => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(nuevoPorducto),
+          body: JSON.stringify(nuevoProducto),
         });
         if (respuesta.status === 201) {
           //redireccionar a la pagina de administracion
@@ -84,7 +85,7 @@ const AdminCrearProducto = () => {
             <Form.Control
               type="text"
               placeholder="Ej: hamburguesa burguerbeer"
-              onChange={(e) => setNombrePorducto(e.target.value)}
+              onChange={(e) => setNombreProducto(e.target.value)}
             />
           </Form.Group>
           <Form.Group className="mb-3">
@@ -92,7 +93,7 @@ const AdminCrearProducto = () => {
             <Form.Control
               type="text"
               placeholder="Ej: hamburguesa especial de burguerandbeer preparada con los mejores ingredientes"
-              onChange={(e) => setDetalleProdcuto(e.target.value)}
+              onChange={(e) => setDetalleProducto(e.target.value)}
             />
           </Form.Group>
           <Form.Group className="mb-3">

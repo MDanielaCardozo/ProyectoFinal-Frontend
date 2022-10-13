@@ -50,7 +50,6 @@ const ItemProducto = ({ producto, consultarAPI }) => {
     <tr>
       <td className="text-black">{producto._id}</td>
       <td className="text-black">{producto.nombre}</td>
-      <td className="text-black">{producto.estado}</td>
       <td className="text-black">${producto.precio}</td>
       <td className="text-black">{producto.detalle}</td>
       <td className="text-black">{producto.categoria}</td>
