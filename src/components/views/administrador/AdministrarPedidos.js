@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import Table from "react-bootstrap/Table";
 import Swal from "sweetalert2";
 import ItemPedido from "./ItemPedido";
+import "./administrador.css"
 
 
 const AdministrarPedidos = () => {
@@ -29,7 +30,7 @@ const AdministrarPedidos = () => {
   }
 
     return (
-        <div>
+        <div className="container paddingInicio">
             <p>Lista de pedidos</p>
             <Table striped bordered hover responsive>
               <thead>
@@ -40,6 +41,7 @@ const AdministrarPedidos = () => {
                   <th>Detalle de compra</th>
                   <th>Monto total</th>
                   <th>Estado</th>
+                  <th>Cambiar estado</th>
                 </tr>
               </thead>
               <tbody>
