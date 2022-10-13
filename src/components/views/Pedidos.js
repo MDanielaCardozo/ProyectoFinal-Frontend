@@ -76,20 +76,25 @@ const Pedidos = () => {
     }
 
     const handleClick = () => {
-            Swal.fire({
-                title: 'Esta seguro?',
-                text: `Total a pagar :$ ${total}`,
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Si, pagar!',
-                cancelButtonText: 'Cancelar'
-            }).then((result) => {
-              if (result.isConfirmed) {
-                guardarPedido();
-              }
-            })
+      total = 0;
+      listaProductosPedido.forEach(element => {
+          total += element.precio;
+      });
+
+      Swal.fire({
+            title: 'Esta seguro?',
+            text: `Total a pagar :$ ${total}`,
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, pagar!',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            guardarPedido();
+          }
+        })
     }
 
 
