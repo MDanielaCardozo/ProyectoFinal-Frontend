@@ -44,10 +44,10 @@ function CollapsibleExample({ usuarioLogueado, setUsuarioLogueado }) {
           <Nav className="ms-auto">
           <NavLink to='/' className='nav-item nav-link fs-6 px-3 navLetra boton text-end'>INICIO</NavLink>
           <NavLink end to='/acercaDe' className='nav-item nav-link fs-6 px-3 navLetra boton text-end'>ACERCA DE</NavLink>
+          {usuarioLogueado.perfil ? <NavLink end to='/administrador' className='nav-item nav-link fs-6 px-3 navLetra boton text-end'>ADMINISTRACION</NavLink>:<></>}
           {usuarioLogueado.nombre ? 
           (
             <>
-            <NavLink end to='/administrador' className='nav-item nav-link fs-6 px-3 navLetra boton text-end'>ADMINISTRACION</NavLink>
             <NavLink end to='/pedidos' className='nav-item nav-link fs-6 px-3 navLetra boton text-end'><FontAwesomeIcon icon={faCartShopping}/></NavLink>
             <Button as={Link} className='nav-item nav-link fs-6 px-3 navLetra boton text-end' onClick={logout}>LOGOUT</Button>
             </>
