@@ -49,20 +49,25 @@ const ItemProducto = ({ producto, consultarAPI }) => {
 
   return (
     <tr>
-      <td className="text-black">{producto._id}</td>
-      <td className="text-black">{producto.nombre}</td>
-      <td className="text-black">${producto.precio}</td>
-      <td className="text-black">{producto.detalle}</td>
-      <td className="text-black">{producto.categoria}</td>
-      <td className="text-black truncate">{producto.imagen}</td>
-      <td className="text-black">
+      <td className="text-black itemTabla truncate">{producto._id}</td>
+      <td className="text-black itemTabla">{producto.nombre}</td>
+      <td className="text-black itemTabla">${producto.precio}</td>
+      <td className="text-black itemTabla">{producto.detalle}</td>
+      <td className="text-black itemTabla">{producto.categoria}</td>
+      <td className="text-black itemTabla truncate">{producto.imagen}</td>
+      <td className="text-black d-flex flex-wrap justify-content-around p-3">
         <Link
           to={`/administrador/editar/${producto._id}`}
-          className="btn btn-warning"
+          className="btn btn-warning btnItemsAdmin"
         >
           Editar
         </Link>
-        <Button variant="danger" type="submit" onClick={handleDeleteProducto}>
+        <Button
+          variant="danger"
+          className="btnItemsAdmin"
+          type="submit"
+          onClick={handleDeleteProducto}
+        >
           Eliminar
         </Button>
       </td>

@@ -95,7 +95,7 @@ const Home = () => {
         </Col>
       </Row>
       <section className="sectionMenu">
-        <h1 className="tituloMenu">#MENÚ</h1>
+        <h1 className="tituloMenu w-100">#MENÚ</h1>
         <Form className="w-50 mb-5 buscadorProd">
           <Form.Control
             type="text"
