@@ -1,31 +1,114 @@
+.sectionLogin h3 {
+  font-weight: 800;
+}
+
+.sectionLogin p {
+  font-weight: 300;
+}
+
+.sectionLogin,
+.sectionLogin .form-label {
+  color: white;
+}
+
+.botonLogin{
+    text-transform: none;
+}
+
 .bg-gris {
+<<<<<<< HEAD
     background-color: #ece6e6;
 }
 
 .bg-login {
     background-color: hsl(33, 41%, 95%);
+=======
+  background-color: #1b0747bd;
+}
+
+.bg-login {
+  background-color: rgba(0, 0, 0, 0.658) !important;
+>>>>>>> dev
 }
 
 .custom-input {
-    -webkit-appearance: none;
-    background: transparent;
-    border: 0;
-    border-bottom: 1px solid #959ba7;
-    border-radius: 0;
-    color: #000;
-    display: inline-block;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1.375;
-    padding: .25rem 0;
-    position: relative;
-    transition: color .2s,border .2s;
-    width: 100%;
+  -webkit-appearance: none;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #959ba7;
+  border-radius: 0;
+  color: #000;
+  display: inline-block;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.375;
+  padding: 0.25rem 0;
+  position: relative;
+  transition: color 0.2s, border 0.2s;
+  width: 100%;
 }
 
 .bg-grupo {
+<<<<<<< HEAD
     background-color: #ffffff;
     padding: 8px;
     border-radius: 10px;
 }
+=======
+  background-color: rgba(0, 0, 0, 0.664) !important;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.imagen {
+  background-image: url(../../img/purplewall.jpg);
+  background-size: cover;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.color-texto {
+  color: rgb(255, 227, 191);
+}
+
+@media all and (max-width: 760px) {
+  .rowLadrillo {
+    background-image: url(../../img/purplewall-40.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 20px;
+    padding-top: 180px;
+  }
+}
+@media all and (min-width: 761px) and (max-width: 991px) {
+  .rowLadrillo {
+    background-image: url(../../img/purplewall-40.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 20px;
+    padding-top: 150px;
+  }
+}
+@media all and (min-width: 992px) and (max-width: 1399px) {
+  .rowLadrillo {
+    background-image: url(../../img/purplewall-40.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 150px 70px 70px 70px;
+  }
+}
+@media all and (min-width: 1400px) {
+  .rowLadrillo {
+    background-image: url(../../img/purplewall.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 150px 200px 70px 200px;
+  }
+}
+>>>>>>> dev

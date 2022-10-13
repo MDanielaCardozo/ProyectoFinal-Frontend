@@ -1,0 +1,61 @@
+{
+  "Usuarios": [
+    {
+      "nombre": "nicolas",
+      "email": "nico@gmail.com",
+      "password": "nico1234",
+      "estado": true,
+      "perfil": true,
+      "id": 1
+    },
+    {
+      "nombre": "fran",
+      "email": "fran@gmail.com",
+      "password": "1234",
+      "estado": true,
+      "perfil": true,
+      "id": 2
+    },
+    {
+      "nombre": "carlos",
+      "email": "carlos@gmail.com",
+      "password": "12345",
+      "estado": true,
+      "perfil": true,
+      "id": 3
+    }
+  ],
+  "Productos": [
+      {
+        "nombre": "hamburguesa doble",
+        "estado": false,
+        "precio": 12,
+        "detalle": "aqui va el detalle",
+        "categoria": "category",
+        "imagen": "https://images.pexels.com/photos/8743886/pexels-photo-8743886.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "id": 1
+      },
+      {
+        "nombre": "hamburguesa",
+        "estado": false,
+        "precio": 12,
+        "detalle": "aqui va el detalle",
+        "categoria": "category",
+        "imagen": "https://images.pexels.com/photos/8743886/pexels-photo-8743886.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "id": 2
+      },
+
+      {
+        "nombre": "hamburguesa triple",
+        "estado": false,
+        "precio": 12,
+        "detalle": "aqui va el detalle",
+        "categoria": "category",
+        "imagen": "https://images.pexels.com/photos/8743886/pexels-photo-8743886.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "id": 3
+      }
+  ],
+  "Pedidos" :[
+      
+  ]
+}

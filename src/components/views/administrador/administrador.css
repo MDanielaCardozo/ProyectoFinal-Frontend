@@ -1,0 +1,21 @@
+.paddingInicio {
+  padding-top: 150px;
+}
+
+.table th {
+  font-weight: 800 !important;
+  text-align: center;
+}
+
+.tituloLista {
+  font-weight: 800;
+}
+
+.itemTabla {
+  font-weight: 500;
+}
+
+.btnItemsAdmin {
+  text-transform: none;
+  box-shadow: none;
+}

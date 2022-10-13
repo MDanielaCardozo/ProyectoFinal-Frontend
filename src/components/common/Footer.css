@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap");
+
+.subrayado {
+  text-decoration: none;
+}
+
+.footerLetra {
+  font-family: "Montserrat", sans-serif;
+  color: whitesmoke;
+}
+
+.footerLetra a{
+  font-weight: 300;
+}
+.positionFooter {
+  margin-top: auto;
+  background-color: rgb(0, 0, 0);
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .logoImg {
+    width: 250px;
+    padding-right: 100px;
+  }
+}
