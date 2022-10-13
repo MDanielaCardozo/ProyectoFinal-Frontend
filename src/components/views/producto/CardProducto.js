@@ -5,9 +5,6 @@ import "./CardProducto.css";
 import Swal from "sweetalert2";
 
 const CardProducto = (props) => {
-  
-  const usuario = JSON.parse(localStorage.getItem(process.env.REACT_APP_LOCALSTORAGE)) || null;
-
   const agregarCarrito = (producto) => {
     let productosPedido = JSON.parse(localStorage.getItem(process.env.REACT_APP_LOCALSTORAGE_PRODUCTOS_PEDIDO)) || [];
     productosPedido.push(producto);

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Table from "react-bootstrap/Table";
-import Button from "react-bootstrap/Button";
 import ItemProducto from "./ItemProducto";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
