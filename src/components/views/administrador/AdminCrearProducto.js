@@ -12,6 +12,7 @@ const AdminCrearProducto = () => {
     const [estadoProducto, setEstadoProducto] = useState(true);
 
     const URL = process.env.REACT_APP_API_USUARIOS;
+    // const URL = process.env.REACT_APP_API_HAMBURGUESERIA;
     const navegacion = useNavigate();
 
     const handleSubmit = async (e) => {
@@ -26,7 +27,7 @@ const AdminCrearProducto = () => {
             imagen: imagen,
             categoria: categoria,
             detalle: detalleProducto,
-            estado: estadoProducto,
+            estado: estadoProducto
         };
         console.log(nuevoPorducto);
 

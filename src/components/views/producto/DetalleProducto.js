@@ -30,11 +30,19 @@ const DetalleProducto = () => {
 
   const agregarCarrito = async (_id) => {
     try {
+
+      const usuario = JSON.parse(localStorage.getItem(process.env.REACT_APP_LOCALSTORAGE));
+      console.log(usuario);
       const pedidos = {
-        usuario:"Fran", 
-        fecha:"12/10/22",
-        productosdelmenu:["Burger"],
-        estado:true
+        // usuario:"Fran", 
+        // fecha:"12/10/22",
+        // productosdelmenu:["Burger"],
+        // estado:true
+
+        usuario: usuario.nombre,
+  fecha:"10/10/22",
+  productosdelmenu:["123"],
+  estado:true
 
   }
   console.log(URL + "pedidos")
@@ -46,6 +54,10 @@ const DetalleProducto = () => {
         },
         body: JSON.stringify(pedidos)
       })
+      console.log(respuesta);
+      const data = await respuesta.json();
+      console.log(data)
+
     } catch (error) {
       console.log(error)
     }
