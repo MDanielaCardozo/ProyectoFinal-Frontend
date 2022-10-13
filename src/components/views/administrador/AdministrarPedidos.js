@@ -6,8 +6,7 @@ import "./administrador.css"
 
 
 const AdministrarPedidos = () => {
-    // ¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡TRAER URL DE LA API!!!!!!!!
-  const URL = process.env.REACT_APP_API_
+  const URL = process.env.REACT_APP_API_HAMBURGUESERIA;
 
   const [pedidos, setPedidos] = useState([]);
 
@@ -17,7 +16,7 @@ const AdministrarPedidos = () => {
 
   const consultarAPI = async () =>{
     try {
-      const respuesta = await fetch (URL);
+      const respuesta = await fetch (URL+'pedidos');
       const listaPedidos = await respuesta.json();
       setPedidos(listaPedidos);
     }catch (error){
@@ -47,7 +46,7 @@ const AdministrarPedidos = () => {
               <tbody>
                 {pedidos.map((pedido)=>(
                   <ItemPedido 
-                    key={pedido.idPedido}
+                    key={pedido._id}
                     pedido={pedido}
                     consultarAPI={consultarAPI}
                   />

@@ -2,8 +2,21 @@ import React from "react";
 import { Card, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./CardProducto.css";
+import Swal from "sweetalert2";
 
 const CardProducto = (props) => {
+  const agregarCarrito = (producto) => {
+    let productosPedido = JSON.parse(localStorage.getItem(process.env.REACT_APP_LOCALSTORAGE_PRODUCTOS_PEDIDO)) || [];
+    productosPedido.push(producto);
+    localStorage.setItem(process.env.REACT_APP_LOCALSTORAGE_PRODUCTOS_PEDIDO, JSON.stringify(productosPedido));
+    Swal.fire(
+      'Producto agregado',
+      'El producto fue agregado correctamente',
+      'success'
+    );
+    //navigate("/");
+  }
+
   return (
     <Col md={4} xl={3} className="mb-5">
       <Card className="h-100 cardProd">
@@ -25,7 +38,7 @@ const CardProducto = (props) => {
         </Card.Body>
         <Card.Footer>
           <Row className="text-center align-items-center justify-content-around d-flex flex-wrap">
-            <Link to={`*`} className="btn btnCard btnCarrito">
+            <Link to={`/`} className="btn btnCard btnCarrito" onClick={()=>{agregarCarrito(props.producto)}}>
               Agregar al carrito
             </Link>
             <Link

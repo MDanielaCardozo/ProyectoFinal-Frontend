@@ -4,7 +4,7 @@ import Button from "react-bootstrap/esm/Button";
 
 const ItemPedido = ({pedido, consultarAPI}) => {
     // TRAER AL URL DE LA API
-    const URL = process.env.REACT_APP_API_PEDIDOS
+    const URL = process.env.REACT_APP_API_HAMBURGUESERIA;
 
     const handleEntregado = (_id) => {
         Swal.fire({
@@ -22,7 +22,7 @@ const ItemPedido = ({pedido, consultarAPI}) => {
                 const parametros = {
                   method: "POST",
                 };
-                const respuesta = await fetch(URL + "/suspender/" + pedido._id, parametros);
+                const respuesta = await fetch(URL + "entregado/" + pedido._id, parametros);
                 if (respuesta.status === 200) {
                   Swal.fire(
                     "Pedido entregado",
@@ -42,14 +42,15 @@ const ItemPedido = ({pedido, consultarAPI}) => {
             }
           });
     }
+
     return (
         <tr>
             <td className='text-black'>{pedido._id}</td>
             <td className='text-black'>{pedido.usuario}</td>
             <td className='text-black'>{pedido.fecha}</td>
-            <td className='text-black'>{pedido.productosdelmenu}</td>
-            <td className='text-black'>{pedido.monto}</td>
-            <td className='text-black'>{pedido.estado}</td>
+            <td className='text-black'></td>
+            <td className='text-black'></td>
+            <td className='text-black'>{pedido.estado?"Entregado":"Pendiente"}</td>
             <td className='text-black'>
             <Button variant="primary" type="submit" onClick={handleEntregado} >Cambiar estado</Button>
             </td>
