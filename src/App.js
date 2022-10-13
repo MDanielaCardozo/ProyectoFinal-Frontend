@@ -17,7 +17,8 @@ import ItemProducto from "./components/views/administrador/ItemProducto";
 import EditarProducto from "./components/views/producto/EditarProducto";
 
 const App = () => {
-  const [usuarioLogueado, setUsuarioLogueado] = useState({});
+  const usuario = JSON.parse(localStorage.getItem(process.env.REACT_APP_LOCALSTORAGE)) || {};
+  const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
 
   return (
     <div>
