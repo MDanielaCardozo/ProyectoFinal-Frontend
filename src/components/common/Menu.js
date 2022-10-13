@@ -21,9 +21,9 @@ function CollapsibleExample({ usuarioLogueado, setUsuarioLogueado }) {
   return (
     <Navbar collapseOnSelect className="navbg gradiente mt-0 pt-0" expand="lg" variant="dark" fixed="top">
       <Container>
-        <Navbar.Brand  href="#">
+        <Navbar.Brand>
             <img
-              alt=""
+              alt="Logo del restaurante"
             src={Logo}
               width="100px"
               height="auto"
