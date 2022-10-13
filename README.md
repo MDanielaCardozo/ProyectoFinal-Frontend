@@ -1,4 +1,6 @@
 # Proyecto Final - c2i
+<p align="center"> <img src="src/img/logoLed.png" alt="logo-burgerhouse" height="200" width="200"/> </p>
+
 ## 👪 Integrantes 
 - Andrade Francisco
 - Andrade Nicolas
@@ -8,7 +10,6 @@
 - Krautmann Otto
 - Menichetti Juan
 - Ormaechea Valentina
----
 
 ## 📜 Requerimientos 
 
@@ -32,7 +33,6 @@ productos del menú y pedidos solicitados, además debe poder realizar las sigui
 - **Acerca de**: Una página informativa que contendrá datos del grupo de desarrolladores del proyecto.
 - **Error404**: Una página con el respectivo mensaje de error a donde deben dirigirnos en caso de no tener una
 funcionalidad desarrollada.
----
 ## 📗 Bibliotecas externas
 
 - Reac-Bootstrap
@@ -40,7 +40,6 @@ funcionalidad desarrollada.
 - Route
 - EmailJS
 
----
 ## ⬇️ Instalacion
 El backend de esta pagina esta subido en vercel, por lo que podriamos utilizarlo realizando los siguientes comandos
 
@@ -56,7 +55,6 @@ npm i
 ```
 npm run
 ```
----
 ## ⬇️ Instalacion Local
 
 ### Opcion 1️⃣ 
