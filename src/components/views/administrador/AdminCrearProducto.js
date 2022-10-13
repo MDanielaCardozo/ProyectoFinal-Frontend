@@ -55,6 +55,7 @@ const AdminCrearProducto = () => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
+            "x-token": JSON.parse(localStorage.getItem(process.env.REACT_APP_LOCALSTORAGE)).token
           },
           body: JSON.stringify(nuevoProducto),
         });
