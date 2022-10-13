@@ -11,6 +11,7 @@ import {
 } from "../administrador/helperProducto";
 import Swal from "sweetalert2";
 import Alert from "react-bootstrap/Alert";
+import "../administrador/AdminCrearProducto.css";
 
 const EditarProducto = () => {
   // Traer el parametro
@@ -72,31 +73,35 @@ const EditarProducto = () => {
 
         if (respuesta.status === 200) {
           Swal.fire(
-            "Producto creado",
+            "Producto editado",
             `El producto ${producto.nombre} fue modificado correctamente.`,
             "success"
           );
         }
       } catch (error) {
         console.log(error);
-        // Mostrar un mensaje al usuario
+        Swal.fire(
+          "Error",
+          `El producto ${producto.nombre} no pudo ser modificado.`,
+          "error"
+        );
       }
-      // Redireccionar a la web de la tabla de productos
+      // Redirecciono a la web de la tabla de productos
       navegacion("/administrador");
     } else {
-      // Mostrar un mensaje de error de validacion de datos al usuario
+      setMsjError(true);
     }
   };
 
   return (
-    <section className="imagen justify-content-center  px-10  py-10">
-      <Card className="card-effect  rounded bg-form px-0">
-        <div className="bg-dark rounded py-2">
-          <h1 className="title-typography text-center text-light">
+    <section className="imagen px-10 py-10">
+      <Card className="card-effect rounded bg-form px-0 d-flex justify-content-center">
+        <div className="bg-dark rounded p-3">
+          <h1 className="title-typography text-center text-light m-0">
             Editar producto
           </h1>
         </div>
-        <Form className="container pt-4 text-light" onSubmit={handleSubmit}>
+        <Form className="container pt-4 text-light formularioProductos" onSubmit={handleSubmit}>
           <Form.Group className="mb-3">
             <Form.Label>Nombre producto *</Form.Label>
             <Form.Control
@@ -147,13 +152,15 @@ const EditarProducto = () => {
             </Form.Select>
           </Form.Group>
           <Button variant="outline-light" className="mb-3" type="submit">
-            Agregar Producto
+            Editar
           </Button>
         </Form>
         {msjError ? (
-          <Alert variant="danger" className="mt-3">
-            Debe corregir los datos.
-          </Alert>
+          <div className="w-100 d-flex justify-content-center">
+            <Alert variant="danger" className="mt-3 w-50 text-center">
+              Debe corregir los datos.
+            </Alert>
+          </div>
         ) : null}
       </Card>
     </section>
