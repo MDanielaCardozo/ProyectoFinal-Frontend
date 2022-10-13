@@ -11,6 +11,7 @@ import Login from "./components/views/Login";
 import Error from "./components/views/Error";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Administrador from "./components/views/administrador/Administrador";
+import AdministrarPedidos from "./components/views/administrador/AdministrarPedidos";
 import RutasProtegidas from "./components/routes/RutasProtegidas";
 import Pedidos from "./components/views/Pedidos";
 import EditarProducto from "./components/views/producto/EditarProducto";
@@ -36,6 +37,7 @@ const App = () => {
                 <Route exact path="/administrador" element={<Administrador/>} />
                 <Route exact path="/crearProducto" element={<CrearProducto/>}/>
                 <Route exact path="/administrador/editar/:id" element={<EditarProducto/>} />
+                <Route exact path="/listaPedidos" element={<AdministrarPedidos/>}/>
               </Routes>
             </RutasProtegidas>
           }></Route>
