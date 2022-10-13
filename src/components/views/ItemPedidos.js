@@ -9,7 +9,7 @@ const ItemPedidos = ({producto, quitarProducto}) => {
               <td>{producto._id}</td>
               <td>{producto.nombre}</td>
               <td>1</td>
-              <td>$850</td>
+              <td>{producto.precio}</td>
               <td>
               <Button variant="danger" onClick={()=>{quitarProducto(producto)}}><FontAwesomeIcon className="botont" icon={faTrash}/></Button>{' '}
               </td>

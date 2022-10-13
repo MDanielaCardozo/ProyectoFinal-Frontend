@@ -2,7 +2,7 @@ import React from "react";
 import Button from "react-bootstrap/esm/Button";
 import Swal from "sweetalert2";
 
-const ItemCliente = ({cliente, consultarAPI}) => {
+const ItemCliente = ({ cliente, consultarAPI }) => {
   // TRAER AL URL DE LA API
   const URL = process.env.REACT_APP_API_USUARIOS;
 
@@ -22,7 +22,10 @@ const ItemCliente = ({cliente, consultarAPI}) => {
           const parametros = {
             method: "POST",
           };
-          const respuesta = await fetch(URL + "/suspender/" + cliente._id, parametros);
+          const respuesta = await fetch(
+            URL + "/suspender/" + cliente._id,
+            parametros
+          );
           if (respuesta.status === 200) {
             Swal.fire(
               "Cliente suspendido",
@@ -33,15 +36,15 @@ const ItemCliente = ({cliente, consultarAPI}) => {
             consultarAPI();
           }
         } catch (error) {
-          Swal.fire({
-            icon: "error",
-            title: "Algo falló",
-            text: "Intenta esta acción más tarde",
-          });
+          // Swal.fire({
+          //   icon: "error",
+          //   title: "Algo falló",
+          //   text: "Intenta esta acción más tarde",
+          // });
         }
       }
     });
-  }
+  };
 
   const handleDeleteCliente = () => {
     Swal.fire({
@@ -81,16 +84,33 @@ const ItemCliente = ({cliente, consultarAPI}) => {
   };
 
   return (
-      
-      
-       <tr>
-      <td className="text-black">{cliente.nombre}</td>
-      <td className="text-black">{cliente.email}</td>
-      <td className="text-black">{cliente.estado}</td>
-      <td className="text-black">{cliente.perfil?"Admin":"Cliente"}</td>
-      <td className="text-black"> 
-        <Button variant="warning" className="me-1" onClick={()=>{handleSuspender(cliente._id)}}>Suspender</Button>
-        <Button variant="danger" type="submit" onClick={handleDeleteCliente} >Eliminar</Button>
+    <tr>
+      <td className="text-black itemTabla">{cliente.nombre}</td>
+      <td className="text-black itemTabla">{cliente.email}</td>
+      <td className="text-black itemTabla">
+        {cliente.estado ? "" : "Suspendido"}
+      </td>
+      <td className="text-black itemTabla">
+        {cliente.perfil ? "Admin" : "Cliente"}
+      </td>
+      <td className="text-black itemTabla d-flex justify-content-around">
+        <Button
+          variant="warning"
+          className="me-1 btnItemsAdmin"
+          onClick={() => {
+            handleSuspender(cliente._id);
+          }}
+        >
+          Suspender
+        </Button>
+        <Button
+          variant="danger"
+          type="submit"
+          className="btnItemsAdmin"
+          onClick={handleDeleteCliente}
+        >
+          Eliminar
+        </Button>
       </td>
     </tr>
   );

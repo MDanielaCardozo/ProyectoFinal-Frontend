@@ -27,9 +27,9 @@ const AdministrarClientes = () => {
   };
 
   return (
-    <div>
-      <p className="text-black">Lista de clientes</p>
-      <Table striped bordered hover responsive>
+    <div className="mt-4">
+      <h1 className="text-black">Lista de clientes</h1>
+      <Table striped bordered hover responsive tablaAdmin>
         <thead>
           <tr>
             <th className="text-black">Nombre</th>
@@ -39,9 +39,13 @@ const AdministrarClientes = () => {
             <th className="text-black">Acciones</th>
           </tr>
         </thead>
-        <tbody className="text-black">          
-         {clientes.map((cliente) =>(
-            <ItemCliente key={cliente._id} cliente = {cliente} consultarAPI = {consultarAPI} />
+        <tbody className="text-black">
+          {clientes.map((cliente) => (
+            <ItemCliente
+              key={cliente._id}
+              cliente={cliente}
+              consultarAPI={consultarAPI}
+            />
           ))}
         </tbody>
       </Table>

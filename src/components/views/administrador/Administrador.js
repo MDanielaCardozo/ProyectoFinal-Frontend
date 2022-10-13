@@ -8,6 +8,7 @@ const Administrador = () => {
         <div className="container text-black paddingInicio mb-5">
             
             <AdministrarProductos />
+            <hr />
             <AdministrarClientes />
         </div>
     );
