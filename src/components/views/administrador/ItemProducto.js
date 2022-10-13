@@ -1,20 +1,11 @@
 import React from "react";
 import Swal from "sweetalert2";
 import Button from "react-bootstrap/esm/Button";
+import "./ItemProducto.css";
+import { Link } from "react-router-dom";
 
-const ItemProducto = (producto, consultarAPI) => {
-  const {
-    idProducto,
-    nombreProducto,
-    estado,
-    precio,
-    descripcion,
-    imagen,
-    categoria,
-  } = { ...producto };
-
-  // traer el URL de la API
-  // const URL
+const ItemProducto = ({ producto, consultarAPI }) => {
+  const URL = process.env.REACT_APP_API_HAMBURGUESERIA;
 
   const handleDeleteProducto = () => {
     Swal.fire({
@@ -32,7 +23,10 @@ const ItemProducto = (producto, consultarAPI) => {
           const parametros = {
             method: "DELETE",
           };
-          const respuesta = await fetch(URL + "/" + idProducto, parametros);
+          const respuesta = await fetch(
+            URL + "productos/" + producto._id,
+            parametros
+          );
           if (respuesta.status === 200) {
             Swal.fire(
               "Eliminado",
@@ -54,22 +48,25 @@ const ItemProducto = (producto, consultarAPI) => {
   };
 
   return (
-      <tr>
-        <td className="text-black">1</td>
-        <td className="text-black">Hamb clasica</td>
-        <td className="text-black">Disponible</td>
-        <td className="text-black">850</td>
-        <td className="text-black">Tomate, lechuga y aderezos</td>
-        <td className="text-black">Hamburguesa</td>
-        <td className="text-black">pexels</td>
-        <td className="text-black">
-          <Button variant="warning" className="me-1">Editar</Button>
-          <Button variant="danger" type="submit" onClick={handleDeleteProducto}>
-            Eliminar
-          </Button>
-        </td>
-      </tr>
-    
+    <tr>
+      <td className="text-black">{producto._id}</td>
+      <td className="text-black">{producto.nombre}</td>
+      <td className="text-black">${producto.precio}</td>
+      <td className="text-black">{producto.detalle}</td>
+      <td className="text-black">{producto.categoria}</td>
+      <td className="text-black truncate">{producto.imagen}</td>
+      <td className="text-black">
+        <Link
+          to={`/administrador/editar/${producto._id}`}
+          className="btn btn-warning"
+        >
+          Editar
+        </Link>
+        <Button variant="danger" type="submit" onClick={handleDeleteProducto}>
+          Eliminar
+        </Button>
+      </td>
+    </tr>
   );
 };
 
