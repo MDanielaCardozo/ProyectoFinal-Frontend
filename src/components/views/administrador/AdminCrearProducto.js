@@ -33,7 +33,7 @@ const AdminCrearProducto = () => {
       validarNombre(nombreProducto) &&
       validarPrecio(precio) &&
       validarDetalle(detalleProducto) &&
-        validarUrl(imagen) &&
+      validarUrl(imagen) &&
       campoRequerido(categoria)
     ) {
       setMsjError(false);
@@ -60,12 +60,21 @@ const AdminCrearProducto = () => {
           body: JSON.stringify(nuevoProducto),
         });
         if (respuesta.status === 201) {
-          //redireccionar a la pagina de administracion
+          Swal.fire(
+            "Producto creado",
+            `El producto ${nuevoProducto.nombre} fue creado correctamente.`,
+            "success"
+          );
+          // Redireccionar a la pagina de administracion
           navegacion("/administrador");
         }
       } catch (error) {
         console.log(error);
-        //mostrar mensaje al ususario
+        Swal.fire(
+          "Error",
+          `El producto ${nuevoProducto.nombre} no pudo ser creado.`,
+          "error"
+        );
       }
     } else {
       setMsjError(true);
@@ -73,14 +82,17 @@ const AdminCrearProducto = () => {
   };
 
   return (
-    <section className="imagen justify-content-center  px-10  py-10">
-      <Card className="card-effect  rounded bg-form px-0">
-        <div className="bg-dark rounded py-2">
-          <h1 className="title-typography text-center text-light">
+    <section className="imagen px-10 py-10">
+      <Card className="card-effect rounded bg-form px-0">
+        <div className="bg-dark rounded p-3">
+          <h1 className="title-typography text-center text-light m-0">
             Agregar nuevos productos
           </h1>
         </div>
-        <Form className="container pt-4 text-light" onSubmit={handleSubmit}>
+        <Form
+          className="container pt-4 text-light formularioProductos"
+          onSubmit={handleSubmit}
+        >
           <Form.Group className="mb-3">
             <Form.Label>Nombre producto *</Form.Label>
             <Form.Control
@@ -126,9 +138,11 @@ const AdminCrearProducto = () => {
           </Button>
         </Form>
         {msjError ? (
-          <Alert variant="danger" className="mt-3">
-            Debe corregir los datos.
-          </Alert>
+          <div className="w-100 d-flex justify-content-center">
+            <Alert variant="danger" className="mt-3 w-50 text-center">
+              Debe corregir los datos.
+            </Alert>
+          </div>
         ) : null}
       </Card>
     </section>

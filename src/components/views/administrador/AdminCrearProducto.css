@@ -17,6 +17,11 @@
 .card-effect:hover{
        transform: none; 
 }
+
+.formularioProductos .form-label{
+    font-weight: 500;
+    font-size: larger;
+}
 /* Celulares */
 @media all and (max-width: 1399px){
    

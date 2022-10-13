@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;800;900&display=swap');
+
+* {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  margin: 0;
+  padding: 0;
+}
+
+.fondo {
+  padding-top: 180px;
+  background-image: url(../../img/purplewall.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.tabla{
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+}
+
+.botont{
+    color: white;
+}
