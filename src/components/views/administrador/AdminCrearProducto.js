@@ -28,7 +28,6 @@ const AdminCrearProducto = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    //validar los datos
     if (
       validarNombre(nombreProducto) &&
       validarPrecio(precio) &&
@@ -38,8 +37,6 @@ const AdminCrearProducto = () => {
     ) {
       setMsjError(false);
 
-      console.log("los datos son correctos crear el objeto");
-      //crear un objeto
       const nuevoProducto = {
         nombre: nombreProducto,
         precio: precio,
@@ -48,7 +45,7 @@ const AdminCrearProducto = () => {
         detalle: detalleProducto,
         estado: estadoProducto,
       };
-      console.log(nuevoProducto);
+
 
       try {
         const respuesta = await fetch(URL + "productos", {
@@ -67,7 +64,6 @@ const AdminCrearProducto = () => {
             `El producto ${nuevoProducto.nombre} fue creado correctamente.`,
             "success"
           );
-          // Redireccionar a la pagina de administracion
           navegacion("/administrador");
         }
       } catch (error) {

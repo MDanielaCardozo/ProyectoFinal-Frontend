@@ -1,11 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;800;900&display=swap");
 
-/* Fuentes */
 * {
   font-family: "Montserrat", sans-serif;
 }
 
-/* Promos */
 .rowBrick {
   background-image: url(../../img/purplewall.jpg);
   background-size: cover;
@@ -37,7 +35,6 @@
   display: none;
 }
 
-/* Seccion conocenos */
 
 .rowConocenos {
   background-color: rgb(47, 45, 51);
@@ -76,7 +73,6 @@
   object-fit: cover;
 }
 
-/* Sección menú */
 
 .sectionMenu {
   position: static;
@@ -109,7 +105,6 @@
   padding: 20px;
 }
 
-/* Sección final */
 .sectionFinal {
   background-color: rgb(47, 45, 51);
   color: rgb(93, 89, 101);
@@ -120,14 +115,12 @@
   font-weight: 800;
 }
 
-/* Buscador productos */
 .buscadorProd {
   border: #363982 solid 5px;
   border-radius: 5px;
 }
 
-/* Mediaqueries */
-/* Celular */
+
 
 @media all and (max-width: 767px) {
   .sectionMenu h1 {

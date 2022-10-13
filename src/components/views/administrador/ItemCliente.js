@@ -3,13 +3,11 @@ import Button from "react-bootstrap/esm/Button";
 import Swal from "sweetalert2";
 
 const ItemCliente = ({ cliente, consultarAPI }) => {
-  // TRAER AL URL DE LA API
   const URL = process.env.REACT_APP_API_USUARIOS;
 
   const handleSuspender = (_id) => {
     Swal.fire({
       title: "Desea suspender a este cliente?",
-      // text: "No podrás revertir esto",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
@@ -32,15 +30,9 @@ const ItemCliente = ({ cliente, consultarAPI }) => {
               "El cliente fue suspendido con éxito",
               "success"
             );
-            // ACÁ CONSULTA A LA API
             consultarAPI();
           }
         } catch (error) {
-          // Swal.fire({
-          //   icon: "error",
-          //   title: "Algo falló",
-          //   text: "Intenta esta acción más tarde",
-          // });
         }
       }
     });
@@ -69,7 +61,6 @@ const ItemCliente = ({ cliente, consultarAPI }) => {
               "El cliente fue borrado con éxito",
               "success"
             );
-            // ACÁ CONSULTA A LA API
             consultarAPI();
           }
         } catch (error) {
