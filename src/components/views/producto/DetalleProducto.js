@@ -5,6 +5,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const DetalleProducto = () => {
+  const usuario = JSON.parse(localStorage.getItem(process.env.REACT_APP_LOCALSTORAGE)) || null;
   const navigate = useNavigate();
   const { id } = useParams();
   console.log(id);
@@ -54,9 +55,6 @@ const DetalleProducto = () => {
             <p className="text-light tipografiaDetalle">
               {producto.detalle}
             </p>
-            {/* <Link to={`*`} className="btn btn-outline-light">
-              Agregar al carrito
-            </Link> */}
             <Button className='btn btn-outline-light' onClick={()=>{agregarCarrito(producto)}}>Agregar al carrito</Button>
           </Col>
         </Row>
