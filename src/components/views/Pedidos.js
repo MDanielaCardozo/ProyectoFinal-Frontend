@@ -24,35 +24,58 @@ const Pedidos = () => {
         'success'
       );
     }
-  
-    const handleClick = async (_id) => {
-        try {
-            let productosPedido = [];
-            total = 0;
-            listaProductosPedido.forEach(element => {
-                total += element.precio;
-                productosPedido.push(element.nombre);
-            });
-            console.log(total);
-            const pedidos = {
-                usuario: usuario.nombre,
-                fecha:"10/10/22",
-                productosdelmenu:[...productosPedido],
-                estado:true
-            }
-            console.log(URL + "pedidos")
-            
-            const respuesta = await fetch(URL + "pedidos",{
-                method:'POST',
-                headers:{
-                    "Content-Type":"application/json"
-                },
-                body: JSON.stringify(pedidos)
-            })
-            console.log(respuesta);
-            const data = await respuesta.json();
-            console.log(data)
 
+    const guardarPedido=async()=>{
+      try {
+        let productosPedido = [];
+        total = 0;
+        listaProductosPedido.forEach(element => {
+            total += element.precio;
+            element.cantidad = 1;
+            productosPedido.push(element);
+        });
+
+        const today = new Date();
+        let day = today.getDate();
+        if (day<10) day = '0'+day;
+        let month = today.getMonth();
+        if (month<10) month = '0'+month;
+        let year = today.getFullYear();
+        year = year % 100;
+        let fecha = `${day}/${month}/${year}`;
+        
+        const pedidos = {
+            usuario: usuario.nombre,
+            fecha,
+            productosdelmenu:[...productosPedido],
+            estado:true
+        }
+        
+        const respuesta = await fetch(URL + "pedidos",{
+            method:'POST',
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body: JSON.stringify(pedidos)
+        })
+
+        const data = await respuesta.json();
+
+        localStorage.setItem(process.env.REACT_APP_LOCALSTORAGE_PRODUCTOS_PEDIDO, JSON.stringify([]));
+        setListaProductosPedido([]);
+        navigate("/");
+
+        Swal.fire(
+          'Perfecto!',
+          'Su pedido esta siendo preparado!',
+          'success'
+        )
+      } catch (error) {
+        console.log(error)
+      }
+    }
+
+    const handleClick = () => {
             Swal.fire({
                 title: 'Esta seguro?',
                 text: `Total a pagar :$ ${total}`,
@@ -62,21 +85,11 @@ const Pedidos = () => {
                 cancelButtonColor: '#d33',
                 confirmButtonText: 'Si, pagar!',
                 cancelButtonText: 'Cancelar'
-              }).then((result) => {
-                if (result.isConfirmed) {
-                    Swal.fire(
-                        'Perfecto!',
-                        'Su pedido esta siendo preparado!',
-                        'success'
-                      )
-                }
-              })
-              localStorage.setItem(process.env.REACT_APP_LOCALSTORAGE_PRODUCTOS_PEDIDO, JSON.stringify([]));
-              setListaProductosPedido([]);
-              navigate("/");
-      } catch (error) {
-        console.log(error)
-      }
+            }).then((result) => {
+              if (result.isConfirmed) {
+                guardarPedido();
+              }
+            })
     }
 
 
