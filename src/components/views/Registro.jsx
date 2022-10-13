@@ -84,20 +84,20 @@ const Registro = ({setUsuarioLogueado}) => {
 
     return (
         <div className="imagen justify-content-center  px-20  py-20 ">
-            <Card className="container  rounded bg-form px-0">
-                <div className="bg-dark rounded py-2">
+            <Card className="rounded bg-form px-0">
+                <div className="bg-dark rounded p-4">
                     <h1 className="title-typography text-center text-light">
-                        Complete el formulario para Registrarse
+                        Complete el formulario para registrarse
                     </h1>
                 </div>
-                <Form className="container" onSubmit={handleSubmit}>
+                <Form className="container formRegistro" onSubmit={handleSubmit}>
                     <div className="row py-4">
                         <div className="col-12 ">
                             <Form.Group
                                 className="mb-3 text-light"
                                 controlId="formAdmin"
                             >
-                                <Form.Label>Nombre*</Form.Label>
+                                <Form.Label>Nombre *</Form.Label>
                                 <Form.Control
                                     type="text"
                                     placeholder="Entre (4 y 15) caracteres"
@@ -112,7 +112,7 @@ const Registro = ({setUsuarioLogueado}) => {
                                 className="mb-3 text-light"
                                 controlId="formEmail"
                             >
-                                <Form.Label>email*</Form.Label>
+                                <Form.Label>Email *</Form.Label>
                                 <Form.Control
                                     type="text"
                                     placeholder="Ej: juanperez@gmail.com"
@@ -127,7 +127,7 @@ const Registro = ({setUsuarioLogueado}) => {
                                 className="mb-3 text-light"
                                 controlId="formClave"
                             >
-                                <Form.Label>Contraseña*</Form.Label>
+                                <Form.Label>Contraseña *</Form.Label>
                                 <Form.Control
                                     type="text"
                                     placeholder="Ej: 1234admin"
@@ -140,7 +140,7 @@ const Registro = ({setUsuarioLogueado}) => {
                     </div>
                     <Button
                         variant="outline-light"
-                        className="mb-3"
+                        className="mb-3 botonRegistro"
                         type="submit"
                     >
                         Registrar
