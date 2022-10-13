@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { Card, Row, Col, Badge, Button } from "react-bootstrap";
 import "./DetalleProducto.css";
 import Burger from "../../imgDetalle/burger.jpeg";
@@ -24,23 +24,32 @@ const DetalleProducto = () => {
       console.log("No pudieron cargarse los productos");
     }
   };
-
+  
+  console.log(producto)
   // agregar a carrito
 
-  const agregarCarrito = async () => {
+  const agregarCarrito = async (_id) => {
     try {
+      const pedidos = {
+        usuario:"Fran", 
+        fecha:"12/10/22",
+        productosdelmenu:["Burger"],
+        estado:true
+
+  }
+  console.log(URL + "pedidos")
+
       const respuesta = await fetch(URL + "pedidos",{
         method:'POST',
         headers:{
           "Content-Type":"application/json"
         },
-        body: JSON.stringify(producto)
+        body: JSON.stringify(pedidos)
       })
     } catch (error) {
       console.log(error)
     }
   }
-
   return (
     <div className="imagenFondo">
       <Card className="container bgCard p-4 mb-3">
@@ -61,7 +70,7 @@ const DetalleProducto = () => {
             {/* <Link to={`*`} className="btn btn-outline-light">
               Agregar al carrito
             </Link> */}
-            <Button className='btn btn-outline-light' onClick={agregarCarrito()}>Agregar al carrito</Button>
+            <Button className='btn btn-outline-light' onClick={()=>{agregarCarrito(producto._id)}}>Agregar al carrito</Button>
           </Col>
         </Row>
       </Card>

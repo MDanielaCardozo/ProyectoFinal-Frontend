@@ -1,20 +1,40 @@
-import React from "react";
+import React ,{useEffect, useState} from "react";
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faTrash} from '@fortawesome/free-solid-svg-icons';
 import Swal from 'sweetalert2';
+import ItemPedidos from "./ItemPedidos";
 import "./Pedidos.css";
 
-const handleClick = ()=>{
-  Swal.fire(
-    'Muy bien!',
-    'Su producto esta siendo preparado.',
-    'success'
-  )
-}
 
 const Pedidos = () => {
+  
+  useEffect(() => {
+    consultarAPI();
+  }, []);
+  
+  const [productos, setProductos] = useState([]);
+  
+  const consultarAPI = async () => {
+    try {
+      const respuesta = await fetch(URL);
+      const listaProductos = await respuesta.json();
+      setProductos(listaProductos);
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: "Algo falló",
+        text: "Intenta esto más tarde",
+      });
+    }
+  };
+  
+  const handleClick = ()=>{
+    Swal.fire(
+      'Muy bien!',
+      'Su producto esta siendo preparado.',
+      'success'
+    )
+  }
   return (
     <div className="fondo text-center text-dark">
       <h1 className="display-3 text-light">CARRITO DE COMPRAS</h1>
@@ -31,7 +51,7 @@ const Pedidos = () => {
           </thead>
           <tbody>
             {/* ejemplo */}
-            <tr>
+            {/* <tr>
               <td>1</td>
               <td>CheesBurger</td>
               <td>1</td>
@@ -39,7 +59,12 @@ const Pedidos = () => {
               <td>
               <Button variant="danger"><FontAwesomeIcon className="botont" icon={faTrash}/></Button>{' '}
               </td>
-            </tr>
+            </tr> */}
+            {productos.map((producto)=>(
+            <ItemPedidos
+            key = {producto._id}
+            producto = {producto}></ ItemPedidos>
+          ))}
           </tbody>
         </Table>
           <div className="text-end">
