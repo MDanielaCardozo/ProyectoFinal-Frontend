@@ -2,6 +2,7 @@ import React from "react";
 import Swal from "sweetalert2";
 import Button from "react-bootstrap/esm/Button";
 import "./ItemProducto.css";
+import { Link } from "react-router-dom";
 
 const ItemProducto = ({ producto, consultarAPI }) => {
   const URL = process.env.REACT_APP_API_HAMBURGUESERIA;
@@ -55,9 +56,12 @@ const ItemProducto = ({ producto, consultarAPI }) => {
       <td className="text-black">{producto.categoria}</td>
       <td className="text-black truncate">{producto.imagen}</td>
       <td className="text-black">
-        <Button variant="warning" className="me-1">
+        <Link
+          to={`/administrador/editar/${producto._id}`}
+          className="btn btn-warning"
+        >
           Editar
-        </Button>
+        </Link>
         <Button variant="danger" type="submit" onClick={handleDeleteProducto}>
           Eliminar
         </Button>
