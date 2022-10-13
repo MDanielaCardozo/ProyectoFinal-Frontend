@@ -84,7 +84,7 @@ const EditarProducto = () => {
           "error"
         );
       }
-      navegacion("/administrador");
+      navegacion("/privado/administrador");
     } else {
       setMsjError(true);
     }
