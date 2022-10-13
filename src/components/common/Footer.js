@@ -11,7 +11,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons'
 import Logo from '../../img/logoLed.png'
 import './Footer.css';
-import 'mdb-react-ui-kit/dist/css/mdb.min.css'
 
 const Footer = () => {
   return (
@@ -23,9 +22,9 @@ const Footer = () => {
               <img
                 alt="Logo del restaurante"
                 src={Logo}
-                width="250"
+                width="170"
                 height="auto"
-                className="my-0 py-0 ps-auto"
+                className="my-0 py-0 ps-auto "
               />
             </MDBCol>
 
@@ -39,7 +38,7 @@ const Footer = () => {
 
             </MDBCol>
 
-            <MDBCol md="3" lg="2" xl="2" className="mx-auto mb-4">
+            <MDBCol md="3" lg="2" xl="2" className="mx-auto mb-4 text-center">
               <h6 className="fw-bold mb-4 fs-5">Mi cuenta</h6>
               <p><Link to='/' className="fs-6 text-reset subrayado">Mis pedidos</Link></p>
               <p><Link to='/' className="fs-6 text-reset subrayado">Burger points</Link></p>
