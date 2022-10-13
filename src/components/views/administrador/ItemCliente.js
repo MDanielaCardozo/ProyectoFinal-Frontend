@@ -54,7 +54,7 @@ const ItemCliente = ({ cliente, consultarAPI }) => {
           const parametros = {
             method: "DELETE",
           };
-          const respuesta = await fetch(URL + "/" + cliente._id, parametros);
+          const respuesta = await fetch(URL + cliente._id, parametros);
           if (respuesta.status === 200) {
             Swal.fire(
               "Eliminado",
