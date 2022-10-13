@@ -35,10 +35,13 @@ productos del menú y pedidos solicitados, además debe poder realizar las sigui
 funcionalidad desarrollada.
 ## 📗 Bibliotecas externas
 
-- Reac-Bootstrap
+- React Bootstrap
 - Sweet Alert
-- Route
+- React Router Dom
 - EmailJS
+- Sweet Alert 2
+- Mdb React ui kit
+- Fontawesome
 
 ## ⬇️ Instalacion
 El backend de esta pagina esta subido en vercel, por lo que podriamos utilizarlo realizando los siguientes comandos
