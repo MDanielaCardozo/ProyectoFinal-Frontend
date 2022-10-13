@@ -21,14 +21,13 @@ const Registro = ({setUsuarioLogueado}) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        //validaciones
         if (validarclave(clave))
             setmsjErrorclave(false);
         else 
             setmsjErrorclave(true);
         
         if (
-            // chequearExistenciaEmail(usuario, email) &&
+          
             cantidadCaracteres(nombre, 4, 70) &&
             validarclave(clave) &&
             validarEmail(email)
@@ -39,7 +38,7 @@ const Registro = ({setUsuarioLogueado}) => {
                 email,
                 password: clave,
                 estado: true,
-                perfil: false // registrar como CLIENTE por defecto
+                perfil: false 
             };
 
             try {
@@ -53,18 +52,18 @@ const Registro = ({setUsuarioLogueado}) => {
                 const respuesta = await fetch(URL + '/nuevo', parametrosPeticion);
                 if (respuesta.status === 201) {
                     const data = await respuesta.json();
-                    //almaceno el usuario en el state y localstorage
+                    
                     localStorage.setItem(process.env.REACT_APP_LOCALSTORAGE, JSON.stringify(data));
                     setUsuarioLogueado(data);
                     sendMail(nuevoUsario.nombre, nuevoUsario.email);
-                    //muestra registro correcto
+                   
                     Swal.fire({
                         title: 'Registro exitoso',
                         showDenyButton: false,
                         showCancelButton: false,
                         confirmButtonText: 'Ok',
                       }).then((result) => {
-                        //redireccionar a la página desde donde se llamó
+                        
                         navigate(-1);                
                       });
                 }
@@ -72,7 +71,6 @@ const Registro = ({setUsuarioLogueado}) => {
                 {
                     const data = await respuesta.json();
                     setmsjErroremail(data.mensaje);
-                    console.log(data);
                 }
             } catch (error) {
                 Swal.fire("Se produjo un error", "No se pudo realizar su registro de usuario, por favor intente nuevamente en unos minutos", "error");

@@ -14,12 +14,10 @@ import Alert from "react-bootstrap/Alert";
 import "../administrador/AdminCrearProducto.css";
 
 const EditarProducto = () => {
-  // Traer el parametro
   const { id } = useParams();
   const [producto, setProducto] = useState({});
   const URL = process.env.REACT_APP_API_HAMBURGUESERIA;
   const navegacion = useNavigate();
-  //   Crear variable de referencia
   const nombreProductoRef = useRef("");
   const precioRef = useRef(0);
   const imagenRef = useRef("");
@@ -37,13 +35,13 @@ const EditarProducto = () => {
       setProducto(dato);
     } catch (error) {
       console.log(error);
-      //   Mostrar un mensaje al usuario
+      
     }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Validar que todos los campos son correctos
+   
     if (
       validarNombre(nombreProductoRef.current.value) &&
       validarPrecio(precioRef.current.value) &&
@@ -51,7 +49,7 @@ const EditarProducto = () => {
       validarUrl(imagenRef.current.value) &&
       campoRequerido(producto.categoria)
     ) {
-      // Crear un objeto con los datos modificados
+     
       const productoEditar = {
         nombre: nombreProductoRef.current.value,
         imagen: imagenRef.current.value,
@@ -60,8 +58,8 @@ const EditarProducto = () => {
         detalle: detalleRef.current.value,
         estado: true,
       };
-      console.log(productoEditar);
-      // Pedir a la API la actualización
+      
+
       try {
         const respuesta = await fetch(URL + "productos/" + id, {
           method: "PUT",
@@ -86,7 +84,6 @@ const EditarProducto = () => {
           "error"
         );
       }
-      // Redirecciono a la web de la tabla de productos
       navegacion("/administrador");
     } else {
       setMsjError(true);

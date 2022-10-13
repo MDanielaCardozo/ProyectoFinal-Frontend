@@ -4,7 +4,6 @@
     font-family: 'Montserrat', sans-serif;
 }
 .navD{
-    /* background-color: rgb(3,8,14); */
     position: absolute;
 }
 .navLetra{
@@ -37,8 +36,7 @@
     position: relative;
   }
   .boton:hover {
-    /* background: #ffffff;
-    color: rgb(0, 0, 0) !important; */
+ 
     background: rgba(0,0,0,0);
     border: 2px solid;
     border-radius: 10px;

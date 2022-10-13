@@ -23,7 +23,7 @@
     font-size: larger;
     color: white;
 }
-/* Celulares */
+
 @media all and (max-width: 1399px){
    
     .px-10 {

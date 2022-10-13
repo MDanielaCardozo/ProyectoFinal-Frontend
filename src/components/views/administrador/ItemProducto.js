@@ -33,7 +33,6 @@ const ItemProducto = ({ producto, consultarAPI }) => {
               "El producto fue borrado con éxito",
               "success"
             );
-            // ACÁ CONSULTA A LA API
             consultarAPI();
           }
         } catch (error) {

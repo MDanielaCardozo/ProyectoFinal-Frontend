@@ -1,7 +1,5 @@
 import React, { useEffect } from "react";
-import { Container } from "react-bootstrap";
 import "./error.css";
-import imagen from "../../img/purplewall.jpg";
 const Error = () => {
   useEffect(() => {
     window.scrollTo(0, 0);

@@ -34,7 +34,6 @@ const Home = () => {
     }
   };
 
-  // Cambiar pagina
   const paginar = (numeroPagina) => {
     setPaginaActual(numeroPagina);
     element.scrollIntoView();
@@ -48,10 +47,8 @@ const Home = () => {
       }
     });
     setProductosBuscados(productosSearch);
-    console.log(productosBuscados);
   };
 
-  // Determinacion de productos por pagina
   const indexUltimoProducto = paginaActual * productosPorPagina;
   const indexPrimerProducto = indexUltimoProducto - productosPorPagina;
   const productosActuales = productosBuscados.slice(

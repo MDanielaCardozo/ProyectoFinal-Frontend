@@ -13,7 +13,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Administrador from "./components/views/administrador/Administrador";
 import RutasProtegidas from "./components/routes/RutasProtegidas";
 import Pedidos from "./components/views/Pedidos";
-import ItemProducto from "./components/views/administrador/ItemProducto";
 import EditarProducto from "./components/views/producto/EditarProducto";
 
 const App = () => {

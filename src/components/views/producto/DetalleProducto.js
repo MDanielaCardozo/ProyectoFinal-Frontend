@@ -8,7 +8,6 @@ const DetalleProducto = () => {
   const usuario = JSON.parse(localStorage.getItem(process.env.REACT_APP_LOCALSTORAGE)) || null;
   const navigate = useNavigate();
   const { id } = useParams();
-  console.log(id);
   const URL = process.env.REACT_APP_API_HAMBURGUESERIA;
   const [producto, setProducto] = useState([]);
 

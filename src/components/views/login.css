@@ -17,11 +17,9 @@
 
 .bg-gris {
   background-color: #1b0747bd;
-  /* background-color: rgba(0, 0, 0, 0.664) !important; */
 }
 
 .bg-login {
-  /* background-color: hsl(33, 41%, 95%); */
   background-color: rgba(0, 0, 0, 0.658) !important;
 }
 
@@ -44,14 +42,12 @@
 }
 
 .bg-grupo {
-  /* background-color: #ffffff; */
   background-color: rgba(0, 0, 0, 0.664) !important;
   padding: 8px;
   border-radius: 10px;
 }
 
 .imagen {
-  /* background-image: url(https://images.pexels.com/photos/159291/beer-machine-alcohol-brewery-159291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1); */
   background-image: url(../../img/purplewall.jpg);
   background-size: cover;
 
@@ -63,7 +59,6 @@
   color: rgb(255, 227, 191);
 }
 
-/* Celulares */
 @media all and (max-width: 760px) {
   .rowLadrillo {
     background-image: url(../../img/purplewall-40.jpg);
@@ -74,7 +69,6 @@
     padding-top: 180px;
   }
 }
-/* Tablets */
 @media all and (min-width: 761px) and (max-width: 991px) {
   .rowLadrillo {
     background-image: url(../../img/purplewall-40.jpg);

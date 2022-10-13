@@ -12,7 +12,6 @@ const Login = ({ setUsuarioLogueado }) => {
   const [errors, setErrors] = useState({});
   const [mensajeError, setMensajeError] = useState("");
 
-  //inicializar useNavigate
   const navigate = useNavigate();
 
   const setField = (field, value) => {
@@ -20,7 +19,7 @@ const Login = ({ setUsuarioLogueado }) => {
       ...form,
       [field]: value,
     });
-    // Check and see if errors exist, and remove them from the error object:
+
     if (!!errors[field])
       setErrors({
         ...errors,
@@ -38,11 +37,7 @@ const Login = ({ setUsuarioLogueado }) => {
       newErrors.email = "El email debe tener entre 4 y 70 caracteres";
     else if (!validarEmail(email)) newErrors.email = "Ingrese un email válido";
 
-    /*
-        // password errors
-        if ( !password || password === '' ) newErrors.password = 'Ingrese su password'
-        else if (!cantidadCaracteres(password, 5, 10))  newErrors.password = 'La contraseña debe tener entre 5 y 10 caracteres'
-        */
+ 
     return newErrors;
   };
 
@@ -52,13 +47,13 @@ const Login = ({ setUsuarioLogueado }) => {
     //validar
     const newErrors = findFormErrors();
     if (Object.keys(newErrors).length > 0) {
-      // We got errors!
+
       setErrors(newErrors);
       return;
     }
 
     const usuario = form;
-    usuario.valido = false; //invalido por defecto
+    usuario.valido = false; 
     setMensajeError("");
 
     try {
@@ -72,13 +67,13 @@ const Login = ({ setUsuarioLogueado }) => {
 
       if (respuesta.status === 200) {
         const data = await respuesta.json();
-        //almaceno el usuario en el state y localstorage
+      
         setUsuarioLogueado(data);
         localStorage.setItem(
           process.env.REACT_APP_LOCALSTORAGE,
           JSON.stringify(data)
         );
-        //redireccionar a la pagina desde donde se llamó
+       
         navigate(-1);
       } else {
         Swal.fire(
