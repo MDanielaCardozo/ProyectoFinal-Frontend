@@ -6,7 +6,9 @@ import ItemPedidos from "./ItemPedidos";
 import "./Pedidos.css";
 
 const Pedidos = () => {
+    const URL = process.env.REACT_APP_API_HAMBURGUESERIA;
     const productosPedido = JSON.parse(localStorage.getItem(process.env.REACT_APP_LOCALSTORAGE_PRODUCTOS_PEDIDO)) || [];
+    const usuario = JSON.parse(localStorage.getItem(process.env.REACT_APP_LOCALSTORAGE)) || {nombre: "anonimo!!"};
     const [listaProductosPedido, setListaProductosPedido] = useState(productosPedido);
 
     const quitarProducto=(producto)=>{
@@ -20,9 +22,37 @@ const Pedidos = () => {
       );
     }
   
-    const handleClick = () => {
-        Swal.fire("Muy bien!", "Su producto esta siendo preparado.", "success");
-    };
+    const handleClick = async (_id) => {
+      try {
+        let productosPedido = [];
+        listaProductosPedido.forEach(element => {
+          productosPedido.push(element.nombre);
+        });
+        const pedidos = {
+          usuario: usuario.nombre,
+          fecha:"10/10/22",
+          productosdelmenu:[...productosPedido],
+          estado:true
+        }
+        console.log(URL + "pedidos")
+
+        const respuesta = await fetch(URL + "pedidos",{
+          method:'POST',
+          headers:{
+            "Content-Type":"application/json"
+          },
+          body: JSON.stringify(pedidos)
+        })
+        console.log(respuesta);
+        const data = await respuesta.json();
+        console.log(data)
+
+      } catch (error) {
+        console.log(error)
+      }
+    }
+
+
     return (
         <div className="fondo text-center text-dark">
             <h1 className="display-3 text-light">CARRITO DE COMPRAS</h1>
