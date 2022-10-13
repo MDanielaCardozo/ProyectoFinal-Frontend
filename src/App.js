@@ -11,6 +11,7 @@ import Login from "./components/views/Login";
 import Error from "./components/views/Error";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Administrador from "./components/views/administrador/Administrador";
+import RutasProtegidas from "./components/routes/RutasProtegidas";
 import Pedidos from "./components/views/Pedidos";
 import ItemProducto from "./components/views/administrador/ItemProducto";
 import EditarProducto from "./components/views/producto/EditarProducto";
@@ -24,14 +25,20 @@ const App = () => {
         <Menu usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado} />
         <Routes>
           <Route exact path="/" element={<Home/>} />
-          <Route exact path="/administrador" element={<Administrador/>} />
+          <Route path='/*' element={
+            <RutasProtegidas>
+              <Routes>
+                <Route exact path="/administrador" element={<Administrador/>} />
+                <Route exact path="/crearProducto" element={<CrearProducto/>}/>
+                <Route exact path="/administrador/editar/:id" element={<EditarProducto/>} />
+              </Routes>
+            </RutasProtegidas>
+          }></Route>
           <Route exact path="/acercaDe" element={<AcercaDe/>} />
-          <Route exact path="/administrador/editar/:id" element={<EditarProducto/>} />
           <Route exact path="/detalleProducto/:id" element={<DetalleProducto/>} />
           <Route exact path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado}/>}/>
           <Route exact path="/registro" element={<Registro setUsuarioLogueado={setUsuarioLogueado}/>} />
           <Route exact path="*" element={<Error/>} />
-          <Route exact path="/crearProducto" element={<CrearProducto/>}/>
           <Route exact path="/pedidos" element={<Pedidos/>}/>
         </Routes>
         <Footer />
