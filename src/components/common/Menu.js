@@ -8,14 +8,28 @@ import Logo from '../../img/logoLed.png'
 import {Link,NavLink, useNavigate} from 'react-router-dom';
 import "./Menu.css"
 import { Button } from "react-bootstrap";
+import Swal from "sweetalert2";
 
 function CollapsibleExample({ usuarioLogueado, setUsuarioLogueado }) {
   const navigate = useNavigate();
 
   const logout = ()=> {
-    localStorage.removeItem(process.env.REACT_APP_LOCALSTORAGE);
-    setUsuarioLogueado({});
-    navigate("/");
+    Swal.fire({
+      title: 'Esta seguro?',
+      text: 'Está seguro que desea cerrar su sesión?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Cerrar',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        localStorage.removeItem(process.env.REACT_APP_LOCALSTORAGE);
+        setUsuarioLogueado({});
+        navigate("/");
+          }
+    })
   }
 
   return (
