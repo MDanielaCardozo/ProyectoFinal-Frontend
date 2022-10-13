@@ -57,7 +57,7 @@ const ItemProducto = ({ producto, consultarAPI }) => {
       <td className="text-black itemTabla truncate">{producto.imagen}</td>
       <td className="text-black d-flex flex-wrap justify-content-around p-3">
         <Link
-          to={`/administrador/editar/${producto._id}`}
+          to={`/privado/administrador/editar/${producto._id}`}
           className="btn btn-warning btnItemsAdmin"
         >
           Editar

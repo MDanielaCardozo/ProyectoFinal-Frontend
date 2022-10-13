@@ -30,9 +30,8 @@ const App = () => {
           <Route exact path="/detalleProducto/:id" element={<DetalleProducto/>} />
           <Route exact path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado}/>}/>
           <Route exact path="/registro" element={<Registro setUsuarioLogueado={setUsuarioLogueado}/>} />
-          <Route exact path="*" element={<Error/>} />
           <Route exact path="/pedidos" element={<Pedidos/>}/>
-          <Route path='/*' element={
+          <Route path='/privado/*' element={
             <RutasProtegidas>
               <Routes>
                 <Route exact path="/administrador" element={<Administrador/>} />
@@ -41,6 +40,7 @@ const App = () => {
               </Routes>
             </RutasProtegidas>
           }></Route>
+          <Route exact path="*" element={<Error/>} />
         </Routes>
         <Footer />
       </BrowserRouter>

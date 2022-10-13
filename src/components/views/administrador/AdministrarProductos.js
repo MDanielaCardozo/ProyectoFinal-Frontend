@@ -32,7 +32,7 @@ const AdministrarProductos = () => {
     <div className="mb-4">
       <div className="d-flex justify-content-between">
         <h1 className="text-black">Lista de productos</h1>
-        <Link to="/crearProducto" className="btn btn-primary mb-2 btnItemsAdmin d-flex align-items-center">
+        <Link to="/privado/crearProducto" className="btn btn-primary mb-2 btnItemsAdmin d-flex align-items-center">
           Agregar producto
         </Link>
       </div>
