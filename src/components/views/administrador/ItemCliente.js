@@ -47,6 +47,9 @@ const ItemCliente = ({cliente, consultarAPI}) => {
       
       
        <tr>
+      <td className="text-black">{cliente.nombre}</td>
+      <td className="text-black">{cliente.email}</td>
+      <td className="text-black">{cliente.estado}</td>
       <td className="text-black">{cliente.perfil?"Admin":"Cliente"}</td>
       <td className="text-black"> 
         <Button variant="warning" className="me-1">Suspender</Button>

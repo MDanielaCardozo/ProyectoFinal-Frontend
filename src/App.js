@@ -11,6 +11,7 @@ import Login from "./components/views/Login";
 import Error from "./components/views/Error";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Administrador from "./components/views/administrador/Administrador";
+import AdministrarPedido from "./components/views/administrador/AdministrarPedido";
 
 const App = () => {
   const [usuarioLogueado, setUsuarioLogueado] = useState({});
@@ -28,6 +29,7 @@ const App = () => {
           <Route exact path="/registro" element={<Registro setUsuarioLogueado={setUsuarioLogueado}/>} />
           <Route exact path="*" element={<Error/>} />
           <Route exact path="/crearProducto" element={<CrearProducto/>}/>
+          <Route exact path="/listaPedidos" element={<AdministrarPedido></AdministrarPedido>}/>
         </Routes>
         <Footer />
       </BrowserRouter>

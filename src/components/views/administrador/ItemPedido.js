@@ -8,7 +8,7 @@ const ItemPedido = ({pedido, consultarAPI}) => {
     return (
         <tr>
             <td className='text-black'>ID</td>
-            <td className='text-black'>ID</td>
+            <td className='text-black'></td>
             <td className='text-black'>ID</td>
             <td className='text-black'>ID</td>
         </tr>
