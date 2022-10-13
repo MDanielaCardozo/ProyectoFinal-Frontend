@@ -129,7 +129,7 @@ const Registro = ({setUsuarioLogueado}) => {
                             >
                                 <Form.Label>Contraseña*</Form.Label>
                                 <Form.Control
-                                    type="text"
+                                    type="password"
                                     placeholder="Ej: 1234admin"
                                     onChange={(e) =>
                                         setclave(e.target.value.trim())
