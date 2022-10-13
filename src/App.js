@@ -11,6 +11,7 @@ import Login from "./components/views/Login";
 import Error from "./components/views/Error";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Administrador from "./components/views/administrador/Administrador";
+import Pedidos from "./components/views/Pedidos";
 import ItemProducto from "./components/views/administrador/ItemProducto";
 import EditarProducto from "./components/views/producto/EditarProducto";
 
@@ -31,6 +32,7 @@ const App = () => {
           <Route exact path="/registro" element={<Registro setUsuarioLogueado={setUsuarioLogueado}/>} />
           <Route exact path="*" element={<Error/>} />
           <Route exact path="/crearProducto" element={<CrearProducto/>}/>
+          <Route exact path="/pedidos" element={<Pedidos/>}/>
         </Routes>
         <Footer />
       </BrowserRouter>

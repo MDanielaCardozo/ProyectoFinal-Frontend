@@ -11,6 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons'
 import Logo from '../../img/logoLed.png'
 import './Footer.css';
+import 'mdb-react-ui-kit/dist/css/mdb.min.css'
 
 const Footer = () => {
   return (
