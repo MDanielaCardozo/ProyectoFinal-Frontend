@@ -21,7 +21,11 @@ const Pedidos = () => {
     }
   
     const handleClick = () => {
-        Swal.fire("Muy bien!", "Su producto esta siendo preparado.", "success");
+        Swal.fire(
+            'Muy bien!',
+            'Su pedido está siendo preparado.!',
+            'success'
+          )
     };
     return (
         <div className="fondo text-center text-dark">
@@ -44,6 +48,7 @@ const Pedidos = () => {
                     </tbody>
                 </Table>
                 <div className="text-end">
+                    <p className="mb-0">Total a pagar :</p>
                     <Button variant="primary" className="mt-3" onClick={handleClick}>
                         Proceder a pagar
                     </Button>
