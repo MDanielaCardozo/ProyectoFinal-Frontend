@@ -26,6 +26,12 @@ const App = () => {
         <Menu usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado} />
         <Routes>
           <Route exact path="/" element={<Home/>} />
+          <Route exact path="/acercaDe" element={<AcercaDe/>} />
+          <Route exact path="/detalleProducto/:id" element={<DetalleProducto/>} />
+          <Route exact path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado}/>}/>
+          <Route exact path="/registro" element={<Registro setUsuarioLogueado={setUsuarioLogueado}/>} />
+          <Route exact path="*" element={<Error/>} />
+          <Route exact path="/pedidos" element={<Pedidos/>}/>
           <Route path='/*' element={
             <RutasProtegidas>
               <Routes>
@@ -35,12 +41,6 @@ const App = () => {
               </Routes>
             </RutasProtegidas>
           }></Route>
-          <Route exact path="/acercaDe" element={<AcercaDe/>} />
-          <Route exact path="/detalleProducto/:id" element={<DetalleProducto/>} />
-          <Route exact path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado}/>}/>
-          <Route exact path="/registro" element={<Registro setUsuarioLogueado={setUsuarioLogueado}/>} />
-          <Route exact path="*" element={<Error/>} />
-          <Route exact path="/pedidos" element={<Pedidos/>}/>
         </Routes>
         <Footer />
       </BrowserRouter>
