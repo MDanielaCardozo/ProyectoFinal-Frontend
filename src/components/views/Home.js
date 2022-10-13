@@ -19,6 +19,7 @@ const Home = () => {
   const [productosBuscados, setProductosBuscados] = useState([]);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     consultarProd();
   }, []);
 
