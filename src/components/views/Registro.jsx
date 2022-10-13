@@ -39,7 +39,7 @@ const Registro = ({setUsuarioLogueado}) => {
                 email,
                 password: clave,
                 estado: true,
-                perfil: true,
+                perfil: false // registrar como CLIENTE por defecto
             };
 
             try {

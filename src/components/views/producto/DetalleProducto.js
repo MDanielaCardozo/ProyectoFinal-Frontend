@@ -17,7 +17,7 @@ const DetalleProducto = () => {
 
   const consultarProd = async () => {
     try {
-      const respuesta = await fetch(URL + "/" + id);
+      const respuesta = await fetch(URL + "productos/" + id);
       const listarProductos = await respuesta.json();
       setProducto(listarProductos);
     } catch (error) {
