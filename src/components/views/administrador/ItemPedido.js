@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState} from 'react';
 import Swal from 'sweetalert2';
 import Button from 'react-bootstrap/esm/Button';
 import ItemPedidoLista from './ItemPedidoLista';
@@ -7,11 +7,20 @@ import Accordion from 'react-bootstrap/Accordion';
 const ItemPedido = ({ pedido, consultarAPI }) => {
     // TRAER AL URL DE LA API
     const URL = process.env.REACT_APP_API_HAMBURGUESERIA;
-    const [estado, setestado] = useState(false);
+
+    const[estado,setEstado]=useState(pedido.estado)
+    console.log(pedido);
+    //como el estate actualiza con retrazo, se crea la varible bandera.
+    let bandera = pedido.estado;
+
+    // let estado= pedido.estado;
 
     const handleEntregado = (_id) => {
+      let title = estado
+          ? 'Desea suspender el pedido?'
+          : 'El pedido fue entregado? ';
         Swal.fire({
-            title: 'El pedido fue entregado?',
+            title:title,
             // text: "No podrás revertir esto",
             icon: 'warning',
             showCancelButton: true,
@@ -21,23 +30,43 @@ const ItemPedido = ({ pedido, consultarAPI }) => {
             cancelButtonText: 'Cancelar',
         }).then(async (result) => {
             if (result.isConfirmed) {
+              if (estado) {
+                setEstado(false);
+                bandera=false;
+              }else{
+                setEstado(true);
+                bandera=true;
+              }
+              console.log(estado);
+              const pedidoEditar = {
+                  usuario: pedido.usuario,
+                  fecha:pedido.fecha,
+                  productosdelmenu: pedido.productosdelmenu,
+                  estado: bandera,
+              };
+              console.log(pedidoEditar)
                 try {
-                    const parametros = {
-                        method: 'POST',
-                    };
                     const respuesta = await fetch(
-                        URL + 'entregado/' + pedido._id,
-                        parametros
+                        URL + 'pedidos/' + pedido._id,
+                        {
+                            method: 'PUT',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body:JSON.stringify(pedidoEditar)
+                        }
+                       
                     );
                     if (respuesta.status === 200) {
+
                         Swal.fire(
-                            'Pedido entregado',
-                            'El pedido fue entregado con éxito',
+                             estado ? 'Pedido suspendido' : 'Pedido entregado',
+                            estado ? 'El pedido fue suspendido' : 'El pedido fue entregado con éxito',
                             'success'
                         );
-                        setestado(true);
                         // ACÁ CONSULTA A LA API
                         consultarAPI();
+
                     }
                 } catch (error) {
                     Swal.fire({
@@ -46,7 +75,8 @@ const ItemPedido = ({ pedido, consultarAPI }) => {
                         text: 'Intenta esta acción más tarde',
                     });
                 }
-            }else setestado(false);
+            }else  setEstado(false);
+            console.log(estado)
         });
     };
     return (
@@ -75,7 +105,7 @@ const ItemPedido = ({ pedido, consultarAPI }) => {
             <td className="text-black">{pedido.usuario}</td>
             <td className="text-black">{pedido.fecha}</td>
             <td className="text-black">
-                {pedido.estado ? 'Entregado' : 'Pendiente'}
+                {estado ? 'Entregado' : 'Pendiente'}
             </td>
             <td className="text-black">
                 <div className="d-flex justify-content-center">
