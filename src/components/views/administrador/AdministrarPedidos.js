@@ -34,7 +34,7 @@ const AdministrarPedidos = () => {
             <Table striped bordered hover responsive>
               <thead>
                 <tr>
-                  <th>ID</th>
+                  <th>Pedido</th>
                   <th>Cliente</th>
                   <th>Fecha</th>
                   <th>Estado</th>
