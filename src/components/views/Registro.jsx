@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Card, Button, Alert } from 'react-bootstrap';
 import './registro.css';
-import { cantidadCaracteres, validarclave, validarGmail } from './helperUsuario';
+import { cantidadCaracteres, validarclave, validarEmail } from './helperUsuario';
 import { useNavigate } from 'react-router-dom';
 import Swal from "sweetalert2";
 import { sendMail } from './sendMail';
@@ -21,17 +21,16 @@ const Registro = ({setUsuarioLogueado}) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        //validaciones
         if (validarclave(clave))
             setmsjErrorclave(false);
         else 
             setmsjErrorclave(true);
         
         if (
-            // chequearExistenciaEmail(usuario, email) &&
-            cantidadCaracteres(nombre, 4, 15) &&
+          
+            cantidadCaracteres(nombre, 4, 70) &&
             validarclave(clave) &&
-            validarGmail(email)
+            validarEmail(email)
         ) {
             setMsjError(false);
             const nuevoUsario = {
@@ -39,7 +38,7 @@ const Registro = ({setUsuarioLogueado}) => {
                 email,
                 password: clave,
                 estado: true,
-                perfil: true,
+                perfil: false 
             };
 
             try {
@@ -53,18 +52,18 @@ const Registro = ({setUsuarioLogueado}) => {
                 const respuesta = await fetch(URL + '/nuevo', parametrosPeticion);
                 if (respuesta.status === 201) {
                     const data = await respuesta.json();
-                    //almaceno el usuario en el state y localstorage
+                    
                     localStorage.setItem(process.env.REACT_APP_LOCALSTORAGE, JSON.stringify(data));
                     setUsuarioLogueado(data);
                     sendMail(nuevoUsario.nombre, nuevoUsario.email);
-                    //muestra registro correcto
+                   
                     Swal.fire({
                         title: 'Registro exitoso',
                         showDenyButton: false,
                         showCancelButton: false,
                         confirmButtonText: 'Ok',
                       }).then((result) => {
-                        //redireccionar a la página desde donde se llamó
+                        
                         navigate(-1);                
                       });
                 }
@@ -72,7 +71,6 @@ const Registro = ({setUsuarioLogueado}) => {
                 {
                     const data = await respuesta.json();
                     setmsjErroremail(data.mensaje);
-                    console.log(data);
                 }
             } catch (error) {
                 Swal.fire("Se produjo un error", "No se pudo realizar su registro de usuario, por favor intente nuevamente en unos minutos", "error");
@@ -84,20 +82,20 @@ const Registro = ({setUsuarioLogueado}) => {
 
     return (
         <div className="imagen justify-content-center  px-20  py-20 ">
-            <Card className="container  rounded bg-form px-0">
-                <div className="bg-dark rounded py-2">
+            <Card className="rounded bg-form px-0">
+                <div className="bg-dark rounded p-4">
                     <h1 className="title-typography text-center text-light">
-                        Complete el formulario para Registrarse
+                        Complete el formulario para registrarse
                     </h1>
                 </div>
-                <Form className="container" onSubmit={handleSubmit}>
+                <Form className="container formRegistro" onSubmit={handleSubmit}>
                     <div className="row py-4">
                         <div className="col-12 ">
                             <Form.Group
                                 className="mb-3 text-light"
                                 controlId="formAdmin"
                             >
-                                <Form.Label>Nombre*</Form.Label>
+                                <Form.Label>Nombre *</Form.Label>
                                 <Form.Control
                                     type="text"
                                     placeholder="Entre (4 y 15) caracteres"
@@ -112,7 +110,7 @@ const Registro = ({setUsuarioLogueado}) => {
                                 className="mb-3 text-light"
                                 controlId="formEmail"
                             >
-                                <Form.Label>email*</Form.Label>
+                                <Form.Label>Email *</Form.Label>
                                 <Form.Control
                                     type="text"
                                     placeholder="Ej: juanperez@gmail.com"
@@ -127,9 +125,9 @@ const Registro = ({setUsuarioLogueado}) => {
                                 className="mb-3 text-light"
                                 controlId="formClave"
                             >
-                                <Form.Label>Contraseña*</Form.Label>
+                                <Form.Label>Contraseña *</Form.Label>
                                 <Form.Control
-                                    type="text"
+                                    type="password"
                                     placeholder="Ej: 1234admin"
                                     onChange={(e) =>
                                         setclave(e.target.value.trim())
@@ -140,7 +138,7 @@ const Registro = ({setUsuarioLogueado}) => {
                     </div>
                     <Button
                         variant="outline-light"
-                        className="mb-3"
+                        className="mb-3 botonRegistro"
                         type="submit"
                     >
                         Registrar

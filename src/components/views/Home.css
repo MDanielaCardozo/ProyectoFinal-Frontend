@@ -1,0 +1,191 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;800;900&display=swap");
+
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+.rowBrick {
+  background-image: url(../../img/purplewall.jpg);
+  background-size: cover;
+  padding: 130px 30px 30px 30px;
+  min-height: 600px;
+  justify-content: space-around;
+}
+
+.imgPromo {
+  width: 100%;
+  object-fit: cover;
+  box-shadow: 5px 5px 50px black;
+}
+
+.imgPromo:hover {
+  transition: 400ms;
+  top: 4px;
+  right: 4px;
+  left: 4px;
+  bottom: 4px;
+  position: relative;
+}
+
+.colPromo {
+  width: 100%;
+}
+
+.carouselPpal {
+  display: none;
+}
+
+
+.rowConocenos {
+  background-color: rgb(47, 45, 51);
+  max-height: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  position: relative;
+}
+
+.rowConocenos h1,
+.rowConocenos h2 {
+  font-weight: 800 !important;
+  font-family: "Montserrat", sans-serif;
+}
+
+.rowConocenos .btn {
+  color: white;
+  outline: 2px white solid;
+  font-family: "Montserrat", sans-serif;
+  margin-top: 20px;
+}
+
+.rowConocenos .btn:hover {
+  color: #c85bd4 !important;
+  outline: 2px #c85bd4 solid;
+}
+
+.colConocenos {
+  width: 100%;
+}
+
+.imgConocenos {
+  max-height: 500px;
+  width: 100%;
+  object-fit: cover;
+}
+
+
+.sectionMenu {
+  position: static;
+  text-align: center;
+  background-color: #84358d;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.sectionMenu h1,
+.sectionFinal h1 {
+  font-weight: 900;
+  font-family: "Montserrat", sans-serif;
+}
+
+.sectionFinal h1 {
+  font-size: 100px;
+}
+
+.rowProd {
+  background-color: #84358d;
+  padding: 0px 20px 0px 20px;
+}
+
+.tituloMenu {
+  color: #363982;
+  font-size: 200px;
+  margin: 0;
+  padding: 20px;
+}
+
+.sectionFinal {
+  background-color: rgb(47, 45, 51);
+  color: rgb(93, 89, 101);
+  padding: 80px 20px 80px 20px;
+}
+
+.sectionFinal h2{
+  font-weight: 800;
+}
+
+.buscadorProd {
+  border: #363982 solid 5px;
+  border-radius: 5px;
+}
+
+
+
+@media all and (max-width: 767px) {
+  .sectionMenu h1 {
+    font-size: 90px;
+  }
+  .imgConocenos {
+    max-height: 200px;
+  }
+
+  .colPromo {
+    margin-bottom: 20px;
+  }
+  .rowConocenos {
+    min-height: 450px;
+    align-content: space-between;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 991px) {
+  .sectionMenu h1 {
+    font-size: 100px;
+  }
+
+  .sectionFinal h1 {
+    font-size: 60px;
+  }
+}
+
+@media all and (max-width: 991px) {
+  .carouselPpal {
+    display: block;
+  }
+  .promosPpal {
+    display: none;
+  }
+}
+
+@media all and (max-width: 400px) {
+  .sectionFinal h1 {
+    font-size: 35px;
+  }
+
+  .sectionFinal h2 {
+    font-size: 20px;
+  }
+
+  .sectionMenu h1 {
+    font-size: 70px;
+  }
+}
+
+@media all and (min-width: 401px) and (max-width: 600px) {
+  .sectionFinal h1 {
+    font-size: 40px;
+  }
+  .sectionFinal h2 {
+    font-size: 25px;
+  }
+  .sectionMenu h1 {
+    font-size: 80px;
+  }
+}
+
+@media all and (min-width: 601px) and (max-width: 767px) {
+  .sectionFinal h1 {
+    font-size: 50px;
+  }
+}
