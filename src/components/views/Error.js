@@ -1,15 +1,23 @@
-import React from 'react';
-import { Container } from 'react-bootstrap';
-import './error.css'
-import imagen from "../../img/purplewall.jpg"
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+import "./error.css";
 const Error = () => {
-    return (
-        <section className='fondo'>
-            <div class="logo"><b><span>4</span>0<span>4</span></b></div>
-            <h3 className='notfound'> Esta pagina no funciona</h3>
-        </section>
-
-    );
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  return (
+    <section className="fondo">
+      <div className="logo">
+        <b>
+          <span>4</span>0<span>4</span>
+        </b>
+      </div>
+      <div className="container-notfound">
+        <h3 className="notfound">No se encontro lo que estas buscando</h3>
+        <Link to="/" className="btn btn-dark bg-black my-3 botonVolver">Volver a Comprar</Link>
+      </div>
+    </section>
+  );
 };
 
 export default Error;
