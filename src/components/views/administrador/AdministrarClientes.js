@@ -34,7 +34,6 @@ const AdministrarClientes = () => {
           <tr>
             <th className="text-black">Nombre</th>
             <th className="text-black">Email</th>
-            <th className="text-black">Estado</th>
             <th className="text-black">Perfil</th>
             <th className="text-black">Acciones</th>
           </tr>

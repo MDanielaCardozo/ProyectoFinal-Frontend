@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import Button from "react-bootstrap/esm/Button";
 import Swal from "sweetalert2";
 
@@ -6,6 +6,7 @@ const ItemCliente = ({ cliente, consultarAPI }) => {
   const URL = process.env.REACT_APP_API_USUARIOS;
 
   const handleSuspender = (_id) => {
+    if(cliente.estado === true){
     Swal.fire({
       title: "Desea suspender a este cliente?",
       icon: "warning",
@@ -31,12 +32,48 @@ const ItemCliente = ({ cliente, consultarAPI }) => {
               "success"
             );
             consultarAPI();
+            setSuspendido(true);
           }
         } catch (error) {
+          console.log(error);
         }
       }
     });
+}else{
+      Swal.fire({
+        title: "Desea habilitar a este cliente?",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        confirmButtonText: "Habilitar",
+        cancelButtonColor: "#d33",
+        cancelButtonText: "Cancelar",
+      }).then(async (result) => {
+        if (result.isConfirmed) {
+          try {
+            const parametros = {
+              method: "POST",
+            };
+            const respuesta = await fetch(
+              URL + "/habilitar/" + cliente._id,
+              parametros
+            );
+            if (respuesta.status === 200) {
+              Swal.fire(
+                "Cliente habilitado",
+                "El cliente se habilito con éxito",
+                "success"
+              );
+              consultarAPI();
+              setSuspendido(false);
+            }
+          } catch (error) {
+            console.log(error);
+          }
+        }
+      });
   };
+};
 
   const handleDeleteCliente = () => {
     Swal.fire({
@@ -79,9 +116,6 @@ const ItemCliente = ({ cliente, consultarAPI }) => {
       <td className="text-black itemTabla">{cliente.nombre}</td>
       <td className="text-black itemTabla">{cliente.email}</td>
       <td className="text-black itemTabla">
-        {cliente.estado ? "" : "Suspendido"}
-      </td>
-      <td className="text-black itemTabla">
         {cliente.perfil ? "Admin" : "Cliente"}
       </td>
       <td className="text-black itemTabla d-flex justify-content-around">
@@ -91,8 +125,7 @@ const ItemCliente = ({ cliente, consultarAPI }) => {
           onClick={() => {
             handleSuspender(cliente._id);
           }}
-        >
-          Suspender
+        >{cliente.estado ? "Suspender" : "Habilitar"}
         </Button>
         <Button
           variant="danger"
