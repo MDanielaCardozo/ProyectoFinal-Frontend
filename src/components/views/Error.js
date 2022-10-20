@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./error.css";
 const Error = () => {
   useEffect(() => {
@@ -11,7 +12,10 @@ const Error = () => {
           <span>4</span>0<span>4</span>
         </b>
       </div>
-      <h3 className="notfound"> Esta pagina no funciona</h3>
+      <div className="container-notfound">
+        <h3 className="notfound">No se encontro lo que estas buscando</h3>
+        <Link to="/" className="btn btn-dark bg-black my-3 botonVolver">Volver a Comprar</Link>
+      </div>
     </section>
   );
 };
