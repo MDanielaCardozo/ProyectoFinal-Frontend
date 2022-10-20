@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Swal from 'sweetalert2';
 import Button from 'react-bootstrap/esm/Button';
 import ItemPedidoLista from './ItemPedidoLista';
@@ -7,8 +7,8 @@ import Accordion from 'react-bootstrap/Accordion';
 const ItemPedido = ({ pedido, consultarAPI }) => {
     // TRAER AL URL DE LA API
     const URL = process.env.REACT_APP_API_HAMBURGUESERIA;
-    const handleEntregado = (_id) => {
-        Swal.fire({
+    const [estado,setestado] = useState(false)
+       Swal.fire({
             title: 'El pedido fue entregado?',
             // text: "No podrás revertir esto",
             icon: 'warning',
@@ -17,6 +17,7 @@ const ItemPedido = ({ pedido, consultarAPI }) => {
             confirmButtonText: 'Si',
             cancelButtonColor: '#d33',
             cancelButtonText: 'Cancelar',
+            
         }).then(async (result) => {
             if (result.isConfirmed) {
                 try {
@@ -33,6 +34,7 @@ const ItemPedido = ({ pedido, consultarAPI }) => {
                             'El pedido fue entregado con éxito',
                             'success'
                         );
+                        setestado(true)
                         // ACÁ CONSULTA A LA API
                         consultarAPI();
                     }
@@ -44,8 +46,8 @@ const ItemPedido = ({ pedido, consultarAPI }) => {
                     });
                 }
             }
-        });
-    };
+        }
+        );
 
     return (
         <tr>
@@ -77,13 +79,23 @@ const ItemPedido = ({ pedido, consultarAPI }) => {
             </td>
             <td className="text-black">
                 <div className="d-flex justify-content-center">
-                    <Button
-                        variant="primary"
-                        type="submit"
-                        onClick={handleEntregado}
-                    >
-                        Cambiar estado
-                    </Button>
+                    {estado ? (
+                        <Button
+                            variant="success"
+                            type="submit"
+                            onClick={handleEntregado}
+                        >
+                            Entregado
+                        </Button>
+                    ) : (
+                        <Button
+                            variant="danger"
+                            type="submit"
+                            onClick={handleEntregado}
+                        >
+                            Pendiente
+                        </Button>
+                    )}
                 </div>
             </td>
         </tr>
