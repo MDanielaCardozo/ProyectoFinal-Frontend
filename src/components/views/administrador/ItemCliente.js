@@ -36,6 +36,11 @@ const ItemCliente = ({ cliente, consultarAPI }) => {
           }
         } catch (error) {
           console.log(error);
+          Swal.fire({
+            icon: "error",
+            title: "Algo falló",
+            text: "Intenta esta acción más tarde",
+          });
         }
       }
     });
@@ -69,6 +74,11 @@ const ItemCliente = ({ cliente, consultarAPI }) => {
             }
           } catch (error) {
             console.log(error);
+            Swal.fire({
+              icon: "error",
+              title: "Algo falló",
+              text: "Intenta esta acción más tarde",
+            });
           }
         }
       });
