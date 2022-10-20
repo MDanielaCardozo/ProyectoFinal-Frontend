@@ -32,7 +32,6 @@ const ItemCliente = ({ cliente, consultarAPI }) => {
               "success"
             );
             consultarAPI();
-            setSuspendido(true);
           }
         } catch (error) {
           console.log(error);
@@ -70,7 +69,6 @@ const ItemCliente = ({ cliente, consultarAPI }) => {
                 "success"
               );
               consultarAPI();
-              setSuspendido(false);
             }
           } catch (error) {
             console.log(error);
