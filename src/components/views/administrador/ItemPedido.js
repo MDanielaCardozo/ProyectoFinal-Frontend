@@ -7,8 +7,10 @@ import Accordion from 'react-bootstrap/Accordion';
 const ItemPedido = ({ pedido, consultarAPI }) => {
     // TRAER AL URL DE LA API
     const URL = process.env.REACT_APP_API_HAMBURGUESERIA;
-    const [estado,setestado] = useState(false)
-       Swal.fire({
+    const [estado, setestado] = useState(false);
+
+    const handleEntregado = (_id) => {
+        Swal.fire({
             title: 'El pedido fue entregado?',
             // text: "No podrás revertir esto",
             icon: 'warning',
@@ -17,7 +19,6 @@ const ItemPedido = ({ pedido, consultarAPI }) => {
             confirmButtonText: 'Si',
             cancelButtonColor: '#d33',
             cancelButtonText: 'Cancelar',
-            
         }).then(async (result) => {
             if (result.isConfirmed) {
                 try {
@@ -34,7 +35,7 @@ const ItemPedido = ({ pedido, consultarAPI }) => {
                             'El pedido fue entregado con éxito',
                             'success'
                         );
-                        setestado(true)
+                        setestado(true);
                         // ACÁ CONSULTA A LA API
                         consultarAPI();
                     }
@@ -45,10 +46,9 @@ const ItemPedido = ({ pedido, consultarAPI }) => {
                         text: 'Intenta esta acción más tarde',
                     });
                 }
-            }
-        }
-        );
-
+            }else setestado(false);
+        });
+    };
     return (
         <tr>
             <td className="text-black">
