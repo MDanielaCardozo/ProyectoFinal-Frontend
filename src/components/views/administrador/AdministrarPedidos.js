@@ -37,7 +37,6 @@ const AdministrarPedidos = () => {
                   <th>Pedido</th>
                   <th>Cliente</th>
                   <th>Fecha</th>
-                  <th>Estado</th>
                   <th>Cambiar estado</th>
                 </tr>
               </thead>

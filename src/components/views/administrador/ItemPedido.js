@@ -105,9 +105,6 @@ const ItemPedido = ({ pedido, consultarAPI }) => {
             <td className="text-black">{pedido.usuario}</td>
             <td className="text-black">{pedido.fecha}</td>
             <td className="text-black">
-                {estado ? 'Entregado' : 'Pendiente'}
-            </td>
-            <td className="text-black">
                 <div className="d-flex justify-content-center">
                     {estado ? (
                         <Button
