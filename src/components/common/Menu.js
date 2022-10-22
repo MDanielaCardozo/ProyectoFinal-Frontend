@@ -49,13 +49,15 @@ function CollapsibleExample({ usuarioLogueado, setUsuarioLogueado }) {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <div>
-            <img
+          <Link to="/">
+          <img
               alt="Logo del restaurante"
             src={Logo}
-              width="100"
+              width="100px"
               height="auto"
               className="my-0 py-0 logoGran"
             />
+          </Link>
           </div>
           <Nav className="ms-auto">
           <NavLink to='/' className='nav-item nav-link fs-6 px-3 navLetra boton text-end'>INICIO</NavLink>
