@@ -78,6 +78,17 @@ const Pedidos = () => {
         }
     };
 
+    const borrarCarrito = () =>{
+        let carritoBorrado = listaProductosPedido
+        console.log(carritoBorrado.pop())
+        for (let i = carritoBorrado.length; i > 0; i--) {
+            carritoBorrado.pop();
+          }
+          localStorage.setItem(process.env.REACT_APP_LOCALSTORAGE_PRODUCTOS_PEDIDO, JSON.stringify(carritoBorrado));
+        setListaProductosPedido([]);
+        Swal.fire("Carrito vaciado", "Los productos fueron quitados del pedido", "success");
+    }
+
     const handleClick = () => {
         total = 0;
         listaProductosPedido.forEach((element) => {
@@ -121,6 +132,7 @@ const Pedidos = () => {
                     </tbody>
                 </Table>
                 <div className="text-end">
+                    <Button variant="danger" className="mt-3 me-3 text-light" onClick={borrarCarrito}>Borrar carrito</Button>
                     <Button variant="primary" className="mt-3" onClick={handleClick}>
                         Proceder a pagar
                     </Button>

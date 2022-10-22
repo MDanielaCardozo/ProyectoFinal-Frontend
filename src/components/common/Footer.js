@@ -19,13 +19,15 @@ const Footer = () => {
         <MDBContainer className="text-center text-md-start mt-5">
           <MDBRow className="mt-3">
             <MDBCol md="3" lg="4" xl="3" className="mx-auto mb-4">
-              <img
-                alt="Logo del restaurante"
-                src={Logo}
-                width="170"
-                height="auto"
-                className="my-0 py-0 ps-auto "
-              />
+            <Link to="/">
+          <img
+              alt="Logo del restaurante"
+            src={Logo}
+              width="170px"
+              height="auto"
+              className="my-0 py-0 ps-auto"
+            />
+          </Link>
             </MDBCol>
 
             <MDBCol md="2" lg="2" xl="2" className="mx-auto mb-4">
