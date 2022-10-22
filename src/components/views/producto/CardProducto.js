@@ -2,20 +2,9 @@ import React from "react";
 import { Card, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./CardProducto.css";
-import Swal from "sweetalert2";
+import { agregarCarrito } from "../helperCarrito";
 
 const CardProducto = (props) => {
-  const agregarCarrito = (producto) => {
-    let productosPedido = JSON.parse(localStorage.getItem(process.env.REACT_APP_LOCALSTORAGE_PRODUCTOS_PEDIDO)) || [];
-    productosPedido.push(producto);
-    localStorage.setItem(process.env.REACT_APP_LOCALSTORAGE_PRODUCTOS_PEDIDO, JSON.stringify(productosPedido));
-    Swal.fire(
-      'Producto agregado',
-      'El producto fue agregado correctamente',
-      'success'
-    );
-  }
-  
   return (
     <Col md={4} xl={3} className="mb-5">
       <Card className="h-100 cardProd">
