@@ -5,7 +5,6 @@ import { useNavigate, useParams } from "react-router-dom";
 import { agregarCarrito } from "../helperCarrito";
 
 const DetalleProducto = () => {
-  const usuario = JSON.parse(localStorage.getItem(process.env.REACT_APP_LOCALSTORAGE)) || null;
   const navigate = useNavigate();
   const { id } = useParams();
   const URL = process.env.REACT_APP_API_HAMBURGUESERIA;
@@ -26,6 +25,12 @@ const DetalleProducto = () => {
     }
   };
 
+  const agregarProducto = (producto) => {
+    if (!agregarCarrito(producto)) {
+      navigate('/login')
+    } 
+  }
+
   return (
     <div className="imagenFondo">
       <Card className="container bgCard p-4 mb-3">
@@ -43,7 +48,7 @@ const DetalleProducto = () => {
             <p className="text-light tipografiaDetalle">
               {producto.detalle}
             </p>
-            <Button className='btn btn-outline-light' onClick={()=>{agregarCarrito(producto); navigate('/')}}>Agregar al carrito</Button>
+            <Button className='btn btn-outline-light' onClick={()=>{agregarProducto(producto)}}>Agregar al carrito</Button>
           </Col>
         </Row>
       </Card>
