@@ -36,13 +36,15 @@ function CollapsibleExample({ usuarioLogueado, setUsuarioLogueado }) {
     <Navbar collapseOnSelect className="navbg gradiente mt-0 pt-0" expand="lg" variant="dark" fixed="top">
       <Container>
         <Navbar.Brand>
-            <img
+          <Link to="/">
+          <img
               alt="Logo del restaurante"
             src={Logo}
               width="100px"
               height="auto"
               className="logoPeq"
             />
+          </Link>
           </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
