@@ -86,7 +86,6 @@ const Pedidos = () => {
           }
           localStorage.setItem(process.env.REACT_APP_LOCALSTORAGE_PRODUCTOS_PEDIDO, JSON.stringify(carritoBorrado));
         setListaProductosPedido([]);
-        console.log("evento click borrar carrito");
         Swal.fire("Carrito vaciado", "Los productos fueron quitados del pedido", "success");
     }
 
@@ -133,7 +132,7 @@ const Pedidos = () => {
                     </tbody>
                 </Table>
                 <div className="text-end">
-                    <Button variant="warning" className="mt-3 me-3" onClick={borrarCarrito}>Borrar carrito</Button>
+                    <Button variant="danger" className="mt-3 me-3 text-light" onClick={borrarCarrito}>Borrar carrito</Button>
                     <Button variant="primary" className="mt-3" onClick={handleClick}>
                         Proceder a pagar
                     </Button>
