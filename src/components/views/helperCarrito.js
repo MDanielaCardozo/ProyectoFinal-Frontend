@@ -30,3 +30,7 @@ export const agregarCarrito = (producto) => {
     }
     return false;
 }
+
+export const formatMoneda=(valor)=>{
+    return `$${valor}`;
+}
