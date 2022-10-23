@@ -7,10 +7,10 @@ import { agregarCarrito } from "../helperCarrito";
 const CardProducto = (props) => {
   const navigate = useNavigate();
   const agregarProducto = (producto) => {
-    console.log(producto);
+    // console.log(producto);
     if ( !agregarCarrito(producto)) {
       navigate("/login");
-      console.log('pasa')
+      // console.log('pasa')
     }
   }
 
