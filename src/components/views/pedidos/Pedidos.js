@@ -120,8 +120,9 @@ const Pedidos = () => {
         console.log(carritoBorrado.pop())
         for (let i = carritoBorrado.length; i > 0; i--) {
             carritoBorrado.pop();
-          }
-          localStorage.setItem(process.env.REACT_APP_LOCALSTORAGE_PRODUCTOS_PEDIDO, JSON.stringify(carritoBorrado));
+        }
+        localStorage.setItem(process.env.REACT_APP_LOCALSTORAGE_PRODUCTOS_PEDIDO, JSON.stringify(carritoBorrado));
+        setTotal(0);
         setListaProductosPedido([]);
         Swal.fire("Carrito vaciado", "Los productos fueron quitados del pedido", "success");
     }
