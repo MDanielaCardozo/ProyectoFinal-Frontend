@@ -78,12 +78,12 @@ const Pedidos = () => {
             const today = new Date();
             let day = today.getDate();
             if (day < 10) day = "0" + day;
-            let month = today.getMonth();
+            let month = today.getMonth() + 1;
             if (month < 10) month = "0" + month;
             let year = today.getFullYear();
             year = year % 100;
             let fecha = `${day}/${month}/${year}`;
-
+            console.log(fecha)
             const pedidos = {
                 usuario: usuario.nombre,
                 fecha,
