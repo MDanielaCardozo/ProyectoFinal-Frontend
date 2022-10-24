@@ -116,15 +116,27 @@ const Pedidos = () => {
     };
 
     const borrarCarrito = () =>{
-        let carritoBorrado = listaProductosPedido
-        console.log(carritoBorrado.pop())
-        for (let i = carritoBorrado.length; i > 0; i--) {
-            carritoBorrado.pop();
-        }
-        localStorage.setItem(process.env.REACT_APP_LOCALSTORAGE_PRODUCTOS_PEDIDO, JSON.stringify(carritoBorrado));
-        setTotal(0);
-        setListaProductosPedido([]);
-        Swal.fire("Carrito vaciado", "Los productos fueron quitados del pedido", "success");
+        Swal.fire({
+            title: "Esta seguro?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Si, borrar",
+            cancelButtonText: "Cancelar",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                let carritoBorrado = listaProductosPedido
+                console.log(carritoBorrado.pop())
+                for (let i = carritoBorrado.length; i > 0; i--) {
+                    carritoBorrado.pop();
+                }
+                localStorage.setItem(process.env.REACT_APP_LOCALSTORAGE_PRODUCTOS_PEDIDO, JSON.stringify([carritoBorrado]));
+                setTotal(0);
+                setListaProductosPedido([]);
+                Swal.fire("Carrito vaciado", "Los productos fueron quitados del pedido", "success");
+            }
+        });
     }
 
     const handleClick = () => {
