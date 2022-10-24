@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Row, Col } from "react-bootstrap";
+import { Card, Row, Col,Button } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import "./CardProducto.css";
 import { agregarCarrito } from "../helperCarrito";
@@ -35,9 +35,9 @@ const CardProducto = (props) => {
         </Card.Body>
         <Card.Footer>
           <Row className="text-center align-items-center justify-content-around d-flex flex-wrap">
-            <Link to={`/`} className="btn btnCard btnCarrito" onClick={()=>{agregarProducto(props.producto)}}>
+            <Button  className="btn btnCard btnCarrito" onClick={()=>{agregarProducto(props.producto)}}>
               Agregar al carrito
-            </Link>
+            </Button>
             <Link
               to={`/detalleProducto/${props.producto._id}`}
               className="btn btnCard mt-1 mt-xl-0 btnVerMas"
