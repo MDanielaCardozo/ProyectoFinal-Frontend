@@ -41,7 +41,7 @@ const App = () => {
               </Routes>
             </RutasProtegidas>
           }></Route>
-          <Route exact path="*" element={<Error/>} />
+          <Route exact path="*" element={<Error usuarioLogueado={usuarioLogueado}/>} />
         </Routes>
         <Footer />
       </BrowserRouter>
