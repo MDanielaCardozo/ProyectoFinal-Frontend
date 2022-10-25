@@ -15,7 +15,7 @@ const CardProducto = (props) => {
   }
 
   return (
-    <Col md={4} xl={3} className="mb-5">
+    <Col md={6} xl={3} className="mb-5">
       <Card className="h-100 cardProd">
         <Card.Img
           variant="top"

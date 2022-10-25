@@ -42,7 +42,10 @@ const Home = () => {
   const buscar = (buscado) => {
     const productosSearch = [];
     productos.forEach((producto) => {
-      if (producto.nombre.toLowerCase().includes(buscado)) {
+      if (
+        producto.nombre.toLowerCase().includes(buscado) ||
+        producto.categoria.toLowerCase().includes(buscado)
+      ) {
         productosSearch.push(producto);
       }
     });
@@ -97,7 +100,7 @@ const Home = () => {
         <Form className="w-50 mb-5 buscadorProd">
           <Form.Control
             type="text"
-            placeholder="Buscar producto"
+            placeholder="Buscar producto por nombre o categoría"
             onChange={(e) => buscar(e.target.value)}
           />
         </Form>

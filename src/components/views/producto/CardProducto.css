@@ -29,6 +29,7 @@
 
 .cardProd .btnCard {
   background-color: #363982;
+  border: none;
   color: white;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
@@ -48,7 +49,7 @@
   flex-wrap: wrap;
 }
 
-.cardProdBody h2{
+.cardProdBody h2 {
   font-weight: 800;
 }
 
@@ -68,6 +69,7 @@
     rgba(0, 0, 0, 0)
   );
 }
+
 @media all and (max-width: 1200px) {
   .btnCard {
     width: 100% !important;
