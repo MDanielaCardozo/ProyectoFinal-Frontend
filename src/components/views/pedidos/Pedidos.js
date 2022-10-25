@@ -78,12 +78,12 @@ const Pedidos = () => {
             const today = new Date();
             let day = today.getDate();
             if (day < 10) day = "0" + day;
-            let month = today.getMonth();
+            let month = today.getMonth() + 1;
             if (month < 10) month = "0" + month;
             let year = today.getFullYear();
             year = year % 100;
             let fecha = `${day}/${month}/${year}`;
-
+            console.log(fecha)
             const pedidos = {
                 usuario: usuario.nombre,
                 fecha,
@@ -116,15 +116,27 @@ const Pedidos = () => {
     };
 
     const borrarCarrito = () =>{
-        let carritoBorrado = listaProductosPedido
-        console.log(carritoBorrado.pop())
-        for (let i = carritoBorrado.length; i > 0; i--) {
-            carritoBorrado.pop();
-        }
-        localStorage.setItem(process.env.REACT_APP_LOCALSTORAGE_PRODUCTOS_PEDIDO, JSON.stringify(carritoBorrado));
-        setTotal(0);
-        setListaProductosPedido([]);
-        Swal.fire("Carrito vaciado", "Los productos fueron quitados del pedido", "success");
+        Swal.fire({
+            title: "Esta seguro?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Si, borrar",
+            cancelButtonText: "Cancelar",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                let carritoBorrado = listaProductosPedido
+                console.log(carritoBorrado.pop())
+                for (let i = carritoBorrado.length; i > 0; i--) {
+                    carritoBorrado.pop();
+                }
+                localStorage.setItem(process.env.REACT_APP_LOCALSTORAGE_PRODUCTOS_PEDIDO, JSON.stringify([carritoBorrado]));
+                setTotal(0);
+                setListaProductosPedido([]);
+                Swal.fire("Carrito vaciado", "Los productos fueron quitados del pedido", "success");
+            }
+        });
     }
 
     const handleClick = () => {
