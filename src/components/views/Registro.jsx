@@ -152,7 +152,7 @@ const Registro = ({setUsuarioLogueado}) => {
                 ) : null}
                 {msjErrorclave ? (
                     <Alert variant="danger" className=" mx-3">
-                        CLAVE ! :Introducir entre 8 y 15 caracteres con al menos
+                        Contraseña ! :Introducir entre 8 y 15 caracteres con al menos
                         una letra minúscula, una mayúscula, un numero y un
                         caracter especial.
                     </Alert>
