@@ -8,7 +8,7 @@ export const cantidadCaracteres = (input, min, max) => {
 
 export function validarclave(input) {
     let patron =
-        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$/;
+         /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{8,15}$/; 
 
     if (patron.test(input)) {
         return true;
