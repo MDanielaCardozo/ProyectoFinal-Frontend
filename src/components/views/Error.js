@@ -14,7 +14,7 @@ const Error = () => {
       </div>
       <div className="container-notfound">
         <h3 className="notfound">No se encontro lo que estas buscando</h3>
-        <Link to="/" className="btn btn-dark bg-black my-3 botonVolver">Volver a Comprar</Link>
+        <Link to="/" className="btn btn-dark bg-black my-3 botonVolver">Volver a inicio</Link>
       </div>
     </section>
   );
