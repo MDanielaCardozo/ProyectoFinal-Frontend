@@ -11,8 +11,10 @@ const Registro = ({setUsuarioLogueado}) => {
     const [email, setemail] = useState('');
     const [clave, setclave] = useState('');
     const [msjError, setMsjError] = useState(false);
+    const [msjErrorusuario, setmsjErrorusuario] = useState(false);
     const [msjErrorclave, setmsjErrorclave] = useState(false);
-    const [msjErroremail, setmsjErroremail] = useState(false);
+    const [msjErrormail,setmsjErrormail] = useState(false)
+    const [msjErroremailRepetido, setmsjErroremailRepetido] = useState(false);
 
     const URL = process.env.REACT_APP_API_USUARIOS;
 
@@ -21,63 +23,72 @@ const Registro = ({setUsuarioLogueado}) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if (validarclave(clave))
-            setmsjErrorclave(false);
-        else 
-            setmsjErrorclave(true);
-        
-        if (
-          
-            cantidadCaracteres(nombre, 8) &&
-            validarclave(clave) &&
-            validarEmail(email)
-        ) {
-            setMsjError(false);
-            const nuevoUsario = {
-                nombre,
-                email,
-                password: clave,
-                estado: true,
-                perfil: false 
-            };
+        if (validarclave(clave)) setmsjErrorclave(false);
+        else  setmsjErrorclave(true);
 
-            try {
-                const parametrosPeticion = {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(nuevoUsario),
+        if (cantidadCaracteres(nombre, 8 , 40))  setmsjErrorusuario(false);
+        else setmsjErrorusuario(true);
+
+        if (validarEmail(email)) setmsjErrormail(false)
+        else setmsjErrormail(true)
+
+            if (
+                cantidadCaracteres(nombre, 8 , 40) &&
+                validarclave(clave) &&
+                validarEmail(email)
+            ) {
+                setMsjError(false);
+                const nuevoUsario = {
+                    nombre,
+                    email,
+                    password: clave,
+                    estado: true,
+                    perfil: false,
                 };
-                const respuesta = await fetch(URL + '/nuevo', parametrosPeticion);
-                if (respuesta.status === 201) {
-                    const data = await respuesta.json();
-                    
-                    localStorage.setItem(process.env.REACT_APP_LOCALSTORAGE, JSON.stringify(data));
-                    setUsuarioLogueado(data);
-                    sendMail(nuevoUsario.nombre, nuevoUsario.email);
-                   
-                    Swal.fire({
-                        title: 'Registro exitoso',
-                        showDenyButton: false,
-                        showCancelButton: false,
-                        confirmButtonText: 'Ok',
-                      }).then((result) => {
-                        
-                        navigate(-1);                
-                      });
+
+                try {
+                    const parametrosPeticion = {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(nuevoUsario),
+                    };
+                    const respuesta = await fetch(
+                        URL + '/nuevo',
+                        parametrosPeticion
+                    );
+                    if (respuesta.status === 201) {
+                        const data = await respuesta.json();
+
+                        localStorage.setItem(
+                            process.env.REACT_APP_LOCALSTORAGE,
+                            JSON.stringify(data)
+                        );
+                        setUsuarioLogueado(data);
+                        sendMail(nuevoUsario.nombre, nuevoUsario.email);
+
+                        Swal.fire({
+                            title: 'Registro exitoso',
+                            showDenyButton: false,
+                            showCancelButton: false,
+                            confirmButtonText: 'Ok',
+                        }).then((result) => {
+                            navigate(-1);
+                        });
+                    } else {
+                        setmsjErroremailRepetido(true)
+                    }
+                } catch (error) {
+                    Swal.fire(
+                        'Se produjo un error',
+                        'No se pudo realizar su registro de usuario, por favor intente nuevamente en unos minutos',
+                        'error'
+                    );
                 }
-                else
-                {
-                    const data = await respuesta.json();
-                    setmsjErroremail(data.mensaje);
-                }
-            } catch (error) {
-                Swal.fire("Se produjo un error", "No se pudo realizar su registro de usuario, por favor intente nuevamente en unos minutos", "error");
+            } else {
+                setMsjError(true);
             }
-        } else {
-            setMsjError(true);
-        }
     };
 
     return (
@@ -88,7 +99,10 @@ const Registro = ({setUsuarioLogueado}) => {
                         Complete el formulario para registrarse
                     </h1>
                 </div>
-                <Form className="container formRegistro" onSubmit={handleSubmit}>
+                <Form
+                    className="container formRegistro"
+                    onSubmit={handleSubmit}
+                >
                     <div className="row py-4">
                         <div className="col-12 ">
                             <Form.Group
@@ -98,7 +112,7 @@ const Registro = ({setUsuarioLogueado}) => {
                                 <Form.Label>Nombre completo*</Form.Label>
                                 <Form.Control
                                     type="text"
-                                    placeholder="Mayor a 8 caracteres"
+                                    placeholder="entre (8 y 40) caracteres."
                                     onChange={(e) =>
                                         setnombre(e.target.value.trim())
                                     }
@@ -150,14 +164,24 @@ const Registro = ({setUsuarioLogueado}) => {
                         ingresados y vuelve a intentar!
                     </Alert>
                 ) : null}
+                {msjErrorusuario ? (
+                    <Alert variant="danger" className=" mx-3">
+                        El usuario debe contener entre 8 y 40 caracteres.
+                    </Alert>
+                ) : null}
                 {msjErrorclave ? (
                     <Alert variant="danger" className=" mx-3">
-                        Contraseña: Introducir entre 8 y 15 caracteres con al menos
-                        una letra minúscula, una mayúscula, un número y un
+                        Contraseña: Introducir entre 8 y 15 caracteres con al
+                        menos una letra minúscula, una mayúscula, un número y un
                         caracter especial.
                     </Alert>
                 ) : null}
-                {msjErroremail ? (
+                {msjErrormail ? (
+                    <Alert variant="danger" className=" mx-3">
+                        Verifique los datos ingresados en Email.
+                    </Alert>
+                ) : null}
+                {msjErroremailRepetido ? (
                     <Alert variant="danger" className=" mx-3">
                         El email ingresado ya existe, por favor introduce un
                         email valido.

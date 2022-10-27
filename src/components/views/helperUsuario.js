@@ -1,5 +1,5 @@
-export const cantidadCaracteres = (input, min) => {
-    if (input.length >= min) {
+export const cantidadCaracteres = (input, min , max) => {
+    if (input.length >= min && input.length <= max) {
         return true;
     } else {
         return false;
@@ -24,11 +24,11 @@ export function validarEmail(input) {
         return false;
     }
 }
-export function chequearExistenciaEmail(emailBD) {
-    if (emailBD !== undefined) {
-        return false;
-    } else {
-        return true;
-    }
-}
+// export function chequearExistenciaEmail(emailBD) {
+//     if (emailBD !== undefined) {
+//         return false;
+//     } else {
+//         return true;
+//     }
+// }
 
