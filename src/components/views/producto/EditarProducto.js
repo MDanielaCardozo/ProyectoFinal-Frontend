@@ -2,13 +2,7 @@ import { React, useEffect, useState, useRef } from "react";
 import { Form, Button } from "react-bootstrap";
 import { useParams, useNavigate } from "react-router-dom";
 import { Card } from "react-bootstrap";
-import {
-  validarNombre,
-  validarDetalle,
-  validarPrecio,
-  campoRequerido,
-  validarUrl,
-} from "../administrador/helperProducto";
+import { encontrarErrores } from "../administrador/helperProducto";
 import Swal from "sweetalert2";
 import Alert from "react-bootstrap/Alert";
 import "../administrador/AdminCrearProducto.css";
@@ -23,6 +17,7 @@ const EditarProducto = () => {
   const imagenRef = useRef("");
   const detalleRef = useRef("");
   const [msjError, setMsjError] = useState(false);
+  const [errors, setErrors] = useState({});
 
   useEffect(() => {
     consultarAPI();
@@ -35,59 +30,54 @@ const EditarProducto = () => {
       setProducto(dato);
     } catch (error) {
       console.log(error);
-      
     }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-   
-    if (
-      validarNombre(nombreProductoRef.current.value) &&
-      validarPrecio(precioRef.current.value) &&
-      validarDetalle(detalleRef.current.value) &&
-      validarUrl(imagenRef.current.value) &&
-      campoRequerido(producto.categoria)
-    ) {
-     
-      const productoEditar = {
-        nombre: nombreProductoRef.current.value,
-        imagen: imagenRef.current.value,
-        precio: precioRef.current.value,
-        categoria: producto.categoria,
-        detalle: detalleRef.current.value,
-        estado: true,
-      };
-      
 
-      try {
-        const respuesta = await fetch(URL + "productos/" + id, {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(productoEditar),
-        });
+    const productoEditar = {
+      nombre: nombreProductoRef.current.value,
+      imagen: imagenRef.current.value,
+      precio: precioRef.current.value,
+      categoria: producto.categoria,
+      detalle: detalleRef.current.value,
+      estado: true,
+    };
 
-        if (respuesta.status === 200) {
-          Swal.fire(
-            "Producto editado",
-            `El producto ${producto.nombre} fue modificado correctamente.`,
-            "success"
-          );
-        }
-      } catch (error) {
-        console.log(error);
+    const newErrors = encontrarErrores(productoEditar);
+    if (Object.keys(newErrors).length > 0) {
+      setMsjError(true);
+      setErrors(newErrors);
+      return;
+    }
+    setMsjError(false);
+
+    try {
+      const respuesta = await fetch(URL + "productos/" + id, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(productoEditar),
+      });
+
+      if (respuesta.status === 200) {
         Swal.fire(
-          "Error",
-          `El producto ${producto.nombre} no pudo ser modificado.`,
-          "error"
+          "Producto editado",
+          `El producto ${producto.nombre} fue modificado correctamente.`,
+          "success"
         );
       }
-      navegacion("/privado/administrador");
-    } else {
-      setMsjError(true);
+    } catch (error) {
+      console.log(error);
+      Swal.fire(
+        "Error",
+        `El producto ${producto.nombre} no pudo ser modificado.`,
+        "error"
+      );
     }
+    navegacion("/privado/administrador");
   };
 
   return (
@@ -98,7 +88,10 @@ const EditarProducto = () => {
             Editar producto
           </h1>
         </div>
-        <Form className="container pt-4 text-light formularioProductos" onSubmit={handleSubmit}>
+        <Form
+          className="container pt-4 text-light formularioProductos"
+          onSubmit={handleSubmit}
+        >
           <Form.Group className="mb-3">
             <Form.Label>Nombre producto *</Form.Label>
             <Form.Control
@@ -106,7 +99,11 @@ const EditarProducto = () => {
               required
               defaultValue={producto.nombre}
               ref={nombreProductoRef}
+              isInvalid={!!errors.nombre}
             />
+            <Form.Control.Feedback type="invalid">
+              {errors.nombre}
+            </Form.Control.Feedback>
           </Form.Group>
           <Form.Group className="mb-3">
             <Form.Label>Detalle *</Form.Label>
@@ -114,7 +111,11 @@ const EditarProducto = () => {
               type="text"
               defaultValue={producto.detalle}
               ref={detalleRef}
+              isInvalid={!!errors.detalle}
             />
+            <Form.Control.Feedback type="invalid">
+              {errors.detalle}
+            </Form.Control.Feedback>
           </Form.Group>
           <Form.Group className="mb-3">
             <Form.Label>Precio *</Form.Label>
@@ -123,7 +124,11 @@ const EditarProducto = () => {
               required
               defaultValue={producto.precio}
               ref={precioRef}
+              isInvalid={!!errors.precio}
             />
+            <Form.Control.Feedback type="invalid">
+              {errors.precio}
+            </Form.Control.Feedback>
           </Form.Group>
           <Form.Group className="mb-3">
             <Form.Label>Imagen URL *</Form.Label>
@@ -132,7 +137,11 @@ const EditarProducto = () => {
               required
               defaultValue={producto.imagen}
               ref={imagenRef}
+              isInvalid={!!errors.imagen}
             />
+            <Form.Control.Feedback type="invalid">
+              {errors.imagen}
+            </Form.Control.Feedback>
           </Form.Group>
           <Form.Group className="mb-3">
             <Form.Label>Categoria del producto *</Form.Label>
@@ -142,11 +151,15 @@ const EditarProducto = () => {
               onChange={(e) =>
                 setProducto({ ...producto, categoria: e.target.value })
               }
+              isInvalid={!!errors.categoria}
             >
               <option value="">Seleccione una opcion</option>
               <option value="hamburguesa">hamburguesas</option>
               <option value="cerveza">cervezas</option>
             </Form.Select>
+            <Form.Control.Feedback type="invalid">
+              {errors.categoria}
+            </Form.Control.Feedback>
           </Form.Group>
           <Button variant="outline-light" className="mb-3" type="submit">
             Editar
