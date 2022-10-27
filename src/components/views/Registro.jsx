@@ -28,7 +28,7 @@ const Registro = ({setUsuarioLogueado}) => {
         
         if (
           
-            cantidadCaracteres(nombre, 4, 70) &&
+            cantidadCaracteres(nombre, 8) &&
             validarclave(clave) &&
             validarEmail(email)
         ) {
@@ -95,10 +95,10 @@ const Registro = ({setUsuarioLogueado}) => {
                                 className="mb-3 text-light"
                                 controlId="formAdmin"
                             >
-                                <Form.Label>Nombre *</Form.Label>
+                                <Form.Label>Nombre completo*</Form.Label>
                                 <Form.Control
                                     type="text"
-                                    placeholder="Entre (4 y 15) caracteres"
+                                    placeholder="Mayor a 8 caracteres"
                                     onChange={(e) =>
                                         setnombre(e.target.value.trim())
                                     }
@@ -152,8 +152,8 @@ const Registro = ({setUsuarioLogueado}) => {
                 ) : null}
                 {msjErrorclave ? (
                     <Alert variant="danger" className=" mx-3">
-                        Contraseña ! :Introducir entre 8 y 15 caracteres con al menos
-                        una letra minúscula, una mayúscula, un numero y un
+                        Contraseña: Introducir entre 8 y 15 caracteres con al menos
+                        una letra minúscula, una mayúscula, un número y un
                         caracter especial.
                     </Alert>
                 ) : null}

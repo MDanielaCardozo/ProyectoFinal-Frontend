@@ -1,5 +1,5 @@
-export const cantidadCaracteres = (input, min, max) => {
-    if (input.length >= min && input.length <= max) {
+export const cantidadCaracteres = (input, min) => {
+    if (input.length >= min) {
         return true;
     } else {
         return false;
