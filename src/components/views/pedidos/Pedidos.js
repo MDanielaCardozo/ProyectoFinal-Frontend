@@ -126,14 +126,9 @@ const Pedidos = () => {
             cancelButtonText: "Cancelar",
         }).then((result) => {
             if (result.isConfirmed) {
-                let carritoBorrado = listaProductosPedido
-                console.log(carritoBorrado.pop())
-                for (let i = carritoBorrado.length; i > 0; i--) {
-                    carritoBorrado.pop();
-                }
-                localStorage.setItem(process.env.REACT_APP_LOCALSTORAGE_PRODUCTOS_PEDIDO, JSON.stringify([carritoBorrado]));
-                setTotal(0);
+                localStorage.setItem(process.env.REACT_APP_LOCALSTORAGE_PRODUCTOS_PEDIDO, JSON.stringify([]));
                 setListaProductosPedido([]);
+                setTotal(0);
                 Swal.fire("Carrito vaciado", "Los productos fueron quitados del pedido", "success");
             }
         });
