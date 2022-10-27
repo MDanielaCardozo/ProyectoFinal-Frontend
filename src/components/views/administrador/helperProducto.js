@@ -47,3 +47,25 @@ export function validarEstado(input) {
     return false;
   }
 }
+
+export const encontrarErrores = (producto) => {
+  const newErrors = {};
+  if (validarNombre(producto.nombre) === false) {
+    newErrors.nombre =
+      "El nombre debe tener un mínimo de 2 caracteres y un máximo de 50.";
+  }
+  if (validarPrecio(producto.precio) === false) {
+    newErrors.precio = "El precio puede tener máximo 4 dígitos.";
+  }
+  if (validarDetalle(producto.detalle) === false) {
+    newErrors.detalle =
+      "El detalle debe tener un mínimo de 5 caracteres y un máximo de 500.";
+  }
+  if (validarUrl(producto.imagen) === false) {
+    newErrors.imagen = "Debe ingresarse un URL.";
+  }
+  if (campoRequerido(producto.categoria) === false) {
+    newErrors.categoria = "Este es un campo requerido.";
+  }
+  return newErrors;
+};

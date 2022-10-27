@@ -4,13 +4,7 @@ import Swal from "sweetalert2";
 import Alert from "react-bootstrap/Alert";
 import { useNavigate } from "react-router-dom";
 import "./AdminCrearProducto.css";
-import {
-  validarNombre,
-  validarDetalle,
-  validarPrecio,
-  campoRequerido,
-  validarUrl,
-} from "./helperProducto";
+import { encontrarErrores } from "./helperProducto";
 
 const AdminCrearProducto = () => {
   const [producto, setProducto] = useState({});
@@ -33,28 +27,6 @@ const AdminCrearProducto = () => {
       });
   };
 
-  const encontrarErrores = () => {
-    const newErrors = {};
-    console.log(producto.nombre);
-    console.log(validarNombre(producto.nombre));
-    if (validarNombre(producto.nombre) === false) {
-      newErrors.nombre = "El nombre debe tener un mínimo de 2 caracteres y un máximo de 50.";
-    }
-    if (validarPrecio(producto.precio) === false) {
-      newErrors.precio = "El precio puede tener máximo 4 dígitos.";
-    }
-    if (validarDetalle(producto.detalle) === false) {
-      newErrors.detalle = "El detalle debe tener un mínimo de 5 caracteres y un máximo de 500.";
-    }
-    if (validarUrl(producto.imagen) === false) {
-      newErrors.imagen = "Debe ingresarse un URL.";
-    }
-    if (campoRequerido(producto.categoria) === false) {
-      newErrors.categoria = "Este es un campo requerido.";
-    }
-    return newErrors;
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (producto.detalle === undefined) {
@@ -66,18 +38,16 @@ const AdminCrearProducto = () => {
     }
 
     if (producto.nombre === undefined) {
-      producto.nombre = 0;
+      producto.nombre = "";
     }
 
-    const newErrors = encontrarErrores();
+    const newErrors = encontrarErrores(producto);
     if (Object.keys(newErrors).length > 0) {
       setMsjError(true);
       setErrors(newErrors);
       return;
     }
 
-    console.log(producto);
-    const nuevoProducto = producto;
     setMsjError(false);
 
     try {
@@ -94,7 +64,7 @@ const AdminCrearProducto = () => {
       if (respuesta.status === 201) {
         Swal.fire(
           "Producto creado",
-          `El producto ${nuevoProducto.nombre} fue creado correctamente.`,
+          `El producto ${producto.nombre} fue creado correctamente.`,
           "success"
         );
         navegacion("/privado/administrador");
@@ -103,7 +73,7 @@ const AdminCrearProducto = () => {
       console.log(error);
       Swal.fire(
         "Error",
-        `El producto ${nuevoProducto.nombre} no pudo ser creado.`,
+        `El producto ${producto.nombre} no pudo ser creado.`,
         "error"
       );
     }
@@ -125,7 +95,6 @@ const AdminCrearProducto = () => {
             <Form.Control
               type="text"
               placeholder="Ej: hamburguesa burguerbeer"
-              // onChange={(e) => setNombreProducto(e.target.value)}
               onChange={(e) => setAtributo("nombre", e.target.value)}
               isInvalid={!!errors.nombre}
             />
@@ -138,7 +107,6 @@ const AdminCrearProducto = () => {
             <Form.Control
               type="text"
               placeholder="Ej: hamburguesa especial de burguerandbeer preparada con los mejores ingredientes"
-              // onChange={(e) => setDetalleProducto(e.target.value)}
               onChange={(e) => setAtributo("detalle", e.target.value)}
               isInvalid={!!errors.detalle}
             />
@@ -163,7 +131,6 @@ const AdminCrearProducto = () => {
             <Form.Control
               type="text"
               placeholder="Ej: https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-              // onChange={(e) => setImagen(e.target.value)}
               onChange={(e) => setAtributo("imagen", e.target.value)}
               isInvalid={!!errors.imagen}
             />
