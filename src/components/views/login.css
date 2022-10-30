@@ -16,11 +16,19 @@
 }
 
 .bg-gris {
+<<<<<<< HEAD
+    background-color: #ece6e6;
+}
+
+.bg-login {
+    background-color: hsl(33, 41%, 95%);
+=======
   background-color: #1b0747bd;
 }
 
 .bg-login {
   background-color: rgba(0, 0, 0, 0.658) !important;
+>>>>>>> dev
 }
 
 .custom-input {
@@ -42,6 +50,12 @@
 }
 
 .bg-grupo {
+<<<<<<< HEAD
+    background-color: #ffffff;
+    padding: 8px;
+    border-radius: 10px;
+}
+=======
   background-color: rgba(0, 0, 0, 0.664) !important;
   padding: 8px;
   border-radius: 10px;
@@ -97,3 +111,4 @@
     padding: 150px 200px 70px 200px;
   }
 }
+>>>>>>> dev
