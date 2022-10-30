@@ -43,7 +43,6 @@ const AdministrarProductos = () => {
       <Table striped bordered hover responsive>
         <thead>
           <tr>
-            <th className="text-black">ID</th>
             <th className="text-black">Nombre producto</th>
             <th className="text-black">Precio</th>
             <th className="text-black">Descripción</th>
