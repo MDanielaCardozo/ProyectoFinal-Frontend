@@ -48,7 +48,6 @@ const ItemProducto = ({ producto, consultarAPI }) => {
 
   return (
     <tr>
-      <td className="text-black itemTabla truncate">{producto._id}</td>
       <td className="text-black itemTabla">{producto.nombre}</td>
       <td className="text-black itemTabla">${producto.precio}</td>
       <td className="text-black itemTabla">{producto.detalle}</td>
