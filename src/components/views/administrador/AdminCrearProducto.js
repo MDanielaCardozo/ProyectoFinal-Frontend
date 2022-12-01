@@ -70,7 +70,6 @@ const AdminCrearProducto = () => {
         navegacion("/privado/administrador");
       }
     } catch (error) {
-      console.log(error);
       Swal.fire(
         "Error",
         `El producto ${producto.nombre} no pudo ser creado.`,

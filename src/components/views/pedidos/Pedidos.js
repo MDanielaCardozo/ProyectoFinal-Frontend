@@ -83,14 +83,12 @@ const Pedidos = () => {
             let year = today.getFullYear();
             year = year % 100;
             let fecha = `${day}/${month}/${year}`;
-            console.log(fecha)
             const pedidos = {
                 usuario: usuario.nombre,
                 fecha,
                 productosdelmenu: [...listaProductosPedido],
                 estado: false, 
             };
-            console.log(pedidos);
             const respuesta = await fetch(URL + "pedidos", {
                 method: "POST",
                 headers: {
@@ -98,9 +96,7 @@ const Pedidos = () => {
                 },
                 body: JSON.stringify(pedidos),
             });
-            console.log(respuesta);
             const data = await respuesta.json();
-            console.log(data);
             if (respuesta.status === 201) {
                 localStorage.setItem(process.env.REACT_APP_LOCALSTORAGE_PRODUCTOS_PEDIDO, JSON.stringify([]));
                 setListaProductosPedido([]);
@@ -111,7 +107,6 @@ const Pedidos = () => {
                 Swal.fire("Ups!", "Ha ocurrido un error, intente nuevamente", "error");
             }
         } catch (error) {
-            console.log(error);
         }
     };
 

@@ -34,7 +34,6 @@ const ItemCliente = ({ cliente, consultarAPI }) => {
             consultarAPI();
           }
         } catch (error) {
-          console.log(error);
           Swal.fire({
             icon: "error",
             title: "Algo falló",
@@ -71,7 +70,6 @@ const ItemCliente = ({ cliente, consultarAPI }) => {
               consultarAPI();
             }
           } catch (error) {
-            console.log(error);
             Swal.fire({
               icon: "error",
               title: "Algo falló",

@@ -30,7 +30,6 @@ const Home = () => {
       setProductos(listaProductos);
       setProductosBuscados(listaProductos);
     } catch (error) {
-      console.log("No pudieron cargarse los productos");
     }
   };
 

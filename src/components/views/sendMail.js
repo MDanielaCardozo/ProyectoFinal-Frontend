@@ -11,11 +11,8 @@ export const sendMail = (nombre, email)=>{
         destinatario: email,
         reply_to: 'restaurant.c2i@gmail.com'
     };
-    console.log(templateParams);
     emailjs.send(EMAILJS_SERVICE, EMAILJS_TEMPLATE, templateParams, EMAILJS_PUBLICKEY)
         .then(function(response) {
-           console.log('SUCCESS!', response.status, response.text);
         }, function(error) {
-           console.log('FAILED...', error);
         });
 }
