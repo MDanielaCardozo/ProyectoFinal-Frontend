@@ -30,7 +30,6 @@ const Login = ({ setUsuarioLogueado }) => {
   const findFormErrors = () => {
     const { email, password } = form;
     const newErrors = {};
-    // email errors
 
     if (!email || email === "") newErrors.email = "Ingrese su email";
     else if (!cantidadCaracteres(email, 4, 70))
@@ -44,7 +43,6 @@ const Login = ({ setUsuarioLogueado }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    //validar
     const newErrors = findFormErrors();
     if (Object.keys(newErrors).length > 0) {
 

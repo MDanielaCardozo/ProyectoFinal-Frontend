@@ -88,7 +88,7 @@ const Pedidos = () => {
                 usuario: usuario.nombre,
                 fecha,
                 productosdelmenu: [...listaProductosPedido],
-                estado: false, // false=PENDIENTE
+                estado: false, 
             };
             console.log(pedidos);
             const respuesta = await fetch(URL + "pedidos", {

@@ -24,11 +24,5 @@ export function validarEmail(input) {
         return false;
     }
 }
-// export function chequearExistenciaEmail(emailBD) {
-//     if (emailBD !== undefined) {
-//         return false;
-//     } else {
-//         return true;
-//     }
-// }
+
 

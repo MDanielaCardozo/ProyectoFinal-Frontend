@@ -5,11 +5,9 @@ import ItemPedidoLista from './ItemPedidoLista';
 import Accordion from 'react-bootstrap/Accordion';
 
 const ItemPedido = ({ pedido, consultarAPI }) => {
-    // TRAER AL URL DE LA API
     const URL = process.env.REACT_APP_API_HAMBURGUESERIA;
 
     const [estado, setEstado] = useState(pedido.estado);
-    //como el estate actualiza con retrazo, se crea la varible bandera.
     let bandera = pedido.estado;
 
     const handleEntregado = (_id) => {
@@ -59,7 +57,6 @@ const ItemPedido = ({ pedido, consultarAPI }) => {
                                 : 'El pedido fue entregado con éxito',
                             'success'
                         );
-                        // ACÁ CONSULTA A LA API
                         consultarAPI();
                     }
                 } catch (error) {
