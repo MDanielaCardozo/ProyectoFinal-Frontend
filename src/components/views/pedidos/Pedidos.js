@@ -33,14 +33,6 @@ const Pedidos = () => {
         }
     }
 
-    // const habilitarProcederAPagar = ()=>{
-    //     if(formatMoneda(total) == 0){
-    //         setBotonActivo(false)
-    //     }else{
-    //         setBotonActivo(true)
-    //     }
-    // }
-
     const quitarProducto = (producto) => {
         Swal.fire({
             title: "Esta seguro?",
