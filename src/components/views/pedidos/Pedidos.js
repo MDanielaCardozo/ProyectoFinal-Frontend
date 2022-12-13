@@ -20,12 +20,26 @@ const Pedidos = () => {
     const usuario = JSON.parse(localStorage.getItem(process.env.REACT_APP_LOCALSTORAGE)) || { nombre: "anonimo!!" };
     const [listaProductosPedido, setListaProductosPedido] = useState(productosPedidoTemp);
     const [total, setTotal] = useState(0);
+    const [botonActivo, setBotonActivo]=useState(true)
 
     const actualizarTotal=(lista)=>{
         let subTotal = 0;
         lista.map((item)=>subTotal += item.precio * item.cantidad);
         setTotal(subTotal);
+        if(subTotal === 0){
+            setBotonActivo(false)
+        }else{
+            setBotonActivo(true)
+        }
     }
+
+    // const habilitarProcederAPagar = ()=>{
+    //     if(formatMoneda(total) == 0){
+    //         setBotonActivo(false)
+    //     }else{
+    //         setBotonActivo(true)
+    //     }
+    // }
 
     const quitarProducto = (producto) => {
         Swal.fire({
@@ -124,6 +138,7 @@ const Pedidos = () => {
                 localStorage.setItem(process.env.REACT_APP_LOCALSTORAGE_PRODUCTOS_PEDIDO, JSON.stringify([]));
                 setListaProductosPedido([]);
                 setTotal(0);
+                setBotonActivo(false)
                 Swal.fire("Carrito vaciado", "Los productos fueron quitados del pedido", "success");
             }
         });
@@ -171,7 +186,7 @@ const Pedidos = () => {
                 <p>Total: {formatMoneda(total)}</p>
                 <div className="text-end">
                     <Button variant="danger" className="mt-3 me-3 text-light" onClick={borrarCarrito}>Borrar carrito</Button>
-                    <Button variant="primary" className="mt-3" onClick={handleClick}>
+                    <Button variant="primary" className="mt-3" onClick={handleClick} disabled={!botonActivo}>
                         Proceder a pagar
                     </Button>
                 </div>
