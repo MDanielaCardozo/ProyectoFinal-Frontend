@@ -25,4 +25,11 @@ export function validarEmail(input) {
     }
 }
 
-
+export function validarNombre(input){
+    let patron = /^[a-zA-Z]+([ ][a-zA-Z]+)*$/;
+    if (patron.test(input)){
+        return true
+    }else{
+        return false
+    }
+}

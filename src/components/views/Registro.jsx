@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Card, Button, Alert } from 'react-bootstrap';
 import './registro.css';
-import { cantidadCaracteres, validarclave, validarEmail } from './helperUsuario';
+import { cantidadCaracteres, validarclave, validarEmail, validarNombre } from './helperUsuario';
 import { useNavigate } from 'react-router-dom';
 import Swal from "sweetalert2";
 import { sendMail } from './sendMail';
@@ -15,6 +15,7 @@ const Registro = ({setUsuarioLogueado}) => {
     const [msjErrorclave, setmsjErrorclave] = useState(false);
     const [msjErrormail,setmsjErrormail] = useState(false)
     const [msjErroremailRepetido, setmsjErroremailRepetido] = useState(false);
+    const [msjErrorNombre, setMsjErrorNombre] = useState(false)
 
     const URL = process.env.REACT_APP_API_USUARIOS;
 
@@ -22,6 +23,9 @@ const Registro = ({setUsuarioLogueado}) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        if (validarNombre(nombre)) setMsjErrorNombre(false);
+        else setMsjErrorNombre(true);
 
         if (validarclave(clave)) setmsjErrorclave(false);
         else  setmsjErrorclave(true);
@@ -35,7 +39,8 @@ const Registro = ({setUsuarioLogueado}) => {
             if (
                 cantidadCaracteres(nombre, 8 , 40) &&
                 validarclave(clave) &&
-                validarEmail(email)
+                validarEmail(email) &&
+                validarNombre(nombre)
             ) {
                 setMsjError(false);
                 const nuevoUsario = {
@@ -185,6 +190,11 @@ const Registro = ({setUsuarioLogueado}) => {
                     <Alert variant="danger" className=" mx-3">
                         El email ingresado ya existe, por favor introduce un
                         email valido.
+                    </Alert>
+                ) : null}
+                {msjErrorNombre ? (
+                    <Alert variant="danger" className=" mx-3">
+                        El nombre contiene caracteres especiales, por favor eliminelos.
                     </Alert>
                 ) : null}
             </Card>
