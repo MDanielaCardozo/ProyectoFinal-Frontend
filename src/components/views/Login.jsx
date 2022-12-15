@@ -36,6 +36,7 @@ const Login = ({ setUsuarioLogueado }) => {
       newErrors.email = "El email debe tener entre 4 y 70 caracteres";
     else if (!validarEmail(email)) newErrors.email = "Ingrese un email válido";
 
+    else if (!password || password === "") newErrors.password = "Ingrese su contraseña"; 
  
     return newErrors;
   };

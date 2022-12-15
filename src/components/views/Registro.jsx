@@ -79,7 +79,7 @@ const Registro = ({setUsuarioLogueado}) => {
                             showCancelButton: false,
                             confirmButtonText: 'Ok',
                         }).then((result) => {
-                            navigate(-1);
+                            navigate(-2);
                         });
                     } else {
                         setmsjErroremailRepetido(true)
